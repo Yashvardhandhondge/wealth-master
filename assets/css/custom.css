@@ -1,0 +1,43 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+
+body {
+    font-size: 1rem;
+    line-height:1.5;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    color:#D1D5DB;
+    background-color: #000000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: "Outfit", sans-serif;
+    line-height: 120%;
+    color: white;
+ 
+}
+
+.footer-item ul li a:hover {
+  color: #E22006;
+  transition: .5s;
+}
+.footer-item ul li a:hover path {
+  stroke: #E22006;
+ 
+}
+
+.footer-item ul li a path {
+ transition: .5s;
+ 
+}
+
+
