@@ -9,8 +9,15 @@ JS Table of Conttent
 (function ($) {
   "use strict";
 
+  $('select').niceSelect();
 
+  $('.popup-youtube').magnificPopup({
+    type: 'iframe'
+  });
 
+  $('.popup-youtube-2').magnificPopup({
+    type: 'iframe'
+  });
   
 }(jQuery));
 

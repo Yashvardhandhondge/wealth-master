@@ -40,4 +40,57 @@ h1,h2,h3,h4,h5,h6{
  
 }
 
+.das-number .space-add {
+  padding-right: 35px;
+}
+
+
+#custom-substack-embed button {
+  background: #E22006 !important;
+  font-weight: bold!important;
+  color: white;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+
+}
+
+form.custom-substack-widget {
+  border-radius: 7px;
+}
+
+#custom-substack-embed ::placeholder{
+  color: #16161680!important;
+}
+
+.das-box {
+  border-radius: 6px;
+}
+
+
+.nice-select {
+  padding-left: 0;
+    background: transparent;
+    border: 0;
+}
+.nice-select .list{
+  background-color: black;
+}
+
+.nice-select  ul.list {
+  
+  padding:12px;
+  width: 100%;
+}
+.nice-select .option.focus, .nice-select .option.selected.focus, .nice-select .option:hover {
+  background-color: black;
+}
+
+.nice-select li {
+  padding: 0 !important;
+
+}
+
+.nice-select  .list li {
+  font-weight: 800 !important;
+}
 
