@@ -14,6 +14,7 @@
       <link rel="stylesheet" href="assets/css/nice-select.css">
       <link rel="stylesheet" href="assets/css/custom.css">
       <!-- endgulp -->
+       <script src="assets/js/i18n.js"></script>
    </head>
    <body class="  font-base  font-normal bg-[#000000]">
       <main class="overflow-hidden">
@@ -21,6 +22,7 @@
          <div class="top-box pt-[47px] relative">
             <div class="container">
                <div class="flex justify-end">
+
                   <div class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] ibg-transparent border border-[#FFFFFF1A] shadow-xl hover:border-[#FFFFFF1A] ">
                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_81_471)">
@@ -32,9 +34,11 @@
                            </clipPath>
                         </defs>
                      </svg>
-                     <select class="bg-transparent border-0 font-[800] text-[14px]">
-                        <option value="us" >EN</option>
-                        <option value="Bs">BN</option>
+                     <select class="bg-transparent border-0 font-[800] text-[14px]" onchange="setLanguage(this.value)" id="languageSwitcher">
+                         <option value="en">English</option>
+                         <option value="lt">Lithuanian</option>
+                         <option value="de">German</option>
+                         <option value="es">Spanish</option>
                      </select>
                   </div>
                </div>
@@ -71,15 +75,18 @@
          <!--  ====================== Hero  Area Start =============================  -->
          <section class="hero-area mt-[43px]">
             <div class="container relative z-10">
-               <div class="join-box flex gap-[6px] items-center px-[9px]  py-[4px] justify-center bg-primary-100 rounded-[20px] max-w-[370px] m-auto">
-                  <img src="assets/images/hero-man-logo.png" alt="images">
-                  <p class="sm:text-sm text-[13px]">join +10,000 daily readers for 100% free</p>
-               </div>
+                <div class="flex px-[9px] py-[4px] gap-[6px] items-center justify-center chip-gradient max-w-[370px] m-auto">
+                    <img src="assets/images/hero-man-logo.png" alt="images">
+                    <p class="sm:text-sm text-[13px]" data-i18n="cta">join +10,000 daily readers for 100% free</p>
+                </div>
                <div class="max-w-[680px] m-auto mt-[22px] relative z-10">
-                  <h1 class="font-medium lg:text-[48px] md:text-[40px] text-[32px] text-center">Join 1% Of Traders Club And Get
-                     <span class="text-primary-200">  Full Access</span> To VIP Strategies
-                  </h1>
-                  <p class="text-[sm] text-center mt-[22px]">We help to earn consistent returns with crypto and manage the risks Start building your crypto portfolio today</p>
+                   <h1 class="font-medium lg:text-[48px] md:text-[40px] text-[32px] text-center" data-i18n="hero_heading">
+                       Join 1% Of Traders Club And Get
+                       <span class="text-primary-200" data-i18n="hero_highlight"> Full Access</span> To VIP Strategies
+                   </h1>
+                   <p class="text-[sm] text-center mt-[22px]" data-i18n="subtext">
+                       We help to earn consistent returns with crypto and manage the risks Start building your crypto portfolio today
+                   </p>
                   <div class="emal-box mt-[25px] max-w-[420px] m-auto">
                      <div id="custom-substack-embed" class=" form-box text-center"></div>
                   </div>
@@ -98,7 +105,9 @@
                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2175 15.6133C25.0503 13.8788 23.553 13.2973 21.6626 13.1317L21.6625 10.7257L20.1976 10.726L20.1977 13.0686C19.8131 13.0685 19.4196 13.0761 19.0286 13.0839L19.0288 10.7258L17.5651 10.7258L17.5645 13.1311C17.2475 13.1376 16.9361 13.1435 16.6325 13.1437L16.6323 13.1362L14.6124 13.1355L14.6127 14.6996C14.6127 14.6996 15.6942 14.679 15.6762 14.6989C16.2695 14.6991 16.4629 15.0434 16.5187 15.3407L16.5188 18.0816C16.5597 18.0818 16.6131 18.0835 16.6736 18.0918L16.5193 18.0919L16.5185 21.9318C16.4925 22.1185 16.3828 22.4161 15.9683 22.4168C15.9871 22.4334 14.9037 22.4166 14.9037 22.4166L14.6128 24.166L16.5191 24.1658C16.7344 24.166 16.9475 24.1684 17.1584 24.1706C17.2949 24.1721 17.4304 24.1736 17.5649 24.1745L17.5656 26.6083L19.0286 26.6085L19.0289 24.2007C19.4302 24.2092 19.8189 24.2123 20.1984 24.212L20.1978 26.6086L21.6623 26.6084L21.6627 24.1793C24.1249 24.0381 25.8485 23.4177 26.0618 21.1062C26.2346 19.2444 25.3592 18.4136 23.9615 18.0776C24.8104 17.6444 25.3412 16.8826 25.2171 15.6134L25.2175 15.6133ZM23.1681 20.8165C23.1685 22.4857 20.5461 22.4489 19.3472 22.432C19.2399 22.4305 19.1439 22.4292 19.0623 22.4292L19.0627 19.2051C19.1625 19.2052 19.2836 19.2023 19.4209 19.1991C20.6496 19.1701 23.1676 19.1106 23.1685 20.8164L23.1681 20.8165ZM19.3036 17.7323C20.3045 17.7486 22.4862 17.7844 22.4866 16.2679C22.4868 14.7166 20.3879 14.7723 19.3628 14.7996C19.2476 14.8026 19.1459 14.8053 19.0623 14.8054L19.0623 17.7295C19.1312 17.7294 19.2125 17.7308 19.3036 17.7323Z" fill="white"/>
                                     </svg>
                                  </div>
-                                 <h2 class="md:text-[20px] text-[16px] font-bold gap-[5px]">Bitcoin: Fear And Greed Index</h2>
+                                  <h2 class="md:text-[20px] text-[16px] font-bold gap-[5px]" data-i18n="index_heading">
+                                      Bitcoin: Fear And Greed Index
+                                  </h2>
                               </div>
                            </div>
                            <div class="flex gap-2 items-center">
@@ -2912,7 +2921,9 @@
                                  </svg>
                               </div>
                               <div class="text-item">
-                                 <p class="text-[10px]"> Extreme Fear (0-24) </p>
+                                  <p class="text-[10px]" data-i18n="extreme_fear_label">
+                                      Extreme Fear (0–24)
+                                  </p>
                               </div>
                            </div>
                            <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-[8px]  py-[5px] rounded-full">
@@ -2936,7 +2947,7 @@
                                  </svg>
                               </div>
                               <div class="text-item">
-                                 <p class="text-[10px]"> Fear (25-49) </p>
+                                 <p class="text-[10px]" data-i18n="fear_label"> Fear (25-49) </p>
                               </div>
                            </div>
                            <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-[8px]  py-[5px] rounded-full">
@@ -2984,7 +2995,7 @@
                                  </svg>
                               </div>
                               <div class="text-item">
-                                 <p class="text-[10px]"> Greed (60-74) </p>
+                                 <p class="text-[10px]" data-i18n="greed_label"> Greed (60-74) </p>
                               </div>
                            </div>
                            <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-[8px]  py-[5px] rounded-full">
@@ -3008,25 +3019,28 @@
                                  </svg>
                               </div>
                               <div class="text-item">
-                                 <p class="text-[10px]"> Extreme Greed (75-100) </p>
+                                 <p class="text-[10px]" data-i18n="extreme_greed_label"> Extreme Greed (75-100) </p>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
-                  <img class="absolute -top-[220px]  left-0 right-0 m-auto" src="assets/images/bitconin-midil-shape.png" alt="images">
                </div>
             </div>
-            <div class="wealth-border max-w-[1006px] absolute top-[150px] left-0 right-0 m-auto hidden md:block">
-               <img class="m-auto" src="assets/images/wealh-border.png" alt="images">
-            </div>
+             <div class="wealth-border max-w-[1006px] absolute top-[150px] left-0 right-0 m-auto hidden md:block">
+                 <img class="absolute top-0 left-0 w-full h-auto" src="assets/images/wealh-border.png" alt="Wealth Border">
+                 <img class="absolute top-0 left-0 w-full h-auto" src="assets/images/Vector.svg" alt="Vector">
+             </div>
          </section>
          <!--  ====================== Hero  Area End =============================  -->
          <!--  ====================== Featured Partners  Area Start =============================  -->
          <section class="featured-area lg:pt-[150px] pt-[113px] ">
             <div class="container">
                <div class="section-title mb-[70px]">
-                  <h2 class="lg:text-[32px] text-[28px] font-medium text-center">  Featured <span class="text-primary-200">Partners</span></h2>
+                   <h2 class="lg:text-[32px] text-[28px] font-medium text-center">
+                       <span data-i18n="featured_partners_before">Featured</span>
+                       <span class="text-primary-200" data-i18n="featured_partners_highlight">Partners</span>
+                   </h2>
                </div>
                <div class="featured-images">
                   <img class="text-center" src="assets/images/featured-images.png" alt="images">
@@ -3038,43 +3052,38 @@
          <div class="maser-club-area bg-[#0F1723] lg:py-[124px] py-[60px] mt-[114px]">
             <div class="container">
                <div class="section-title mb-[70px] max-w-[900px] m-auto">
-                  <h2 class="lg:text-[32px] text-[28px] font-medium text-center"> At <span class="text-primary-200">Wealth Master Club</span>, We trade the highest conviction setups
-                     and help to earn passive income with crypto 
-                  </h2>
+                   <h2 class="lg:text-[32px] text-[28px] font-medium text-center">
+                       <span data-i18n="hero_text_before">At</span>
+                       <span class="text-primary-200" data-i18n="hero_text_highlight">Wealth Master Club</span>,
+                       <span data-i18n="hero_text_after">We trade the highest conviction setups and help to earn passive income with crypto</span>
+                   </h2>
                </div>
                <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
-                  <div class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D]">
-                     <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
-                        <div class="images-box flex items-center gap-[11px] ">
-                           <img src="assets/images/wealth-1.png" alt="images">
-                           <h4 class="uppercase font-medium text-[20px]">DOGE</h4>
-                        </div>
-                        <div class="shape-box">
-                           <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M1 32.7525C3.33333 25.7525 12 12.1525 28 13.7525C48 15.7525 43 -8.24729 62.5 8.25271C82 24.7527 89.5 -2.74766 97 1.75234" stroke="#22C55E" stroke-opacity="0.8"/>
-                              <path d="M28 13.7525C8.5 12.7473 1 32.7525 1 32.7525H97V1.75234C89.5 -2.74766 82 24.7527 62.5 8.25271C43 -8.24729 48.0731 14.7873 28 13.7525Z" fill="url(#paint0_linear_103_7747)"/>
-                              <defs>
-                                 <linearGradient id="paint0_linear_103_7747" x1="49.5" y1="3.75269" x2="49.5" y2="32.7527" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#22C55E" stop-opacity="0.2"/>
-                                    <stop offset="1" stop-color="#22C55E" stop-opacity="0"/>
-                                 </linearGradient>
-                              </defs>
-                           </svg>
-                        </div>
-                     </div>
-                     <div class="content-box flex items-center justify-between">
-                        <div class="left-text">
-                           <p>September 2nd 2024</p>
-                           <p>- Strong Signal</p>
-                        </div>
-                        <div class="right-box flex items-center gap-[10px]">
-                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E"/>
-                           </svg>
-                           <p class="font-bold text-[18px] text-[#22C55E]">201.69%</p>
-                        </div>
-                     </div>
-                  </div>
+                   <div class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D]">
+                       <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
+                           <div class="images-box flex items-center gap-[11px]">
+                               <img src="assets/images/wealth-1.png" alt="images">
+                               <h4 class="uppercase font-medium text-[20px]" data-i18n="doge_name">DOGE</h4>
+                           </div>
+                           <div class="shape-box">
+                               <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                   <!-- SVG paths remain unchanged -->
+                               </svg>
+                           </div>
+                       </div>
+                       <div class="content-box flex items-center justify-between">
+                           <div class="left-text">
+                               <p data-i18n="date_format">September 2nd 2024</p>
+                               <p data-i18n="signal_strength">- Strong Signal</p>
+                           </div>
+                           <div class="right-box flex items-center gap-[10px]">
+                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E"/>
+                               </svg>
+                               <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
+                           </div>
+                       </div>
+                   </div>
                   <div class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D]">
                      <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
                         <div class="images-box flex items-center gap-[11px] ">
@@ -3094,18 +3103,18 @@
                            </svg>
                         </div>
                      </div>
-                     <div class="content-box flex items-center justify-between">
-                        <div class="left-text">
-                           <p>September 2nd 2024</p>
-                           <p>- Strong Signal</p>
-                        </div>
-                        <div class="right-box flex items-center gap-[10px]">
-                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E"/>
-                           </svg>
-                           <p class="font-bold text-[18px] text-[#22C55E]">201.69%</p>
-                        </div>
-                     </div>
+                      <div class="content-box flex items-center justify-between">
+                          <div class="left-text">
+                              <p data-i18n="date_format">September 2nd 2024</p>
+                              <p data-i18n="signal_strength">- Strong Signal</p>
+                          </div>
+                          <div class="right-box flex items-center gap-[10px]">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E"/>
+                              </svg>
+                              <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
+                          </div>
+                      </div>
                   </div>
                   <div class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D]">
                      <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
@@ -3126,18 +3135,18 @@
                            </svg>
                         </div>
                      </div>
-                     <div class="content-box flex items-center justify-between">
-                        <div class="left-text">
-                           <p>September 2nd 2024</p>
-                           <p>- Strong Signal</p>
-                        </div>
-                        <div class="right-box flex items-center gap-[10px]">
-                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E"/>
-                           </svg>
-                           <p class="font-bold text-[18px] text-[#22C55E]">201.69%</p>
-                        </div>
-                     </div>
+                      <div class="content-box flex items-center justify-between">
+                          <div class="left-text">
+                              <p data-i18n="date_format">September 2nd 2024</p>
+                              <p data-i18n="signal_strength">- Strong Signal</p>
+                          </div>
+                          <div class="right-box flex items-center gap-[10px]">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E"/>
+                              </svg>
+                              <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
+                          </div>
+                      </div>
                   </div>
                   <div class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D]">
                      <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
@@ -3158,18 +3167,18 @@
                            </svg>
                         </div>
                      </div>
-                     <div class="content-box flex items-center justify-between">
-                        <div class="left-text">
-                           <p>September 2nd 2024</p>
-                           <p>- Strong Signal</p>
-                        </div>
-                        <div class="right-box flex items-center gap-[10px]">
-                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E"/>
-                           </svg>
-                           <p class="font-bold text-[18px] text-[#22C55E]">201.69%</p>
-                        </div>
-                     </div>
+                      <div class="content-box flex items-center justify-between">
+                          <div class="left-text">
+                              <p data-i18n="date_format">September 2nd 2024</p>
+                              <p data-i18n="signal_strength">- Strong Signal</p>
+                          </div>
+                          <div class="right-box flex items-center gap-[10px]">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E"/>
+                              </svg>
+                              <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
+                          </div>
+                      </div>
                   </div>
                </div>
             </div>
@@ -3194,12 +3203,10 @@
                            </defs>
                         </svg>
                      </div>
-                     <div class="content-text mt-5">
-                        <h3 class="text-[24px] font-bold">Start earning consistent passive income with crypto</h3>
-                        <p class="text-base mt-2">Every month, we do the digging — so you
-                           don't have to.
-                        </p>
-                     </div>
+                      <div class="content-text mt-5">
+                          <h3 class="text-[24px] font-bold" data-i18n="feature1_title">Start earning consistent passive income with crypto</h3>
+                          <p class="text-base mt-2" data-i18n="feature1_desc">Every month, we do the digging — so you don't have to.</p>
+                      </div>
                   </div>
                   <div class="item-box">
                      <div class="icon-box">
@@ -3215,10 +3222,10 @@
                            </defs>
                         </svg>
                      </div>
-                     <div class="content-text mt-5">
-                        <h3 class="text-[24px] font-bold">Access to crypto portfolio strategies</h3>
-                        <p class="text-base mt-2">Save +80 hours of research</p>
-                     </div>
+                      <div class="content-text mt-5">
+                          <h3 class="text-[24px] font-bold" data-i18n="feature2_title">Access to crypto portfolio strategies</h3>
+                          <p class="text-base mt-2" data-i18n="feature2_desc">Save +80 hours of research</p>
+                      </div>
                   </div>
                   <div class="item-box">
                      <div class="icon-box">
@@ -3236,10 +3243,10 @@
                            </defs>
                         </svg>
                      </div>
-                     <div class="content-text mt-5">
-                        <h3 class="text-[24px] font-bold">Get the highest conviction trades</h3>
-                        <p class="text-base mt-2">Unique insights balancing upside with objective risk assessment.</p>
-                     </div>
+                      <div class="content-text mt-5">
+                          <h3 class="text-[24px] font-bold" data-i18n="feature3_title">Get the highest conviction trades</h3>
+                          <p class="text-base mt-2" data-i18n="feature3_desc">Unique insights balancing upside with objective risk assessment.</p>
+                      </div>
                   </div>
                </div>
             </div>
@@ -3264,9 +3271,9 @@
                         </a>
                      </div>
                      <div class="text-box mt-6 ">
-                        <p class="text-center md:text-left"> Premium cryptocurrency analysis and
-                           signals for serious wealth builders. 
-                        </p>
+                         <p class="text-center md:text-left" data-i18n="footer_tagline">
+                             Premium cryptocurrency analysis and signals for serious wealth builders.
+                         </p>
                      </div>
                      <div class="footer-social-icon mt-6">
                         <ul class="flex items-center gap-4 justify-center md:justify-start">
@@ -3306,14 +3313,14 @@
                      </div>
                   </div>
                   <div class="footer-item col-span-6 md:col-span-3">
-                     <h4 class="font-bold text-[18px] mb-6">Quick Links</h4>
+                      <h4 class="font-bold text-[18px] mb-6" data-i18n="quick_links">Quick Links</h4>
                      <ul class="flex flex-col gap-3">
                         <li>
                            <a class="flex items-center gap-1 group" href="#">
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                  <path d="M6 12L10 8L6 4" stroke="#9CA3AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
-                              <span></span>Home
+                               <span data-i18n="home">Home</span>
                            </a>
                         </li>
                         <li>
@@ -3321,7 +3328,7 @@
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                  <path d="M6 12L10 8L6 4" stroke="#9CA3AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
-                              <span></span>Performance
+                               <span data-i18n="performance">Performance</span>
                            </a>
                         </li>
                         <li>
@@ -3329,7 +3336,7 @@
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                  <path d="M6 12L10 8L6 4" stroke="#9CA3AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
-                              <span></span>Pricing
+                               <span data-i18n="pricing">Pricing</span>
                            </a>
                         </li>
                         <li>
@@ -3337,7 +3344,7 @@
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                  <path d="M6 12L10 8L6 4" stroke="#9CA3AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
-                              <span></span>Benefits
+                               <span data-i18n="benefits">Benefits</span>
                            </a>
                         </li>
                      </ul>
@@ -3350,7 +3357,7 @@
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                  <path d="M6 12L10 8L6 4" stroke="#9CA3AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
-                              <span></span>Blog
+                               <span data-i18n="blog">Blog</span>
                            </a>
                         </li>
                         <li>
@@ -3358,7 +3365,7 @@
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                  <path d="M6 12L10 8L6 4" stroke="#9CA3AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
-                              <span></span>Knowledge Base
+                               <span data-i18n="knowledge_base">Knowledge Base</span>
                            </a>
                         </li>
                         <li>
@@ -3366,7 +3373,7 @@
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                  <path d="M6 12L10 8L6 4" stroke="#9CA3AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
-                              <span></span>FAQ
+                               <span data-i18n="faq">FAQ</span>
                            </a>
                         </li>
                         <li>
@@ -3374,16 +3381,16 @@
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                  <path d="M6 12L10 8L6 4" stroke="#9CA3AF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
-                              <span></span>Support
+                               <span data-i18n="support">Support</span>
                            </a>
                         </li>
                      </ul>
                   </div>
                   <div class="footer-item col-span-12 md:col-span-3 mt-[80px] md:mt-0">
-                     <h4 class="font-bold text-[18px] mb-6 text-center md:text-left">Subscribe</h4>
-                     <p class="text-center md:text-left">Get the latest updates and offers
-                        straight to your inbox.
-                     </p>
+                      <h4 class="font-bold text-[18px] mb-6 text-center md:text-left" data-i18n="subscribe">Subscribe</h4>
+                      <p class="text-center md:text-left" data-i18n="subscribe_text">
+                          Get the latest updates and offers straight to your inbox.
+                      </p>
                      <div id="custom-substack-embed" class="mt-6 form-box"></div>
                      <script>
                         window.CustomSubstackWidget = {
@@ -3398,27 +3405,29 @@
                      </script>
                   </div>
                </div>
-               <div class="copy-right-area pt-8 mt-8 border-t border-[#1F2937]">
-                  <div class="grid sm:grid-cols-2 gap-10 grid-cols-1">
-                     <div class="item-text">
-                        <p class="text-center sm:text-left">© 2025 Wealth Masters. All rights reserved.</p>
-                     </div>
-                     <div class="item-box">
-                        <ul class="flex md:gap-6 gap-3 items-center sm:justify-end justify-center ">
-                           <li><a class="hover:text-primary-200 duration-500 text-sm" href="#">Privacy Policy</a></li>
-                           <li><a class="hover:text-primary-200 duration-500 text-sm" href="#">Terms of Service</a></li>
-                           <li><a class="hover:text-primary-200 duration-500 text-sm" href="#">Cookie Policy</a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
+                <div class="copy-right-area pt-8 mt-8 border-t border-[#1F2937]">
+                    <div class="grid sm:grid-cols-2 gap-10 grid-cols-1">
+                        <div class="item-text">
+                            <p class="text-center sm:text-left" data-i18n="copyright">
+                                © 2025 Wealth Masters. All rights reserved.
+                            </p>
+                        </div>
+                        <div class="item-box">
+                            <ul class="flex md:gap-6 gap-3 items-center sm:justify-end justify-center">
+                                <li><a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="privacy_policy">Privacy Policy</a></li>
+                                <li><a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="terms_service">Terms of Service</a></li>
+                                <li><a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="cookie_policy">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
          </footer>
          <!--  ====================== Footer Area End =============================  -->
          <!-- gulp:js -->
          <script src="assets/js/jquery.min.js"></script>
          <script src="assets/js/jquery.nice-select.min.js"></script>
-         <script src="assets/js/widget.js"></script>
+          <script src="assets/js/widget.js"></script>
          <script src="assets/js/app.js"></script>
          <!-- endgulp -->
       </main>

@@ -94,3 +94,19 @@ form.custom-substack-widget {
   font-weight: 800 !important;
 }
 
+.shape-item{
+    opacity: 0.4;
+}
+
+.chip-gradient {
+    background: linear-gradient(
+            90deg,
+            rgba(222, 57, 11, 0) 0%,
+            rgba(222, 57, 11, 0.34) 50%,
+            rgba(120, 31, 6, 0) 100%
+    );
+    border-radius: 9999px;
+    box-shadow:
+            0 0 0 1px rgba(220, 38, 38, 0.2),
+            0 0 0 1px rgba(220, 38, 38, 0) inset;
+}
