@@ -46,13 +46,12 @@ module.exports = {
           100: '#262626',
           200: '#DC2626',
         },
+        white: '#FFFFFF',
       },
 
       boxShadow: {
         'xl': ' 2px 2px 1px 0px #FFFFFF59 inset',
         '2xl': '  0px 4px 34px 0px #00000008',
-  
-
       },
 
       backgroundImage: {

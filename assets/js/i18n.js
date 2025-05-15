@@ -40,7 +40,12 @@ const translations = {
         copyright: "© 2025 Wealth Masters. All rights reserved.",
         privacy_policy: "Privacy Policy",
         terms_service: "Terms of Service",
-        cookie_policy: "Cookie Policy"
+        cookie_policy: "Cookie Policy",
+        testimonial_before: "The strategy master difference:",
+        testimonial_after: "in their words",
+        testimonial_one: "I was impressed by their attention to detail and the quality of the final result. They understood exactly what I needed and brought it to life even better than I imagined.",
+        testimonial_two: "From the very beginning, their professionalism stood out. They understood our needs perfectly and delivered a solution that exceeded expectations.",
+        testimonial_three: " couldn’t be happier with the experience! The team was friendly, responsive, and super talented. The final result looks amazing and works flawlessly.",
     },
     es: {
         cta: "Únete a más de 10,000 lectores diarios gratis al 100%",
@@ -83,7 +88,12 @@ const translations = {
         copyright: "© 2025 Wealth Masters. Todos los derechos reservados.",
         privacy_policy: "Política de Privacidad",
         terms_service: "Términos de Servicio",
-        cookie_policy: "Política de Cookies"
+        cookie_policy: "Política de Cookies",
+        testimonial_before: "La diferencia de Strategy Master:",
+        testimonial_after: "en sus palabras",
+        testimonial_one: "Me impresionó su atención al detalle y la calidad del resultado final. Entendieron exactamente lo que necesitaba y lo hicieron incluso mejor de lo que imaginé.",
+        testimonial_two: "Desde el principio, su profesionalismo destacó. Entendieron nuestras necesidades a la perfección y entregaron una solución que superó las expectativas.",
+        testimonial_three: "¡No podría estar más feliz con la experiencia! El equipo fue amable, receptivo y muy talentoso. El resultado final se ve increíble y funciona perfectamente.",
     },
     de: {
         cta: "Tritt über 10.000 täglichen Lesern kostenlos bei",
@@ -126,7 +136,12 @@ const translations = {
         copyright: "© 2025 Wealth Masters. Alle Rechte vorbehalten.",
         privacy_policy: "Datenschutzrichtlinie",
         terms_service: "Nutzungsbedingungen",
-        cookie_policy: "Cookie-Richtlinie"
+        cookie_policy: "Cookie-Richtlinie",
+        testimonial_before: "Der Strategy-Master-Unterschied:",
+        testimonial_after: "in ihren Worten",
+        testimonial_one: "Ich war beeindruckt von ihrer Liebe zum Detail und der Qualität des Endergebnisses. Sie haben genau verstanden, was ich brauchte, und es besser umgesetzt, als ich es mir vorgestellt hatte.",
+        testimonial_two: "Von Anfang an fiel ihre Professionalität auf. Sie verstanden unsere Anforderungen genau und lieferten eine Lösung, die unsere Erwartungen übertraf.",
+        testimonial_three: "Ich bin absolut zufrieden mit der Zusammenarbeit! Das Team war freundlich, hilfsbereit und sehr talentiert. Das Endergebnis sieht großartig aus und funktioniert einwandfrei.",
     },
     lt: {
         cta: "Prisijunkite prie daugiau nei 10 000 kasdienių skaitytojų visiškai nemokamai",
@@ -169,7 +184,12 @@ const translations = {
         copyright: "© 2025 Wealth Masters. Visos teisės saugomos.",
         privacy_policy: "Privatumo politika",
         terms_service: "Paslaugų sąlygos",
-        cookie_policy: "Slapukų politika"
+        cookie_policy: "Slapukų politika",
+        testimonial_before: "Strategy Master skirtumas:",
+        testimonial_after: "jų žodžiais",
+        testimonial_one: "Buvau sužavėtas jų dėmesiu detalėms ir galutinio rezultato kokybe. Jie puikiai suprato, ko man reikėjo, ir įgyvendino dar geriau nei tikėjausi.",
+        testimonial_two: "Nuo pat pradžių išsiskyrė jų profesionalumas. Jie puikiai suprato mūsų poreikius ir pateikė sprendimą, kuris viršijo lūkesčius.”",
+        testimonial_three: "Negalėčiau būti labiau patenkintas patirtimi! Komanda buvo draugiška, reaguojanti ir labai talentinga. Galutinis rezultatas atrodo puikiai ir veikia be priekaištų.",
     }
 };
 

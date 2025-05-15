@@ -20,6 +20,3 @@ JS Table of Conttent
   });
   
 }(jQuery));
-
-
-

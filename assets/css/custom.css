@@ -54,6 +54,15 @@ h1,h2,h3,h4,h5,h6{
 
 }
 
+.head-btn{
+    background: #E22006;
+    color: white;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 20px;
+}
+
 form.custom-substack-widget {
   border-radius: 7px;
 }
@@ -77,9 +86,8 @@ form.custom-substack-widget {
 }
 
 .nice-select  ul.list {
-  
+
   padding:12px;
-  width: 100%;
 }
 .nice-select .option.focus, .nice-select .option.selected.focus, .nice-select .option:hover {
   background-color: black;
@@ -109,4 +117,19 @@ form.custom-substack-widget {
     box-shadow:
             0 0 0 1px rgba(220, 38, 38, 0.2),
             0 0 0 1px rgba(220, 38, 38, 0) inset;
+}
+
+.head-nav{
+    border: 1px solid #37393C;
+    padding: 10px 40px;
+}
+
+.mobile-menu {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.mobile-menu.active {
+    transform: translateY(0);
+    opacity: 1;
 }
