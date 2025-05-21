@@ -102,10 +102,6 @@ form.custom-substack-widget {
   font-weight: 800 !important;
 }
 
-.shape-item{
-    opacity: 0.4;
-}
-
 .chip-gradient {
     background: linear-gradient(
             90deg,

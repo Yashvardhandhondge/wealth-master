@@ -53,7 +53,7 @@
                             </nav>
 
 <!--                             Language Selector - Desktop-->
-                            <div class="hidden lg:flex gap-2 rounded-[7px] items-center z-50 px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl hover:border-[#FFFFFF1A]">
+                            <div class="hidden lg:flex gap-2 rounded-[7px] items-center z-50 px-[15px] py-[2px] h-12 bg-transparent border border-[#FFFFFF1A] shadow-xl hover:border-[#FFFFFF1A]">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_81_471)">
                                         <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z" fill="#DC2626"/>
@@ -64,11 +64,15 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <select class="bg-transparent border-0 font-[800] text-[14px] text-white" onchange="setLanguage(this.value)" id="languageSwitcher">
-                                    <option value="en">English</option>
-                                    <option value="lt">Lithuanian</option>
-                                    <option value="de">German</option>
-                                    <option value="es">Spanish</option>
+                                <select
+                                        class="appearance-none bg-transparent border-0 font-[800] text-[14px] text-white focus:outline-none focus:ring-0"
+                                        onchange="setLanguage(this.value)"
+                                        id="languageSwitcher"
+                                >
+                                    <option class="text-black" value="en">English</option>
+                                    <option class="text-black" value="lt">Lithuanian</option>
+                                    <option class="text-black" value="de">German</option>
+                                    <option class="text-black" value="es">Spanish</option>
                                 </select>
                             </div>
                         </div>
@@ -3160,14 +3164,35 @@
                        <span class="text-primary-200" data-i18n="featured_partners_highlight">Partners</span>
                    </h2>
                </div>
-               <div class="featured-images">
-                  <img class="text-center" src="assets/images/featured-images.png" alt="images">
+               <div class="space-y-10">
+                  <div class="flex justify-between flex-col sm:flex-row px-24 sm:px-0 gap-4">
+                      <div class="relative w-fit mx-auto sm:mx-0">
+                          <img src="assets/images/f1.svg" alt="Partner 1" class="block" />
+                          <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none"></div>
+                      </div>
+                      <img src="assets/images/f3.svg" alt="Partner" class="h-12 sm:h-auto">
+                      <img src="assets/images/f4.svg" alt="Partner" class="h-12 sm:h-auto">
+                      <img src="assets/images/f5.svg" alt="Partner" class="h-12 sm:h-auto">
+                      <div class="relative w-fit mx-auto sm:mx-0">
+                          <img src="assets/images/f2.svg" alt="Partner 1" class="block" />
+                          <div class="absolute inset-0 bg-gradient-to-r from-white/0 to-black/80 pointer-events-none"></div>
+                      </div>
+                  </div>
+                   <div class="flex justify-evenly flex-col sm:flex-row px-24 sm:px-0 gap-4">
+                       <img src="assets/images/f6.svg" alt="Partner" class="h-12 sm:h-auto">
+                       <img src="assets/images/f7.svg" alt="Partner" class="h-12 sm:h-auto">
+                       <img src="assets/images/f8.svg" alt="Partner" class="h-12 sm:h-auto">
+                       <img src="assets/images/f9.svg" alt="Partner" class="h-12 sm:h-auto">
+                   </div>
                </div>
             </div>
          </section>
          <!--  ====================== Featured Partners  Area End =============================  -->
          <!--  ====================== Master Club  Area Start =============================  -->
-         <div class="maser-club-area bg-[#0F1723] lg:py-[124px] py-[60px] mt-[114px]">
+         <div class="maser-club-area bg-[#0F1723] lg:py-[124px] py-[60px] mt-[114px] relative">
+             <div class="hidden sm:block shape-item absolute bottom-full right-0">
+                 <img src="assets/images/middle.png" alt="images">
+             </div>
             <div class="container">
                <div class="section-title mb-[70px] max-w-[900px] m-auto">
                    <h2 class="lg:text-[32px] text-[28px] font-medium text-center">
