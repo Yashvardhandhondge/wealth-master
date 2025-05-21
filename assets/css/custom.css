@@ -1,0 +1,135 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+
+body {
+    font-size: 1rem;
+    line-height:1.5;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    color:#D1D5DB;
+    background-color: #000000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: "Outfit", sans-serif;
+    line-height: 120%;
+    color: white;
+ 
+}
+
+.footer-item ul li a:hover {
+  color: #E22006;
+  transition: .5s;
+}
+.footer-item ul li a:hover path {
+  stroke: #E22006;
+ 
+}
+
+.footer-item ul li a path {
+ transition: .5s;
+ 
+}
+
+.das-number .space-add {
+  padding-right: 35px;
+}
+
+
+#custom-substack-embed button {
+  background: #E22006 !important;
+  font-weight: bold!important;
+  color: white;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+
+}
+
+.head-btn{
+    background: #E22006;
+    color: white;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 20px;
+}
+
+form.custom-substack-widget {
+  border-radius: 7px;
+}
+
+#custom-substack-embed ::placeholder{
+  color: #16161680!important;
+}
+
+.das-box {
+  border-radius: 6px;
+}
+
+
+.nice-select {
+  padding-left: 0;
+    background: transparent;
+    border: 0;
+}
+.nice-select .list{
+  background-color: black;
+}
+
+.nice-select  ul.list {
+
+  padding:12px;
+}
+.nice-select .option.focus, .nice-select .option.selected.focus, .nice-select .option:hover {
+  background-color: black;
+}
+
+.nice-select li {
+  padding: 0 !important;
+
+}
+
+.nice-select  .list li {
+  font-weight: 800 !important;
+}
+
+.shape-item{
+    opacity: 0.4;
+}
+
+.chip-gradient {
+    background: linear-gradient(
+            90deg,
+            rgba(222, 57, 11, 0) 0%,
+            rgba(222, 57, 11, 0.34) 50%,
+            rgba(120, 31, 6, 0) 100%
+    );
+    border-radius: 9999px;
+    box-shadow:
+            0 0 0 1px rgba(220, 38, 38, 0.2),
+            0 0 0 1px rgba(220, 38, 38, 0) inset;
+}
+
+.head-nav{
+    border: 1px solid #37393C;
+    padding: 10px 40px;
+}
+
+.mobile-menu {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.mobile-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+}
