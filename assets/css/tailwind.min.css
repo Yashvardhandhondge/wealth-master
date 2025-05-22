@@ -654,8 +654,8 @@ video {
   inset: 0px;
 }
 
-.-bottom-\[100px\] {
-  bottom: -100px;
+.-top-1\/3 {
+  top: -33.333333%;
 }
 
 .-top-44 {
@@ -682,6 +682,10 @@ video {
   right: 51px;
 }
 
+.top-0 {
+  top: 0px;
+}
+
 .top-1\/2 {
   top: 50%;
 }
@@ -704,26 +708,6 @@ video {
 
 .top-\[190px\] {
   top: 190px;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.bottom-\[100\%\] {
-  bottom: 100%;
-}
-
-.-top-1\/2 {
-  top: -50%;
-}
-
-.-top-1\/3 {
-  top: -33.333333%;
-}
-
-.-top-2\/3 {
-  top: -66.666667%;
 }
 
 .z-0 {
@@ -851,6 +835,10 @@ video {
   height: auto;
 }
 
+.w-24 {
+  width: 6rem;
+}
+
 .w-\[1006px\] {
   width: 1006px;
 }
@@ -862,10 +850,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-24 {
-  width: 6rem;
 }
 
 .max-w-\[370px\] {
@@ -916,11 +900,6 @@ video {
 
 .translate-y-10 {
   --tw-translate-y: 2.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-1\/3 {
-  --tw-translate-y: -33.333333%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1202,6 +1181,11 @@ video {
   padding-right: 1rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .px-\[15px\] {
   padding-left: 15px;
   padding-right: 15px;
@@ -1250,11 +1234,6 @@ video {
 .py-\[60px\] {
   padding-top: 60px;
   padding-bottom: 60px;
-}
-
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .\!pr-\[100px\] {
@@ -1339,10 +1318,6 @@ video {
 
 .text-\[24px\] {
   font-size: 24px;
-}
-
-.text-\[28px\] {
-  font-size: 28px;
 }
 
 .text-\[8px\] {
@@ -1537,10 +1512,6 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:top-24 {
-    top: 6rem;
-  }
-
   .sm\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
@@ -1628,10 +1599,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:-bottom-\[580px\] {
-    bottom: -580px;
-  }
-
   .md\:right-20 {
     right: 5rem;
   }
@@ -1751,7 +1718,7 @@ video {
     font-size: 32px;
   }
 
-  .lg\:text-\[48px\] {
-    font-size: 48px;
+  .lg\:text-\[46px\] {
+    font-size: 46px;
   }
 }
