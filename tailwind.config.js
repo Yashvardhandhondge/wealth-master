@@ -47,6 +47,7 @@ module.exports = {
           200: '#DC2626',
         },
         white: '#FFFFFF',
+        footer: '#9CA3AF',
       },
 
       boxShadow: {
