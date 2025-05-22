@@ -24,38 +24,23 @@
                 <header class="relative px-4 py-4 lg:pt-6">
                     <div class="relative">
                         <!-- Desktop Navigation -->
-                        <div class="flex justify-between items-center">
-                            <!-- Mobile Logo and Menu Toggle -->
-                            <div class="flex items-center justify-between w-full lg:w-auto z-50">
-                                <a href="#" class="z-50 lg:invisible">
-                                    <img src="/assets/images/footer-mobile.png" alt="Wealth Matrix Logo"/>
-                                </a>
-                                <button id="menuToggle" class="text-white block lg:hidden z-50">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                                    </svg>
-                                </button>
-                            </div>
-
+                        <div class="flex justify-end md:justify-between items-center pb-12 sm:pb-0">
                             <!-- Desktop Nav -->
-
-                            <div class="w-[150px] flex gap-[6px] flex-col items-end relative z-50">
-                                <div class="logo w-full flex justify-center opacity-0 group-hover:opacity-[100] duration-500">
-                                    <svg  width="32" height="37" viewBox="0 0 32 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 12L6 9V31H0V12Z" fill="#DD390D"/>
-                                        <path d="M17 12L23 9V31H17V12Z" fill="#DD390D"/>
-                                        <path d="M9 3L15 0V36.5H9V3Z" fill="#DD390D"/>
-                                        <path d="M26 4L32 1V26.5H26L26 4Z" fill="#DD390D"/>
-                                    </svg>
-                                </div>
+                            <span class="w-24"></span>
+                            <div class="gap-[6px] flex-col items-center relative z-50 hidden lg:flex">
                                 <div class="flex flex-col items-center gap-1">
-                                    <span class="text-xl font-semibold tracking-[0.5rem]">WEALTH</span>
-                                    <span class="text-xs font-semibold tracking-[0.2rem]">MASTERS</span>
+                                    <figure class="flex gap-1 items-center">
+                                        <img src="assets/images/l1.png" alt="l1" class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10">
+                                        <img src="assets/images/l2.png" alt="l2" class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10">
+                                        <img src="assets/images/l3.png" alt="l3" class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10">
+                                        <img src="assets/images/l4.png" alt="l4" class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start">
+                                    </figure>
+                                    <img src="assets/images/l-body.svg" class="" alt="images">
                                 </div>
                             </div>
 
 <!--                             Language Selector - Desktop-->
-                            <div class="relative hidden lg:flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] ibg-transparent border border-[#FFFFFF1A] shadow-xl hover:border-[#FFFFFF1A] ">
+                            <div class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl hover:border-[#FFFFFF1A] ">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_81_471)">
                                         <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z" fill="#DC2626"/>
@@ -78,75 +63,57 @@
                                 </select>
                             </div>
                         </div>
-
-<!--                         Mobile Menu-->
-                        <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-[#0C0C0C] flex flex-col items-center justify-center z-40">
-                            <div class="flex flex-col items-center gap-8 text-white">
-                                <a href="#" class="font-bold text-xl"><h5>Features</h5></a>
-                                <a href="#" class="font-bold text-xl"><h5>About</h5></a>
-                                <a href="#" class="font-bold text-xl"><h5>Blog</h5></a>
-                                <div class="head-btn mt-4">
-                                    <button class="px-8 py-3">Sign Up Now</button>
-                                </div>
-
-                                <!-- Language Selector - Mobile -->
-                                <div class="flex gap-2 rounded-[7px] items-center mt-6 px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_81_471)">
-                                            <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z" fill="#DC2626"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_81_471">
-                                                <rect width="24" height="24" fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <select class="bg-transparent border-0 font-[800] text-[14px] text-white" onchange="setLanguage(this.value)" id="mobileLangSwitcher">
-                                        <option value="en">English</option>
-                                        <option value="lt">Lithuanian</option>
-                                        <option value="de">German</option>
-                                        <option value="es">Spanish</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </header>
             </div>
-            <div class="shape-item absolute top-0 right-0">
+            <div class="shape-item absolute -top-44 lg:top-0 right-0">
                <img src="assets/images/header-top-left.png" alt="images">
             </div>
-            <div class="shape-item absolute top-0 left-0">
+            <div class="shape-item absolute -top-44 lg:top-0 left-0">
                <img src="assets/images/header-top-right.png" alt="images">
             </div>
          </div>
          <!--  ====================== Header Area End =============================  -->
          <!--  ====================== Hero  Area Start =============================  -->
          <section class="hero-area relative mt-12">
-             <img class="absolute top-1/2 left-1/2 -translate-y-2/3 transform -translate-x-1/2 w-[1006px] h-auto" src="assets/images/wealh-border.png" alt="Wealth Border">
-            <div class="container space-y-12">
+             <img class="hidden custom:inline absolute top-1/2 left-1/2 -translate-y-2/3 transform -translate-x-1/2 w-[1006px] h-auto" src="assets/images/wealh-border.png" alt="Wealth Border">
+             <img class="inline sm:hidden absolute top-1/4 xd:top-1/3 left-1/2 -translate-y-2/3 transform -translate-x-1/2 w-full h-auto" src="assets/images/mobile-ellipse.png" alt="Wealth Border">
+             <div class="gap-[6px] flex-col items-center relative z-50 flex lg:hidden mb-6">
+                 <div class="flex flex-col items-center gap-1">
+                     <figure class="flex gap-1 items-center">
+                         <img src="assets/images/l1.png" alt="l1" class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10">
+                         <img src="assets/images/l2.png" alt="l2" class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10">
+                         <img src="assets/images/l3.png" alt="l3" class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10">
+                         <img src="assets/images/l4.png" alt="l4" class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start">
+                     </figure>
+                     <img src="assets/images/l-body.svg" class="" alt="images">
+                 </div>
+             </div>
+             <div class="container space-y-4 sm:space-y-12">
                 <div class="flex px-[9px] py-[4px] gap-[6px] items-center justify-center bg-primary-100 max-w-[370px] mx-auto rounded-full">
-                    <img src="assets/images/hero-man-logo.png" alt="images">
-                    <p class="sm:text-sm text-[14px] font-medium" data-i18n="cta">join +10,000 daily readers for 100% free</p>
+                    <img src="assets/images/hero-man-logo.png" class="h-6 sm:h-auto" alt="images">
+                    <p class="sm:text-sm text-xs font-medium" data-i18n="cta">join +10,000 daily readers for 100% free</p>
                 </div>
                 <div class="max-w-[680px] mx-auto relative z-10">
-                   <h1 class="font-medium lg:text-[48px] md:text-[40px] text-[32px] text-center" data-i18n="hero_heading">
+                   <h1 class="font-medium lg:text-[48px] md:text-[40px] text-[24px] xd:text-[28px] sm:text-[32px] text-center" data-i18n="hero_heading">
                        Join 1% Of Traders Club And Get
                        <span class="text-primary-200" data-i18n="hero_highlight"> Full Access</span> To VIP Strategies
                    </h1>
-                   <p class="text-[sm] text-center mt-[22px]" data-i18n="subtext">
+                   <p class="text-sm sm:text-base text-center mt-[22px]" data-i18n="subtext">
                        We help to earn consistent returns with crypto and manage the risks Start building your crypto portfolio today
                    </p>
-                  <div class="emal-box mt-[25px] max-w-[420px] m-auto">
-                      <div id="custom-substack-embed" class="mt-6 form-box"></div>
-                      <script>
-                          window.CustomSubstackWidget = {
-                              substackUrl: "wealthmasters.substack.com",
-                              placeholder: "Type Your Email...",
-                              buttonText: "Start earning",
-                              theme: "custom-theme  rounded-[7px] w-full  outline-none  bg-white text-[#16161680]",
-                      </script>
-                  </div>
+                    <div class="emal-box mt-[25px] max-w-[420px] w-full px-8 sm:px-0 mx-auto">
+                        <div id="custom-substack-embed" class="mt-6 form-box w-full"></div>
+
+                        <script>
+                            window.CustomSubstackWidget = {
+                                substackUrl: "wealthmasters.substack.com",
+                                placeholder: "Type Your Email...",
+                                buttonText: "Start earning",
+                                theme: "custom-theme rounded-[7px] w-full outline-none bg-white text-[#16161680]"
+                            };
+                        </script>
+                    </div>
                </div>
             </div>
             <div class="lg:container">
@@ -2957,8 +2924,8 @@
                            <p class="text-[12px]">2024</p>
                            <p class="text-[12px]">2025</p>
                         </div>
-                        <div class="color-main-box mt-[55px] md:columns-5 columns-2 gap-2 justify-between lg:max-w-[870px] m-auto">
-                           <div class="flex mt-2 md:mt-0 items-center gap-2 bg-[#FFFFFF0D] px-[8px]  py-[5px] rounded-full">
+                        <div class="color-main-box grid grid-cols-3 sm:grid-cols-6 gap-x-2 mt-4 mt-[55px]gap-2 lg:max-w-[870px] m-auto">
+                           <div class="flex mt-2 md:mt-0 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px]  py-[5px] rounded-full">
                               <div class="item-colr">
                                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_d_89_2033)">
@@ -2979,12 +2946,12 @@
                                  </svg>
                               </div>
                               <div class="text-item">
-                                  <p class="text-[10px] font-medium" data-i18n="extreme_fear_label">
+                                  <p class="text-[8px] font-medium" data-i18n="extreme_fear_label">
                                       Extreme Fear (0–24)
                                   </p>
                               </div>
                            </div>
-                           <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-[8px]  py-[5px] rounded-full">
+                           <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
                               <div class="item-colr">
                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_d_89_2039)">
@@ -3005,10 +2972,10 @@
                                  </svg>
                               </div>
                               <div class="text-item">
-                                 <p class="text-[10px]  font-medium" data-i18n="fear_label"> Fear (25-49) </p>
+                                 <p class="text-[8px] font-medium" data-i18n="fear_label"> Fear (25-49) </p>
                               </div>
                            </div>
-                           <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-[8px]  py-[5px] rounded-full">
+                           <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
                               <div class="item-colr">
                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_d_89_2045)">
@@ -3029,10 +2996,10 @@
                                  </svg>
                               </div>
                               <div class="text-item">
-                                 <p class="text-[10px]  font-medium"> Neutral (50-59) </p>
+                                 <p class="text-[8px] font-medium"> Neutral (50-59) </p>
                               </div>
                            </div>
-                           <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-[8px]  py-[5px] rounded-full">
+                           <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
                               <div class="item-colr">
                                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_d_89_2051)">
@@ -3053,10 +3020,10 @@
                                  </svg>
                               </div>
                               <div class="text-item">
-                                 <p class="text-[10px]  font-medium" data-i18n="greed_label"> Greed (60-74) </p>
+                                 <p class="text-[8px] font-medium" data-i18n="greed_label"> Greed (60-74) </p>
                               </div>
                            </div>
-                           <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-[8px]  py-[5px] rounded-full">
+                           <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
                               <div class="item-colr">
                                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_d_89_2057)">
@@ -3077,7 +3044,7 @@
                                  </svg>
                               </div>
                               <div class="text-item">
-                                 <p class="text-[10px]  font-medium" data-i18n="extreme_greed_label"> Extreme Greed (75-100) </p>
+                                 <p class="text-[8px] font-medium" data-i18n="extreme_greed_label"> Extreme Greed (75-100) </p>
                               </div>
                            </div>
                         </div>
@@ -3091,13 +3058,14 @@
          <section class="featured-area lg:pt-[150px] pt-[113px] ">
             <div class="container">
                <div class="section-title mb-[70px]">
-                   <h2 class="lg:text-[32px] text-[28px] font-medium text-center">
+                   <h2 class="lg:text-[32px] text-[24px] font-medium text-center">
                        <span data-i18n="featured_partners_before">Featured</span>
                        <span class="text-primary-200" data-i18n="featured_partners_highlight">Partners</span>
                    </h2>
                </div>
-               <div class="space-y-10">
-                  <div class="flex justify-between flex-col sm:flex-row px-24 sm:px-0 gap-4">
+               <div class="space-y-2 sm:space-y-10">
+                   <img src="assets/images/mobile-feature.png" alt="Partner" class="w-full sm:hidden">
+                  <div class="justify-between flex-row gap-4 hidden sm:flex">
                       <div class="relative w-fit mx-auto sm:mx-0">
                           <img src="assets/images/f1.svg" alt="Partner 1" class="block" />
                           <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none"></div>
@@ -3110,7 +3078,7 @@
                           <div class="absolute inset-0 bg-gradient-to-r from-white/0 to-black/80 pointer-events-none"></div>
                       </div>
                   </div>
-                   <div class="flex justify-evenly flex-col sm:flex-row px-24 sm:px-0 gap-4">
+                   <div class="hidden sm:flex justify-evenly flex-col sm:flex-row px-24 sm:px-0 gap-4">
                        <img src="assets/images/f6.svg" alt="Partner" class="h-12 sm:h-auto">
                        <img src="assets/images/f7.svg" alt="Partner" class="h-12 sm:h-auto">
                        <img src="assets/images/f8.svg" alt="Partner" class="h-12 sm:h-auto">
@@ -3121,13 +3089,13 @@
          </section>
          <!--  ====================== Featured Partners  Area End =============================  -->
          <!--  ====================== Master Club  Area Start =============================  -->
-         <div class="maser-club-area bg-[#0F1723] lg:py-[124px] py-[60px] mt-[114px] relative">
+         <div class="maser-club-area bg-[#0F1723] lg:py-[124px] py-[60px] mt-[114px] relative z-10">
              <div class="hidden sm:block shape-item absolute bottom-full right-0">
                  <img src="assets/images/middle.png" alt="images">
              </div>
             <div class="container">
                <div class="section-title mb-[70px] max-w-[900px] m-auto">
-                   <h2 class="lg:text-[32px] text-[28px] font-medium text-center">
+                   <h2 class="lg:text-[32px] text-[24px] font-medium text-center">
                        <span data-i18n="hero_text_before">At</span>
                        <span class="text-primary-200" data-i18n="hero_text_highlight">Wealth Master Club</span>,
                        <span data-i18n="hero_text_after">We trade the highest conviction setups and help to earn passive income with crypto</span>
@@ -3261,7 +3229,7 @@
          <!--  ====================== Master Club  Area End =============================  -->
          <!--  ====================== start-earning  Area Start =============================  -->
          <div class="start-area pt-[157px] relative pb-[178px]">
-<!--            <img class="absolute md:-bottom-[580px] -bottom-[100px]  left-0 right-0 m-auto" src="assets/images/footer-shape.png" alt="images">-->
+            <img class="absolute left-0 -top-1/3 transform inline sm:hidden" src="assets/images/mobile-mid.png" alt="images">
             <div class="container relative z-10">
                <div class="grid md:grid-cols-3 gap-20">
                   <div class="item-box">
@@ -3328,11 +3296,12 @@
          </div>
          <!--  ====================== start-earning  Area End =============================  -->
           <div class="relative">
-              <img src="assets/images/footer-ellipse.png" alt="images" class="absolute top-24 left-1/2 transform -translate-y-1/2 -translate-x-1/2 m-auto z-0"/>
+              <img src="assets/images/footer-ellipse.png" alt="images" class="absolute hidden sm:inline top-24 left-1/2 transform -translate-y-1/2 -translate-x-1/2 m-auto z-0"/>
+              <img src="assets/images/mobile-footer.png" alt="images" class="absolute  inline sm:hidden bottom-full top-0 right-0 left-0 m-auto z-0"/>
               <footer class="footer-area border-t border-[#FFFFFF33] md:pt-[113px] pt-[74px] pb-[35px] bg-[#000000] relative z-10">
                   <div class="container">
-                      <div class="grid  md:gap-10 gap-4 grid-cols-12">
-                          <div class="footer-item col-span-12 md:col-span-3 mb-20 md:mb-0">
+                      <div class="grid  md:gap-10 gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                          <div class="footer-item col-span-2 lg:col-span-1 mb-20 md:mb-0">
                               <div class="site-logo">
                                   <a href="index.html">
                                       <svg class="m-auto md:ml-0" width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -3388,9 +3357,9 @@
                                   </ul>
                               </div>
                           </div>
-                          <div class="footer-item col-span-6 md:col-span-3">
-                              <h4 class="font-bold text-[18px] mb-6" data-i18n="quick_links">Quick Links</h4>
-                              <ul class="flex flex-col gap-3">
+                          <div class="footer-item">
+                              <h4 class="font-medium text-[18px] mb-6" data-i18n="quick_links">Quick Links</h4>
+                              <ul class="flex flex-col gap-3 text-footer">
                                   <li>
                                       <a class="flex items-center gap-1 group" href="#">
                                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -3425,8 +3394,8 @@
                                   </li>
                               </ul>
                           </div>
-                          <div class="footer-item col-span-6 md:col-span-3">
-                              <h4 class="font-bold text-[18px] mb-6">Resources</h4>
+                          <div class="footer-item">
+                              <h4 class="font-medium text-[18px] mb-6">Resources</h4>
                               <ul class="flex flex-col gap-3 text-footer">
                                   <li>
                                       <a class="flex items-center gap-1 group" href="#">
@@ -3462,12 +3431,12 @@
                                   </li>
                               </ul>
                           </div>
-                          <div class="footer-item col-span-12 md:col-span-3 mt-[80px] md:mt-0">
-                              <h4 class="font-bold text-[18px] mb-6 text-center md:text-left" data-i18n="subscribe">Subscribe</h4>
+                          <div class="footer-item col-span-2 lg:col-span-1 mt-[80px] md:mt-0">
+                              <h4 class="font-medium text-[18px] mb-6 text-center md:text-left" data-i18n="subscribe">Subscribe</h4>
                               <p class="text-center md:text-left text-footer" data-i18n="subscribe_text">
                                   Get the latest updates and offers straight to your inbox.
                               </p>
-                              <div id="custom-substack-embed" class="mt-6 form-box"></div>
+                              <div id="custom-substack-embed" class="mt-6 form-box flex justify-center"></div>
                               <script>
                                   window.CustomSubstackWidget = {
                                       substackUrl: "wealthmasters.substack.com",

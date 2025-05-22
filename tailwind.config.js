@@ -34,8 +34,11 @@ module.exports = {
     }
   ],
   theme: {
-
     extend: {
+      screens: {
+        'custom': '932px',
+        'xd': '540px'
+      },
       container: {
         center: true,
         padding: '1rem',
