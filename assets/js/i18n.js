@@ -202,8 +202,61 @@ function setLanguage(lang) {
         const key = el.getAttribute('data-i18n');
         el.textContent = translations[lang][key] || key;
     });
-    initSubstackWidget(lang);
 }
 
-// Default language
 setLanguage('en');
+
+// Fetch from Alternative.me API
+async function loadBitcoinData() {
+    const response = await fetch('https://api.alternative.me/fng/?limit=1000');
+    const data = await response.json();
+    console.log(data)
+
+    // Process data points
+    const svg = document.querySelector('.das-line svg');
+    data.data.forEach((item, index) => {
+        const x = 100 + (index * 2.5); // Adjust positioning
+        const y = 300 - (item.value * 2.5); // Scale to SVG height
+
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', x);
+        circle.setAttribute('cy', y);
+        circle.setAttribute('r', 4);
+        circle.setAttribute('fill', getColorForValue(item.value));
+        circle.setAttribute('data-value', item.value);
+        circle.setAttribute('data-date', item.timestamp);
+
+        svg.appendChild(circle);
+    });
+}
+
+function getColorForValue(value) {
+    if (value < 25) return '#FF3B30';
+    if (value < 50) return '#FF9500';
+    if (value < 60) return '#FFCC00';
+    if (value < 75) return '#34C759';
+    return '#ADFF2F';
+}
+
+loadBitcoinData().finally();
+
+document.querySelectorAll('circle').forEach(point => {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    tooltip.innerHTML = `
+    <strong>${point.getAttribute('data-year')}</strong><br>
+    Value: ${point.getAttribute('data-value')}
+  `;
+    document.body.appendChild(tooltip);
+
+    point.addEventListener('mouseenter', (e) => {
+        const rect = point.getBoundingClientRect();
+        tooltip.style.left = `${rect.left + window.scrollX}px`;
+        tooltip.style.top = `${rect.top + window.scrollY}px`;
+        tooltip.style.display = 'block';
+    });
+
+    point.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none';
+    });
+});
