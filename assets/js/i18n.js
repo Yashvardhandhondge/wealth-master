@@ -210,20 +210,31 @@ setLanguage('en');
 async function loadBitcoinData() {
     const response = await fetch('https://api.alternative.me/fng/?limit=1000');
     const data = await response.json();
-    console.log(data)
+    console.log(data);
 
-    // Process data points
     const svg = document.querySelector('.das-line svg');
+
+    // Set SVG height and clear previous elements
+    svg.setAttribute('height', 500);
+    svg.innerHTML = '';
+
+    const graphHeight = 400;
+    const paddingBottom = 20;
+    const maxValue = 100; // Fear & Greed Index max value
+
     data.data.forEach((item, index) => {
-        const x = 100 + (index * 2.5); // Adjust positioning
-        const y = 300 - (item.value * 2.5); // Scale to SVG height
+        const x = 100 + (index * 2.5); // Horizontal spacing
+        const value = parseInt(item.value, 10);
+
+        // Scale Y: Invert because SVG origin is top-left
+        const y = graphHeight - paddingBottom - ((value / maxValue) * (graphHeight - paddingBottom));
 
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
         circle.setAttribute('cx', x);
         circle.setAttribute('cy', y);
         circle.setAttribute('r', 4);
-        circle.setAttribute('fill', getColorForValue(item.value));
-        circle.setAttribute('data-value', item.value);
+        circle.setAttribute('fill', getColorForValue(value));
+        circle.setAttribute('data-value', value);
         circle.setAttribute('data-date', item.timestamp);
 
         svg.appendChild(circle);
