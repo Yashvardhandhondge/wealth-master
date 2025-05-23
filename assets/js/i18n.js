@@ -3,6 +3,7 @@ const translations = {
         cta: "Join +10,000 daily readers for 100% free",
         hero_heading: "Join 1% Of Traders Club And Get",
         hero_highlight: "Full Access",
+        hero_end: "To VIP Strategies",
         extreme_fear_label: "Extreme Fear (0–24)",
         fear_label: "Fear (25–49)",
         greed_label: "Greed (60–74)",
@@ -51,6 +52,7 @@ const translations = {
         cta: "Únete a más de 10,000 lectores diarios gratis al 100%",
         hero_heading: "Únete al 1% del Club de Comerciantes y obtén",
         hero_highlight: "Acceso completo",
+        hero_end: "A Estrategias VIP",
         extreme_fear_label: "Miedo extremo (0–24)",
         fear_label: "Miedo (25–49)",
         greed_label: "Codicia (60–74)",
@@ -99,6 +101,7 @@ const translations = {
         cta: "Tritt über 10.000 täglichen Lesern kostenlos bei",
         hero_heading: "Tritt dem 1 % der Händler-Club bei und erhalte",
         hero_highlight: "Vollzugriff",
+        hero_end: "Zu VIP-Strategien",
         extreme_fear_label: "Extreme Angst (0–24)",
         fear_label: "Angst (25–49)",
         greed_label: "Gier (60–74)",
@@ -147,6 +150,7 @@ const translations = {
         cta: "Prisijunkite prie daugiau nei 10 000 kasdienių skaitytojų visiškai nemokamai",
         hero_heading: "Prisijunkite prie 1 % prekybininkų klubo ir gaukite",
         hero_highlight: "Visą prieigą",
+        hero_end: "Į VIP Strategijas",
         extreme_fear_label: "Ekstremali baimė (0–24)",
         fear_label: "Baimė (25–49)",
         greed_label: "Godus (60–74)",
@@ -198,6 +202,7 @@ function setLanguage(lang) {
         const key = el.getAttribute('data-i18n');
         el.textContent = translations[lang][key] || key;
     });
+    initSubstackWidget(lang);
 }
 
 // Default language

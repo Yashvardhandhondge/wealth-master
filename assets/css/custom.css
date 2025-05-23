@@ -151,7 +151,10 @@ form.custom-substack-widget {
     background: linear-gradient(140deg, #E22006 0%, #E22006 25%, #3d1003 35%, #000000 50%, #000000 65%, #000000 100%);
     border-bottom: 2px solid #E22006;
     border-right: 2px solid #E22006;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow:
+            4px 4px 15px rgba(226, 32, 6, 0.7),
+            -2px -2px 8px rgba(226, 32, 6, 0.3),
+            inset 0 0 12px rgba(226, 32, 6, 0.4);
 }
 
 #custom-substack-2 input{
