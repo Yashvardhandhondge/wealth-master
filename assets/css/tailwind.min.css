@@ -1517,6 +1517,10 @@ video {
     margin-right: 0px;
   }
 
+  .sm\:mt-\[55px\] {
+    margin-top: 55px;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -1543,6 +1547,10 @@ video {
 
   .sm\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .sm\:flex-row {
@@ -1595,6 +1603,15 @@ video {
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .sm\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .sm\:text-\[10px\] {
+    font-size: 10px;
   }
 }
 
@@ -1691,6 +1708,10 @@ video {
 
   .lg\:max-w-\[870px\] {
     max-width: 870px;
+  }
+
+  .lg\:max-w-\[920px\] {
+    max-width: 920px;
   }
 
   .lg\:grid-cols-4 {

@@ -136,3 +136,34 @@ form.custom-substack-widget {
         transform: translateY(0);
     }
 }
+
+#custom-substack-1 button, #custom-substack-2 button {
+    background: #E22006;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+    cursor: pointer;
+}
+
+#custom-substack-1 button:hover, #custom-substack-2 button:hover {
+    background: linear-gradient(140deg, #E22006 0%, #E22006 25%, #3d1003 35%, #000000 50%, #000000 65%, #000000 100%);
+    border-bottom: 2px solid #E22006;
+    border-right: 2px solid #E22006;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#custom-substack-2 input{
+    box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+    color: white;
+    background: #262626;
+    border: 2px solid #FFFFFF1A;
+    margin-right: -10px;
+    font-size: 14px;
+}
+
+#custom-substack-1 .success, #custom-substack-1 .error {
+    font-size: 14px;
+    text-align: center;
+}
