@@ -1,161 +1,300 @@
 // Fetch from Alternative.me API
+// Fixed Bitcoin Fear & Greed Index Chart
+// Make sure to include ApexCharts library in your HTML:
+// <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
 async function loadBitcoinData() {
-    const res = await fetch('https://api.alternative.me/fng/?limit=1000');
-    const { data } = await res.json();
-
-    // Categorize data points by color groups
-    const groupedData = {
-        red: [],
-        orange: [],
-        yellow: [],
-        green: [],
-        lime: []
-    };
-
-    data.reverse().forEach(d => {
-        const value = Number(d.value);
-        const point = { x: new Date(d.timestamp * 1000), y: value };
-
-        if (value < 20) groupedData.red.push(point);
-        else if (value < 40) groupedData.orange.push(point);
-        else if (value < 60) groupedData.yellow.push(point);
-        else if (value < 80) groupedData.green.push(point);
-        else groupedData.lime.push(point);
-    });
-
-    const options = {
-        chart: {
-            type: 'scatter',
-            height: 500,
-            background: 'transparent',
-            toolbar: {
-                show: false
-            },
-            margin: {
-                top: 20,
-                right: 50,  // Increased for right labels
-                bottom: 30,
-                left: 50     // Increased for balance
-            },
-            // Add these to ensure proper rendering
-            animations: {
-                enabled: false  // Helps with rendering issues
-            },
-            sparkline: {
-                enabled: false
+    try {
+        // Fetch Fear & Greed Index data
+        const fngRes = await fetch('https://api.alternative.me/fng/?limit=365');
+        const fngData = await fngRes.json();
+        
+        // Fetch Bitcoin price data (using CoinGecko API)
+        const btcRes = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365&interval=daily');
+        const btcData = await btcRes.json();
+        
+        // Process and combine data
+        const processedData = [];
+        const fngMap = new Map();
+        
+        // Create map of FNG data by date
+        fngData.data.forEach(item => {
+            const date = new Date(item.timestamp * 1000);
+            const dateStr = date.toISOString().split('T')[0];
+            fngMap.set(dateStr, {
+                value: parseInt(item.value),
+                classification: item.value_classification
+            });
+        });
+        
+        // Combine with Bitcoin price data
+        btcData.prices.forEach(([timestamp, price]) => {
+            const date = new Date(timestamp);
+            const dateStr = date.toISOString().split('T')[0];
+            const fngInfo = fngMap.get(dateStr);
+            
+            if (fngInfo) {
+                processedData.push({
+                    date: timestamp,
+                    price: price,
+                    fngValue: fngInfo.value,
+                    classification: fngInfo.classification
+                });
             }
-        },
-        series: [
-            { name: 'Extreme Fear', data: groupedData.red, color: '#FF3B30' },
-            { name: 'Fear', data: groupedData.orange, color: '#FF9500' },
-            { name: 'Neutral', data: groupedData.yellow, color: '#FFCC00' },
-            { name: 'Greed', data: groupedData.green, color: '#34C759' },
-            { name: 'Extreme Greed', data: groupedData.lime, color: '#AEFC2E' }
-        ],
-        xaxis: {
-            type: 'datetime',
-            labels: {
-                style: {
-                    colors: '#d1d5db'
-                },
-                offsetY: 2
-            },
-            axisBorder: { color: '#181818' },
-            axisTicks: { color: '#d1d5db' }
-        },
-            yaxis: [
-                // Left y-axis (your existing configuration)
-                {
-                    min: 0,
-                    max: 100,
-                    tickAmount: 10,
-                    labels: {
-                        style: {
-                            colors: '#d1d5db',
-                            fontSize: '12px'
-                        },
-                        formatter: function(value) {
-                            return `$${value}K`;
-                        },
-                        offsetX: -10
-                    },
-                    axisBorder: { color: '#d1d5db' },
-                    axisTicks: { color: '#d1d5db' },
-                    opposite: false  // Ensures this stays on the left
-                },
-                {
-                    min: 0,
-                    max: 100,
-                    tickAmount: 5,  // Only show 5 ticks (100, 80, 60, 40, 20)
-                    labels: {
-                        style: {
-                            colors: '#d1d5db',
-                            fontSize: '12px'
-                        },
-                        formatter: function(value) {
-                            // Only show labels for specific values
-                            if ([100, 80, 60, 40, 20].includes(value)) {
-                                return value;
-                            }
-                            return '';  // Empty string for other values
-                        },
-                        offsetX: 30  // Position to the right of the axis line
-                    },
-                    axisBorder: { show: false },
-                    axisTicks: { show: false },
-                    opposite: true,  // Places this on the right side
+        });
+        
+        // Sort by date
+        processedData.sort((a, b) => a.date - b.date);
+        
+        // Prepare chart series
+        const priceSeries = processedData.map(item => [item.date, item.price]);
+        const fngSeries = processedData.map(item => [item.date, item.fngValue]);
+        
+        // Create color-coded FNG points
+        const fngPoints = {
+            extremeFear: [],
+            fear: [],
+            neutral: [],
+            greed: [],
+            extremeGreed: []
+        };
+        
+        processedData.forEach(item => {
+            const point = [item.date, item.fngValue];
+            if (item.fngValue <= 24) fngPoints.extremeFear.push(point);
+            else if (item.fngValue <= 49) fngPoints.fear.push(point);
+            else if (item.fngValue <= 59) fngPoints.neutral.push(point);
+            else if (item.fngValue <= 74) fngPoints.greed.push(point);
+            else fngPoints.extremeGreed.push(point);
+        });
+        
+        const options = {
+            chart: {
+                type: 'line',
+                height: 500,
+                background: 'transparent',
+                toolbar: {
                     show: true,
-                    floating: true,
-                    tooltip: { enabled: false }
+                    tools: {
+                        download: true,
+                        selection: false,
+                        zoom: true,
+                        zoomin: true,
+                        zoomout: true,
+                        pan: false,
+                        reset: true
+                    }
+                },
+                animations: {
+                    enabled: true,
+                    easing: 'easeinout',
+                    speed: 800
+                }
+            },
+            series: [
+                {
+                    name: 'Bitcoin Price',
+                    type: 'area',
+                    data: priceSeries,
+                    yAxisIndex: 0,
+                    color: '#F7931A',
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                            shadeIntensity: 0.1,
+                            opacityFrom: 0.4,
+                            opacityTo: 0.1,
+                            stops: [0, 100]
+                        }
+                    }
+                },
+                {
+                    name: 'Extreme Fear (0-24)',
+                    type: 'scatter',
+                    data: fngPoints.extremeFear,
+                    yAxisIndex: 1,
+                    color: '#FF3B30',
+                    marker: {
+                        size: 4,
+                        strokeWidth: 0
+                    }
+                },
+                {
+                    name: 'Fear (25-49)',
+                    type: 'scatter',
+                    data: fngPoints.fear,
+                    yAxisIndex: 1,
+                    color: '#FF9500',
+                    marker: {
+                        size: 4,
+                        strokeWidth: 0
+                    }
+                },
+                {
+                    name: 'Neutral (50-59)',
+                    type: 'scatter',
+                    data: fngPoints.neutral,
+                    yAxisIndex: 1,
+                    color: '#FFCC00',
+                    marker: {
+                        size: 4,
+                        strokeWidth: 0
+                    }
+                },
+                {
+                    name: 'Greed (60-74)',
+                    type: 'scatter',
+                    data: fngPoints.greed,
+                    yAxisIndex: 1,
+                    color: '#34C759',
+                    marker: {
+                        size: 4,
+                        strokeWidth: 0
+                    }
+                },
+                {
+                    name: 'Extreme Greed (75-100)',
+                    type: 'scatter',
+                    data: fngPoints.extremeGreed,
+                    yAxisIndex: 1,
+                    color: '#AEFC2E',
+                    marker: {
+                        size: 4,
+                        strokeWidth: 0
+                    }
                 }
             ],
-        grid: {
-            borderColor: '#181818',
-            padding: {
-                left: 10,
-                right: 100  // Extra padding on right
-            }
-        },
-        markers: { size: 4 },
-        legend: { show: false },
-        // Custom tooltip styling
-        tooltip: {
-            enabled: true,
-            style: {
-                fontSize: '12px',
-                fontFamily: 'inherit'
-            },
-            y: {
-                formatter: function(value) {
-                    return `$${value}K`;
+            xaxis: {
+                type: 'datetime',
+                labels: {
+                    style: {
+                        colors: '#d1d5db',
+                        fontSize: '12px'
+                    },
+                    datetimeUTC: false,
+                    format: 'dd MMM'
                 },
-                title: {
-                    formatter: function() {
-                        return 'Value';
+                axisBorder: {
+                    color: '#374151'
+                },
+                axisTicks: {
+                    color: '#374151'
+                },
+                grid: {
+                    borderColor: '#374151'
+                }
+            },
+            yaxis: [
+                {
+                    // Bitcoin Price (Left Y-axis)
+                    seriesName: 'Bitcoin Price',
+                    opposite: false,
+                    min: Math.min(...priceSeries.map(p => p[1])) * 0.95,
+                    max: Math.max(...priceSeries.map(p => p[1])) * 1.05,
+                    labels: {
+                        style: {
+                            colors: '#d1d5db',
+                            fontSize: '12px'
+                        },
+                        formatter: function(value) {
+                            return '$' + (value / 1000).toFixed(0) + 'K';
+                        }
+                    },
+                    title: {
+                        text: 'Bitcoin Price (USD)',
+                        style: {
+                            color: '#F7931A',
+                            fontSize: '14px',
+                            fontWeight: 600
+                        }
+                    },
+                    axisBorder: {
+                        show: true,
+                        color: '#F7931A'
+                    }
+                },
+                {
+                    // Fear & Greed Index (Right Y-axis)
+                    seriesName: 'Fear & Greed Index',
+                    opposite: true,
+                    min: 0,
+                    max: 100,
+                    tickAmount: 5,
+                    labels: {
+                        style: {
+                            colors: '#d1d5db',
+                            fontSize: '12px'
+                        },
+                        formatter: function(value) {
+                            return Math.round(value);
+                        }
+                    },
+                    title: {
+                        text: 'Fear & Greed Index',
+                        style: {
+                            color: '#d1d5db',
+                            fontSize: '14px',
+                            fontWeight: 600
+                        }
+                    },
+                    axisBorder: {
+                        show: true,
+                        color: '#d1d5db'
+                    }
+                }
+            ],
+            grid: {
+                borderColor: '#374151',
+                strokeDashArray: 3,
+                xaxis: {
+                    lines: {
+                        show: true
+                    }
+                },
+                yaxis: {
+                    lines: {
+                        show: true
                     }
                 }
             },
-            theme: 'light',  // Force light theme
-            custom: function({ series, seriesIndex, dataPointIndex, w }) {
-                // Custom HTML for tooltip
-                return `<div class="apexcharts-tooltip-custom" style="background: #ffffff; color: #000000; padding: 8px 12px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.1)">
-                <div style="font-weight: 600">${w.globals.seriesNames[seriesIndex]}</div>
-                <div>Date: ${new Date(w.globals.seriesX[seriesIndex][dataPointIndex]).toLocaleDateString()}</div>
-                <div>Value: $${series[seriesIndex][dataPointIndex]}K</div>
-            </div>`;
+            legend: {
+                show: false // We'll use the existing legend below the chart
+            },
+            tooltip: {
+                shared: true,
+                custom: function({ series, seriesIndex, dataPointIndex, w }) {
+                    const dataPoint = processedData[dataPointIndex];
+                    if (!dataPoint) return '';
+                    
+                    const date = new Date(dataPoint.date).toLocaleDateString();
+                    const price = '$' + dataPoint.price.toLocaleString();
+                    const fngValue = dataPoint.fngValue;
+                    const classification = dataPoint.classification;
+                    
+                    return `
+                        <div style="background: #1f2937; padding: 12px; border-radius: 8px; border: 1px solid #374151;">
+                            <div style="color: #f9fafb; font-weight: 600; margin-bottom: 8px;">${date}</div>
+                            <div style="color: #F7931A; margin-bottom: 4px;">Bitcoin: ${price}</div>
+                            <div style="color: #d1d5db;">Fear & Greed: ${fngValue} (${classification})</div>
+                        </div>
+                    `;
+                }
+            },
+            stroke: {
+                width: [2, 0, 0, 0, 0, 0], // Only the price line should have stroke
+                curve: 'smooth'
+            },
+            fill: {
+                opacity: [0.3, 1, 1, 1, 1, 1]
             }
-        }
-    };
-
-    const chart = new ApexCharts(document.querySelector("#chart"), options);
-    chart.render();
-
-    // Alternative way to handle icon clicks if the above doesn't work
-    document.querySelector('.icon-item:nth-child(2)').addEventListener('click', function() {
-        if (chart.toggleFullscreen) {
-            chart.toggleFullscreen();
-        } else {
-            // Fallback for older versions
+        };
+        
+        // Render the chart
+        const chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+        
+        // Handle fullscreen functionality
+        document.querySelector('#full-screen').addEventListener('click', function() {
             const chartElement = document.querySelector('#chart');
             if (chartElement.requestFullscreen) {
                 chartElement.requestFullscreen();
@@ -164,28 +303,48 @@ async function loadBitcoinData() {
             } else if (chartElement.msRequestFullscreen) {
                 chartElement.msRequestFullscreen();
             }
-        }
-    });
+        });
+        
+        // Handle screenshot functionality
+        document.querySelector('.icon-item:first-child').addEventListener('click', async function() {
+            try {
+                const dataURI = await chart.dataURI({
+                    pixelRatio: 2,
+                    width: 1200,
+                    height: 600
+                });
+                
+                const link = document.createElement('a');
+                link.href = dataURI.imgURI;
+                link.download = 'bitcoin-fear-greed-index-' + new Date().toISOString().split('T')[0] + '.png';
+                link.click();
+            } catch (error) {
+                console.error('Failed to export chart:', error);
+                alert('Chart export failed. Please try again.');
+            }
+        });
+        
+    } catch (error) {
+        console.error('Error loading Bitcoin data:', error);
+        
+        // Fallback: Show error message
+        document.querySelector("#chart").innerHTML = `
+            <div style="display: flex; align-items: center; justify-content: center; height: 400px; color: #d1d5db; flex-direction: column;">
+                <svg width="48" height="48" fill="currentColor" viewBox="0 0 20 20" style="margin-bottom: 16px;">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                </svg>
+                <p style="text-align: center; font-size: 16px; margin-bottom: 8px;">Unable to load chart data</p>
+                <p style="text-align: center; font-size: 14px; opacity: 0.7;">Please check your internet connection and try again</p>
+            </div>
+        `;
+    }
+}
 
-    document.querySelector('.icon-item:nth-child(1)').addEventListener('click', async function () {
-        try {
-            chart.updateOptions({
-                chart: {
-                    background: '#0C0C0C' // Your dark background color
-                }
-            }, false, false); // The two 'false' prevent animation and redraw
-
-            // Export with dark background
-            const { imgURI } = await chart.dataURI();
-            const downloadLink = document.createElement('a');
-            downloadLink.href = imgURI;
-            downloadLink.download = 'fear-greed-index.png';
-            downloadLink.click();
-        } catch (error) {
-            console.error('Failed to export chart:', error);
-            alert('Chart export failed. Please try again.');
-        }
-    });
+// Initialize the chart when DOM is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadBitcoinData);
+} else {
+    loadBitcoinData();
 }
 
 loadBitcoinData().finally();
