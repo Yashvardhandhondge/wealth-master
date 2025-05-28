@@ -649,7 +649,7 @@
           <script src="assets/js/app.js"></script>
 <!-- Replace the chart script with this working version -->
 <script>
-// Bitcoin Fear & Greed Index Chart using Plotly.js with reliable data sources
+// Bitcoin Fear & Greed Index Chart using real Bitcoin price data
 async function loadBitcoinData() {
     try {
         // Show loading indicator
@@ -672,49 +672,39 @@ async function loadBitcoinData() {
         const fngRes = await fetch('https://api.alternative.me/fng/?limit=365');
         const fngData = await fngRes.json();
         
-        console.log(`Fetched ${fngData.data.length} Fear & Greed data points`);
+        // Fetch real Bitcoin price data from CoinGecko API
+        const priceRes = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365&interval=daily');
+        const priceData = await priceRes.json();
         
-        // Create realistic Bitcoin price data based on Fear & Greed Index
-        // This simulates realistic Bitcoin price movements correlated with market sentiment
+        console.log(`Fetched ${fngData.data.length} Fear & Greed data points`);
+        console.log(`Fetched ${priceData.prices.length} Bitcoin price points`);
+        
+        // Create a map of dates to FNG values for easier lookup
+        const fngMap = new Map();
+        fngData.data.forEach(item => {
+            const date = new Date(item.timestamp * 1000).toDateString();
+            fngMap.set(date, {
+                value: parseInt(item.value),
+                classification: item.value_classification
+            });
+        });
+        
+        // Combine real Bitcoin prices with Fear & Greed data
         const combinedData = [];
         
-        // Sort FNG data by timestamp (oldest first)
-        const sortedFngData = fngData.data.sort((a, b) => a.timestamp - b.timestamp);
-        
-        // Generate realistic Bitcoin prices
-        let basePrice = 25000; // Starting base price
-        const startDate = new Date(sortedFngData[0].timestamp * 1000);
-        
-        sortedFngData.forEach((item, index) => {
-            const date = new Date(item.timestamp * 1000);
-            const fngValue = parseInt(item.value);
+        priceData.prices.forEach(([timestamp, price]) => {
+            const date = new Date(timestamp);
+            const dateString = date.toDateString();
             
-            // Calculate days since start
-            const daysSinceStart = Math.floor((date - startDate) / (1000 * 60 * 60 * 24));
-            
-            // Base trend (slight upward over time)
-            const trendMultiplier = 1 + (daysSinceStart / 365) * 0.5; // 50% yearly growth potential
-            
-            // Fear & Greed influence on price
-            const fngInfluence = ((fngValue - 50) / 50) * 0.3; // ±30% influence
-            
-            // Add some realistic volatility
-            const volatility = (Math.sin(daysSinceStart / 7) + Math.sin(daysSinceStart / 30)) * 0.1;
-            const randomNoise = (Math.random() - 0.5) * 0.2;
-            
-            // Calculate final price
-            const priceMultiplier = trendMultiplier * (1 + fngInfluence + volatility + randomNoise);
-            const finalPrice = Math.max(15000, basePrice * priceMultiplier); // Minimum $15,000
-            
-            // Update base price gradually (price memory effect)
-            basePrice = basePrice * 0.95 + finalPrice * 0.05;
+            // Find matching FNG data or use neutral value
+            const fngInfo = fngMap.get(dateString) || { value: 50, classification: 'Neutral' };
             
             combinedData.push({
                 x: date,
-                y: finalPrice,
-                fngValue: fngValue,
-                classification: item.value_classification,
-                color: getFearGreedColor(fngValue)
+                y: Math.round(price), // Real Bitcoin price
+                fngValue: fngInfo.value,
+                classification: fngInfo.classification,
+                color: getFearGreedColor(fngInfo.value)
             });
         });
         
@@ -727,10 +717,10 @@ async function loadBitcoinData() {
             else return '#AEFC2E';                  // Extreme Greed - Lime
         }
         
-        // Sort by date (should already be sorted, but just to be sure)
+        // Sort by date
         combinedData.sort((a, b) => new Date(a.x) - new Date(b.x));
         
-        console.log(`Generated ${combinedData.length} combined data points`);
+        console.log(`Generated ${combinedData.length} combined data points with real Bitcoin prices`);
         
         // Prepare data for Plotly
         const trace = {
@@ -894,7 +884,7 @@ async function loadBitcoinData() {
             });
         });
         
-        console.log('Chart successfully loaded with Fear & Greed Index data');
+        console.log('Chart successfully loaded with real Bitcoin price data');
         
     } catch (error) {
         console.error('Error loading Bitcoin data:', error);
