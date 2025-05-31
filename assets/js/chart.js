@@ -1,298 +1,390 @@
-// Fetch from Alternative.me API
+// Fetch from Alternative.me API and CoinAPI
 // Fixed Bitcoin Fear & Greed Index Chart
-// Make sure to include ApexCharts library in your HTML:
-// <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+// Make sure to include Plotly library in your HTML:
+// <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
 
 async function loadBitcoinData() {
     try {
-        // Fetch Fear & Greed Index data
-        const fngRes = await fetch('https://api.alternative.me/fng/?limit=365');
+        // Show loading indicator
+        document.querySelector("#chart").innerHTML = `
+            <div style="display: flex; align-items: center; justify-content: center; height: 400px; color: #d1d5db;">
+                <div style="text-align: center;">
+                    <div style="border: 4px solid #374151; border-top: 4px solid #F7931A; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
+                    <p>Loading historical chart data...</p>
+                </div>
+            </div>
+            <style>
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            </style>
+        `;
+
+        // Fetch Fear & Greed Index data (all available data)
+        const fngRes = await fetch('https://api.alternative.me/fng/?limit=0');
         const fngData = await fngRes.json();
         
-        // Fetch Bitcoin price data (using CoinGecko API)
-        const btcRes = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365&interval=daily');
-        const btcData = await btcRes.json();
+        // Use CryptoCompare API for historical Bitcoin data (free, no 365-day limit)
+        // Get daily data for the last 2000 days (about 5.5 years)
+        const priceRes = await fetch('https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym=USD&limit=2000');
+        const priceResponse = await priceRes.json();
         
-        // Process and combine data
-        const processedData = [];
+        if (priceResponse.Response === 'Error') {
+            throw new Error('Failed to fetch Bitcoin price data');
+        }
+        
+        const priceData = priceResponse.Data.Data;
+        
+        console.log(`Fetched ${fngData.data.length} Fear & Greed data points (all available data)`);
+        console.log(`Fetched ${priceData.length} Bitcoin price points (last 5+ years)`);
+        
+        // Create a map of dates to FNG values for easier lookup
         const fngMap = new Map();
-        
-        // Create map of FNG data by date
         fngData.data.forEach(item => {
-            const date = new Date(item.timestamp * 1000);
-            const dateStr = date.toISOString().split('T')[0];
-            fngMap.set(dateStr, {
+            const date = new Date(item.timestamp * 1000).toDateString();
+            fngMap.set(date, {
                 value: parseInt(item.value),
                 classification: item.value_classification
             });
         });
         
-        // Combine with Bitcoin price data
-        btcData.prices.forEach(([timestamp, price]) => {
-            const date = new Date(timestamp);
-            const dateStr = date.toISOString().split('T')[0];
-            const fngInfo = fngMap.get(dateStr);
+        // Combine Bitcoin prices with Fear & Greed data
+        const combinedData = [];
+        
+        priceData.forEach(dayData => {
+            const date = new Date(dayData.time * 1000);
+            const dateString = date.toDateString();
             
-            if (fngInfo) {
-                processedData.push({
-                    date: timestamp,
-                    price: price,
-                    fngValue: fngInfo.value,
-                    classification: fngInfo.classification
-                });
-            }
+            // Find matching FNG data or use neutral value
+            const fngInfo = fngMap.get(dateString) || { value: 50, classification: 'Neutral' };
+            
+            combinedData.push({
+                x: date,
+                y: Math.round(dayData.close), // Bitcoin closing price
+                fngValue: fngInfo.value,
+                classification: fngInfo.classification,
+                color: getFearGreedColor(fngInfo.value)
+            });
         });
+        
+        // Function to get color based on Fear & Greed value
+        function getFearGreedColor(value) {
+            if (value <= 24) return '#FF3B30';      // Extreme Fear - Red
+            else if (value <= 49) return '#FF9500'; // Fear - Orange
+            else if (value <= 59) return '#FFCC00'; // Neutral - Yellow
+            else if (value <= 74) return '#34C759'; // Greed - Green
+            else return '#AEFC2E';                  // Extreme Greed - Lime
+        }
         
         // Sort by date
-        processedData.sort((a, b) => a.date - b.date);
+        combinedData.sort((a, b) => new Date(a.x) - new Date(b.x));
         
-        // Prepare chart series
-        const priceSeries = processedData.map(item => [item.date, item.price]);
-        const fngSeries = processedData.map(item => [item.date, item.fngValue]);
+        console.log(`Generated ${combinedData.length} combined data points with historical Bitcoin price data`);
         
-        // Create color-coded FNG points
-        const fngPoints = {
-            extremeFear: [],
-            fear: [],
-            neutral: [],
-            greed: [],
-            extremeGreed: []
-        };
-        
-        processedData.forEach(item => {
-            const point = [item.date, item.fngValue];
-            if (item.fngValue <= 24) fngPoints.extremeFear.push(point);
-            else if (item.fngValue <= 49) fngPoints.fear.push(point);
-            else if (item.fngValue <= 59) fngPoints.neutral.push(point);
-            else if (item.fngValue <= 74) fngPoints.greed.push(point);
-            else fngPoints.extremeGreed.push(point);
-        });
-        
-        const options = {
-            chart: {
-                type: 'line',
-                height: 500,
-                background: 'transparent',
-                toolbar: {
-                    show: true,
-                    tools: {
-                        download: true,
-                        selection: false,
-                        zoom: true,
-                        zoomin: true,
-                        zoomout: true,
-                        pan: false,
-                        reset: true
-                    }
-                },
-                animations: {
-                    enabled: true,
-                    easing: 'easeinout',
-                    speed: 800
-                }
-            },
-            series: [
-                {
-                    name: 'Bitcoin Price',
-                    type: 'area',
-                    data: priceSeries,
-                    yAxisIndex: 0,
-                    color: '#F7931A',
-                    fill: {
-                        type: 'gradient',
-                        gradient: {
-                            shadeIntensity: 0.1,
-                            opacityFrom: 0.4,
-                            opacityTo: 0.1,
-                            stops: [0, 100]
-                        }
-                    }
-                },
-                {
-                    name: 'Extreme Fear (0-24)',
-                    type: 'scatter',
-                    data: fngPoints.extremeFear,
-                    yAxisIndex: 1,
-                    color: '#FF3B30',
-                    marker: {
-                        size: 4,
-                        strokeWidth: 0
-                    }
-                },
-                {
-                    name: 'Fear (25-49)',
-                    type: 'scatter',
-                    data: fngPoints.fear,
-                    yAxisIndex: 1,
-                    color: '#FF9500',
-                    marker: {
-                        size: 4,
-                        strokeWidth: 0
-                    }
-                },
-                {
-                    name: 'Neutral (50-59)',
-                    type: 'scatter',
-                    data: fngPoints.neutral,
-                    yAxisIndex: 1,
-                    color: '#FFCC00',
-                    marker: {
-                        size: 4,
-                        strokeWidth: 0
-                    }
-                },
-                {
-                    name: 'Greed (60-74)',
-                    type: 'scatter',
-                    data: fngPoints.greed,
-                    yAxisIndex: 1,
-                    color: '#34C759',
-                    marker: {
-                        size: 4,
-                        strokeWidth: 0
-                    }
-                },
-                {
-                    name: 'Extreme Greed (75-100)',
-                    type: 'scatter',
-                    data: fngPoints.extremeGreed,
-                    yAxisIndex: 1,
-                    color: '#AEFC2E',
-                    marker: {
-                        size: 4,
-                        strokeWidth: 0
-                    }
-                }
-            ],
-            xaxis: {
-                type: 'datetime',
-                labels: {
-                    style: {
-                        colors: '#d1d5db',
-                        fontSize: '12px'
-                    },
-                    datetimeUTC: false,
-                    format: 'dd MMM'
-                },
-                axisBorder: {
-                    color: '#374151'
-                },
-                axisTicks: {
-                    color: '#374151'
-                },
-                grid: {
-                    borderColor: '#374151'
-                }
-            },
-            yaxis: [
-                {
-                    // Bitcoin Price (Left Y-axis)
-                    seriesName: 'Bitcoin Price',
-                    opposite: false,
-                    min: Math.min(...priceSeries.map(p => p[1])) * 0.95,
-                    max: Math.max(...priceSeries.map(p => p[1])) * 1.05,
-                    labels: {
-                        style: {
-                            colors: '#d1d5db',
-                            fontSize: '12px'
-                        },
-                        formatter: function(value) {
-                            return '$' + (value / 1000).toFixed(0) + 'K';
-                        }
-                    },
-                    title: {
-                        text: 'Bitcoin Price (USD)',
-                        style: {
-                            color: '#F7931A',
-                            fontSize: '14px',
-                            fontWeight: 600
-                        }
-                    },
-                    axisBorder: {
-                        show: true,
-                        color: '#F7931A'
-                    }
-                },
-                {
-                    // Fear & Greed Index (Right Y-axis)
-                    seriesName: 'Fear & Greed Index',
-                    opposite: true,
-                    min: 0,
-                    max: 100,
-                    tickAmount: 5,
-                    labels: {
-                        style: {
-                            colors: '#d1d5db',
-                            fontSize: '12px'
-                        },
-                        formatter: function(value) {
-                            return Math.round(value);
-                        }
-                    },
+        // Prepare data for Plotly
+        const trace = {
+            x: combinedData.map(d => d.x),
+            y: combinedData.map(d => d.y),
+            mode: 'markers',
+            type: 'scatter',
+            marker: {
+                size: 8,
+                color: combinedData.map(d => d.fngValue),
+                colorscale: [
+                    [0, '#FF3B30'],    // Red for extreme fear (0-24)
+                    [0.25, '#FF9500'], // Orange for fear (25-49)
+                    [0.5, '#FFCC00'],  // Yellow for neutral (50-59)
+                    [0.75, '#34C759'], // Green for greed (60-74)
+                    [1, '#AEFC2F']     // Lime for extreme greed (75-100)
+                ],
+                cmin: 0,
+                cmax: 100,
+                colorbar: {
                     title: {
                         text: 'Fear & Greed Index',
-                        style: {
-                            color: '#d1d5db',
-                            fontSize: '14px',
-                            fontWeight: 600
-                        }
+                        font: { color: '#d1d5db', size: 14 }
                     },
-                    axisBorder: {
-                        show: true,
-                        color: '#d1d5db'
-                    }
-                }
-            ],
-            grid: {
-                borderColor: '#374151',
-                strokeDashArray: 3,
-                xaxis: {
-                    lines: {
-                        show: true
-                    }
+                    titleside: 'right',
+                    tickmode: 'array',
+                    tickvals: [0, 20, 40, 60, 80, 100],
+                    ticktext: ['0', '20', '40', '60', '80', '100'],
+                    tickfont: { color: '#d1d5db', size: 12 },
+                    len: 0.9,
+                    thickness: 20,
+                    x: 1.02,
+                    bgcolor: 'rgba(255,255,255,0.1)',
+                    bordercolor: '#374151',
+                    borderwidth: 1,
+                    outlinecolor: '#d1d5db',
+                    outlinewidth: 1
                 },
-                yaxis: {
-                    lines: {
-                        show: true
-                    }
+                opacity: 0.8,
+                line: {
+                    width: 0
                 }
             },
-            legend: {
-                show: false // We'll use the existing legend below the chart
-            },
-            tooltip: {
-                shared: true,
-                custom: function({ series, seriesIndex, dataPointIndex, w }) {
-                    const dataPoint = processedData[dataPointIndex];
-                    if (!dataPoint) return '';
-                    
-                    const date = new Date(dataPoint.date).toLocaleDateString();
-                    const price = '$' + dataPoint.price.toLocaleString();
-                    const fngValue = dataPoint.fngValue;
-                    const classification = dataPoint.classification;
-                    
-                    return `
-                        <div style="background: #1f2937; padding: 12px; border-radius: 8px; border: 1px solid #374151;">
-                            <div style="color: #f9fafb; font-weight: 600; margin-bottom: 8px;">${date}</div>
-                            <div style="color: #F7931A; margin-bottom: 4px;">Bitcoin: ${price}</div>
-                            <div style="color: #d1d5db;">Fear & Greed: ${fngValue} (${classification})</div>
-                        </div>
-                    `;
-                }
-            },
-            stroke: {
-                width: [2, 0, 0, 0, 0, 0], // Only the price line should have stroke
-                curve: 'smooth'
-            },
-            fill: {
-                opacity: [0.3, 1, 1, 1, 1, 1]
-            }
+            hovertemplate: '<b>%{text}</b><br>' +
+                          'Bitcoin Price: <b>$%{y:,.0f}</b><br>' +
+                          'Fear & Greed: <b>%{customdata[0]}</b> (%{customdata[1]})<br>' +
+                          '<extra></extra>',
+            text: combinedData.map(d => d.x.toLocaleDateString('en-US', { 
+                weekday: 'short', 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            })),
+            customdata: combinedData.map(d => [d.fngValue, d.classification]),
+            name: 'Bitcoin Price vs Fear & Greed'
         };
         
-        // Render the chart
-        const chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
+        const layout = {
+            title: {
+                text: '',
+                font: { color: '#d1d5db', size: 16 }
+            },
+            xaxis: {
+                title: {
+                    text: '',
+                    font: { color: '#d1d5db', size: 12 }
+                },
+                color: '#d1d5db',
+                gridcolor: '#374151',
+                tickfont: { color: '#d1d5db', size: 11 },
+                showgrid: true,
+                type: 'date',
+                zeroline: false,
+                showline: true,
+                linecolor: '#374151'
+            },
+            yaxis: {
+                title: {
+                    text: 'Bitcoin Price (USD)',
+                    font: { color: '#F7931A', size: 14 }
+                },
+                color: '#d1d5db',
+                gridcolor: '#374151',
+                tickfont: { color: '#d1d5db', size: 11 },
+                showgrid: true,
+                type: 'log',
+                zeroline: false,
+                showline: true,
+                linecolor: '#374151',
+                tickmode: 'auto',
+                nticks: 8,
+                tickformat: '',
+                tickprefix: '$',
+                showexponent: 'none',
+                separatethousands: true,
+                side: 'left',
+                ticklen: 6,
+                tickwidth: 1,
+                tickcolor: '#374151'
+            },
+            plot_bgcolor: 'rgba(0,0,0,0.1)',
+            paper_bgcolor: 'transparent',
+            font: { color: '#d1d5db', family: 'Inter, sans-serif' },
+            margin: { l: 90, r: 140, t: 50, b: 60 }, // Increased left margin for price labels
+            showlegend: false,
+            hovermode: 'closest',
+            dragmode: 'zoom'
+        };
         
+        const config = {
+            displayModeBar: true,
+            modeBarButtonsToRemove: [
+                'pan2d', 
+                'lasso2d', 
+                'select2d', 
+                'autoScale2d',
+                'hoverClosestCartesian',
+                'hoverCompareCartesian',
+                'toggleSpikelines'
+            ],
+            displaylogo: false,
+            toImageButtonOptions: {
+                format: 'png',
+                filename: 'bitcoin-fear-greed-index-historical-' + new Date().toISOString().split('T')[0],
+                height: 600,
+                width: 1200,
+                scale: 2
+            },
+            modeBarButtons: [
+                [{
+                    name: 'Download as PNG',
+                    icon: Plotly.Icons.camera,
+                    click: function(gd) {
+                        Plotly.downloadImage(gd, {
+                            format: 'png',
+                            width: 1200,
+                            height: 600,
+                            filename: 'bitcoin-fear-greed-index-historical-' + new Date().toISOString().split('T')[0]
+                        });
+                    }
+                }],
+                ['zoom2d', 'zoomIn2d', 'zoomOut2d', 'resetScale2d']
+            ],
+            responsive: true
+        };
+        
+        // Clear the loading indicator and render the chart
+        document.querySelector("#chart").innerHTML = '';
+        Plotly.newPlot('chart', [trace], layout, config);
+
+        // Add custom time range dropdown after chart is created
+        const chartContainer = document.querySelector('#chart');
+        const dropdownHTML = `
+            <div class="time-range-dropdown" style="position: absolute; top: 10px; left: 10px; z-index: 1000;">
+                <select id="timeRangeSelector" style="
+                    background: #374151; 
+                    color: #d1d5db; 
+                    border: 1px solid #d1d5db; 
+                    border-radius: 6px; 
+                    padding: 8px 12px; 
+                    font-size: 12px;
+                    outline: none;
+                    cursor: pointer;
+                ">
+                    <option value="7">7 Days</option>
+                    <option value="30" selected>30 Days</option>
+                    <option value="90">3 Months</option>
+                    <option value="180">6 Months</option>
+                    <option value="365">1 Year</option>
+                    <option value="all">All Data</option>
+                </select>
+            </div>
+        `;
+        
+        chartContainer.style.position = 'relative';
+        chartContainer.insertAdjacentHTML('afterbegin', dropdownHTML);
+
+        // Handle dropdown change
+        document.getElementById('timeRangeSelector').addEventListener('change', function(e) {
+            const selectedDays = e.target.value;
+            let startDate, endDate = new Date();
+            
+            if (selectedDays === 'all') {
+                startDate = new Date(Math.min(...combinedData.map(d => d.x)));
+            } else {
+                startDate = new Date(Date.now() - parseInt(selectedDays) * 24 * 60 * 60 * 1000);
+            }
+            
+            // Filter data for the selected time range
+            const filteredData = combinedData.filter(d => d.x >= startDate && d.x <= endDate);
+            
+            if (filteredData.length > 0) {
+                const minPrice = Math.min(...filteredData.map(d => d.y));
+                const maxPrice = Math.max(...filteredData.map(d => d.y));
+                
+                // Calculate appropriate price range with padding
+                const priceRange = maxPrice - minPrice;
+                const padding = priceRange * 0.1; // 10% padding
+                const yMin = Math.max(1, minPrice - padding); // Ensure minimum value is at least 1 for log scale
+                const yMax = maxPrice + padding;
+                
+                // Generate evenly distributed tick values
+                const tickCount = 8; // Number of ticks on y-axis
+                const tickValues = [];
+                const tickText = [];
+                
+                if (yMax / yMin > 100) {
+                    // Use log scale ticks for large ranges
+                    const logMin = Math.log10(yMin);
+                    const logMax = Math.log10(yMax);
+                    const logStep = (logMax - logMin) / (tickCount - 1);
+                    
+                    for (let i = 0; i < tickCount; i++) {
+                        const logVal = logMin + (i * logStep);
+                        const val = Math.pow(10, logVal);
+                        tickValues.push(val);
+                        
+                        if (val >= 10000) {
+                            tickText.push(`$${(val / 1000).toFixed(0)}K`);
+                        } else if (val >= 1000) {
+                            tickText.push(`$${(val / 1000).toFixed(1)}K`);
+                        } else {
+                            tickText.push(`$${val.toFixed(0)}`);
+                        }
+                    }
+                } else {
+                    // Use linear ticks for smaller ranges
+                    const step = (yMax - yMin) / (tickCount - 1);
+                    
+                    for (let i = 0; i < tickCount; i++) {
+                        const val = yMin + (i * step);
+                        tickValues.push(val);
+                        
+                        if (val >= 10000) {
+                            tickText.push(`$${(val / 1000).toFixed(0)}K`);
+                        } else if (val >= 1000) {
+                            tickText.push(`$${(val / 1000).toFixed(1)}K`);
+                        } else {
+                            tickText.push(`$${val.toFixed(0)}`);
+                        }
+                    }
+                }
+                
+                // Update chart with new date range and optimized y-axis
+                const update = {
+                    'xaxis.range': [startDate, endDate],
+                    'yaxis.range': [Math.log10(yMin), Math.log10(yMax)],
+                    'yaxis.tickvals': tickValues,
+                    'yaxis.ticktext': tickText,
+                    'yaxis.tickmode': 'array'
+                };
+                
+                Plotly.relayout('chart', update);
+            }
+        });
+
+        // Set initial view to 30 days with proper y-axis scaling
+        const initialStartDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+        const initialEndDate = new Date();
+        
+        setTimeout(() => {
+            const filteredData = combinedData.filter(d => d.x >= initialStartDate && d.x <= initialEndDate);
+            
+            if (filteredData.length > 0) {
+                const minPrice = Math.min(...filteredData.map(d => d.y));
+                const maxPrice = Math.max(...filteredData.map(d => d.y));
+                const priceRange = maxPrice - minPrice;
+                const padding = priceRange * 0.1;
+                const yMin = Math.max(1, minPrice - padding);
+                const yMax = maxPrice + padding;
+                
+                // Generate initial tick values
+                const tickCount = 8;
+                const tickValues = [];
+                const tickText = [];
+                
+                const logMin = Math.log10(yMin);
+                const logMax = Math.log10(yMax);
+                const logStep = (logMax - logMin) / (tickCount - 1);
+                
+                for (let i = 0; i < tickCount; i++) {
+                    const logVal = logMin + (i * logStep);
+                    const val = Math.pow(10, logVal);
+                    tickValues.push(val);
+                    
+                    if (val >= 10000) {
+                        tickText.push(`$${(val / 1000).toFixed(0)}K`);
+                    } else if (val >= 1000) {
+                        tickText.push(`$${(val / 1000).toFixed(1)}K`);
+                    } else {
+                        tickText.push(`$${val.toFixed(0)}`);
+                    }
+                }
+                
+                Plotly.relayout('chart', {
+                    'xaxis.range': [initialStartDate, initialEndDate],
+                    'yaxis.range': [Math.log10(yMin), Math.log10(yMax)],
+                    'yaxis.tickvals': tickValues,
+                    'yaxis.ticktext': tickText,
+                    'yaxis.tickmode': 'array'
+                });
+            }
+        }, 100);
+
         // Handle fullscreen functionality
         document.querySelector('#full-screen').addEventListener('click', function() {
             const chartElement = document.querySelector('#chart');
@@ -305,67 +397,39 @@ async function loadBitcoinData() {
             }
         });
         
-        // Handle screenshot functionality
-        document.querySelector('.icon-item:first-child').addEventListener('click', async function() {
-            try {
-                const dataURI = await chart.dataURI({
-                    pixelRatio: 2,
-                    width: 1200,
-                    height: 600
-                });
-                
-                const link = document.createElement('a');
-                link.href = dataURI.imgURI;
-                link.download = 'bitcoin-fear-greed-index-' + new Date().toISOString().split('T')[0] + '.png';
-                link.click();
-            } catch (error) {
-                console.error('Failed to export chart:', error);
-                alert('Chart export failed. Please try again.');
-            }
+        // Handle screenshot functionality (camera icon)
+        document.querySelector('.icon-item:first-child').addEventListener('click', function() {
+            Plotly.downloadImage('chart', {
+                format: 'png',
+                width: 1200,
+                height: 600,
+                filename: 'bitcoin-fear-greed-index-historical-' + new Date().toISOString().split('T')[0]
+            });
         });
         
-    } catch (error) {
-        console.error('Error loading Bitcoin data:', error);
+        console.log('Chart successfully loaded with historical Bitcoin price data from CryptoCompare');
         
-        // Fallback: Show error message
+    } catch (error) {
+        console.error('Error loading Bitcoin historical data:', error);
+        
+        // Show error message with retry button
         document.querySelector("#chart").innerHTML = `
             <div style="display: flex; align-items: center; justify-content: center; height: 400px; color: #d1d5db; flex-direction: column;">
-                <svg width="48" height="48" fill="currentColor" viewBox="0 0 20 20" style="margin-bottom: 16px;">
+                <svg width="48" height="48" fill="currentColor" viewBox="0 0 20 20" style="margin-bottom: 16px; opacity: 0.7;">
                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
                 </svg>
-                <p style="text-align: center; font-size: 16px; margin-bottom: 8px;">Unable to load chart data</p>
-                <p style="text-align: center; font-size: 14px; opacity: 0.7;">Please check your internet connection and try again</p>
+                <p style="text-align: center; font-size: 16px; margin-bottom: 8px; font-weight: 600;">Unable to load chart data</p>
+                <p style="text-align: center; font-size: 14px; opacity: 0.7; margin-bottom: 16px;">Failed to fetch historical data. Please try again.</p>
+                <button onclick="loadBitcoinData()" style="padding: 10px 20px; background: #F7931A; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 500; transition: background-color 0.2s;">
+                    Retry Loading
+                </button>
             </div>
         `;
     }
 }
-
 // Initialize the chart when DOM is loaded
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadBitcoinData);
 } else {
     loadBitcoinData();
 }
-
-loadBitcoinData().finally();
-
-document.querySelectorAll('circle').forEach(point => {
-    const tooltip = document.createElement('div');
-    tooltip.className = 'tooltip';
-    tooltip.innerHTML = `
-    <strong>${point.getAttribute('data-year')}</strong><br>
-    Value: ${point.getAttribute('data-value')}
-  `;
-    document.body.appendChild(tooltip);
-
-    point.addEventListener('mouseenter', (e) => {
-        const rect = point.getBoundingClientRect();
-        tooltip.style.left = `${rect.left + window.scrollX}px`;
-        tooltip.style.top = `${rect.top + window.scrollY}px`;
-        tooltip.style.display = 'block';
-    });
-
-    point.addEventListener('mouseleave', () => {
-        tooltip.style.display = 'none';
-    });
-});
