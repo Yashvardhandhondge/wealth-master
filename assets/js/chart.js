@@ -191,39 +191,8 @@ async function loadBitcoinData() {
         };
         
         const config = {
-            displayModeBar: true,
-            modeBarButtonsToRemove: [
-                'pan2d', 
-                'lasso2d', 
-                'select2d', 
-                'autoScale2d',
-                'hoverClosestCartesian',
-                'hoverCompareCartesian',
-                'toggleSpikelines'
-            ],
+            displayModeBar: false,
             displaylogo: false,
-            toImageButtonOptions: {
-                format: 'png',
-                filename: 'bitcoin-fear-greed-index-historical-' + new Date().toISOString().split('T')[0],
-                height: 600,
-                width: 1200,
-                scale: 2
-            },
-            modeBarButtons: [
-                [{
-                    name: 'Download as PNG',
-                    icon: Plotly.Icons.camera,
-                    click: function(gd) {
-                        Plotly.downloadImage(gd, {
-                            format: 'png',
-                            width: 1200,
-                            height: 600,
-                            filename: 'bitcoin-fear-greed-index-historical-' + new Date().toISOString().split('T')[0]
-                        });
-                    }
-                }],
-                ['zoom2d', 'zoomIn2d', 'zoomOut2d', 'resetScale2d']
-            ],
             responsive: true
         };
         
@@ -234,16 +203,19 @@ async function loadBitcoinData() {
         // Add custom time range dropdown after chart is created
         const chartContainer = document.querySelector('#chart');
         const dropdownHTML = `
-            <div class="time-range-dropdown" style="position: absolute; top: 10px; left: 10px; z-index: 1000;">
+            <div class="time-range-dropdown" style="position: absolute; top: 10px; right: 10px; z-index: 1000;">
                 <select id="timeRangeSelector" style="
-                    background: #374151; 
+                    background: rgba(0,0,0,0.1); 
                     color: #d1d5db; 
-                    border: 1px solid #d1d5db; 
+                    border: 1px solid #374151; 
                     border-radius: 6px; 
                     padding: 8px 12px; 
                     font-size: 12px;
+                    font-family: Inter, sans-serif;
                     outline: none;
                     cursor: pointer;
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
                 ">
                     <option value="7">7 Days</option>
                     <option value="30" selected>30 Days</option>
@@ -395,16 +367,6 @@ async function loadBitcoinData() {
             } else if (chartElement.msRequestFullscreen) {
                 chartElement.msRequestFullscreen();
             }
-        });
-        
-        // Handle screenshot functionality (camera icon)
-        document.querySelector('.icon-item:first-child').addEventListener('click', function() {
-            Plotly.downloadImage('chart', {
-                format: 'png',
-                width: 1200,
-                height: 600,
-                filename: 'bitcoin-fear-greed-index-historical-' + new Date().toISOString().split('T')[0]
-            });
         });
         
         console.log('Chart successfully loaded with historical Bitcoin price data from CryptoCompare');
