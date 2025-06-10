@@ -5,12 +5,15 @@
 
 async function loadBitcoinData() {
     try {
+        // Check if mobile device
+        const isMobile = window.innerWidth <= 768;
+        
         // Show loading indicator
         document.querySelector("#chart").innerHTML = `
-            <div style="display: flex; align-items: center; justify-content: center; height: 400px; color: #d1d5db;">
+            <div style="display: flex; align-items: center; justify-content: center; height: ${isMobile ? '300px' : '400px'}; color: #d1d5db;">
                 <div style="text-align: center;">
-                    <div style="border: 4px solid #374151; border-top: 4px solid #F7931A; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
-                    <p>Loading historical chart data...</p>
+                    <div style="border: 4px solid #374151; border-top: 4px solid #F7931A; border-radius: 50%; width: ${isMobile ? '30px' : '40px'}; height: ${isMobile ? '30px' : '40px'}; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
+                    <p style="font-size: ${isMobile ? '12px' : '14px'};">Loading historical chart data...</p>
                 </div>
             </div>
             <style>
@@ -78,9 +81,7 @@ async function loadBitcoinData() {
         }
         
         // Sort by date
-        combinedData.sort((a, b) => new Date(a.x) - new Date(b.x));
-        
-        console.log(`Generated ${combinedData.length} combined data points with historical Bitcoin price data`);
+        combinedData.sort((a, b) => new Date(a.x) - new Date(b.x));        console.log(`Generated ${combinedData.length} combined data points with historical Bitcoin price data`);
         
         // Prepare data for Plotly
         const trace = {
@@ -89,7 +90,7 @@ async function loadBitcoinData() {
             mode: 'markers',
             type: 'scatter',
             marker: {
-                size: 8,
+                size: isMobile ? 5 : 8,
                 color: combinedData.map(d => d.fngValue),
                 colorscale: [
                     [0, '#FF3B30'],    // Red for extreme fear (0-24)
@@ -102,17 +103,17 @@ async function loadBitcoinData() {
                 cmax: 100,
                 colorbar: {
                     title: {
-                        text: 'Fear & Greed Index',
-                        font: { color: '#d1d5db', size: 14 }
+                        text: isMobile ? 'F&G' : 'Fear & Greed Index',
+                        font: { color: '#d1d5db', size: isMobile ? 10 : 14 }
                     },
                     titleside: 'right',
                     tickmode: 'array',
-                    tickvals: [0, 20, 40, 60, 80, 100],
-                    ticktext: ['0', '20', '40', '60', '80', '100'],
-                    tickfont: { color: '#d1d5db', size: 12 },
-                    len: 0.9,
-                    thickness: 20,
-                    x: 1.02,
+                    tickvals: isMobile ? [0, 25, 50, 75, 100] : [0, 20, 40, 60, 80, 100],
+                    ticktext: isMobile ? ['0', '25', '50', '75', '100'] : ['0', '20', '40', '60', '80', '100'],
+                    tickfont: { color: '#d1d5db', size: isMobile ? 8 : 12 },
+                    len: isMobile ? 0.7 : 0.9,
+                    thickness: isMobile ? 12 : 20,
+                    x: isMobile ? 1.01 : 1.02,
                     bgcolor: 'rgba(255,255,255,0.1)',
                     bordercolor: '#374151',
                     borderwidth: 1,
@@ -123,11 +124,15 @@ async function loadBitcoinData() {
                 line: {
                     width: 0
                 }
-            },
-            hovertemplate: '<b>%{text}</b><br>' +
-                          'Bitcoin Price: <b>$%{y:,.0f}</b><br>' +
-                          'Fear & Greed: <b>%{customdata[0]}</b> (%{customdata[1]})<br>' +
-                          '<extra></extra>',
+            },            hovertemplate: isMobile ? 
+                '<b>%{text}</b><br>' +
+                'BTC: <b>$%{y:,.0f}</b><br>' +
+                'F&G: <b>%{customdata[0]}</b><br>' +
+                '<extra></extra>' :
+                '<b>%{text}</b><br>' +
+                'Bitcoin Price: <b>$%{y:,.0f}</b><br>' +
+                'Fear & Greed: <b>%{customdata[0]}</b> (%{customdata[1]})<br>' +
+                '<extra></extra>',
             text: combinedData.map(d => d.x.toLocaleDateString('en-US', { 
                 weekday: 'short', 
                 year: 'numeric', 
@@ -137,8 +142,7 @@ async function loadBitcoinData() {
             customdata: combinedData.map(d => [d.fngValue, d.classification]),
             name: 'Bitcoin Price vs Fear & Greed'
         };
-        
-        const layout = {
+          const layout = {
             title: {
                 text: '',
                 font: { color: '#d1d5db', size: 16 }
@@ -146,11 +150,11 @@ async function loadBitcoinData() {
             xaxis: {
                 title: {
                     text: '',
-                    font: { color: '#d1d5db', size: 12 }
+                    font: { color: '#d1d5db', size: isMobile ? 10 : 12 }
                 },
                 color: '#d1d5db',
                 gridcolor: '#374151',
-                tickfont: { color: '#d1d5db', size: 11 },
+                tickfont: { color: '#d1d5db', size: isMobile ? 9 : 11 },
                 showgrid: true,
                 type: 'date',
                 zeroline: false,
@@ -159,19 +163,19 @@ async function loadBitcoinData() {
             },
             yaxis: {
                 title: {
-                    text: 'Bitcoin Price (USD)',
-                    font: { color: '#F7931A', size: 14 }
+                    text: isMobile ? 'BTC Price' : 'Bitcoin Price (USD)',
+                    font: { color: '#F7931A', size: isMobile ? 11 : 14 }
                 },
                 color: '#d1d5db',
                 gridcolor: '#374151',
-                tickfont: { color: '#d1d5db', size: 11 },
+                tickfont: { color: '#d1d5db', size: isMobile ? 9 : 11 },
                 showgrid: true,
                 type: 'log',
                 zeroline: false,
                 showline: true,
                 linecolor: '#374151',
                 tickmode: 'auto',
-                nticks: 8,
+                nticks: isMobile ? 6 : 8,
                 tickformat: '',
                 tickprefix: '$',
                 showexponent: 'none',
@@ -184,7 +188,12 @@ async function loadBitcoinData() {
             plot_bgcolor: 'rgba(0,0,0,0.1)',
             paper_bgcolor: 'transparent',
             font: { color: '#d1d5db', family: 'Inter, sans-serif' },
-            margin: { l: 90, r: 140, t: 50, b: 60 }, // Increased left margin for price labels
+            margin: { 
+                l: isMobile ? 50 : 90, 
+                r: isMobile ? 60 : 140, 
+                t: isMobile ? 30 : 50, 
+                b: isMobile ? 40 : 60 
+            },
             showlegend: false,
             hovermode: 'closest',
             dragmode: 'zoom'
@@ -198,31 +207,29 @@ async function loadBitcoinData() {
         
         // Clear the loading indicator and render the chart
         document.querySelector("#chart").innerHTML = '';
-        Plotly.newPlot('chart', [trace], layout, config);
-
-        // Add custom time range dropdown after chart is created
+        Plotly.newPlot('chart', [trace], layout, config);        // Add custom time range dropdown after chart is created
         const chartContainer = document.querySelector('#chart');
         const dropdownHTML = `
-            <div class="time-range-dropdown" style="position: absolute; top: 10px; right: 10px; z-index: 1000;">
+            <div class="time-range-dropdown" style="position: absolute; top: ${isMobile ? '5px' : '10px'}; right: ${isMobile ? '5px' : '10px'}; z-index: 1000;">
                 <select id="timeRangeSelector" style="
                     background: rgba(0,0,0,0.1); 
                     color: #d1d5db; 
                     border: 1px solid #374151; 
-                    border-radius: 6px; 
-                    padding: 8px 12px; 
-                    font-size: 12px;
+                    border-radius: ${isMobile ? '4px' : '6px'}; 
+                    padding: ${isMobile ? '4px 8px' : '8px 12px'}; 
+                    font-size: ${isMobile ? '10px' : '12px'};
                     font-family: Inter, sans-serif;
                     outline: none;
                     cursor: pointer;
                     backdrop-filter: blur(10px);
                     -webkit-backdrop-filter: blur(10px);
                 ">
-                    <option value="7">7 Days</option>
-                    <option value="30" selected>30 Days</option>
-                    <option value="90">3 Months</option>
-                    <option value="180">6 Months</option>
-                    <option value="365">1 Year</option>
-                    <option value="all">All Data</option>
+                    <option value="7">${isMobile ? '7D' : '7 Days'}</option>
+                    <option value="30" selected>${isMobile ? '30D' : '30 Days'}</option>
+                    <option value="90">${isMobile ? '3M' : '3 Months'}</option>
+                    <option value="180">${isMobile ? '6M' : '6 Months'}</option>
+                    <option value="365">${isMobile ? '1Y' : '1 Year'}</option>
+                    <option value="all">${isMobile ? 'All' : 'All Data'}</option>
                 </select>
             </div>
         `;
@@ -389,9 +396,20 @@ async function loadBitcoinData() {
         `;
     }
 }
+
 // Initialize the chart when DOM is loaded
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadBitcoinData);
 } else {
     loadBitcoinData();
 }
+
+// Add window resize listener to make chart responsive
+window.addEventListener('resize', function() {
+    // Debounce resize events
+    clearTimeout(window.resizeTimer);
+    window.resizeTimer = setTimeout(function() {
+        // Reload chart with new responsive settings
+        loadBitcoinData();
+    }, 250);
+});
