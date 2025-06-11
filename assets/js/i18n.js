@@ -51,7 +51,7 @@ const translations = {
     es: {
         cta: "Únete a más de 10,000 lectores diarios 100% gratis",
         hero_heading: "Únete al 1 % del Club de Traders y obtén",
-        hero_highlight: "Acceso Completo",
+        hero_highlight: "acceso completo",
         hero_end: "a estrategias VIP",
         extreme_fear_label: "Miedo Extremo (0–24)",
         fear_label: "Miedo (25–49)",
@@ -100,7 +100,7 @@ const translations = {
     de: {
         cta: "Schließe dich über 10.000 täglichen Lesern kostenlos an",
         hero_heading: "Tritt dem 1 %-Traders-Club bei und erhalte",
-        hero_highlight: "Vollen Zugang",
+        hero_highlight: "vollen Zugang",
         hero_end: "zu exklusiven VIP-Strategien",
         extreme_fear_label: "Extreme Angst (0–24)",
         fear_label: "Angst (25–49)",
@@ -149,8 +149,8 @@ const translations = {
     lt: {
         cta: "Prisijunk prie daugiau nei 10 000 kasdienių skaitytojų visiškai nemokamai",
         hero_heading: "Prisijunk prie 1 % prekiautojų klubo ir gauk",
-        hero_highlight: "Pilną Prieigą",
-        hero_end: "prie VIP Strategijų",
+        hero_highlight: "pilną prieigą",
+        hero_end: "prie VIP strategijų",
         extreme_fear_label: "Ekstremali Baimė (0–24)",
         fear_label: "Baimė (25–49)",
         greed_label: "Godumas (60–74)",
