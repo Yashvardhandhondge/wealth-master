@@ -258,7 +258,17 @@ async function loadBitcoinData() {
                 // Calculate appropriate price range with padding
                 const priceRange = maxPrice - minPrice;
                 const padding = priceRange * 0.1; // 10% padding
-                const yMin = Math.max(1, minPrice - padding); // Ensure minimum value is at least 1 for log scale
+                
+                // Special handling for "All Data" view only
+                let yMin;
+                if (selectedDays === 'all') {
+                    // For All Data view, use 4300 as minimum to show the chart better
+                    yMin = 4300;
+                } else {
+                    // Keep original logic for all other time ranges
+                    yMin = Math.max(1, minPrice - padding);
+                }
+                
                 const yMax = maxPrice + padding;
                 
                 // Generate evenly distributed tick values
@@ -266,8 +276,37 @@ async function loadBitcoinData() {
                 const tickValues = [];
                 const tickText = [];
                 
-                if (yMax / yMin > 100) {
-                    // Use log scale ticks for large ranges
+                if (selectedDays === 'all') {
+                    // Special tick generation for All Data view with better spacing
+                    const logMin = Math.log10(yMin);
+                    const logMax = Math.log10(yMax);
+                    const logStep = (logMax - logMin) / (tickCount - 1);
+                    
+                    for (let i = 0; i < tickCount; i++) {
+                        const logVal = logMin + (i * logStep);
+                        let val = Math.pow(10, logVal);
+                        
+                        // Round to nice values for better readability
+                        if (val < 10000) {
+                            val = Math.round(val / 1000) * 1000; // Round to nearest 1000
+                        } else if (val < 100000) {
+                            val = Math.round(val / 5000) * 5000; // Round to nearest 5000
+                        } else {
+                            val = Math.round(val / 10000) * 10000; // Round to nearest 10000
+                        }
+                        
+                        tickValues.push(val);
+                        
+                        if (val >= 10000) {
+                            tickText.push(`$${(val / 1000).toFixed(0)}K`);
+                        } else if (val >= 1000) {
+                            tickText.push(`$${(val / 1000).toFixed(0)}K`);
+                        } else {
+                            tickText.push(`$${val.toFixed(0)}`);
+                        }
+                    }
+                } else if (yMax / yMin > 100) {
+                    // Use log scale ticks for large ranges (other views)
                     const logMin = Math.log10(yMin);
                     const logMax = Math.log10(yMax);
                     const logStep = (logMax - logMin) / (tickCount - 1);
@@ -286,7 +325,7 @@ async function loadBitcoinData() {
                         }
                     }
                 } else {
-                    // Use linear ticks for smaller ranges
+                    // Use linear ticks for smaller ranges (other views)
                     const step = (yMax - yMin) / (tickCount - 1);
                     
                     for (let i = 0; i < tickCount; i++) {
