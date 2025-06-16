@@ -174,13 +174,11 @@ async function loadBitcoinData() {
                 zeroline: false,
                 showline: true,
                 linecolor: '#374151',
-                tickmode: 'auto',
-                nticks: isMobile ? 6 : 8,
-                tickformat: '',
-                tickprefix: '$',
-                showexponent: 'none',
-                separatethousands: true,
-                side: 'left',
+                // Fixed y-axis formatting for proper price display
+                tickmode: 'array',
+                tickvals: [1000, 2000, 5000, 10000, 20000, 50000, 100000],
+                ticktext: ['$1K', '$2K', '$5K', '$10K', '$20K', '$50K', '$100K'],
+                range: [Math.log10(4300), Math.log10(120000)], // Set proper range for all data
                 ticklen: 6,
                 tickwidth: 1,
                 tickcolor: '#374151'
@@ -207,7 +205,11 @@ async function loadBitcoinData() {
         
         // Clear the loading indicator and render the chart
         document.querySelector("#chart").innerHTML = '';
-        Plotly.newPlot('chart', [trace], layout, config);        // Add custom time range dropdown after chart is created
+        Plotly.newPlot('chart', [trace], layout, config);
+
+        // === Comment out time range dropdown and filter functionality ===
+        /*
+        // Add custom time range dropdown after chart is created
         const chartContainer = document.querySelector('#chart');
         const dropdownHTML = `
             <div class="time-range-dropdown" style="position: absolute; top: ${isMobile ? '5px' : '10px'}; right: ${isMobile ? '5px' : '10px'}; z-index: 1000;">
@@ -402,6 +404,9 @@ async function loadBitcoinData() {
                 });
             }
         }, 100);
+        */
+
+        // Chart now displays all data by default without any filters
 
         // Handle fullscreen functionality
         document.querySelector('#full-screen').addEventListener('click', function() {
