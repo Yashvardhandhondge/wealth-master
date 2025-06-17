@@ -207,8 +207,7 @@ async function loadBitcoinData() {
         document.querySelector("#chart").innerHTML = '';
         Plotly.newPlot('chart', [trace], layout, config);
 
-        // === Comment out time range dropdown and filter functionality ===
-        /*
+        // === Restore time range filtering functionality (without UI) ===
         // Add custom time range dropdown after chart is created
         const chartContainer = document.querySelector('#chart');
         const dropdownHTML = `
@@ -227,11 +226,11 @@ async function loadBitcoinData() {
                     -webkit-backdrop-filter: blur(10px);
                 ">
                     <option value="7">${isMobile ? '7D' : '7 Days'}</option>
-                    <option value="30" selected>${isMobile ? '30D' : '30 Days'}</option>
+                    <option value="30">${isMobile ? '30D' : '30 Days'}</option>
                     <option value="90">${isMobile ? '3M' : '3 Months'}</option>
                     <option value="180">${isMobile ? '6M' : '6 Months'}</option>
                     <option value="365">${isMobile ? '1Y' : '1 Year'}</option>
-                    <option value="all">${isMobile ? 'All' : 'All Data'}</option>
+                    <option value="all" selected>${isMobile ? 'All' : 'All Data'}</option>
                 </select>
             </div>
         `;
@@ -357,8 +356,8 @@ async function loadBitcoinData() {
             }
         });
 
-        // Set initial view to 30 days with proper y-axis scaling
-        const initialStartDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+        // Set initial view to All Data instead of 30 days
+        const initialStartDate = new Date(Math.min(...combinedData.map(d => d.x)));
         const initialEndDate = new Date();
         
         setTimeout(() => {
@@ -367,12 +366,12 @@ async function loadBitcoinData() {
             if (filteredData.length > 0) {
                 const minPrice = Math.min(...filteredData.map(d => d.y));
                 const maxPrice = Math.max(...filteredData.map(d => d.y));
-                const priceRange = maxPrice - minPrice;
-                const padding = priceRange * 0.1;
-                const yMin = Math.max(1, minPrice - padding);
-                const yMax = maxPrice + padding;
                 
-                // Generate initial tick values
+                // Use All Data view logic with 4300 minimum
+                const yMin = 4300;
+                const yMax = maxPrice + (maxPrice - minPrice) * 0.1;
+                
+                // Generate tick values for All Data view
                 const tickCount = 8;
                 const tickValues = [];
                 const tickText = [];
@@ -383,13 +382,23 @@ async function loadBitcoinData() {
                 
                 for (let i = 0; i < tickCount; i++) {
                     const logVal = logMin + (i * logStep);
-                    const val = Math.pow(10, logVal);
+                    let val = Math.pow(10, logVal);
+                    
+                    // Round to nice values for better readability
+                    if (val < 10000) {
+                        val = Math.round(val / 1000) * 1000;
+                    } else if (val < 100000) {
+                        val = Math.round(val / 5000) * 5000;
+                    } else {
+                        val = Math.round(val / 10000) * 10000;
+                    }
+                    
                     tickValues.push(val);
                     
                     if (val >= 10000) {
                         tickText.push(`$${(val / 1000).toFixed(0)}K`);
                     } else if (val >= 1000) {
-                        tickText.push(`$${(val / 1000).toFixed(1)}K`);
+                        tickText.push(`$${(val / 1000).toFixed(0)}K`);
                     } else {
                         tickText.push(`$${val.toFixed(0)}`);
                     }
@@ -404,9 +413,6 @@ async function loadBitcoinData() {
                 });
             }
         }, 100);
-        */
-
-        // Chart now displays all data by default without any filters
 
         // Handle fullscreen functionality
         document.querySelector('#full-screen').addEventListener('click', function() {
