@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://wealthmasters.pro/sitemap.xml
