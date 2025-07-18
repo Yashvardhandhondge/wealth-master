@@ -346,13 +346,28 @@ img#image0_61_3589 {
     gap: 6rem;
     padding-bottom: 20px;
 }
+.footer-item{
+	width:30%;
+}
 @media (max-width: 768px) {
 .ft-top-wrap {
     flex-direction: row;
     flex-wrap: wrap;
 	justify-content: center;
 }
+.ft-top-wrap {
+    display: flex;
+    gap: 6rem;
+    padding-bottom: 20px;
+    flex-wrap: nowrap !important;
+    flex-direction: column !important;
+    align-content: center;
+    align-items: center;
 }
 .footer-item{
-	width:30%;
+	width:100% !important;
+}
+.footer-links {
+    text-align: center !important;
+}
 }
