@@ -206,3 +206,153 @@ circle:hover {
         width: 35%;
     }
 }
+img#image0_61_3589 {
+    height: 100px;
+    width: auto;
+}
+@media (max-width: 768px) {
+	.site-logo {
+    display: flex;
+    justify-content: center;
+}
+}
+/* FAQs styles */
+.faq-section {
+  background-color: transparent;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: 'Inter', sans-serif;
+  z-index: 100;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: auto;
+  width: 100%;
+}
+
+.faq-title {
+  font-size: 32px;
+  color: #f44336;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #333;
+  padding: 20px 0;
+}
+
+.faq-item h3 {
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.faq-item h3 span {
+  color: #f44336;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.faq-item h3:hover {
+  color: #f44336;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.faq-answer.open {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.faqs {
+  margin-bottom: 150px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .faq-title {
+    font-size: 26px;
+  }
+
+  .faq-item h3 {
+    font-size: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .faq-item h3 span {
+    font-size: 20px;
+    align-self: flex-end;
+  }
+
+  .faq-answer {
+    font-size: 15px;
+  }
+}
+// footer column
+.footer-title {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .footer-title {
+    text-align: left;
+  }
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #f44336;
+}
+.ft-top-wrap {
+    display: flex;
+    gap: 6rem;
+    padding-bottom: 20px;
+}
+@media (max-width: 768px) {
+.ft-top-wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+	justify-content: center;
+}
+}
+.footer-item{
+	width:30%;
+}
