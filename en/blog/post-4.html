@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Wealth Masters</title>
+    <meta name="description" content="Join Wealth Masters for expert crypto signals, VIP strategies, and insights to grow your passive income across Europe and France.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/images/image1.webp" type="image/png" sizes="32x32" style="border-radius: 50%;">
+    <link rel="apple-touch-icon" href="/assets/images/image1.webp" style="border-radius: 50%;">
+    <link rel="mask-icon" href="/assets/images/image1.webp" color="#000000" style="border-radius: 50%;">
+    <!-- Dynamic Canonical Tag -->
+    <script>
+      const link = document.createElement("link");
+      link.rel = "canonical";
+      link.href = window.location.origin + window.location.pathname;
+      document.head.appendChild(link);
+    </script>
+    <!-- gulp:css -->
+    <link rel="stylesheet" href="/assets/css/nice-select.css">
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <!-- endgulp -->
+    <script src="/assets/js/i18n.js"></script>
+    <script src="/assets/js/plotly-2.26.0.min.js"></script>
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Wealth Masters",
+        "url": "http://wealthmasters.pro/",
+        "logo": "http://wealthmasters.pro/assets/images/image1.webp",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contact@wealthmasters.pro",
+          "contactType": "customer service"
+        },
+        "sameAs": ["https://www.linkedin.com/company/wealthmasters-club/", "https://www.instagram.com/wealth.mastersclub"]
+      }
+    </script>
+
+    <!--Nav Menu-->
+    <script>
+      // File: /assets/js/menu.js
+
+// Wait for the entire HTML document to be parsed before running the script
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Find the button and the menu by their unique IDs
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // IMPORTANT: Check if both elements actually exist before trying to add a click listener
+    if (hamburgerButton && mobileMenu) {
+        
+        hamburgerButton.addEventListener('click', () => {
+            // This function runs every time the button is clicked
+
+            // Toggle the 'open' class on the button itself for the 'X' animation
+            hamburgerButton.classList.toggle('open');
+            
+            // Toggle the 'hidden' class on the menu panel to show/hide it
+            mobileMenu.classList.toggle('hidden');
+
+            // Optional but recommended: Prevent the page from scrolling when the menu is open
+            if (mobileMenu.classList.contains('hidden')) {
+                // If menu is now hidden, allow scrolling again
+                document.body.style.overflow = 'auto';
+            } else {
+                // If menu is now visible, prevent scrolling
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    } else {
+        // If the script can't find the elements, it will log an error in the developer console
+        console.error('Hamburger menu script could not find the button or menu panel. Check that the IDs in your HTML are correct: #hamburger-button and #mobile-menu.');
+    }
+});
+    </script>
+
+    <script>
+        // File: /assets/js/schema-generator.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    // This function will only run if it finds an element with the ID 'blog-post-title',
+    // meaning it will only activate on your blog post pages.
+    const blogTitleElement = document.getElementById('blog-post-title');
+    if (blogTitleElement) {
+        try {
+            // 1. Automatically read data from the page
+            const headline = blogTitleElement.textContent.trim();
+            const metaDescription = document.querySelector('meta[name="description"]').getAttribute('content');
+            const pageUrl = window.location.href;
+            const imageUrl = document.getElementById('featured-image').src;
+            const datePublished = document.getElementById('publication-date').getAttribute('datetime');
+
+            // 2. Define the schema object using the data we just read
+            const articleSchema = {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": pageUrl
+                },
+                "headline": headline,
+                "description": metaDescription,
+                "image": imageUrl,
+                "author": {
+                    "@type": "Organization",
+                    "name": "Wealth Masters"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Wealth Masters",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "http://wealthmasters.pro//assets/images/image1.webp" // Your site's logo URL
+                    }
+                },
+                "datePublished": datePublished,
+                "dateModified": datePublished // For simplicity, use the same date. Can be changed if you have a modified date.
+            };
+
+            // 3. Create a new <script> tag for the schema
+            const schemaScript = document.createElement('script');
+            schemaScript.type = 'application/ld+json';
+            schemaScript.textContent = JSON.stringify(articleSchema, null, 2);
+
+            // 4. Inject the new script tag into the <head> of the document
+            document.head.appendChild(schemaScript);
+
+        } catch (error) {
+            console.error('Error generating Article schema:', error);
+        }
+    }
+});
+    </script>
+  </head>
+  <body class="  font-base  font-normal bg-[#000000]">
+    <main class="overflow-hidden">
+      <!--  ====================== Header Area Start =============================  -->
+      <div class="top-box pt-4 lg:pt-[40px] relative">
+        <div class="container">
+        <header class="relative px-4 py-4 lg:pt-6">
+    <div class="relative">
+        <!-- Desktop Navigation -->
+        <div class="flex justify-between items-center pb-12 sm:pb-0">
+
+            <!-- 1. Left Spacer -->
+            <span class="w-24"></span>
+
+            <!-- 2. Center Animated Logo -->
+            <div class="gap-[6px] flex-col items-center relative z-50 hidden lg:flex">
+                <div class="flex flex-col items-center gap-1">
+                    <figure class="flex gap-1 items-center">
+                        <img src="/assets/images/l1.webp" loading="lazy" alt="stack_0.5s_ease-out_1s_forwards" class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10">
+                        <img src="/assets/images/l2.webp" loading="lazy" alt="l2" class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10">
+                        <img src="/assets/images/l3.webp" loading="lazy" alt="l3" class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10">
+                        <img src="/assets/images/l4.webp" loading="lazy" alt="l4" class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start">
+                    </figure>
+                    <img src="/assets/images/l-body.svg" loading="lazy" class="rishi-img" alt="images">
+                </div>
+            </div>
+
+            <!-- 3. Right-Side Group (Language Selector + Hamburger) -->
+            <div class="flex items-center gap-2 sm:gap-4">
+            
+                <!-- Language Selector -->
+                <div class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl hover:border-[#FFFFFF1A] ">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_81_471)">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z" fill="#DC2626" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_81_471">
+                                <rect width="24" height="24" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <select id="languageSwitcher" class="nice-select font-bold" onchange="setLanguage(this.value)">
+                        <option value="en" data-display="EN">English</option>
+                        <option value="lt" data-display="LT">Lithuanian</option>
+                        <option value="de" data-display="DE">German</option>
+                        <option value="es" data-display="ES">Spanish</option>
+                    </select>
+                </div>
+                
+                <button id="hamburger-button" class="hamburger z-50">
+                     <span class="hamburger-top"></span>
+                     <span class="hamburger-middle"></span>
+                     <span class="hamburger-bottom"></span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black bg-opacity-95">
+        <!-- KEY CHANGE: Increased spacing from space-y-6 to space-y-10 -->
+        <div class="flex flex-col items-center justify-center w-full h-full text-white text-2xl space-y-10">
+            <a href="/" class="hover:text-primary-200">Home</a>
+            <a href="/about.html" class="hover:text-primary-200">About Us</a>
+            <a href="/contact.html" class="hover:text-primary-200">Contact</a>
+            <a href="/privacy.html" class="hover:text-primary-200">Privacy</a>
+            <a href="/blog.html" class="hover:text-primary-200">Blog</a>
+        </div>
+    </div>
+</header>
+        </div>
+        <div class="shape-item absolute -top-44 lg:top-0 right-0">
+          <img src="/assets/images/header-top-left.webp" loading="lazy" alt="images">
+        </div>
+        <div class="shape-item absolute -top-44 lg:top-0 left-0">
+          <img src="/assets/images/header-top-right.webp" loading="lazy" alt="images">
+        </div>
+      </div>
+      <!--  ====================== Header Area End =============================  -->
+
+
+
+
+
+
+<!-- ====================== Blog Post Section Start ============================= -->
+<style>
+    /* All the CSS from the previous response remains the same. */
+    /* No changes are needed here. */
+    .blog-post-section {
+        margin-top: 150px;
+        margin-bottom: 150px;
+        position: relative;
+        overflow: hidden;
+        color: #E5E5E5;
+    }
+    .blog-glow-effect {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(220, 38, 38, 0.1) 0%, rgba(220, 38, 38, 0) 65%);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 0;
+    }
+    .blog-post-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .blog-post-title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        color: #FFFFFF;
+        line-height: 1.2;
+        font-size: 40px;
+    }
+    .blog-post-meta {
+        color: #A1A1AA;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    .blog-post-content h3 {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: #FFFFFF;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .blog-post-content p, .blog-post-content li {
+        color: #A1A1AA;
+        line-height: 1.8;
+        font-size: 1.125rem;
+    }
+    .blog-post-content p { margin-bottom: 1rem; }
+    .blog-post-content ul { list-style-type: none; padding-left: 1rem; margin-bottom: 1rem; }
+    .blog-post-content ul li { margin-bottom: 0.75rem; position: relative; padding-left: 1.5rem; }
+    .blog-post-content ul li::before { content: '■'; position: absolute; left: 0; color: #DC2626; font-size: 0.8rem; top: 0.45rem; }
+    .blog-post-content a { color: #DC2626; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+    .blog-post-content a:hover { text-decoration: underline; }
+    .featured-image { border-radius: 12px; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); }
+    .blog-post-content blockquote { border-left: 4px solid #DC2626; padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: #E5E5E5; font-size: 1.25rem; }
+</style>
+
+<section class="blog-post-section">
+    <div class="blog-glow-effect"></div>
+    
+    <article class="container px-6 blog-post-content">
+
+        <header>
+            <!-- KEY CHANGE: Added an ID to the H1 tag -->
+            <h1 id="blog-post-title" class="blog-post-title text-3xl md:text-5xl">Beyond the Hype: 3 Pillars of Sustainable Crypto Trading</h1>
+            
+            <!-- KEY CHANGE: Used a <time> tag with a machine-readable datetime attribute -->
+            <p class="blog-post-meta">
+                Published by Wealth Masters on <time id="publication-date" datetime="2025-07-22">July 22, 2025</time>
+            </p>
+        </header>
+
+        <!-- KEY CHANGE: Added an ID to the main image tag -->
+        <img id="featured-image" src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop" alt="Abstract 3D illustration of cryptocurrency blocks" class="featured-image">
+        
+        <!-- The rest of your article content remains the same -->
+        <p>The cryptocurrency market is an arena of immense opportunity, but it's also filled with noise, hype, and emotional pitfalls. While stories of overnight millionaires capture headlines, true, sustainable wealth is built on a foundation of discipline, strategy, and psychological fortitude. At Wealth Masters, we focus on these foundations. Here are the three pillars every serious trader must master.</p>
+        <h3>Pillar 1: Master Your Psychology</h3>
+        <p>The most sophisticated technical analysis is useless if you can't control your own emotions. The market is a battlefield of fear and greed, and successful traders know how to use these sentiments to their advantage, rather than fall victim to them.</p>
+        <blockquote>"The stock market is a device for transferring money from the impatient to the patient."</blockquote>
+        <p>This timeless wisdom is even more potent in the volatile crypto space. By using tools like the <a href="/">Fear & Greed Index</a>, you can objectively gauge market sentiment. When others are fearful, it can present a buying opportunity. When they're euphoric and greedy, it might be time for caution. Your greatest edge isn't a secret indicator; it's your temperament.</p>
+        <h3>Pillar 2: Implement Ironclad Risk Management</h3>
+        <p>Risk management is not about avoiding losses—it's about ensuring that losses are small and manageable, while wins are significant. It's the mechanism that keeps you in the game long enough to be profitable. Three rules are non-negotiable:</p>
+        <ul>
+            <li><strong>The 1% Rule:</strong> Never risk more than 1-2% of your total trading capital on a single trade. This ensures that a string of losses won't wipe out your account, allowing you to survive and trade another day.</li>
+            <li><strong>Define Your Exit Before You Enter:</strong> Always know your stop-loss (the point at which you cut your losses) and your take-profit targets before you place a trade. Trading without a plan is gambling.</li>
+            <li><strong>Favorable Risk/Reward Ratio:</strong> Only take trades where the potential reward is at least twice the potential risk (a 1:2 ratio or better). This means even if you only win 50% of your trades, you can still be highly profitable.</li>
+        </ul>
+        <h3>Pillar 3: Execute a Repeatable, Edge-Driven Strategy</h3>
+        <p>"Winging it" is not a strategy. A sustainable approach is based on a defined set of rules that give you an "edge" over the long run. This edge comes from identifying repeatable patterns and market conditions that are likely to lead to a predictable outcome.</p>
+        <p>This is where Wealth Masters excels. We do the +80 hours of research for you, identifying high-conviction setups based on:
+        </p>
+        <ul>
+            <li>Market Structure Analysis</li>
+            <li>Key Levels of Support and Resistance</li>
+            <li>Volume and On-Chain Data</li>
+            <li>Catalyst Events and Narrative Shifts</li>
+        </ul>
+        <p>By following a proven strategy, you remove guesswork and emotion, replacing them with discipline and probability. This is the path from amateur speculator to a trading master.</p>
+        <p>Ready to build your trading on a foundation of strength? <a href="#">Join the Wealth Masters club</a> and get access to the strategies that empower you to trade with confidence.</p>
+        
+    </article>
+</section>
+<!-- ====================== Blog Post Section End =============================== -->
+
+
+
+
+
+
+      <!--  ====================== start-earning  Area Start =============================  -->
+      <div class="relative">
+        <img src="/assets/images/footer-ellipse.webp" loading="lazy" alt="images" class="absolute hidden sm:inline top-24 left-1/2 transform -translate-y-1/2 -translate-x-1/2 m-auto z-0" />
+        <img src="/assets/images/mobile-footer.webp" loading="lazy" alt="images" class="absolute  inline sm:hidden bottom-full top-0 right-0 left-0 m-auto z-0" />
+        <footer class="footer-area border-t border-[#FFFFFF33] md:pt-[113px] pt-[74px] pb-[35px] bg-[#000000] relative z-10">
+		<div class="footer-colo">
+          <div class="container">
+            <div class="ft-top-wrap">
+              <div class="footer-item">
+                <div class="site-logo">
+                  <a href="/">
+                        <img id="image0_61_3589" width="500" height="500" preserveAspectRatio="none" src="/assets/images/wealth-masters-logo.webp" alt="wealth masters logo"/>
+						</a>
+                </div>
+                <div class="text-box mt-6 ">
+                  <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Premium cryptocurrency signals, market analysis, and trading strategies for investors in France and Europe building long-term crypto wealth. </p>
+                </div>
+                <div class="footer-social-icon mt-6">
+                  <ul class="flex items-center gap-4 justify-center lg:justify-start text-footer">
+				  <li>
+                    <a href="https://www.linkedin.com/company/wealthmasters-club/" target="_blank">
+                      <!-- <img src="//assets/images/download.svg" alt="LinkedIn icon" width="20" height="20"> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2" />
+                        <path d="M8 10H6V18H8V10ZM7 6C6.44772 6 6 6.44772 6 7C6 7.55228 6.44772 8 7 8C7.55228 8 8 7.55228 8 7C8 6.44772 7.55228 6 7 6ZM18 18H16V14C16 13.4477 15.5523 13 15 13H14C13.4477 13 13 13.4477 13 14V18H11V10H13V11C13.5523 10.4477 14.2761 10 15 10C16.6569 10 18 11.3431 18 13V18Z" fill="currentColor" />
+                      </svg>
+                    </a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/wealth.mastersclub" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14.1666 1.66675H5.83329C3.53211 1.66675 1.66663 3.53223 1.66663 5.83341V14.1667C1.66663 16.4679 3.53211 18.3334 5.83329 18.3334H14.1666C16.4678 18.3334 18.3333 16.4679 18.3333 14.1667V5.83341C18.3333 3.53223 16.4678 1.66675 14.1666 1.66675Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M13.3334 9.47501C13.4362 10.1685 13.3178 10.8769 12.9948 11.4992C12.6719 12.1215 12.161 12.6262 11.5347 12.9414C10.9085 13.2566 10.1987 13.3663 9.50653 13.255C8.81431 13.1436 8.17484 12.8167 7.67907 12.321C7.1833 11.8252 6.85648 11.1857 6.7451 10.4935C6.63371 9.8013 6.74343 9.09159 7.05865 8.46532C7.37386 7.83905 7.87853 7.32812 8.50086 7.00521C9.12319 6.68229 9.8315 6.56383 10.525 6.66667C11.2325 6.77158 11.8874 7.10123 12.3931 7.60693C12.8988 8.11263 13.2285 8.76757 13.3334 9.47501Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M14.5834 5.41675H14.5917" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="mailto:contact@wealthmasters.pro" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M16.6666 3.33325H3.33329C2.41282 3.33325 1.66663 4.07944 1.66663 4.99992V14.9999C1.66663 15.9204 2.41282 16.6666 3.33329 16.6666H16.6666C17.5871 16.6666 18.3333 15.9204 18.3333 14.9999V4.99992C18.3333 4.07944 17.5871 3.33325 16.6666 3.33325Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M18.3333 5.83325L10.8583 10.5833C10.601 10.7444 10.3036 10.8299 9.99996 10.8299C9.69636 10.8299 9.3989 10.7444 9.14163 10.5833L1.66663 5.83325" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+			  
+                <!--New Box-->
+			<div class="footer-item">
+			  <h2 class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explore</h2>
+			  <ul class="footer-links">
+				<li><a href="/" title="Go to Home">Home</a></li>
+				<li><a href="/about" title="Learn About Us">About Us</a></li>
+				<li><a href="/contact" title="Contact Wealth Masters">Contact</a></li>
+				<li><a href="/privacy-policy" title="Read Our Privacy Policy">Privacy</a></li>
+			  </ul>
+			</div>
+              <!--New Box end here-->
+			<div class="footer-item">
+			  <div class="newsletter">
+              <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Subscribe</h2>
+              <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text"> Get the latest crypto trading signals, market updates, investment strategies, and exclusive crypto offers delivered straight to your inbox. </p>
+              <div id="custom-substack-2" class="mt-6 form-box">
+                <div id="custom-substack-2" class="mt-6 form-box">
+                  <form id="join-club-form" class="flex items-center justify-center">
+                    <div style="display: flex; width: 100%; max-width: 420px; height: 44px;">
+                      <input id="join-email-input" type="email" name="email" placeholder="Type Your Email..." required style="
+          flex: 1;
+          border-top-left-radius: 7px;
+          border-bottom-left-radius: 7px;
+          border: 1px solid #666;
+          padding: 10px 15px;
+          background: #111111;
+          font-size: 14px;
+          color: #fff;
+          box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+          outline: none;
+          border-right: none;
+        " />
+                      <button id="join-submit-btn" type="submit" style="
+          width: 125px;
+          height: 100%;
+          border-top-right-radius: 7px;
+          border-bottom-right-radius: 7px;
+          padding: 10px 15px;
+          background: #DC2626;
+          color: white;
+          border: 1px solid #666;
+          border-left: none;
+          font-weight: 600;
+          font-size: 14px;
+          cursor: pointer;
+          box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+          transition: background-color 0.2s;
+        " onmouseover="this.style.background='#B91C1C'" onmouseout="this.style.background='#DC2626'">Get Signals</button>
+                    </div>
+                    <input type="hidden" name="utm_source" value="website" />
+                    <input type="hidden" name="utm_medium" value="footer_form" />
+                  </form>
+                  <div id="join-form-message" style="display: none; margin-top: 10px; font-size: 14px;"></div>
+                </div>
+                <script>
+                  // Join the Club form logic
+                  document.getElementById('join-club-form').addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('join-email-input').value;
+                    const submitBtn = document.getElementById('join-submit-btn');
+                    const messageDiv = document.getElementById('join-form-message');
+                    if (!email || !isValidEmail(email)) {
+                      showMessageJoin('Please enter a valid email address.', 'error');
+                      return;
+                    }
+                    submitBtn.innerHTML = 'Subscribing...';
+                    submitBtn.disabled = true;
+                    messageDiv.style.display = 'none';
+                    try {
+                      await submitToSubstackViaIframe(email);
+                      showMessageJoin('🎉 Successfully subscribed!', 'success');
+                      document.getElementById('join-email-input').value = '';
+                    } catch (error) {
+                      console.error('Subscription error:', error);
+                      showMessageJoin('Something went wrong. Please try again or contact support.', 'error');
+                    } finally {
+                      submitBtn.innerHTML = 'Join The Club';
+                      submitBtn.disabled = false;
+                    }
+                  });
+
+                  function showMessageJoin(message, type) {
+                    const messageDiv = document.getElementById('join-form-message');
+                    messageDiv.innerHTML = message;
+                    messageDiv.style.display = 'block';
+                    messageDiv.style.color = type === 'success' ? '#34C759' : '#FF3B30';
+                    if (type === 'success') {
+                      setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                      }, 5000);
+                    }
+                  }
+                  // Email validation (shared)
+                  function isValidEmail(email) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return emailRegex.test(email);
+                  }
+                  // Hidden iframe Substack submission (shared)
+                  function submitToSubstackViaIframe(email) {
+                    return new Promise((resolve, reject) => {
+                      const iframe = document.createElement('iframe');
+                      iframe.style.display = 'none';
+                      iframe.name = 'substack-frame-' + Date.now();
+                      document.body.appendChild(iframe);
+                      const form = document.createElement('form');
+                      form.method = 'POST';
+                      form.action = 'https://wealthmasters.substack.com/api/v1/free';
+                      form.target = iframe.name;
+                      form.style.display = 'none';
+                      const emailInput = document.createElement('input');
+                      emailInput.type = 'hidden';
+                      emailInput.name = 'email';
+                      emailInput.value = email;
+                      const utmSource = document.createElement('input');
+                      utmSource.type = 'hidden';
+                      utmSource.name = 'utm_source';
+                      utmSource.value = 'website';
+                      const utmMedium = document.createElement('input');
+                      utmMedium.type = 'hidden';
+                      utmMedium.name = 'utm_medium';
+                      utmMedium.value = 'footer_form';
+                      form.appendChild(emailInput);
+                      form.appendChild(utmSource);
+                      form.appendChild(utmMedium);
+                      document.body.appendChild(form);
+                      iframe.onload = function() {
+                        setTimeout(() => {
+                          try {
+                            document.body.removeChild(form);
+                            document.body.removeChild(iframe);
+                            resolve();
+                          } catch (cleanupError) {
+                            console.warn('Cleanup error:', cleanupError);
+                            resolve();
+                          }
+                        }, 1000);
+                      };
+                      iframe.onerror = function() {
+                        reject(new Error('Network error'));
+                      };
+                      form.submit();
+                      setTimeout(() => {
+                        try {
+                          document.body.removeChild(form);
+                          document.body.removeChild(iframe);
+                          resolve();
+                        } catch (e) {
+                          resolve();
+                        }
+                      }, 5000);
+                    });
+                  }
+                </script>
+              </div>
+            </div>
+			</div>
+			</div>
+            <div class="copy-right-area w-full pt-8 mt-8 justify-between border-t border-[#1F2937]">
+              <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
+                <div class="item-text">
+                  <p class="text-sm text-footer" data-i18n="copyright"> Wealth Masters &copy2025. All rights reserved. </p>
+                </div>
+                <div class="item-box">
+                  <ul class="flex md:gap-6 gap-3 items-center text-footer">
+                    <li>
+                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="privacy_policy">Privacy Policy</a>
+                    </li>
+                    <li>
+                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="terms_service">Terms of Service</a>
+                    </li>
+                    <li>
+                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="cookie_policy">Cookie Policy</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+		  </div>
+        </footer>
+      </div>
+      <!--  ====================== Footer Area End =============================  -->
+      <!-- gulp:js -->
+      <script src="/assets/js/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+      <script src="/assets/js/jquery.nice-select.min.js"></script>
+      <script src="/assets/js/app.js"></script>
+      <!-- Replace the chart script with this working version -->
+      <script src="/assets/js/chart.js"></script>
+      <!-- endgulp -->
+    </main>
+  </body>
+</html>

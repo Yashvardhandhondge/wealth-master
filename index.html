@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="assets/css/tailwind.min.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <!-- endgulp -->
-    <script src="assets/js/i18n.js" defer></script>
-    <script src="assets/js/plotly-2.26.0.min.js" defer></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/plotly-2.26.0.min.js"></script>
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
       {
@@ -83,99 +83,117 @@
         }]
       }
     </script>
-	<script>
-	document.addEventListener('DOMContentLoaded', () => {
-    // 1. Create the Hamburger Button
-    const menuButton = document.createElement('button');
-    menuButton.id = 'menu-btn';
-    menuButton.className = 'hamburger lg:hidden z-50';
-    menuButton.setAttribute('type', 'button');
-    menuButton.innerHTML = `
-        <span class="hamburger-top"></span>
-        <span class="hamburger-middle"></span>
-        <span class="hamburger-bottom"></span>
-    `;
 
-    // 2. Create the Mobile Navigation Menu Panel
-    const mobileMenu = document.createElement('div');
-    mobileMenu.id = 'menu';
-    mobileMenu.className = 'lg:hidden fixed inset-0 z-40 flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-95 bg-black';
-    mobileMenu.style.display = 'none'; // Initially hidden
-    mobileMenu.innerHTML = `
-        <div class="w-full py-3 text-center"><a href="/" class="block hover:text-primary-200">Home</a></div>
-        <div class="w-full py-3 text-center"><a href="/about.html" class="block hover:text-primary-200">About Us</a></div>
-        <div class="w-full py-3 text-center"><a href="/contact.html" class="block hover:text-primary-200">Contact</a></div>
-        <div class="w-full py-3 text-center"><a href="/privacy.html" class="block hover:text-primary-200">Privacy</a></div>
-        <div class="w-full py-3 text-center"><a href="/blog.html" class="block hover:text-primary-200">Blog</a></div>
-    `;
+    <!--Nav Menu-->
+    <script>
+      // File: assets/js/menu.js
 
-    // 3. Find the language selector to insert the button next to it
-    const languageSelector = document.querySelector('.relative.flex.gap-2');
-    if (languageSelector && languageSelector.parentNode) {
-        // Insert the hamburger button right after the language selector
-        languageSelector.parentNode.insertBefore(menuButton, languageSelector.nextSibling);
+// Wait for the entire HTML document to be parsed before running the script
+document.addEventListener('DOMContentLoaded', () => {
 
-        // Append the mobile menu to the header's parent to ensure it's in the flow
-        const header = document.querySelector('header');
-        if (header) {
-            header.appendChild(mobileMenu);
-        }
+    // Find the button and the menu by their unique IDs
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // IMPORTANT: Check if both elements actually exist before trying to add a click listener
+    if (hamburgerButton && mobileMenu) {
+        
+        hamburgerButton.addEventListener('click', () => {
+            // This function runs every time the button is clicked
+
+            // Toggle the 'open' class on the button itself for the 'X' animation
+            hamburgerButton.classList.toggle('open');
+            
+            // Toggle the 'hidden' class on the menu panel to show/hide it
+            mobileMenu.classList.toggle('hidden');
+
+            // Optional but recommended: Prevent the page from scrolling when the menu is open
+            if (mobileMenu.classList.contains('hidden')) {
+                // If menu is now hidden, allow scrolling again
+                document.body.style.overflow = 'auto';
+            } else {
+                // If menu is now visible, prevent scrolling
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    } else {
+        // If the script can't find the elements, it will log an error in the developer console
+        console.error('Hamburger menu script could not find the button or menu panel. Check that the IDs in your HTML are correct: #hamburger-button and #mobile-menu.');
     }
-
-    // 4. Add Event Listener to the Hamburger Button
-    menuButton.addEventListener('click', () => {
-        menuButton.classList.toggle('open');
-        const isMenuOpen = mobileMenu.style.display === 'flex';
-        mobileMenu.style.display = isMenuOpen ? 'none' : 'flex';
-        document.body.style.overflow = isMenuOpen ? 'initial' : 'hidden';
-    });
 });
-</script>
+    </script>
   </head>
   <body class="  font-base  font-normal bg-[#000000]">
     <main class="overflow-hidden">
       <!--  ====================== Header Area Start =============================  -->
       <div class="top-box pt-4 lg:pt-[40px] relative">
         <div class="container">
-          <header class="relative px-4 py-4 lg:pt-6">
-            <div class="relative">
-              <!-- Desktop Navigation -->
-              <div class="flex justify-end md:justify-between items-center pb-12 sm:pb-0">
-                <!-- Desktop Nav -->
-                <span class="w-24"></span>
-                <div class="gap-[6px] flex-col items-center relative z-50 hidden lg:flex">
-                  <div class="flex flex-col items-center gap-1">
+        <header class="relative px-4 py-4 lg:pt-6">
+    <div class="relative">
+        <!-- Desktop Navigation -->
+        <div class="flex justify-between items-center pb-12 sm:pb-0">
+
+            <!-- 1. Left Spacer -->
+            <span class="w-24"></span>
+
+            <!-- 2. Center Animated Logo -->
+            <div class="gap-[6px] flex-col items-center relative z-50 hidden lg:flex">
+                <div class="flex flex-col items-center gap-1">
                     <figure class="flex gap-1 items-center">
-                      <img src="assets/images/l1.webp" loading="lazy" alt="stack_0.5s_ease-out_1s_forwards" class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10">
-                      <img src="assets/images/l2.webp" loading="lazy" alt="l2" class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10">
-                      <img src="assets/images/l3.webp" loading="lazy" alt="l3" class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10">
-                      <img src="assets/images/l4.webp" loading="lazy" alt="l4" class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start">
+                        <img src="assets/images/l1.webp" loading="lazy" alt="stack_0.5s_ease-out_1s_forwards" class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10">
+                        <img src="assets/images/l2.webp" loading="lazy" alt="l2" class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10">
+                        <img src="assets/images/l3.webp" loading="lazy" alt="l3" class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10">
+                        <img src="assets/images/l4.webp" loading="lazy" alt="l4" class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start">
                     </figure>
                     <img src="assets/images/l-body.svg" loading="lazy" class="rishi-img" alt="images">
-                  </div>
                 </div>
-                <!--                             Language Selector - Desktop-->
-                <div class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl hover:border-[#FFFFFF1A] ">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_81_471)">
-                      <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z" fill="#DC2626" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_81_471">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <select id="languageSwitcher" class="nice-select font-bold" onchange="setLanguage(this.value)">
-                    <option value="en" data-display="EN">English</option>
-                    <option value="lt" data-display="LT">Lithuanian</option>
-                    <option value="de" data-display="DE">German</option>
-                    <option value="es" data-display="ES">Spanish</option>
-                  </select>
-                </div>
-              </div>
             </div>
-          </header>
+
+            <!-- 3. Right-Side Group (Language Selector + Hamburger) -->
+            <div class="flex items-center gap-2 sm:gap-4">
+            
+                <!-- Language Selector -->
+                <div class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl hover:border-[#FFFFFF1A] ">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_81_471)">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z" fill="#DC2626" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_81_471">
+                                <rect width="24" height="24" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <select id="languageSwitcher" class="nice-select font-bold" onchange="setLanguage(this.value)">
+                        <option value="en" data-display="EN">English</option>
+                        <option value="lt" data-display="LT">Lithuanian</option>
+                        <option value="de" data-display="DE">German</option>
+                        <option value="es" data-display="ES">Spanish</option>
+                    </select>
+                </div>
+                
+                <button id="hamburger-button" class="hamburger z-50">
+                     <span class="hamburger-top"></span>
+                     <span class="hamburger-middle"></span>
+                     <span class="hamburger-bottom"></span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black bg-opacity-95">
+        <!-- KEY CHANGE: Increased spacing from space-y-6 to space-y-10 -->
+        <div class="flex flex-col items-center justify-center w-full h-full text-white text-2xl space-y-10">
+            <a href="/" class="hover:text-primary-200">Home</a>
+            <a href="/about.html" class="hover:text-primary-200">About Us</a>
+            <a href="/contact.html" class="hover:text-primary-200">Contact</a>
+            <a href="/privacy.html" class="hover:text-primary-200">Privacy</a>
+            <a href="/blog/index.html" class="hover:text-primary-200">Blog</a>
+        </div>
+    </div>
+</header>
         </div>
         <div class="shape-item absolute -top-44 lg:top-0 right-0">
           <img src="assets/images/header-top-left.webp" loading="lazy" alt="images">
@@ -847,8 +865,8 @@
 			  <h2 class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explore</h2>
 			  <ul class="footer-links">
 				<li><a href="/" title="Go to Home">Home</a></li>
-				<li><a href="/about" title="Learn About Us">About Us</a></li>
-				<li><a href="/contact" title="Contact Wealth Masters">Contact</a></li>
+				<li><a href="/about.html" title="Learn About Us">About Us</a></li>
+				<li><a href="/contact.html" title="Contact Wealth Masters">Contact</a></li>
 				<li><a href="/privacy-policy" title="Read Our Privacy Policy">Privacy</a></li>
 			  </ul>
 			</div>
@@ -1002,12 +1020,12 @@
             <div class="copy-right-area w-full pt-8 mt-8 justify-between border-t border-[#1F2937]">
               <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
                 <div class="item-text">
-                  <p class="text-sm text-footer" data-i18n="copyright"> © 2025 Wealth Masters. All rights reserved. </p>
+                  <p class="text-sm text-footer" data-i18n="copyright"> Wealth Masters &copy2025. All rights reserved. </p>
                 </div>
                 <div class="item-box">
                   <ul class="flex md:gap-6 gap-3 items-center text-footer">
                     <li>
-                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="privacy_policy">Privacy Policy</a>
+                      <a class="hover:text-primary-200 duration-500 text-sm" href="/privacy-policy.html" data-i18n="privacy_policy">Privacy Policy</a>
                     </li>
                     <li>
                       <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="terms_service">Terms of Service</a>
@@ -1025,12 +1043,12 @@
       </div>
       <!--  ====================== Footer Area End =============================  -->
       <!-- gulp:js -->
-      <script src="assets/js/jquery.min.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" defer></script>
-      <script src="assets/js/jquery.nice-select.min.js" defer></script>
-      <script src="assets/js/app.js" defer></script>
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+      <script src="assets/js/jquery.nice-select.min.js"></script>
+      <script src="assets/js/app.js"></script>
       <!-- Replace the chart script with this working version -->
-      <script src="assets/js/chart.js" defer></script>
+      <script src="assets/js/chart.js"></script>
       <!-- endgulp -->
     </main>
   </body>

@@ -412,14 +412,21 @@ img#image0_61_3589 {
     background: #B91C1C;
 }
 
+/* =================================== */
+/*        Hamburger & Menu Styles      */
+/* =================================== */
+
+/* Styles for the hamburger button container.
+   A z-index of 50 ensures it's above the menu panel (which will be z-40). */
 .hamburger {
     cursor: pointer;
     width: 24px;
     height: 24px;
     transition: all 0.25s;
-    position: relative;
+    position: relative; /* Changed to relative for proper stacking */
     background: transparent;
     border: none;
+    z-index: 50;
 }
 
 /* Styles for the individual lines of the hamburger icon */
@@ -428,10 +435,10 @@ img#image0_61_3589 {
 .hamburger-bottom {
     position: absolute;
     width: 24px;
-    height: 3px; /* Slightly thicker for better visibility */
+    height: 3px;
     top: 0;
     left: 0;
-    background: #ffffff; /* White color */
+    background: #ffffff;
     border-radius: 2px;
     transform: rotate(0);
     transition: all 0.5s;
@@ -445,29 +452,39 @@ img#image0_61_3589 {
     transform: translateY(14px);
 }
 
-/* Styles for the "open" state (when the menu is visible) */
+/* Styles for the "open" (cross) state */
 .hamburger.open {
-    transform: rotate(90deg);
+    /* The transform in the 'open' state is now applied to the lines */
 }
 
+/* Rotate the top line to form one part of the "X" */
 .hamburger.open .hamburger-top {
     transform: rotate(45deg) translateY(6px) translateX(6px);
 }
 
+/* Hide the middle line completely */
 .hamburger.open .hamburger-middle {
-    display: none; /* Hide the middle line to form an "X" */
+    display: none;
 }
 
+/* Rotate the bottom line to form the other part of the "X" */
 .hamburger.open .hamburger-bottom {
     transform: rotate(-45deg) translateY(6px) translateX(-6px);
 }
 
-/* =================================== */
-/*        Mobile Menu Panel Styles     */
-/* =================================== */
-
-/* The opacity and background are already handled by Tailwind classes, 
-   but this ensures it's enforced if classes are missed. */
+/* Styles for the main menu panel.
+   A z-index of 40 places it below the hamburger button (z-50) but above all other page content. */
 #menu {
-    background-color: rgba(0, 0, 0, 0.95);
+    /* The class in the script handles z-index, but we can be explicit */
+    z-index: 40; 
+}
+
+.flex.flex-col.items-center.justify-center.w-full.h-full.text-white.text-2xl.space-y-10 {
+    padding-top: 100px !important;
+}
+@media screen and (max-width: 768px) {
+    .flex.flex-col.items-center.justify-center.w-full.h-full.text-white.text-2xl.space-y-10 {
+        padding-top: 30px !important;
+    }
+  
 }
