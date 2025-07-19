@@ -306,7 +306,7 @@ img#image0_61_3589 {
     font-size: 15px;
   }
 }
-// footer column
+/* footer column */ 
 .footer-title {
   font-size: 18px;
   color: #fff;
@@ -370,4 +370,104 @@ img#image0_61_3589 {
 .footer-links {
     text-align: center !important;
 }
+}
+.custom-email-input {
+    flex: 1;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    background: #FFFFFF;
+    font-size: 14px;
+    color: #000;
+    box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+    outline: none;
+    border-right: none;
+}
+
+.custom-submit-btn {
+    min-width: 100px;
+    width: auto;
+    max-width: 140px;
+    height: 100%; /* This might need adjustment based on the container */
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 10px 12px;
+    background: #DC2626;
+    color: white;
+    border: 1px solid #ccc;
+    border-left: none;
+    font-weight: 600;
+    font-size: 11px;
+    cursor: pointer;
+    box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* This replaces the onmouseover and onmouseout events */
+.custom-submit-btn:hover {
+    background: #B91C1C;
+}
+
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+    background: transparent;
+    border: none;
+}
+
+/* Styles for the individual lines of the hamburger icon */
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    width: 24px;
+    height: 3px; /* Slightly thicker for better visibility */
+    top: 0;
+    left: 0;
+    background: #ffffff; /* White color */
+    border-radius: 2px;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+.hamburger-middle {
+    transform: translateY(7px);
+}
+
+.hamburger-bottom {
+    transform: translateY(14px);
+}
+
+/* Styles for the "open" state (when the menu is visible) */
+.hamburger.open {
+    transform: rotate(90deg);
+}
+
+.hamburger.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.hamburger.open .hamburger-middle {
+    display: none; /* Hide the middle line to form an "X" */
+}
+
+.hamburger.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+/* =================================== */
+/*        Mobile Menu Panel Styles     */
+/* =================================== */
+
+/* The opacity and background are already handled by Tailwind classes, 
+   but this ensures it's enforced if classes are missed. */
+#menu {
+    background-color: rgba(0, 0, 0, 0.95);
 }

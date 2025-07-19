@@ -83,6 +83,54 @@
         }]
       }
     </script>
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+    // 1. Create the Hamburger Button
+    const menuButton = document.createElement('button');
+    menuButton.id = 'menu-btn';
+    menuButton.className = 'hamburger lg:hidden z-50';
+    menuButton.setAttribute('type', 'button');
+    menuButton.innerHTML = `
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+    `;
+
+    // 2. Create the Mobile Navigation Menu Panel
+    const mobileMenu = document.createElement('div');
+    mobileMenu.id = 'menu';
+    mobileMenu.className = 'lg:hidden fixed inset-0 z-40 flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-95 bg-black';
+    mobileMenu.style.display = 'none'; // Initially hidden
+    mobileMenu.innerHTML = `
+        <div class="w-full py-3 text-center"><a href="/" class="block hover:text-primary-200">Home</a></div>
+        <div class="w-full py-3 text-center"><a href="/about.html" class="block hover:text-primary-200">About Us</a></div>
+        <div class="w-full py-3 text-center"><a href="/contact.html" class="block hover:text-primary-200">Contact</a></div>
+        <div class="w-full py-3 text-center"><a href="/privacy.html" class="block hover:text-primary-200">Privacy</a></div>
+        <div class="w-full py-3 text-center"><a href="/blog.html" class="block hover:text-primary-200">Blog</a></div>
+    `;
+
+    // 3. Find the language selector to insert the button next to it
+    const languageSelector = document.querySelector('.relative.flex.gap-2');
+    if (languageSelector && languageSelector.parentNode) {
+        // Insert the hamburger button right after the language selector
+        languageSelector.parentNode.insertBefore(menuButton, languageSelector.nextSibling);
+
+        // Append the mobile menu to the header's parent to ensure it's in the flow
+        const header = document.querySelector('header');
+        if (header) {
+            header.appendChild(mobileMenu);
+        }
+    }
+
+    // 4. Add Event Listener to the Hamburger Button
+    menuButton.addEventListener('click', () => {
+        menuButton.classList.toggle('open');
+        const isMenuOpen = mobileMenu.style.display === 'flex';
+        mobileMenu.style.display = isMenuOpen ? 'none' : 'flex';
+        document.body.style.overflow = isMenuOpen ? 'initial' : 'hidden';
+    });
+});
+</script>
   </head>
   <body class="  font-base  font-normal bg-[#000000]">
     <main class="overflow-hidden">
@@ -167,40 +215,9 @@
             <div class="email-box mt-[25px] max-w-[420px] w-full px-8 sm:px-0 mx-auto">
               <form id="newsletter-form" class="flex items-center justify-center">
                 <div style="display: flex; width: 100%; max-width: 420px; height: 44px;">
-                  <input type="email" id="email-input" name="email" placeholder="Type Your Email..." required style="
-          flex: 1;
-          border-top-left-radius: 7px;
-          border-bottom-left-radius: 7px;
-          border: 1px solid #ccc;
-          padding: 10px 15px;
-          background: #FFFFFF;
-          font-size: 14px;
-          color: #000;
-          box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
-          outline: none;
-          border-right: none;
-        " />
-                  <button type="submit" id="submit-btn" style="
-          min-width: 100px;
-          width: auto;
-          max-width: 140px;
-          height: 100%;
-          border-top-right-radius: 7px;
-          border-bottom-right-radius: 7px;
-          padding: 10px 12px;
-          background: #DC2626;
-          color: white;
-          border: 1px solid #ccc;
-          border-left: none;
-          font-weight: 600;
-          font-size: 11px;
-          cursor: pointer;
-          box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
-          transition: background-color 0.2s;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        " onmouseover="this.style.background='#B91C1C'" onmouseout="this.style.background='#DC2626'"> Start Earning </button>
+<input type="email" id="email-input" name="email" placeholder="Type Your Email..." required class="custom-email-input" />
+
+<button type="submit" id="submit-btn" class="custom-submit-btn"> Start Earning </button>
                 </div>
               </form>
               <!-- Success/Error Messages -->
@@ -787,7 +804,7 @@
               <div class="footer-item">
                 <div class="site-logo">
                   <a href="/">
-                        <img id="image0_61_3589" width="500" height="500" preserveAspectRatio="none" src="assets/images/wealth-masters-logo.webp" />
+                        <img id="image0_61_3589" width="500" height="500" preserveAspectRatio="none" src="assets/images/wealth-masters-logo.webp" alt="wealth masters logo"/>
 						</a>
                 </div>
                 <div class="text-box mt-6 ">
@@ -795,6 +812,7 @@
                 </div>
                 <div class="footer-social-icon mt-6">
                   <ul class="flex items-center gap-4 justify-center lg:justify-start text-footer">
+				  <li>
                     <a href="https://www.linkedin.com/company/wealthmasters-club/" target="_blank">
                       <!-- <img src="/assets/images/download.svg" alt="LinkedIn icon" width="20" height="20"> -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1002,6 +1020,7 @@
               </div>
             </div>
           </div>
+		  </div>
         </footer>
       </div>
       <!--  ====================== Footer Area End =============================  -->
