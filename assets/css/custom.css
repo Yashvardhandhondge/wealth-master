@@ -7,37 +7,43 @@
 
 
 body {
-    font-size: 1rem;
-    line-height:1.5;
-    font-weight: 400;
-    font-family: "Inter", sans-serif;
-    color:#D1D5DB;
-    background-color: #000000;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: #D1D5DB;
+  background-color: #000000;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Outfit", sans-serif;
-    line-height: 120%;
-    color: white;
- 
+  line-height: 120%;
+  color: white;
+
 }
 
 .footer-item ul li a:hover {
   color: #E22006;
   transition: .5s;
 }
+
 .footer-item ul li a:hover path {
   stroke: #E22006;
- 
+
 }
 
 .footer-item ul li a path {
- transition: .5s;
- 
+  transition: .5s;
+
 }
 
 .das-number .space-add {
@@ -47,28 +53,28 @@ h1,h2,h3,h4,h5,h6{
 
 #custom-substack-embed button {
   background: #E22006 !important;
-  font-weight: bold!important;
+  font-weight: bold !important;
   color: white;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
 
 }
 
-.head-btn{
-    background: #E22006;
-    color: white;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 400;
-    padding: 10px 20px;
+.head-btn {
+  background: #E22006;
+  color: white;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 20px;
 }
 
 form.custom-substack-widget {
   border-radius: 7px;
 }
 
-#custom-substack-embed ::placeholder{
-  color: #16161680!important;
+#custom-substack-embed ::placeholder {
+  color: #16161680 !important;
 }
 
 .das-box {
@@ -78,18 +84,22 @@ form.custom-substack-widget {
 
 .nice-select {
   padding-left: 0;
-    background: transparent;
-    border: 0;
+  background: transparent;
+  border: 0;
 }
-.nice-select .list{
+
+.nice-select .list {
   background-color: black;
 }
 
-.nice-select  ul.list {
+.nice-select ul.list {
 
-  padding:12px;
+  padding: 12px;
 }
-.nice-select .option.focus, .nice-select .option.selected.focus, .nice-select .option:hover {
+
+.nice-select .option.focus,
+.nice-select .option.selected.focus,
+.nice-select .option:hover {
   background-color: black;
 }
 
@@ -98,124 +108,130 @@ form.custom-substack-widget {
 
 }
 
-.nice-select  .list li {
+.nice-select .list li {
   font-weight: 800 !important;
 }
 
 .chip-gradient {
-    background: linear-gradient(
-            90deg,
-            rgba(222, 57, 11, 0) 0%,
-            rgba(222, 57, 11, 0.34) 50%,
-            rgba(120, 31, 6, 0) 100%
-    );
-    border-radius: 9999px;
-    box-shadow:
-            0 0 0 1px rgba(220, 38, 38, 0.2),
-            0 0 0 1px rgba(220, 38, 38, 0) inset;
+  background: linear-gradient(90deg,
+      rgba(222, 57, 11, 0) 0%,
+      rgba(222, 57, 11, 0.34) 50%,
+      rgba(120, 31, 6, 0) 100%);
+  border-radius: 9999px;
+  box-shadow:
+    0 0 0 1px rgba(220, 38, 38, 0.2),
+    0 0 0 1px rgba(220, 38, 38, 0) inset;
 }
 
-.head-nav{
-    border: 1px solid #37393C;
-    padding: 10px 40px;
+.head-nav {
+  border: 1px solid #37393C;
+  padding: 10px 40px;
 }
 
 .mobile-menu {
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    transform: translateY(-100%);
-    opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translateY(-100%);
+  opacity: 0;
 }
+
 .mobile-menu.active {
-    transform: translateY(0);
-    opacity: 1;
+  transform: translateY(0);
+  opacity: 1;
 }
 
 @keyframes stack {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-#custom-substack-1 button, #custom-substack-2 button {
-    background: #E22006;
-    color: white;
-    font-weight: 500;
-    font-size: 14px;
-    border-radius: 7px;
-    box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
-    cursor: pointer;
+#custom-substack-1 button,
+#custom-substack-2 button {
+  background: #E22006;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 7px;
+  box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+  cursor: pointer;
 }
 
-#custom-substack-1 button:hover, #custom-substack-2 button:hover {
-    background: linear-gradient(140deg, #E22006 0%, #E22006 25%, #3d1003 35%, #000000 50%, #000000 65%, #000000 100%);
-    border-bottom: 2px solid #E22006;
-    border-right: 2px solid #E22006;
-    box-shadow:
-            4px 4px 15px rgba(226, 32, 6, 0.7),
-            -2px -2px 8px rgba(226, 32, 6, 0.3),
-            inset 0 0 12px rgba(226, 32, 6, 0.4);
+#custom-substack-1 button:hover,
+#custom-substack-2 button:hover {
+  background: linear-gradient(140deg, #E22006 0%, #E22006 25%, #3d1003 35%, #000000 50%, #000000 65%, #000000 100%);
+  border-bottom: 2px solid #E22006;
+  border-right: 2px solid #E22006;
+  box-shadow:
+    4px 4px 15px rgba(226, 32, 6, 0.7),
+    -2px -2px 8px rgba(226, 32, 6, 0.3),
+    inset 0 0 12px rgba(226, 32, 6, 0.4);
 }
 
-#custom-substack-2 input{
-    box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
-    color: white;
-    background: #262626;
-    border: 2px solid #FFFFFF1A;
-    margin-right: -10px;
-    font-size: 14px;
+#custom-substack-2 input {
+  box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+  color: white;
+  background: #262626;
+  border: 2px solid #FFFFFF1A;
+  margin-right: -10px;
+  font-size: 14px;
 }
 
-#custom-substack-1 .success, #custom-substack-1 .error {
-    font-size: 14px;
-    text-align: center;
+#custom-substack-1 .success,
+#custom-substack-1 .error {
+  font-size: 14px;
+  text-align: center;
 }
 
-#custom-substack-2 .success, #custom-substack-2 .error {
-    font-size: 14px;
-    text-align: center;
+#custom-substack-2 .success,
+#custom-substack-2 .error {
+  font-size: 14px;
+  text-align: center;
 }
 
 
 /*chart*/
 /* Add to your styles */
 circle {
-    transition: all 0.3s;
-    cursor: pointer;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
 circle:hover {
-    r: 8;
-    stroke: white;
-    stroke-width: 2;
+  r: 8;
+  stroke: white;
+  stroke-width: 2;
 }
 
 .tooltip {
-    position: absolute;
-    background: rgba(0,0,0,0.8);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    pointer-events: none;
-    transform: translate(-50%, -100%);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  pointer-events: none;
+  transform: translate(-50%, -100%);
 }
 
 @media (min-width: 1280px) {
-    .xl\:w-1\/4 {
-        width: 35%;
-    }
+  .xl\:w-1\/4 {
+    width: 35%;
+  }
 }
+
 img#image0_61_3589 {
-    height: 100px;
-    width: auto;
+  height: 100px;
+  width: auto;
 }
+
 @media (max-width: 768px) {
-	.site-logo {
+  .site-logo {
     display: flex;
     justify-content: center;
+  }
 }
-}
+
 /* FAQs styles */
 .faq-section {
   background-color: transparent;
@@ -306,7 +322,8 @@ img#image0_61_3589 {
     font-size: 15px;
   }
 }
-/* footer column */ 
+
+/* footer column */
 .footer-title {
   font-size: 18px;
   color: #fff;
@@ -341,21 +358,25 @@ img#image0_61_3589 {
 .footer-links a:hover {
   color: #f44336;
 }
+
 .ft-top-wrap {
-    display: flex;
-    gap: 6rem;
-    padding-bottom: 20px;
+  display: flex;
+  gap: 6rem;
+  padding-bottom: 20px;
 }
-.footer-item{
-	width:30%;
+
+.footer-item {
+  width: 30%;
 }
+
 @media (max-width: 768px) {
-.ft-top-wrap {
+  .ft-top-wrap {
     flex-direction: row;
     flex-wrap: wrap;
-	justify-content: center;
-}
-.ft-top-wrap {
+    justify-content: center;
+  }
+
+  .ft-top-wrap {
     display: flex;
     gap: 6rem;
     padding-bottom: 20px;
@@ -363,53 +384,57 @@ img#image0_61_3589 {
     flex-direction: column !important;
     align-content: center;
     align-items: center;
-}
-.footer-item{
-	width:100% !important;
-}
-.footer-links {
+  }
+
+  .footer-item {
+    width: 100% !important;
+  }
+
+  .footer-links {
     text-align: center !important;
+  }
 }
-}
+
 .custom-email-input {
-    flex: 1;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
-    border: 1px solid #ccc;
-    padding: 10px 15px;
-    background: #FFFFFF;
-    font-size: 14px;
-    color: #000;
-    box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
-    outline: none;
-    border-right: none;
+  flex: 1;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  background: #FFFFFF;
+  font-size: 14px;
+  color: #000;
+  box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+  outline: none;
+  border-right: none;
 }
 
 .custom-submit-btn {
-    min-width: 100px;
-    width: auto;
-    max-width: 140px;
-    height: 100%; /* This might need adjustment based on the container */
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
-    padding: 10px 12px;
-    background: #DC2626;
-    color: white;
-    border: 1px solid #ccc;
-    border-left: none;
-    font-weight: 600;
-    font-size: 11px;
-    cursor: pointer;
-    box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
-    transition: background-color 0.2s;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  min-width: 100px;
+  width: auto;
+  max-width: 140px;
+  height: 100%;
+  /* This might need adjustment based on the container */
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 10px 12px;
+  background: #DC2626;
+  color: white;
+  border: 1px solid #ccc;
+  border-left: none;
+  font-weight: 600;
+  font-size: 11px;
+  cursor: pointer;
+  box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* This replaces the onmouseover and onmouseout events */
 .custom-submit-btn:hover {
-    background: #B91C1C;
+  background: #B91C1C;
 }
 
 /* =================================== */
@@ -419,72 +444,74 @@ img#image0_61_3589 {
 /* Styles for the hamburger button container.
    A z-index of 50 ensures it's above the menu panel (which will be z-40). */
 .hamburger {
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-    transition: all 0.25s;
-    position: relative; /* Changed to relative for proper stacking */
-    background: transparent;
-    border: none;
-    z-index: 50;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+  /* Changed to relative for proper stacking */
+  background: transparent;
+  border: none;
+  z-index: 50;
 }
 
 /* Styles for the individual lines of the hamburger icon */
 .hamburger-top,
 .hamburger-middle,
 .hamburger-bottom {
-    position: absolute;
-    width: 24px;
-    height: 3px;
-    top: 0;
-    left: 0;
-    background: #ffffff;
-    border-radius: 2px;
-    transform: rotate(0);
-    transition: all 0.5s;
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  border-radius: 2px;
+  transform: rotate(0);
+  transition: all 0.5s;
 }
 
 .hamburger-middle {
-    transform: translateY(7px);
+  transform: translateY(7px);
 }
 
 .hamburger-bottom {
-    transform: translateY(14px);
+  transform: translateY(14px);
 }
 
 /* Styles for the "open" (cross) state */
 .hamburger.open {
-    /* The transform in the 'open' state is now applied to the lines */
+  /* The transform in the 'open' state is now applied to the lines */
 }
 
 /* Rotate the top line to form one part of the "X" */
 .hamburger.open .hamburger-top {
-    transform: rotate(45deg) translateY(6px) translateX(6px);
+  transform: rotate(45deg) translateY(6px) translateX(6px);
 }
 
 /* Hide the middle line completely */
 .hamburger.open .hamburger-middle {
-    display: none;
+  display: none;
 }
 
 /* Rotate the bottom line to form the other part of the "X" */
 .hamburger.open .hamburger-bottom {
-    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
 }
 
 /* Styles for the main menu panel.
    A z-index of 40 places it below the hamburger button (z-50) but above all other page content. */
 #menu {
-    /* The class in the script handles z-index, but we can be explicit */
-    z-index: 40; 
+  /* The class in the script handles z-index, but we can be explicit */
+  z-index: 40;
 }
 
 .flex.flex-col.items-center.justify-center.w-full.h-full.text-white.text-2xl.space-y-10 {
-    padding-top: 100px !important;
+  padding-top: 100px !important;
 }
+
 @media screen and (max-width: 768px) {
-    .flex.flex-col.items-center.justify-center.w-full.h-full.text-white.text-2xl.space-y-10 {
-        padding-top: 30px !important;
-    }
-  
+  .flex.flex-col.items-center.justify-center.w-full.h-full.text-white.text-2xl.space-y-10 {
+    padding-top: 30px !important;
+  }
+
 }

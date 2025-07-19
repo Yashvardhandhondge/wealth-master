@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Wealth Masters</title>
-    <meta name="description" content="Join Wealth Masters for expert crypto signals, VIP strategies, and insights to grow your passive income across Europe and France.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/images/image1.webp" type="image/png" sizes="32x32" style="border-radius: 50%;">
-    <link rel="apple-touch-icon" href="assets/images/image1.webp" style="border-radius: 50%;">
-    <link rel="mask-icon" href="assets/images/image1.webp" color="#000000" style="border-radius: 50%;">
-    <!-- Dynamic Canonical Tag -->
-    <script>
-      const link = document.createElement("link");
-      link.rel = "canonical";
-      link.href = window.location.origin + window.location.pathname;
-      document.head.appendChild(link);
-    </script>
-    <!-- gulp:css -->
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/tailwind.min.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
-    <!-- endgulp -->
-    <script src="assets/js/i18n.js"></script>
-    <script src="assets/js/plotly-2.26.0.min.js"></script>
-    <!-- Schema.org Markup -->
-    <script type="application/ld+json">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expert Crypto Signals & VIP Strategies | Wealth Masters</title>
+  <meta name="description"
+    content="Join Wealth Masters for expert crypto signals, VIP strategies, and insights to grow your passive income across Europe and France.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="assets/images/image1.webp" type="image/png" sizes="32x32" style="border-radius: 50%;">
+  <link rel="apple-touch-icon" href="assets/images/image1.webp" style="border-radius: 50%;">
+  <link rel="mask-icon" href="assets/images/image1.webp" color="#000000" style="border-radius: 50%;">
+  <!-- Dynamic Canonical Tag -->
+  <script>
+    const link = document.createElement("link");
+    link.rel = "canonical";
+    link.href = window.location.origin + window.location.pathname;
+    document.head.appendChild(link);
+  </script>
+  <!-- gulp:css -->
+  <link rel="stylesheet" href="assets/css/nice-select.css">
+  <link rel="stylesheet" href="assets/css/tailwind.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <!-- endgulp -->
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/plotly-2.26.0.min.js"></script>
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -41,7 +45,7 @@
         "sameAs": ["https://www.linkedin.com/company/wealthmasters-club/", "https://www.instagram.com/wealth.mastersclub"]
       }
     </script>
-    <script type="application/ld+json">
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -83,803 +87,938 @@
         }]
       }
     </script>
+  <!--Nav Menu-->
+  <script>
+    // File: assets/js/menu.js
 
-    <!--Nav Menu-->
-    <script>
-      // File: assets/js/menu.js
+    // Wait for the entire HTML document to be parsed before running the script
+    document.addEventListener('DOMContentLoaded', () => {
 
-// Wait for the entire HTML document to be parsed before running the script
-document.addEventListener('DOMContentLoaded', () => {
+      // Find the button and the menu by their unique IDs
+      const hamburgerButton = document.getElementById('hamburger-button');
+      const mobileMenu = document.getElementById('mobile-menu');
 
-    // Find the button and the menu by their unique IDs
-    const hamburgerButton = document.getElementById('hamburger-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+      // IMPORTANT: Check if both elements actually exist before trying to add a click listener
+      if (hamburgerButton && mobileMenu) {
 
-    // IMPORTANT: Check if both elements actually exist before trying to add a click listener
-    if (hamburgerButton && mobileMenu) {
-        
         hamburgerButton.addEventListener('click', () => {
-            // This function runs every time the button is clicked
+          // This function runs every time the button is clicked
 
-            // Toggle the 'open' class on the button itself for the 'X' animation
-            hamburgerButton.classList.toggle('open');
-            
-            // Toggle the 'hidden' class on the menu panel to show/hide it
-            mobileMenu.classList.toggle('hidden');
+          // Toggle the 'open' class on the button itself for the 'X' animation
+          hamburgerButton.classList.toggle('open');
 
-            // Optional but recommended: Prevent the page from scrolling when the menu is open
-            if (mobileMenu.classList.contains('hidden')) {
-                // If menu is now hidden, allow scrolling again
-                document.body.style.overflow = 'auto';
-            } else {
-                // If menu is now visible, prevent scrolling
-                document.body.style.overflow = 'hidden';
-            }
+          // Toggle the 'hidden' class on the menu panel to show/hide it
+          mobileMenu.classList.toggle('hidden');
+
+          // Optional but recommended: Prevent the page from scrolling when the menu is open
+          if (mobileMenu.classList.contains('hidden')) {
+            // If menu is now hidden, allow scrolling again
+            document.body.style.overflow = 'auto';
+          } else {
+            // If menu is now visible, prevent scrolling
+            document.body.style.overflow = 'hidden';
+          }
         });
-    } else {
+      } else {
         // If the script can't find the elements, it will log an error in the developer console
         console.error('Hamburger menu script could not find the button or menu panel. Check that the IDs in your HTML are correct: #hamburger-button and #mobile-menu.');
-    }
-});
-    </script>
-  </head>
-  <body class="  font-base  font-normal bg-[#000000]">
-    <main class="overflow-hidden">
-      <!--  ====================== Header Area Start =============================  -->
-      <div class="top-box pt-4 lg:pt-[40px] relative">
-        <div class="container">
+      }
+    });
+  </script>
+</head>
+
+<body class="  font-base  font-normal bg-[#000000]">
+  <main class="overflow-hidden">
+    <!--  ====================== Header Area Start =============================  -->
+    <div class="top-box pt-4 lg:pt-[40px] relative">
+      <div class="container">
         <header class="relative px-4 py-4 lg:pt-6">
-    <div class="relative">
-        <!-- Desktop Navigation -->
-        <div class="flex justify-between items-center pb-12 sm:pb-0">
+          <div class="relative">
+            <!-- Desktop Navigation -->
+            <div class="flex justify-between items-center pb-12 sm:pb-0">
 
-            <!-- 1. Left Spacer -->
-            <span class="w-24"></span>
+              <!-- 1. Left Spacer -->
+              <span class="w-24"></span>
 
-            <!-- 2. Center Animated Logo -->
-            <div class="gap-[6px] flex-col items-center relative z-50 hidden lg:flex">
+              <!-- 2. Center Animated Logo -->
+              <div class="gap-[6px] flex-col items-center relative z-50 hidden lg:flex">
                 <div class="flex flex-col items-center gap-1">
-                    <figure class="flex gap-1 items-center">
-                        <img src="assets/images/l1.webp" loading="lazy" alt="stack_0.5s_ease-out_1s_forwards" class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10">
-                        <img src="assets/images/l2.webp" loading="lazy" alt="l2" class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10">
-                        <img src="assets/images/l3.webp" loading="lazy" alt="l3" class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10">
-                        <img src="assets/images/l4.webp" loading="lazy" alt="l4" class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start">
-                    </figure>
-                    <img src="assets/images/l-body.svg" loading="lazy" class="rishi-img" alt="images">
+                  <figure class="flex gap-1 items-center">
+                    <img src="assets/images/l1.webp" loading="lazy" alt="stack_0.5s_ease-out_1s_forwards"
+                      class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10">
+                    <img src="assets/images/l2.webp" loading="lazy" alt="l2"
+                      class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10">
+                    <img src="assets/images/l3.webp" loading="lazy" alt="l3"
+                      class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10">
+                    <img src="assets/images/l4.webp" loading="lazy" alt="l4"
+                      class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start">
+                  </figure>
+                  <img src="assets/images/l-body.svg" loading="lazy" class="rishi-img" alt="images">
                 </div>
-            </div>
+              </div>
 
-            <!-- 3. Right-Side Group (Language Selector + Hamburger) -->
-            <div class="flex items-center gap-2 sm:gap-4">
-            
+              <!-- 3. Right-Side Group (Language Selector + Hamburger) -->
+              <div class="flex items-center gap-2 sm:gap-4">
+
                 <!-- Language Selector -->
-                <div class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl hover:border-[#FFFFFF1A] ">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_81_471)">
-                            <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z" fill="#DC2626" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_81_471">
-                                <rect width="24" height="24" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                    <select id="languageSwitcher" class="nice-select font-bold" onchange="setLanguage(this.value)">
-                        <option value="en" data-display="EN">English</option>
-                        <option value="lt" data-display="LT">Lithuanian</option>
-                        <option value="de" data-display="DE">German</option>
-                        <option value="es" data-display="ES">Spanish</option>
-                    </select>
+                <div
+                  class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl hover:border-[#FFFFFF1A] ">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_81_471)">
+                      <path
+                        d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z"
+                        fill="#DC2626" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_81_471">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <select id="languageSwitcher" class="nice-select font-bold" onchange="setLanguage(this.value)">
+                    <option value="en" data-display="EN">English</option>
+                    <option value="lt" data-display="LT">Lithuanian</option>
+                    <option value="de" data-display="DE">German</option>
+                    <option value="es" data-display="ES">Spanish</option>
+                  </select>
                 </div>
-                
-                <button id="hamburger-button" class="hamburger z-50">
-                     <span class="hamburger-top"></span>
-                     <span class="hamburger-middle"></span>
-                     <span class="hamburger-bottom"></span>
-                </button>
-            </div>
 
-        </div>
+                <button id="hamburger-button" class="hamburger z-50">
+                  <span class="hamburger-top"></span>
+                  <span class="hamburger-middle"></span>
+                  <span class="hamburger-bottom"></span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Mobile Menu Panel -->
+          <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black bg-opacity-95">
+            <!-- KEY CHANGE: Increased spacing from space-y-6 to space-y-10 -->
+            <div class="flex flex-col items-center justify-center w-full h-full text-white text-2xl space-y-10">
+              <a href="/" class="hover:text-primary-200">Home</a>
+              <a href="/about.html" class="hover:text-primary-200">About Us</a>
+              <a href="/contact.html" class="hover:text-primary-200">Contact</a>
+              <a href="/privacy.html" class="hover:text-primary-200">Privacy</a>
+              <a href="/blog/index.html" class="hover:text-primary-200">Blog</a>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div class="shape-item absolute -top-44 lg:top-0 right-0">
+        <img src="assets/images/header-top-left.webp" loading="lazy" alt="images">
+      </div>
+      <div class="shape-item absolute -top-44 lg:top-0 left-0">
+        <img src="assets/images/header-top-right.webp" loading="lazy" alt="images">
+      </div>
     </div>
-    
-    <!-- Mobile Menu Panel -->
-    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black bg-opacity-95">
-        <!-- KEY CHANGE: Increased spacing from space-y-6 to space-y-10 -->
-        <div class="flex flex-col items-center justify-center w-full h-full text-white text-2xl space-y-10">
-            <a href="/" class="hover:text-primary-200">Home</a>
-            <a href="/about.html" class="hover:text-primary-200">About Us</a>
-            <a href="/contact.html" class="hover:text-primary-200">Contact</a>
-            <a href="/privacy.html" class="hover:text-primary-200">Privacy</a>
-            <a href="/blog/index.html" class="hover:text-primary-200">Blog</a>
-        </div>
-    </div>
-</header>
-        </div>
-        <div class="shape-item absolute -top-44 lg:top-0 right-0">
-          <img src="assets/images/header-top-left.webp" loading="lazy" alt="images">
-        </div>
-        <div class="shape-item absolute -top-44 lg:top-0 left-0">
-          <img src="assets/images/header-top-right.webp" loading="lazy" alt="images">
+    <!--  ====================== Header Area End =============================  -->
+    <!--  ====================== Hero  Area Start =============================  -->
+    <section class="hero-area relative mt-12">
+      <img
+        class="hidden custom:inline absolute top-1/2 left-1/2 -translate-y-2/3 transform -translate-x-1/2 w-[1006px] h-auto"
+        src="assets/images/wealh-border.webp" loading="lazy" alt="Wealth Border">
+      <img
+        class="inline sm:hidden absolute top-1/4 xd:top-1/3 left-1/2 -translate-y-2/3 transform -translate-x-1/2 w-full h-auto"
+        src="assets/images/mobile-ellipse.webp" fetchpriority="high" decoding="async" alt="Wealth Border">
+      <div class="gap-[6px] flex-col items-center relative z-50 flex lg:hidden mb-6">
+        <div class="flex flex-col items-center gap-1">
+          <figure class="flex gap-1 items-center">
+            <img src="assets/images/l1.webp" loading="lazy" alt="l1"
+              class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10">
+            <img src="assets/images/l2.webp" loading="lazy" alt="l2"
+              class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10">
+            <img src="assets/images/l3.webp" loading="lazy" alt="l3"
+              class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10">
+            <img src="assets/images/l4.webp" loading="lazy" alt="l4"
+              class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start">
+          </figure>
+          <img src="assets/images/l-body.svg" loading="lazy" class="" alt="images">
         </div>
       </div>
-      <!--  ====================== Header Area End =============================  -->
-      <!--  ====================== Hero  Area Start =============================  -->
-      <section class="hero-area relative mt-12">
-        <img class="hidden custom:inline absolute top-1/2 left-1/2 -translate-y-2/3 transform -translate-x-1/2 w-[1006px] h-auto" src="assets/images/wealh-border.webp" loading="lazy" alt="Wealth Border">
-        <img class="inline sm:hidden absolute top-1/4 xd:top-1/3 left-1/2 -translate-y-2/3 transform -translate-x-1/2 w-full h-auto" src="assets/images/mobile-ellipse.webp" fetchpriority="high" decoding="async" alt="Wealth Border">
-        <div class="gap-[6px] flex-col items-center relative z-50 flex lg:hidden mb-6">
-          <div class="flex flex-col items-center gap-1">
-            <figure class="flex gap-1 items-center">
-              <img src="assets/images/l1.webp" loading="lazy" alt="l1" class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10">
-              <img src="assets/images/l2.webp" loading="lazy" alt="l2" class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10">
-              <img src="assets/images/l3.webp" loading="lazy" alt="l3" class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10">
-              <img src="assets/images/l4.webp" loading="lazy" alt="l4" class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start">
-            </figure>
-            <img src="assets/images/l-body.svg" loading="lazy" class="" alt="images">
-          </div>
+      <div class="container space-y-4 sm:space-y-12">
+        <div
+          class="flex px-[9px] py-[4px] gap-[6px] items-center justify-center bg-primary-100 max-w-[370px] mx-auto rounded-full">
+          <img src="assets/images/hero-man-logo.webp" loading="lazy" class="h-6 sm:h-auto" alt="images">
+          <p class="sm:text-sm text-xs font-medium" data-i18n="cta">Join +1,000 daily readers for 100% free</p>
         </div>
-        <div class="container space-y-4 sm:space-y-12">
-          <div class="flex px-[9px] py-[4px] gap-[6px] items-center justify-center bg-primary-100 max-w-[370px] mx-auto rounded-full">
-            <img src="assets/images/hero-man-logo.webp" loading="lazy" class="h-6 sm:h-auto" alt="images">
-            <p class="sm:text-sm text-xs font-medium" data-i18n="cta">Join +1,000 daily readers for 100% free</p>
+        <div class="max-w-[680px] mx-auto relative z-10">
+          <h1 class="font-medium lg:text-[46px] md:text-[40px] text-[24px] xd:text-[28px] sm:text-[32px] text-center">
+            <span data-i18n="hero_heading">Join 1% Of Traders Club And Get</span>
+            <span class="text-primary-200" data-i18n="hero_highlight"> Full Access</span>
+            <span data-i18n="hero_end"> To VIP Strategies</span>
+          </h1>
+          <p class="text-sm sm:text-base text-center mt-[22px]" data-i18n="subtext"> We help to earn consistent returns
+            with crypto and manage the risks. Start building your crypto portfolio today </p>
+          <div class="email-box mt-[25px] max-w-[420px] w-full px-8 sm:px-0 mx-auto">
+            <form id="newsletter-form" class="flex items-center justify-center">
+              <div style="display: flex; width: 100%; max-width: 420px; height: 44px;">
+                <input type="email" id="email-input" name="email" placeholder="Type Your Email..." required
+                  class="custom-email-input" />
+
+                <button type="submit" id="submit-btn" class="custom-submit-btn"> Start Earning </button>
+              </div>
+            </form>
+            <!-- Success/Error Messages -->
+            <div id="form-message" style="margin-top: 10px; text-align: center; font-size: 14px; display: none;"></div>
           </div>
-          <div class="max-w-[680px] mx-auto relative z-10">
-            <h1 class="font-medium lg:text-[46px] md:text-[40px] text-[24px] xd:text-[28px] sm:text-[32px] text-center">
-              <span data-i18n="hero_heading">Join 1% Of Traders Club And Get</span>
-              <span class="text-primary-200" data-i18n="hero_highlight"> Full Access</span>
-              <span data-i18n="hero_end"> To VIP Strategies</span>
-            </h1>
-            <p class="text-sm sm:text-base text-center mt-[22px]" data-i18n="subtext"> We help to earn consistent returns with crypto and manage the risks. Start building your crypto portfolio today </p>
-            <div class="email-box mt-[25px] max-w-[420px] w-full px-8 sm:px-0 mx-auto">
-              <form id="newsletter-form" class="flex items-center justify-center">
-                <div style="display: flex; width: 100%; max-width: 420px; height: 44px;">
-<input type="email" id="email-input" name="email" placeholder="Type Your Email..." required class="custom-email-input" />
-
-<button type="submit" id="submit-btn" class="custom-submit-btn"> Start Earning </button>
-                </div>
-              </form>
-              <!-- Success/Error Messages -->
-              <div id="form-message" style="margin-top: 10px; text-align: center; font-size: 14px; display: none;"></div>
-            </div>
-            <script>
-              document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                const email = document.getElementById('email-input').value;
-                const submitBtn = document.getElementById('submit-btn');
-                const messageDiv = document.getElementById('form-message');
-                // Validate email
-                if (!email || !isValidEmail(email)) {
-                  showMessage('Please enter a valid email address.', 'error');
-                  return;
-                }
-                // Show loading state
-                submitBtn.innerHTML = 'Subscribing...';
-                submitBtn.disabled = true;
-                messageDiv.style.display = 'none';
-                // Use the more reliable iframe method for Substack
-                try {
-                  await submitToSubstackViaIframe(email);
-                  showMessage('🎉 Successfully subscribed! ', 'success');
-                  document.getElementById('email-input').value = '';
-                } catch (error) {
-                  console.error('Subscription error:', error);
-                  showMessage('Something went wrong. Please try again or contact support.', 'error');
-                } finally {
-                  // Reset button
-                  submitBtn.innerHTML = 'Start Earning';
-                  submitBtn.disabled = false;
-                }
-              });
-
-              function isValidEmail(email) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailRegex.test(email);
+          <script>
+            document.getElementById('newsletter-form').addEventListener('submit', async function (e) {
+              e.preventDefault();
+              const email = document.getElementById('email-input').value;
+              const submitBtn = document.getElementById('submit-btn');
+              const messageDiv = document.getElementById('form-message');
+              // Validate email
+              if (!email || !isValidEmail(email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
               }
-
-              function showMessage(message, type) {
-                const messageDiv = document.getElementById('form-message');
-                messageDiv.innerHTML = message;
-                messageDiv.style.display = 'block';
-                messageDiv.style.color = type === 'success' ? '#34C759' : '#FF3B30';
-                // Auto-hide success messages after 5 seconds
-                if (type === 'success') {
-                  setTimeout(() => {
-                    messageDiv.style.display = 'none';
-                  }, 5000);
-                }
+              // Show loading state
+              submitBtn.innerHTML = 'Subscribing...';
+              submitBtn.disabled = true;
+              messageDiv.style.display = 'none';
+              // Use the more reliable iframe method for Substack
+              try {
+                await submitToSubstackViaIframe(email);
+                showMessage('🎉 Successfully subscribed! ', 'success');
+                document.getElementById('email-input').value = '';
+              } catch (error) {
+                console.error('Subscription error:', error);
+                showMessage('Something went wrong. Please try again or contact support.', 'error');
+              } finally {
+                // Reset button
+                submitBtn.innerHTML = 'Start Earning';
+                submitBtn.disabled = false;
               }
-              // Improved iframe method that handles 302 redirects properly
-              function submitToSubstackViaIframe(email) {
-                return new Promise((resolve, reject) => {
-                  const iframe = document.createElement('iframe');
-                  iframe.style.display = 'none';
-                  iframe.name = 'substack-frame-' + Date.now();
-                  document.body.appendChild(iframe);
-                  const form = document.createElement('form');
-                  form.method = 'POST';
-                  form.action = 'https://wealthmasters.substack.com/api/v1/free';
-                  form.target = iframe.name;
-                  form.style.display = 'none';
-                  const emailInput = document.createElement('input');
-                  emailInput.type = 'hidden';
-                  emailInput.name = 'email';
-                  emailInput.value = email;
-                  const utmSource = document.createElement('input');
-                  utmSource.type = 'hidden';
-                  utmSource.name = 'utm_source';
-                  utmSource.value = 'website';
-                  const utmMedium = document.createElement('input');
-                  utmMedium.type = 'hidden';
-                  utmMedium.name = 'utm_medium';
-                  utmMedium.value = 'hero_form';
-                  form.appendChild(emailInput);
-                  form.appendChild(utmSource);
-                  form.appendChild(utmMedium);
-                  document.body.appendChild(form);
-                  // Handle iframe load event - 302 redirect means success
-                  iframe.onload = function() {
-                    setTimeout(() => {
-                      try {
-                        // Clean up
-                        document.body.removeChild(form);
-                        document.body.removeChild(iframe);
-                        resolve();
-                      } catch (cleanupError) {
-                        console.warn('Cleanup error:', cleanupError);
-                        resolve(); // Still resolve as the subscription likely worked
-                      }
-                    }, 1000);
-                  };
-                  iframe.onerror = function() {
-                    reject(new Error('Network error'));
-                  };
-                  // Submit the form
-                  form.submit();
-                  // Fallback timeout - assume success after 5 seconds
+            });
+
+            function isValidEmail(email) {
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              return emailRegex.test(email);
+            }
+
+            function showMessage(message, type) {
+              const messageDiv = document.getElementById('form-message');
+              messageDiv.innerHTML = message;
+              messageDiv.style.display = 'block';
+              messageDiv.style.color = type === 'success' ? '#34C759' : '#FF3B30';
+              // Auto-hide success messages after 5 seconds
+              if (type === 'success') {
+                setTimeout(() => {
+                  messageDiv.style.display = 'none';
+                }, 5000);
+              }
+            }
+            // Improved iframe method that handles 302 redirects properly
+            function submitToSubstackViaIframe(email) {
+              return new Promise((resolve, reject) => {
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.name = 'substack-frame-' + Date.now();
+                document.body.appendChild(iframe);
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = 'https://wealthmasters.substack.com/api/v1/free';
+                form.target = iframe.name;
+                form.style.display = 'none';
+                const emailInput = document.createElement('input');
+                emailInput.type = 'hidden';
+                emailInput.name = 'email';
+                emailInput.value = email;
+                const utmSource = document.createElement('input');
+                utmSource.type = 'hidden';
+                utmSource.name = 'utm_source';
+                utmSource.value = 'website';
+                const utmMedium = document.createElement('input');
+                utmMedium.type = 'hidden';
+                utmMedium.name = 'utm_medium';
+                utmMedium.value = 'hero_form';
+                form.appendChild(emailInput);
+                form.appendChild(utmSource);
+                form.appendChild(utmMedium);
+                document.body.appendChild(form);
+                // Handle iframe load event - 302 redirect means success
+                iframe.onload = function () {
                   setTimeout(() => {
                     try {
+                      // Clean up
                       document.body.removeChild(form);
                       document.body.removeChild(iframe);
                       resolve();
-                    } catch (e) {
-                      resolve(); // Resolve anyway
+                    } catch (cleanupError) {
+                      console.warn('Cleanup error:', cleanupError);
+                      resolve(); // Still resolve as the subscription likely worked
                     }
-                  }, 5000);
-                });
-              }
-            </script>
-          </div>
+                  }, 1000);
+                };
+                iframe.onerror = function () {
+                  reject(new Error('Network error'));
+                };
+                // Submit the form
+                form.submit();
+                // Fallback timeout - assume success after 5 seconds
+                setTimeout(() => {
+                  try {
+                    document.body.removeChild(form);
+                    document.body.removeChild(iframe);
+                    resolve();
+                  } catch (e) {
+                    resolve(); // Resolve anyway
+                  }
+                }, 5000);
+              });
+            }
+          </script>
         </div>
-        <div class="lg:container">
-          <div class="bitcoin-box mt-[56px] relative">
-            <img src="assets/images/center-ellipse.webp" loading="lazy" class="absolute top-28 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="images">
-            <div class="das-box bg-[#0C0C0C] relative z-10 rounded-t-[10px]">
-              <div class="top-box bg-[#181818] py-[18px] px-[21px] rounded-t-[10px]">
-                <div class="flex justify-between">
-                  <div class="flex-item">
-                    <div class="flex items-center gap-[5px]">
-                      <div class="icon">
-                        <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M19.3051 38.3665C29.8493 38.3665 38.397 29.8187 38.397 19.2746C38.397 8.73046 29.8493 0.182739 19.3051 0.182739C8.76097 0.182739 0.213257 8.73046 0.213257 19.2746C0.213257 29.8187 8.76097 38.3665 19.3051 38.3665Z" fill="#F7931A" />
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2175 15.6133C25.0503 13.8788 23.553 13.2973 21.6626 13.1317L21.6625 10.7257L20.1976 10.726L20.1977 13.0686C19.8131 13.0685 19.4196 13.0761 19.0286 13.0839L19.0288 10.7258L17.5651 10.7258L17.5645 13.1311C17.2475 13.1376 16.9361 13.1435 16.6325 13.1437L16.6323 13.1362L14.6124 13.1355L14.6127 14.6996C14.6127 14.6996 15.6942 14.679 15.6762 14.6989C16.2695 14.6991 16.4629 15.0434 16.5187 15.3407L16.5188 18.0816C16.5597 18.0818 16.6131 18.0835 16.6736 18.0918L16.5193 18.0919L16.5185 21.9318C16.4925 22.1185 16.3828 22.4161 15.9683 22.4168C15.9871 22.4334 14.9037 22.4166 14.9037 22.4166L14.6128 24.166L16.5191 24.1658C16.7344 24.166 16.9475 24.1684 17.1584 24.1706C17.2949 24.1721 17.4304 24.1736 17.5649 24.1745L17.5656 26.6083L19.0286 26.6085L19.0289 24.2007C19.4302 24.2092 19.8189 24.2123 20.1984 24.212L20.1978 26.6086L21.6623 26.6084L21.6627 24.1793C24.1249 24.0381 25.8485 23.4177 26.0618 21.1062C26.2346 19.2444 25.3592 18.4136 23.9615 18.0776C24.8104 17.6444 25.3412 16.8826 25.2171 15.6134L25.2175 15.6133ZM23.1681 20.8165C23.1685 22.4857 20.5461 22.4489 19.3472 22.432C19.2399 22.4305 19.1439 22.4292 19.0623 22.4292L19.0627 19.2051C19.1625 19.2052 19.2836 19.2023 19.4209 19.1991C20.6496 19.1701 23.1676 19.1106 23.1685 20.8164L23.1681 20.8165ZM19.3036 17.7323C20.3045 17.7486 22.4862 17.7844 22.4866 16.2679C22.4868 14.7166 20.3879 14.7723 19.3628 14.7996C19.2476 14.8026 19.1459 14.8053 19.0623 14.8054L19.0623 17.7295C19.1312 17.7294 19.2125 17.7308 19.3036 17.7323Z" fill="white" />
-                        </svg>
-                      </div>
-                      <h2 class="md:text-[20px] text-[16px] font-bold gap-[5px]" data-i18n="index_heading"> Bitcoin: Fear And Greed Index </h2>
-                    </div>
-                  </div>
-                  <div class="flex gap-2 items-center">
-                    <div class="icon-item">
-                      <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.73755 10.3315C3.73755 9.75548 3.96637 9.20306 4.37366 8.79577C4.78096 8.38847 5.33337 8.15965 5.90937 8.15965H6.91927C7.27674 8.15971 7.62869 8.07153 7.9439 7.90293C8.25911 7.73434 8.52784 7.49055 8.72623 7.19319L9.60799 5.86838C9.80639 5.57102 10.0751 5.32723 10.3903 5.15864C10.7055 4.99004 11.0575 4.90186 11.415 4.90192H15.6066C15.964 4.90186 16.316 4.99004 16.6312 5.15864C16.9464 5.32723 17.2151 5.57102 17.4135 5.86838L18.2953 7.19319C18.4937 7.49055 18.7624 7.73434 19.0776 7.90293C19.3928 8.07153 19.7448 8.15971 20.1023 8.15965H21.1122C21.6882 8.15965 22.2406 8.38847 22.6479 8.79577C23.0552 9.20306 23.284 9.75548 23.284 10.3315V20.1047C23.284 20.6807 23.0552 21.2331 22.6479 21.6404C22.2406 22.0477 21.6882 22.2765 21.1122 22.2765H5.90937C5.33337 22.2765 4.78096 22.0477 4.37366 21.6404C3.96637 21.2331 3.73755 20.6807 3.73755 20.1047V10.3315Z" stroke="white" stroke-width="2.17183" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M16.7687 14.675C16.7687 15.539 16.4254 16.3677 15.8145 16.9786C15.2035 17.5895 14.3749 17.9328 13.5109 17.9328C12.6469 17.9328 11.8183 17.5895 11.2073 16.9786C10.5964 16.3677 10.2532 15.539 10.2532 14.675C10.2532 13.811 10.5964 12.9824 11.2073 12.3715C11.8183 11.7605 12.6469 11.4173 13.5109 11.4173C14.3749 11.4173 15.2035 11.7605 15.8145 12.3715C16.4254 12.9824 16.7687 13.811 16.7687 14.675Z" stroke="white" stroke-width="2.17183" stroke-linecap="round" stroke-linejoin="round" />
+      </div>
+      <div class="lg:container">
+        <div class="bitcoin-box mt-[56px] relative">
+          <img src="assets/images/center-ellipse.webp" loading="lazy"
+            class="absolute top-28 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="images">
+          <div class="das-box bg-[#0C0C0C] relative z-10 rounded-t-[10px]">
+            <div class="top-box bg-[#181818] py-[18px] px-[21px] rounded-t-[10px]">
+              <div class="flex justify-between">
+                <div class="flex-item">
+                  <div class="flex items-center gap-[5px]">
+                    <div class="icon">
+                      <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M19.3051 38.3665C29.8493 38.3665 38.397 29.8187 38.397 19.2746C38.397 8.73046 29.8493 0.182739 19.3051 0.182739C8.76097 0.182739 0.213257 8.73046 0.213257 19.2746C0.213257 29.8187 8.76097 38.3665 19.3051 38.3665Z"
+                          fill="#F7931A" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M25.2175 15.6133C25.0503 13.8788 23.553 13.2973 21.6626 13.1317L21.6625 10.7257L20.1976 10.726L20.1977 13.0686C19.8131 13.0685 19.4196 13.0761 19.0286 13.0839L19.0288 10.7258L17.5651 10.7258L17.5645 13.1311C17.2475 13.1376 16.9361 13.1435 16.6325 13.1437L16.6323 13.1362L14.6124 13.1355L14.6127 14.6996C14.6127 14.6996 15.6942 14.679 15.6762 14.6989C16.2695 14.6991 16.4629 15.0434 16.5187 15.3407L16.5188 18.0816C16.5597 18.0818 16.6131 18.0835 16.6736 18.0918L16.5193 18.0919L16.5185 21.9318C16.4925 22.1185 16.3828 22.4161 15.9683 22.4168C15.9871 22.4334 14.9037 22.4166 14.9037 22.4166L14.6128 24.166L16.5191 24.1658C16.7344 24.166 16.9475 24.1684 17.1584 24.1706C17.2949 24.1721 17.4304 24.1736 17.5649 24.1745L17.5656 26.6083L19.0286 26.6085L19.0289 24.2007C19.4302 24.2092 19.8189 24.2123 20.1984 24.212L20.1978 26.6086L21.6623 26.6084L21.6627 24.1793C24.1249 24.0381 25.8485 23.4177 26.0618 21.1062C26.2346 19.2444 25.3592 18.4136 23.9615 18.0776C24.8104 17.6444 25.3412 16.8826 25.2171 15.6134L25.2175 15.6133ZM23.1681 20.8165C23.1685 22.4857 20.5461 22.4489 19.3472 22.432C19.2399 22.4305 19.1439 22.4292 19.0623 22.4292L19.0627 19.2051C19.1625 19.2052 19.2836 19.2023 19.4209 19.1991C20.6496 19.1701 23.1676 19.1106 23.1685 20.8164L23.1681 20.8165ZM19.3036 17.7323C20.3045 17.7486 22.4862 17.7844 22.4866 16.2679C22.4868 14.7166 20.3879 14.7723 19.3628 14.7996C19.2476 14.8026 19.1459 14.8053 19.0623 14.8054L19.0623 17.7295C19.1312 17.7294 19.2125 17.7308 19.3036 17.7323Z"
+                          fill="white" />
                       </svg>
                     </div>
-                    <div class="icon-item" id="full-screen">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.27808 4.7812V1.01501M1.27808 1.01501H5.04426M1.27808 1.01501L5.9858 5.72274M16.3428 4.7812V1.01501M16.3428 1.01501H12.5766M16.3428 1.01501L11.6351 5.72274M1.27808 12.3136V16.0797M1.27808 16.0797H5.04426M1.27808 16.0797L5.9858 11.372M16.3428 16.0797V12.3136M16.3428 16.0797H12.5766M16.3428 16.0797L11.6351 11.372" stroke="white" stroke-width="1.88309" stroke-linecap="round" stroke-linejoin="round" />
+                    <h2 class="md:text-[20px] text-[16px] font-bold gap-[5px]" data-i18n="index_heading"> Bitcoin: Fear
+                      And Greed Index </h2>
+                  </div>
+                </div>
+                <div class="flex gap-2 items-center">
+                  <div class="icon-item">
+                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M3.73755 10.3315C3.73755 9.75548 3.96637 9.20306 4.37366 8.79577C4.78096 8.38847 5.33337 8.15965 5.90937 8.15965H6.91927C7.27674 8.15971 7.62869 8.07153 7.9439 7.90293C8.25911 7.73434 8.52784 7.49055 8.72623 7.19319L9.60799 5.86838C9.80639 5.57102 10.0751 5.32723 10.3903 5.15864C10.7055 4.99004 11.0575 4.90186 11.415 4.90192H15.6066C15.964 4.90186 16.316 4.99004 16.6312 5.15864C16.9464 5.32723 17.2151 5.57102 17.4135 5.86838L18.2953 7.19319C18.4937 7.49055 18.7624 7.73434 19.0776 7.90293C19.3928 8.07153 19.7448 8.15971 20.1023 8.15965H21.1122C21.6882 8.15965 22.2406 8.38847 22.6479 8.79577C23.0552 9.20306 23.284 9.75548 23.284 10.3315V20.1047C23.284 20.6807 23.0552 21.2331 22.6479 21.6404C22.2406 22.0477 21.6882 22.2765 21.1122 22.2765H5.90937C5.33337 22.2765 4.78096 22.0477 4.37366 21.6404C3.96637 21.2331 3.73755 20.6807 3.73755 20.1047V10.3315Z"
+                        stroke="white" stroke-width="2.17183" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M16.7687 14.675C16.7687 15.539 16.4254 16.3677 15.8145 16.9786C15.2035 17.5895 14.3749 17.9328 13.5109 17.9328C12.6469 17.9328 11.8183 17.5895 11.2073 16.9786C10.5964 16.3677 10.2532 15.539 10.2532 14.675C10.2532 13.811 10.5964 12.9824 11.2073 12.3715C11.8183 11.7605 12.6469 11.4173 13.5109 11.4173C14.3749 11.4173 15.2035 11.7605 15.8145 12.3715C16.4254 12.9824 16.7687 13.811 16.7687 14.675Z"
+                        stroke="white" stroke-width="2.17183" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <div class="icon-item" id="full-screen">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M1.27808 4.7812V1.01501M1.27808 1.01501H5.04426M1.27808 1.01501L5.9858 5.72274M16.3428 4.7812V1.01501M16.3428 1.01501H12.5766M16.3428 1.01501L11.6351 5.72274M1.27808 12.3136V16.0797M1.27808 16.0797H5.04426M1.27808 16.0797L5.9858 11.372M16.3428 16.0797V12.3136M16.3428 16.0797H12.5766M16.3428 16.0797L11.6351 11.372"
+                        stroke="white" stroke-width="1.88309" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="relative pb-10 min-h-[600px]">
+                <div id="chart" class="md:px-6 px-1 h-[400px] md:h-[500px] relative"></div>
+                <style>
+                  #timeRangeSelector:hover {
+                    background: #4B5563;
+                    border-color: #F7931A;
+                  }
+
+                  #timeRangeSelector:focus {
+                    border-color: #F7931A;
+                    box-shadow: 0 0 0 2px rgba(247, 147, 26, 0.2);
+                  }
+
+                  #timeRangeSelector option {
+                    background: #374151;
+                    color: #d1d5db;
+                  }
+                </style>
+                <div
+                  class="color-main-box grid grid-cols-3 sm:grid-cols-5 gap-x-2 mt-4 mt-[55px]gap-2 lg:max-w-[870px] m-auto">
+                  <div
+                    class="flex mt-2 md:mt-0 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px]  py-[5px] rounded-full">
+                    <div class="item-colr">
+                      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_89_2033)">
+                          <rect x="6.64209" y="5.88062" width="11.7613" height="11.7613" rx="5.88067" fill="#FF3B30" />
+                        </g>
+                        <defs>
+                          <filter id="filter0_d_89_2033" x="0.761421" y="-5.34058e-05" width="23.5227" height="23.5227"
+                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset />
+                            <feGaussianBlur stdDeviation="2.94033" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix"
+                              values="0 0 0 0 1 0 0 0 0 0.231373 0 0 0 0 0.188235 0 0 0 0.25 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_2033" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_2033" result="shape" />
+                          </filter>
+                        </defs>
                       </svg>
                     </div>
+                    <div class="text-item">
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_fear_label"> Extreme Fear
+                        (0–24) </p>
+                    </div>
                   </div>
-                </div>
-                <div class="relative pb-10 min-h-[600px]">
-                  <div id="chart" class="md:px-6 px-1 h-[400px] md:h-[500px] relative"></div>
-                  <style>
-                    #timeRangeSelector:hover {
-                      background: #4B5563;
-                      border-color: #F7931A;
-                    }
-
-                    #timeRangeSelector:focus {
-                      border-color: #F7931A;
-                      box-shadow: 0 0 0 2px rgba(247, 147, 26, 0.2);
-                    }
-
-                    #timeRangeSelector option {
-                      background: #374151;
-                      color: #d1d5db;
-                    }
-                  </style>
-                  <div class="color-main-box grid grid-cols-3 sm:grid-cols-5 gap-x-2 mt-4 mt-[55px]gap-2 lg:max-w-[870px] m-auto">
-                    <div class="flex mt-2 md:mt-0 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px]  py-[5px] rounded-full">
-                      <div class="item-colr">
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <g filter="url(#filter0_d_89_2033)">
-                            <rect x="6.64209" y="5.88062" width="11.7613" height="11.7613" rx="5.88067" fill="#FF3B30" />
-                          </g>
-                          <defs>
-                            <filter id="filter0_d_89_2033" x="0.761421" y="-5.34058e-05" width="23.5227" height="23.5227" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                              <feOffset />
-                              <feGaussianBlur stdDeviation="2.94033" />
-                              <feComposite in2="hardAlpha" operator="out" />
-                              <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.231373 0 0 0 0 0.188235 0 0 0 0.25 0" />
-                              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_2033" />
-                              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_2033" result="shape" />
-                            </filter>
-                          </defs>
-                        </svg>
-                      </div>
-                      <div class="text-item">
-                        <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_fear_label"> Extreme Fear (0–24) </p>
-                      </div>
+                  <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
+                    <div class="item-colr">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_89_2039)">
+                          <rect x="5.89661" y="5.88062" width="11.7613" height="11.7613" rx="5.88067" fill="#FF9500" />
+                        </g>
+                        <defs>
+                          <filter id="filter0_d_89_2039" x="0.0159378" y="-5.34058e-05" width="23.5227" height="23.5227"
+                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset />
+                            <feGaussianBlur stdDeviation="2.94033" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.584314 0 0 0 0 0 0 0 0 0.25 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_2039" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_2039" result="shape" />
+                          </filter>
+                        </defs>
+                      </svg>
                     </div>
-                    <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
-                      <div class="item-colr">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <g filter="url(#filter0_d_89_2039)">
-                            <rect x="5.89661" y="5.88062" width="11.7613" height="11.7613" rx="5.88067" fill="#FF9500" />
-                          </g>
-                          <defs>
-                            <filter id="filter0_d_89_2039" x="0.0159378" y="-5.34058e-05" width="23.5227" height="23.5227" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                              <feOffset />
-                              <feGaussianBlur stdDeviation="2.94033" />
-                              <feComposite in2="hardAlpha" operator="out" />
-                              <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.584314 0 0 0 0 0 0 0 0 0.25 0" />
-                              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_2039" />
-                              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_2039" result="shape" />
-                            </filter>
-                          </defs>
-                        </svg>
-                      </div>
-                      <div class="text-item">
-                        <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="fear_label"> Fear (25-49) </p>
-                      </div>
+                    <div class="text-item">
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="fear_label"> Fear (25-49) </p>
                     </div>
-                    <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
-                      <div class="item-colr">
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <g filter="url(#filter0_d_89_2045)">
-                            <rect x="6.64209" y="5.88062" width="11.7613" height="11.7613" rx="5.88067" fill="#F6EB61" />
-                          </g>
-                          <defs>
-                            <filter id="filter0_d_89_2045" x="0.761421" y="-5.34058e-05" width="23.5227" height="23.5227" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                              <feOffset />
-                              <feGaussianBlur stdDeviation="2.94033" />
-                              <feComposite in2="hardAlpha" operator="out" />
-                              <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.756863 0 0 0 0 0.188235 0 0 0 0.25 0" />
-                              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_2045" />
-                              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_2045" result="shape" />
-                            </filter>
-                          </defs>
-                        </svg>
-                      </div>
-                      <div class="text-item">
-                        <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="neutral_label"> Neutral (50) </p>
-                      </div>
+                  </div>
+                  <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
+                    <div class="item-colr">
+                      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_89_2045)">
+                          <rect x="6.64209" y="5.88062" width="11.7613" height="11.7613" rx="5.88067" fill="#F6EB61" />
+                        </g>
+                        <defs>
+                          <filter id="filter0_d_89_2045" x="0.761421" y="-5.34058e-05" width="23.5227" height="23.5227"
+                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset />
+                            <feGaussianBlur stdDeviation="2.94033" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix"
+                              values="0 0 0 0 1 0 0 0 0 0.756863 0 0 0 0 0.188235 0 0 0 0.25 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_2045" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_2045" result="shape" />
+                          </filter>
+                        </defs>
+                      </svg>
                     </div>
-                    <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
-                      <div class="item-colr">
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <g filter="url(#filter0_d_89_2051)">
-                            <rect x="6.64209" y="5.88062" width="11.7613" height="11.7613" rx="5.88067" fill="#4CD964" />
-                          </g>
-                          <defs>
-                            <filter id="filter0_d_89_2051" x="0.761421" y="-5.34058e-05" width="23.5227" height="23.5227" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                              <feOffset />
-                              <feGaussianBlur stdDeviation="2.94033" />
-                              <feComposite in2="hardAlpha" operator="out" />
-                              <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.831373 0 0 0 0 0.188235 0 0 0 0.25 0" />
-                              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_2051" />
-                              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_2051" result="shape" />
-                            </filter>
-                          </defs>
-                        </svg>
-                      </div>
-                      <div class="text-item">
-                        <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="greed_label"> Greed (51-74) </p>
-                      </div>
+                    <div class="text-item">
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="neutral_label"> Neutral (50) </p>
                     </div>
-                    <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
-                      <div class="item-colr">
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <g filter="url(#filter0_d_89_2057)">
-                            <rect x="6.64209" y="5.88062" width="11.7613" height="11.7613" rx="5.88067" fill="#FF3B30" />
-                          </g>
-                          <defs>
-                            <filter id="filter0_d_89_2057" x="0.761421" y="-5.34058e-05" width="23.5227" height="23.5227" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                              <feOffset />
-                              <feGaussianBlur stdDeviation="2.94033" />
-                              <feComposite in2="hardAlpha" operator="out" />
-                              <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.231373 0 0 0 0 0.188235 0 0 0 0.25 0" />
-                              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_2057" />
-                              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_2057" result="shape" />
-                            </filter>
-                          </defs>
-                        </svg>
-                      </div>
-                      <div class="text-item">
-                        <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_greed_label"> Extreme Greed (75–100) </p>
-                      </div>
+                  </div>
+                  <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
+                    <div class="item-colr">
+                      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_89_2051)">
+                          <rect x="6.64209" y="5.88062" width="11.7613" height="11.7613" rx="5.88067" fill="#4CD964" />
+                        </g>
+                        <defs>
+                          <filter id="filter0_d_89_2051" x="0.761421" y="-5.34058e-05" width="23.5227" height="23.5227"
+                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset />
+                            <feGaussianBlur stdDeviation="2.94033" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix"
+                              values="0 0 0 0 1 0 0 0 0 0.831373 0 0 0 0 0.188235 0 0 0 0.25 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_2051" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_2051" result="shape" />
+                          </filter>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="text-item">
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="greed_label"> Greed (51-74) </p>
+                    </div>
+                  </div>
+                  <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
+                    <div class="item-colr">
+                      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_89_2057)">
+                          <rect x="6.64209" y="5.88062" width="11.7613" height="11.7613" rx="5.88067" fill="#FF3B30" />
+                        </g>
+                        <defs>
+                          <filter id="filter0_d_89_2057" x="0.761421" y="-5.34058e-05" width="23.5227" height="23.5227"
+                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset />
+                            <feGaussianBlur stdDeviation="2.94033" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix"
+                              values="0 0 0 0 1 0 0 0 0 0.231373 0 0 0 0 0.188235 0 0 0 0.25 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_89_2057" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_89_2057" result="shape" />
+                          </filter>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="text-item">
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_greed_label"> Extreme Greed
+                        (75–100) </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+    </section>
+    <!--  ====================== Hero  Area End =============================  -->
+    <!--  ====================== About Area Start =============================  -->
+    <section class="featured-area lg:pt-[150px] pt-[113px] ">
+      <div class="container">
+        <div class="section-title mb-[70px]">
+          <h2 class="lg:text-[32px] text-[24px] font-medium text-center">
+            <span data-i18n="featured_partners_before">Featured</span>
+            <span class="text-primary-200" data-i18n="featured_partners_highlight">Partners</span>
+          </h2>
+        </div>
+        <div class="space-y-2 sm:space-y-10">
+          <!-- Mobile view - stacked vertically with spacing -->
+          <!-- Desktop view - show the 3 logos in a clean row -->
+          <div
+            class="flex flex-col space-y-4 sm:flex-row justify-between sm:justify-between sm:items-center sm:space-y-0 w-full">
+            <div class="relative w-fit mx-auto sm:mx-0">
+              <img src="assets/images/f2.svg" loading="lazy" alt="MarketWatch" class="block h-12" />
+              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none"></div>
+            </div>
+            <img src="assets/images/logoo2.webp" loading="lazy" alt="TradingView" class="h-12 mx-auto sm:mx-0">
+            <div class="relative w-fit mx-auto sm:mx-0">
+              <img src="assets/images/logoo4.webp" loading="lazy" alt="Bitcoin.com" class="block h-12" />
+              <div class="absolute inset-0 bg-gradient-to-r from-white/0 to-black/80 pointer-events-none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  ====================== Featured Partners  Area End =============================  -->
+    <!--  ====================== Master Club  Area Start =============================  -->
+    <div class="maser-club-area bg-[#0F1723] lg:py-[124px] py-[60px] mt-[114px] relative z-10">
+      <div class="hidden sm:block shape-item absolute bottom-full right-0">
+        <img src="assets/images/middle.webp" loading="lazy" alt="images">
+      </div>
+      <div class="container">
+        <div class="section-title mb-[70px] max-w-[900px] m-auto">
+          <h2 class="lg:text-[32px] text-[24px] font-medium text-center">
+            <span data-i18n="hero_text_before">At</span>
+            <span class="text-primary-200" data-i18n="hero_text_highlight">Wealth Master Club</span>, <span
+              data-i18n="hero_text_after">We trade the highest conviction setups and help to earn passive income with
+              crypto</span>
+          </h2>
+        </div>
+        <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
+          <div
+            class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[#2a3a57] transition-shadow duration-300">
+            <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
+              <div class="images-box flex items-center gap-[11px]">
+                <img src="assets/images/wealth-1.webp" loading="lazy" alt="images">
+                <h4 class="uppercase font-medium text-[20px]" data-i18n="doge_name">DOGE</h4>
+              </div>
+              <div class="shape-box">
+                <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- SVG paths remain unchanged -->
+                </svg>
+              </div>
+            </div>
+            <div class="content-box flex items-center justify-between">
+              <div class="left-text text-sm text-white font-semibold">
+                <p data-i18n="date_format">September 2nd 2024</p>
+                <p data-i18n="signal_strength">- Strong Signal</p>
+              </div>
+              <div class="right-box flex items-center gap-[10px]">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
+                    fill="#22C55E" />
+                </svg>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[#2a3a57] transition-shadow duration-300">
+            <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
+              <div class="images-box flex items-center gap-[11px] ">
+                <img src="assets/images/wealth-2.webp" loading="lazy" alt="images">
+                <h4 class="uppercase font-medium text-[20px]">SUI</h4>
+              </div>
+              <div class="shape-box">
+                <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 32.7525C3.33333 25.7525 12 12.1525 28 13.7525C48 15.7525 43 -8.24729 62.5 8.25271C82 24.7527 89.5 -2.74766 97 1.75234"
+                    stroke="#22C55E" stroke-opacity="0.8" />
+                  <path
+                    d="M28 13.7525C8.5 12.7473 1 32.7525 1 32.7525H97V1.75234C89.5 -2.74766 82 24.7527 62.5 8.25271C43 -8.24729 48.0731 14.7873 28 13.7525Z"
+                    fill="url(#paint0_linear_103_7747)" />
+                  <defs>
+                    <linearGradient id="paint0_linear_103_7747" x1="49.5" y1="3.75269" x2="49.5" y2="32.7527"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#22C55E" stop-opacity="0.2" />
+                      <stop offset="1" stop-color="#22C55E" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <div class="content-box flex items-center justify-between">
+              <div class="left-text text-sm text-white font-semibold">
+                <p data-i18n="date_format">September 2nd 2024</p>
+                <p data-i18n="signal_strength">- Strong Signal</p>
+              </div>
+              <div class="right-box flex items-center gap-[10px]">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
+                    fill="#22C55E" />
+                </svg>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[#2a3a57] transition-shadow duration-300">
+            <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
+              <div class="images-box flex items-center gap-[11px] ">
+                <img src="assets/images/wealth-3.webp" loading="lazy" alt="images">
+                <h4 class="uppercase font-medium text-[20px]">SUI</h4>
+              </div>
+              <div class="shape-box">
+                <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 32.7525C3.33333 25.7525 12 12.1525 28 13.7525C48 15.7525 43 -8.24729 62.5 8.25271C82 24.7527 89.5 -2.74766 97 1.75234"
+                    stroke="#22C55E" stroke-opacity="0.8" />
+                  <path
+                    d="M28 13.7525C8.5 12.7473 1 32.7525 1 32.7525H97V1.75234C89.5 -2.74766 82 24.7527 62.5 8.25271C43 -8.24729 48.0731 14.7873 28 13.7525Z"
+                    fill="url(#paint0_linear_103_7747)" />
+                  <defs>
+                    <linearGradient id="paint0_linear_103_7747" x1="49.5" y1="3.75269" x2="49.5" y2="32.7527"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#22C55E" stop-opacity="0.2" />
+                      <stop offset="1" stop-color="#22C55E" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <div class="content-box flex items-center justify-between">
+              <div class="left-text text-sm text-white font-semibold">
+                <p data-i18n="date_format">September 2nd 2024</p>
+                <p data-i18n="signal_strength">- Strong Signal</p>
+              </div>
+              <div class="right-box flex items-center gap-[10px]">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
+                    fill="#22C55E" />
+                </svg>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[#2a3a57] transition-shadow duration-300">
+            <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
+              <div class="images-box flex items-center gap-[11px] ">
+                <img src="assets/images/wealth-4.webp" loading="lazy" alt="images">
+                <h4 class="uppercase font-medium text-[20px]">RAY</h4>
+              </div>
+              <div class="shape-box">
+                <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 32.7525C3.33333 25.7525 12 12.1525 28 13.7525C48 15.7525 43 -8.24729 62.5 8.25271C82 24.7527 89.5 -2.74766 97 1.75234"
+                    stroke="#22C55E" stroke-opacity="0.8" />
+                  <path
+                    d="M28 13.7525C8.5 12.7473 1 32.7525 1 32.7525H97V1.75234C89.5 -2.74766 82 24.7527 62.5 8.25271C43 -8.24729 48.0731 14.7873 28 13.7525Z"
+                    fill="url(#paint0_linear_103_7747)" />
+                  <defs>
+                    <linearGradient id="paint0_linear_103_7747" x1="49.5" y1="3.75269" x2="49.5" y2="32.7527"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#22C55E" stop-opacity="0.2" />
+                      <stop offset="1" stop-color="#22C55E" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <div class="content-box flex items-center justify-between">
+              <div class="left-text text-sm text-white font-semibold">
+                <p data-i18n="date_format">September 2nd 2024</p>
+                <p data-i18n="signal_strength">- Strong Signal</p>
+              </div>
+              <div class="right-box flex items-center gap-[10px]">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
+                    fill="#22C55E" />
+                </svg>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  ====================== Master Club  Area End =============================  -->
+    <!--  ====================== start-earning  Area Start =============================  -->
+    <div class="start-area pt-[157px] relative pb-[178px]">
+      <img class="absolute left-0 -top-1/3 transform inline sm:hidden" src="assets/images/mobile-mid.webp"
+        loading="lazy" alt="images">
+      <div class="container relative z-10">
+        <div class="grid md:grid-cols-3 gap-20">
+          <div class="item-box hover:bg-[#0F0A08] p-6 rounded-xl transition-all duration-200 cursor-pointer">
+            <div class="icon-box hover:scale-105 transition-transform duration-200">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="71" height="71" rx="7.5" fill="url(#paint0_linear_61_3333)"
+                  stroke="#201615" />
+                <path
+                  d="M36.5936 51.2261C45.3303 51.2261 52.4128 44.1436 52.4128 35.4069C52.4128 26.6701 45.3303 19.5876 36.5936 19.5876C27.8569 19.5876 20.7744 26.6701 20.7744 35.4069C20.7744 44.1436 27.8569 51.2261 36.5936 51.2261Z"
+                  stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M36.5933 25.9153V35.4068L42.9209 38.5707" stroke="#DC2626" stroke-width="2.66667"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <defs>
+                  <linearGradient id="paint0_linear_61_3333" x1="1" y1="7.52542" x2="60.322" y2="71"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#270501" />
+                    <stop offset="1" stop-color="#070101" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="content-text mt-5">
+              <h3 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="feature1_title"> Start earning
+                consistent passive income with crypto </h3>
+              <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="feature1_desc"> Every month, we do
+                the digging — so you don't have to. </p>
+            </div>
+          </div>
+          <div class="item-box hover:bg-[#0F0A08] p-6 rounded-xl transition-all duration-200 cursor-pointer">
+            <div class="icon-box hover:scale-105 transition-transform duration-200">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="71" height="71" rx="7.5" fill="url(#paint0_linear_61_3343)"
+                  stroke="#201615" />
+                <path
+                  d="M20.7744 21.1697H30.2659C31.9441 21.1697 33.5536 21.8363 34.7403 23.023C35.927 24.2097 36.5936 25.8192 36.5936 27.4974V49.6443C36.5936 48.3856 36.0936 47.1785 35.2036 46.2885C34.3136 45.3985 33.1065 44.8985 31.8479 44.8985H20.7744V21.1697Z"
+                  stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M52.4125 21.1697H42.9209C41.2427 21.1697 39.6333 21.8363 38.4466 23.023C37.2599 24.2097 36.5933 25.8192 36.5933 27.4974V49.6443C36.5933 48.3856 37.0933 47.1785 37.9833 46.2885C38.8733 45.3985 40.0804 44.8985 41.339 44.8985H52.4125V21.1697Z"
+                  stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
+                <defs>
+                  <linearGradient id="paint0_linear_61_3343" x1="1" y1="7.52542" x2="60.322" y2="71"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#270501" />
+                    <stop offset="1" stop-color="#070101" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="content-text mt-5">
+              <h3 class="text-[24px] font-bold" data-i18n="feature2_title">Access to crypto portfolio strategies</h3>
+              <p class="text-base mt-2 text-footer" data-i18n="feature2_desc">Save +80 hours of research</p>
+            </div>
+          </div>
+          <div class="item-box hover:bg-[#0F0A08] p-6 rounded-xl transition-all duration-200 cursor-pointer">
+            <div class="icon-box hover:scale-105 transition-transform duration-200">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="71" height="71" rx="7.5" fill="url(#paint0_linear_61_3352)"
+                  stroke="#201615" />
+                <path d="M22.356 21.1697V49.6443H50.8305" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M46.0847 43.3165V30.6611" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M38.1748 43.3165V24.3335" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M30.2659 43.3166V38.5708" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <defs>
+                  <linearGradient id="paint0_linear_61_3352" x1="1" y1="7.52542" x2="60.322" y2="71"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#270501" />
+                    <stop offset="1" stop-color="#070101" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="content-text mt-5">
+              <h3 class="text-[24px] font-bold" data-i18n="feature3_title">Get the highest conviction trades</h3>
+              <p class="text-base mt-2 text-footer" data-i18n="feature3_desc">Unique insights balancing upside with
+                objective risk assessment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="faqs">
+      <!-- FAQs -->
+      <section id="faqs" class="faq-section">
+        <div class="faq-container">
+          <h2 class="faq-title">Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3 onclick="toggleFaq(this)">What crypto signal services does Wealth Masters offer? <span>+</span>
+            </h3>
+            <p class="faq-answer"> Wealth Masters delivers premium crypto signals, expert analysis, and automated alerts
+              via a crypto signal bot and Telegram group. Our services are built for serious traders aiming to grow
+              passive income portfolios across Europe and France. </p>
+          </div>
+          <div class="faq-item">
+            <h3 onclick="toggleFaq(this)">How accurate is the crypto signal provider success rate? <span>+</span>
+            </h3>
+            <p class="faq-answer"> Our crypto signal provider success rate in 2025 is over 70%, verified by trade
+              history and live signals. We deliver signals with strong conviction and risk management for
+              high-probability setups. </p>
+          </div>
+          <div class="faq-item">
+            <h3 onclick="toggleFaq(this)">Can I access crypto signal Telegram channels or bots? <span>+</span>
+            </h3>
+            <p class="faq-answer"> Yes. All members get instant access to our private crypto signal Telegram group and
+              crypto signal app with bot automation. Signals are shared in real time with stop loss, entry, and exit
+              levels. </p>
+          </div>
+          <div class="faq-item">
+            <h3 onclick="toggleFaq(this)">Are there free crypto signal options available? <span>+</span>
+            </h3>
+            <p class="faq-answer"> Wealth Masters offers a free crypto signal Telegram channel with sample trades and
+              basic market analysis. Full VIP strategies are available to premium members only. </p>
+          </div>
+          <div class="faq-item">
+            <h3 onclick="toggleFaq(this)">Why choose Wealth Masters over other crypto signal providers? <span>+</span>
+            </h3>
+            <p class="faq-answer"> In 2025, Wealth Masters ranks among the best crypto signal providers for its 70%+
+              accuracy, crypto signal app, automated bot, and dedicated Telegram group for France and European traders.
+            </p>
+          </div>
+          <!-- SEO keyword block (invisible but crawlable) -->
+          <div style="display: none;"> crypto signal telegram, best crypto signal group telegram, free crypto signal
+            telegram channel, crypto signal bot 2025, best crypto signal providers France Europe, crypto signal app
+            review, auto trade crypto signals, universal crypto signal, trading signals for crypto </div>
+        </div>
       </section>
-      <!--  ====================== Hero  Area End =============================  -->
-      <!--  ====================== About Area Start =============================  -->
-      <section class="featured-area lg:pt-[150px] pt-[113px] ">
-        <div class="container">
-          <div class="section-title mb-[70px]">
-            <h2 class="lg:text-[32px] text-[24px] font-medium text-center">
-              <span data-i18n="featured_partners_before">Featured</span>
-              <span class="text-primary-200" data-i18n="featured_partners_highlight">Partners</span>
-            </h2>
-          </div>
-          <div class="space-y-2 sm:space-y-10">
-            <!-- Mobile view - stacked vertically with spacing -->
-            <!-- Desktop view - show the 3 logos in a clean row -->
-            <div class="flex flex-col space-y-4 sm:flex-row justify-between sm:justify-between sm:items-center sm:space-y-0 w-full">
-              <div class="relative w-fit mx-auto sm:mx-0">
-                <img src="assets/images/f2.svg" loading="lazy" alt="MarketWatch" class="block h-12" />
-                <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none"></div>
-              </div>
-              <img src="assets/images/logoo2.webp" loading="lazy" alt="TradingView" class="h-12 mx-auto sm:mx-0">
-              <div class="relative w-fit mx-auto sm:mx-0">
-                <img src="assets/images/logoo4.webp" loading="lazy" alt="Bitcoin.com" class="block h-12" />
-                <div class="absolute inset-0 bg-gradient-to-r from-white/0 to-black/80 pointer-events-none"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--  ====================== Featured Partners  Area End =============================  -->
-      <!--  ====================== Master Club  Area Start =============================  -->
-      <div class="maser-club-area bg-[#0F1723] lg:py-[124px] py-[60px] mt-[114px] relative z-10">
-        <div class="hidden sm:block shape-item absolute bottom-full right-0">
-          <img src="assets/images/middle.webp" loading="lazy" alt="images">
-        </div>
-        <div class="container">
-          <div class="section-title mb-[70px] max-w-[900px] m-auto">
-            <h2 class="lg:text-[32px] text-[24px] font-medium text-center">
-              <span data-i18n="hero_text_before">At</span>
-              <span class="text-primary-200" data-i18n="hero_text_highlight">Wealth Master Club</span>, <span data-i18n="hero_text_after">We trade the highest conviction setups and help to earn passive income with crypto</span>
-            </h2>
-          </div>
-          <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
-            <div class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[#2a3a57] transition-shadow duration-300">
-              <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
-                <div class="images-box flex items-center gap-[11px]">
-                  <img src="assets/images/wealth-1.webp" loading="lazy" alt="images">
-                  <h4 class="uppercase font-medium text-[20px]" data-i18n="doge_name">DOGE</h4>
-                </div>
-                <div class="shape-box">
-                  <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- SVG paths remain unchanged -->
-                  </svg>
-                </div>
-              </div>
-              <div class="content-box flex items-center justify-between">
-                <div class="left-text text-sm text-white font-semibold">
-                  <p data-i18n="date_format">September 2nd 2024</p>
-                  <p data-i18n="signal_strength">- Strong Signal</p>
-                </div>
-                <div class="right-box flex items-center gap-[10px]">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E" />
-                  </svg>
-                  <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
-                </div>
-              </div>
-            </div>
-            <div class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[#2a3a57] transition-shadow duration-300">
-              <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
-                <div class="images-box flex items-center gap-[11px] ">
-                  <img src="assets/images/wealth-2.webp" loading="lazy" alt="images">
-                  <h4 class="uppercase font-medium text-[20px]">SUI</h4>
-                </div>
-                <div class="shape-box">
-                  <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 32.7525C3.33333 25.7525 12 12.1525 28 13.7525C48 15.7525 43 -8.24729 62.5 8.25271C82 24.7527 89.5 -2.74766 97 1.75234" stroke="#22C55E" stroke-opacity="0.8" />
-                    <path d="M28 13.7525C8.5 12.7473 1 32.7525 1 32.7525H97V1.75234C89.5 -2.74766 82 24.7527 62.5 8.25271C43 -8.24729 48.0731 14.7873 28 13.7525Z" fill="url(#paint0_linear_103_7747)" />
-                    <defs>
-                      <linearGradient id="paint0_linear_103_7747" x1="49.5" y1="3.75269" x2="49.5" y2="32.7527" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#22C55E" stop-opacity="0.2" />
-                        <stop offset="1" stop-color="#22C55E" stop-opacity="0" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
-              </div>
-              <div class="content-box flex items-center justify-between">
-                <div class="left-text text-sm text-white font-semibold">
-                  <p data-i18n="date_format">September 2nd 2024</p>
-                  <p data-i18n="signal_strength">- Strong Signal</p>
-                </div>
-                <div class="right-box flex items-center gap-[10px]">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E" />
-                  </svg>
-                  <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
-                </div>
-              </div>
-            </div>
-            <div class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[#2a3a57] transition-shadow duration-300">
-              <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
-                <div class="images-box flex items-center gap-[11px] ">
-                  <img src="assets/images/wealth-3.webp" loading="lazy" alt="images">
-                  <h4 class="uppercase font-medium text-[20px]">SUI</h4>
-                </div>
-                <div class="shape-box">
-                  <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 32.7525C3.33333 25.7525 12 12.1525 28 13.7525C48 15.7525 43 -8.24729 62.5 8.25271C82 24.7527 89.5 -2.74766 97 1.75234" stroke="#22C55E" stroke-opacity="0.8" />
-                    <path d="M28 13.7525C8.5 12.7473 1 32.7525 1 32.7525H97V1.75234C89.5 -2.74766 82 24.7527 62.5 8.25271C43 -8.24729 48.0731 14.7873 28 13.7525Z" fill="url(#paint0_linear_103_7747)" />
-                    <defs>
-                      <linearGradient id="paint0_linear_103_7747" x1="49.5" y1="3.75269" x2="49.5" y2="32.7527" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#22C55E" stop-opacity="0.2" />
-                        <stop offset="1" stop-color="#22C55E" stop-opacity="0" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
-              </div>
-              <div class="content-box flex items-center justify-between">
-                <div class="left-text text-sm text-white font-semibold">
-                  <p data-i18n="date_format">September 2nd 2024</p>
-                  <p data-i18n="signal_strength">- Strong Signal</p>
-                </div>
-                <div class="right-box flex items-center gap-[10px]">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E" />
-                  </svg>
-                  <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
-                </div>
-              </div>
-            </div>
-            <div class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[#2a3a57] transition-shadow duration-300">
-              <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
-                <div class="images-box flex items-center gap-[11px] ">
-                  <img src="assets/images/wealth-4.webp" loading="lazy" alt="images">
-                  <h4 class="uppercase font-medium text-[20px]">RAY</h4>
-                </div>
-                <div class="shape-box">
-                  <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 32.7525C3.33333 25.7525 12 12.1525 28 13.7525C48 15.7525 43 -8.24729 62.5 8.25271C82 24.7527 89.5 -2.74766 97 1.75234" stroke="#22C55E" stroke-opacity="0.8" />
-                    <path d="M28 13.7525C8.5 12.7473 1 32.7525 1 32.7525H97V1.75234C89.5 -2.74766 82 24.7527 62.5 8.25271C43 -8.24729 48.0731 14.7873 28 13.7525Z" fill="url(#paint0_linear_103_7747)" />
-                    <defs>
-                      <linearGradient id="paint0_linear_103_7747" x1="49.5" y1="3.75269" x2="49.5" y2="32.7527" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#22C55E" stop-opacity="0.2" />
-                        <stop offset="1" stop-color="#22C55E" stop-opacity="0" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
-              </div>
-              <div class="content-box flex items-center justify-between">
-                <div class="left-text text-sm text-white font-semibold">
-                  <p data-i18n="date_format">September 2nd 2024</p>
-                  <p data-i18n="signal_strength">- Strong Signal</p>
-                </div>
-                <div class="right-box flex items-center gap-[10px]">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z" fill="#22C55E" />
-                  </svg>
-                  <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">201.69%</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--  ====================== Master Club  Area End =============================  -->
-      <!--  ====================== start-earning  Area Start =============================  -->
-      <div class="start-area pt-[157px] relative pb-[178px]">
-        <img class="absolute left-0 -top-1/3 transform inline sm:hidden" src="assets/images/mobile-mid.webp" loading="lazy" alt="images">
-        <div class="container relative z-10">
-          <div class="grid md:grid-cols-3 gap-20">
-            <div class="item-box hover:bg-[#0F0A08] p-6 rounded-xl transition-all duration-200 cursor-pointer">
-              <div class="icon-box hover:scale-105 transition-transform duration-200">
-                <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="0.5" y="0.5" width="71" height="71" rx="7.5" fill="url(#paint0_linear_61_3333)" stroke="#201615" />
-                  <path d="M36.5936 51.2261C45.3303 51.2261 52.4128 44.1436 52.4128 35.4069C52.4128 26.6701 45.3303 19.5876 36.5936 19.5876C27.8569 19.5876 20.7744 26.6701 20.7744 35.4069C20.7744 44.1436 27.8569 51.2261 36.5936 51.2261Z" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M36.5933 25.9153V35.4068L42.9209 38.5707" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
-                  <defs>
-                    <linearGradient id="paint0_linear_61_3333" x1="1" y1="7.52542" x2="60.322" y2="71" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#270501" />
-                      <stop offset="1" stop-color="#070101" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <div class="content-text mt-5">
-                <h3 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="feature1_title"> Start earning consistent passive income with crypto </h3>
-                <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="feature1_desc"> Every month, we do the digging — so you don't have to. </p>
-              </div>
-            </div>
-            <div class="item-box hover:bg-[#0F0A08] p-6 rounded-xl transition-all duration-200 cursor-pointer">
-              <div class="icon-box hover:scale-105 transition-transform duration-200">
-                <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="0.5" y="0.5" width="71" height="71" rx="7.5" fill="url(#paint0_linear_61_3343)" stroke="#201615" />
-                  <path d="M20.7744 21.1697H30.2659C31.9441 21.1697 33.5536 21.8363 34.7403 23.023C35.927 24.2097 36.5936 25.8192 36.5936 27.4974V49.6443C36.5936 48.3856 36.0936 47.1785 35.2036 46.2885C34.3136 45.3985 33.1065 44.8985 31.8479 44.8985H20.7744V21.1697Z" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M52.4125 21.1697H42.9209C41.2427 21.1697 39.6333 21.8363 38.4466 23.023C37.2599 24.2097 36.5933 25.8192 36.5933 27.4974V49.6443C36.5933 48.3856 37.0933 47.1785 37.9833 46.2885C38.8733 45.3985 40.0804 44.8985 41.339 44.8985H52.4125V21.1697Z" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
-                  <defs>
-                    <linearGradient id="paint0_linear_61_3343" x1="1" y1="7.52542" x2="60.322" y2="71" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#270501" />
-                      <stop offset="1" stop-color="#070101" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <div class="content-text mt-5">
-                <h3 class="text-[24px] font-bold" data-i18n="feature2_title">Access to crypto portfolio strategies</h3>
-                <p class="text-base mt-2 text-footer" data-i18n="feature2_desc">Save +80 hours of research</p>
-              </div>
-            </div>
-            <div class="item-box hover:bg-[#0F0A08] p-6 rounded-xl transition-all duration-200 cursor-pointer">
-              <div class="icon-box hover:scale-105 transition-transform duration-200">
-                <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="0.5" y="0.5" width="71" height="71" rx="7.5" fill="url(#paint0_linear_61_3352)" stroke="#201615" />
-                  <path d="M22.356 21.1697V49.6443H50.8305" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M46.0847 43.3165V30.6611" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M38.1748 43.3165V24.3335" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M30.2659 43.3166V38.5708" stroke="#DC2626" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round" />
-                  <defs>
-                    <linearGradient id="paint0_linear_61_3352" x1="1" y1="7.52542" x2="60.322" y2="71" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#270501" />
-                      <stop offset="1" stop-color="#070101" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <div class="content-text mt-5">
-                <h3 class="text-[24px] font-bold" data-i18n="feature3_title">Get the highest conviction trades</h3>
-                <p class="text-base mt-2 text-footer" data-i18n="feature3_desc">Unique insights balancing upside with objective risk assessment.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="faqs">
-        <!-- FAQs -->
-        <section id="faqs" class="faq-section">
-          <div class="faq-container">
-            <h2 class="faq-title">Frequently Asked Questions</h2>
-            <div class="faq-item">
-              <h3 onclick="toggleFaq(this)">What crypto signal services does Wealth Masters offer? <span>+</span>
-              </h3>
-              <p class="faq-answer"> Wealth Masters delivers premium crypto signals, expert analysis, and automated alerts via a crypto signal bot and Telegram group. Our services are built for serious traders aiming to grow passive income portfolios across Europe and France. </p>
-            </div>
-            <div class="faq-item">
-              <h3 onclick="toggleFaq(this)">How accurate is the crypto signal provider success rate? <span>+</span>
-              </h3>
-              <p class="faq-answer"> Our crypto signal provider success rate in 2025 is over 70%, verified by trade history and live signals. We deliver signals with strong conviction and risk management for high-probability setups. </p>
-            </div>
-            <div class="faq-item">
-              <h3 onclick="toggleFaq(this)">Can I access crypto signal Telegram channels or bots? <span>+</span>
-              </h3>
-              <p class="faq-answer"> Yes. All members get instant access to our private crypto signal Telegram group and crypto signal app with bot automation. Signals are shared in real time with stop loss, entry, and exit levels. </p>
-            </div>
-            <div class="faq-item">
-              <h3 onclick="toggleFaq(this)">Are there free crypto signal options available? <span>+</span>
-              </h3>
-              <p class="faq-answer"> Wealth Masters offers a free crypto signal Telegram channel with sample trades and basic market analysis. Full VIP strategies are available to premium members only. </p>
-            </div>
-            <div class="faq-item">
-              <h3 onclick="toggleFaq(this)">Why choose Wealth Masters over other crypto signal providers? <span>+</span>
-              </h3>
-              <p class="faq-answer"> In 2025, Wealth Masters ranks among the best crypto signal providers for its 70%+ accuracy, crypto signal app, automated bot, and dedicated Telegram group for France and European traders. </p>
-            </div>
-            <!-- SEO keyword block (invisible but crawlable) -->
-            <div style="display: none;"> crypto signal telegram, best crypto signal group telegram, free crypto signal telegram channel, crypto signal bot 2025, best crypto signal providers France Europe, crypto signal app review, auto trade crypto signals, universal crypto signal, trading signals for crypto </div>
-          </div>
-        </section>
-        <script>
-          function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            const allAnswers = document.querySelectorAll('.faq-answer');
-            const allToggles = document.querySelectorAll('.faq-item h3 span');
-            allAnswers.forEach(a => {
-              if (a !== answer) a.classList.remove('open');
-            });
-            allToggles.forEach(s => {
-              if (s !== element.querySelector('span')) s.textContent = '+';
-            });
-            const isOpen = answer.classList.contains('open');
-            answer.classList.toggle('open');
-            element.querySelector('span').textContent = isOpen ? '+' : '–';
-          }
-        </script>
-      </div>
-      <!--FAQs end -->
-      <!--  ====================== start-earning  Area Start =============================  -->
-      <div class="relative">
-        <img src="assets/images/footer-ellipse.webp" loading="lazy" alt="images" class="absolute hidden sm:inline top-24 left-1/2 transform -translate-y-1/2 -translate-x-1/2 m-auto z-0" />
-        <img src="assets/images/mobile-footer.webp" loading="lazy" alt="images" class="absolute  inline sm:hidden bottom-full top-0 right-0 left-0 m-auto z-0" />
-        <footer class="footer-area border-t border-[#FFFFFF33] md:pt-[113px] pt-[74px] pb-[35px] bg-[#000000] relative z-10">
-		<div class="footer-colo">
+      <script>
+        function toggleFaq(element) {
+          const answer = element.nextElementSibling;
+          const allAnswers = document.querySelectorAll('.faq-answer');
+          const allToggles = document.querySelectorAll('.faq-item h3 span');
+          allAnswers.forEach(a => {
+            if (a !== answer) a.classList.remove('open');
+          });
+          allToggles.forEach(s => {
+            if (s !== element.querySelector('span')) s.textContent = '+';
+          });
+          const isOpen = answer.classList.contains('open');
+          answer.classList.toggle('open');
+          element.querySelector('span').textContent = isOpen ? '+' : '–';
+        }
+      </script>
+    </div>
+    <!--FAQs end -->
+    <!--  ====================== start-earning  Area Start =============================  -->
+    <div class="relative">
+      <img src="assets/images/footer-ellipse.webp" loading="lazy" alt="images"
+        class="absolute hidden sm:inline top-24 left-1/2 transform -translate-y-1/2 -translate-x-1/2 m-auto z-0" />
+      <img src="assets/images/mobile-footer.webp" loading="lazy" alt="images"
+        class="absolute  inline sm:hidden bottom-full top-0 right-0 left-0 m-auto z-0" />
+      <footer
+        class="footer-area border-t border-[#FFFFFF33] md:pt-[113px] pt-[74px] pb-[35px] bg-[#000000] relative z-10">
+        <div class="footer-colo">
           <div class="container">
             <div class="ft-top-wrap">
               <div class="footer-item">
                 <div class="site-logo">
                   <a href="/">
-                        <img id="image0_61_3589" width="500" height="500" preserveAspectRatio="none" src="assets/images/wealth-masters-logo.webp" alt="wealth masters logo"/>
-						</a>
+                    <img id="image0_61_3589" width="500" height="500" preserveAspectRatio="none"
+                      src="assets/images/wealth-masters-logo.webp" alt="wealth masters logo" />
+                  </a>
                 </div>
                 <div class="text-box mt-6 ">
-                  <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Premium cryptocurrency signals, market analysis, and trading strategies for investors in France and Europe building long-term crypto wealth. </p>
+                  <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Premium cryptocurrency
+                    signals, market analysis, and trading strategies for investors in France and Europe building
+                    long-term crypto wealth. </p>
                 </div>
                 <div class="footer-social-icon mt-6">
                   <ul class="flex items-center gap-4 justify-center lg:justify-start text-footer">
-				  <li>
-                    <a href="https://www.linkedin.com/company/wealthmasters-club/" target="_blank">
-                      <!-- <img src="/assets/images/download.svg" alt="LinkedIn icon" width="20" height="20"> -->
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2" />
-                        <path d="M8 10H6V18H8V10ZM7 6C6.44772 6 6 6.44772 6 7C6 7.55228 6.44772 8 7 8C7.55228 8 8 7.55228 8 7C8 6.44772 7.55228 6 7 6ZM18 18H16V14C16 13.4477 15.5523 13 15 13H14C13.4477 13 13 13.4477 13 14V18H11V10H13V11C13.5523 10.4477 14.2761 10 15 10C16.6569 10 18 11.3431 18 13V18Z" fill="currentColor" />
-                      </svg>
-                    </a>
+                    <li>
+                      <a href="https://www.linkedin.com/company/wealthmasters-club/" target="_blank">
+                        <!-- <img src="/assets/images/download.svg" alt="LinkedIn icon" width="20" height="20"> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2" />
+                          <path
+                            d="M8 10H6V18H8V10ZM7 6C6.44772 6 6 6.44772 6 7C6 7.55228 6.44772 8 7 8C7.55228 8 8 7.55228 8 7C8 6.44772 7.55228 6 7 6ZM18 18H16V14C16 13.4477 15.5523 13 15 13H14C13.4477 13 13 13.4477 13 14V18H11V10H13V11C13.5523 10.4477 14.2761 10 15 10C16.6569 10 18 11.3431 18 13V18Z"
+                            fill="currentColor" />
+                        </svg>
+                      </a>
                     </li>
                     <li>
                       <a href="https://www.instagram.com/wealth.mastersclub" target="_blank">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M14.1666 1.66675H5.83329C3.53211 1.66675 1.66663 3.53223 1.66663 5.83341V14.1667C1.66663 16.4679 3.53211 18.3334 5.83329 18.3334H14.1666C16.4678 18.3334 18.3333 16.4679 18.3333 14.1667V5.83341C18.3333 3.53223 16.4678 1.66675 14.1666 1.66675Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
-                          <path d="M13.3334 9.47501C13.4362 10.1685 13.3178 10.8769 12.9948 11.4992C12.6719 12.1215 12.161 12.6262 11.5347 12.9414C10.9085 13.2566 10.1987 13.3663 9.50653 13.255C8.81431 13.1436 8.17484 12.8167 7.67907 12.321C7.1833 11.8252 6.85648 11.1857 6.7451 10.4935C6.63371 9.8013 6.74343 9.09159 7.05865 8.46532C7.37386 7.83905 7.87853 7.32812 8.50086 7.00521C9.12319 6.68229 9.8315 6.56383 10.525 6.66667C11.2325 6.77158 11.8874 7.10123 12.3931 7.60693C12.8988 8.11263 13.2285 8.76757 13.3334 9.47501Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
-                          <path d="M14.5834 5.41675H14.5917" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path
+                            d="M14.1666 1.66675H5.83329C3.53211 1.66675 1.66663 3.53223 1.66663 5.83341V14.1667C1.66663 16.4679 3.53211 18.3334 5.83329 18.3334H14.1666C16.4678 18.3334 18.3333 16.4679 18.3333 14.1667V5.83341C18.3333 3.53223 16.4678 1.66675 14.1666 1.66675Z"
+                            stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round">
+                          </path>
+                          <path
+                            d="M13.3334 9.47501C13.4362 10.1685 13.3178 10.8769 12.9948 11.4992C12.6719 12.1215 12.161 12.6262 11.5347 12.9414C10.9085 13.2566 10.1987 13.3663 9.50653 13.255C8.81431 13.1436 8.17484 12.8167 7.67907 12.321C7.1833 11.8252 6.85648 11.1857 6.7451 10.4935C6.63371 9.8013 6.74343 9.09159 7.05865 8.46532C7.37386 7.83905 7.87853 7.32812 8.50086 7.00521C9.12319 6.68229 9.8315 6.56383 10.525 6.66667C11.2325 6.77158 11.8874 7.10123 12.3931 7.60693C12.8988 8.11263 13.2285 8.76757 13.3334 9.47501Z"
+                            stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round">
+                          </path>
+                          <path d="M14.5834 5.41675H14.5917" stroke="#9CA3AF" stroke-width="1.66667"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
                       </a>
                     </li>
                     <li>
                       <a href="mailto:contact@wealthmasters.pro" target="_blank">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M16.6666 3.33325H3.33329C2.41282 3.33325 1.66663 4.07944 1.66663 4.99992V14.9999C1.66663 15.9204 2.41282 16.6666 3.33329 16.6666H16.6666C17.5871 16.6666 18.3333 15.9204 18.3333 14.9999V4.99992C18.3333 4.07944 17.5871 3.33325 16.6666 3.33325Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
-                          <path d="M18.3333 5.83325L10.8583 10.5833C10.601 10.7444 10.3036 10.8299 9.99996 10.8299C9.69636 10.8299 9.3989 10.7444 9.14163 10.5833L1.66663 5.83325" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path
+                            d="M16.6666 3.33325H3.33329C2.41282 3.33325 1.66663 4.07944 1.66663 4.99992V14.9999C1.66663 15.9204 2.41282 16.6666 3.33329 16.6666H16.6666C17.5871 16.6666 18.3333 15.9204 18.3333 14.9999V4.99992C18.3333 4.07944 17.5871 3.33325 16.6666 3.33325Z"
+                            stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round">
+                          </path>
+                          <path
+                            d="M18.3333 5.83325L10.8583 10.5833C10.601 10.7444 10.3036 10.8299 9.99996 10.8299C9.69636 10.8299 9.3989 10.7444 9.14163 10.5833L1.66663 5.83325"
+                            stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round">
+                          </path>
                         </svg>
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
-			  
-                <!--New Box-->
-			<div class="footer-item">
-			  <h2 class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explore</h2>
-			  <ul class="footer-links">
-				<li><a href="/" title="Go to Home">Home</a></li>
-				<li><a href="/about.html" title="Learn About Us">About Us</a></li>
-				<li><a href="/contact.html" title="Contact Wealth Masters">Contact</a></li>
-				<li><a href="/privacy-policy" title="Read Our Privacy Policy">Privacy</a></li>
-			  </ul>
-			</div>
+
+              <!--New Box-->
+              <div class="footer-item">
+                <h2 class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explore</h2>
+                <ul class="footer-links">
+                  <li><a href="/" title="Go to Home">Home</a></li>
+                  <li><a href="/about.html" title="Learn About Us">About Us</a></li>
+                  <li><a href="/contact.html" title="Contact Wealth Masters">Contact</a></li>
+                  <li><a href="/privacy-policy" title="Read Our Privacy Policy">Privacy</a></li>
+                </ul>
+              </div>
               <!--New Box end here-->
-			<div class="footer-item">
-			  <div class="newsletter">
-              <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Subscribe</h2>
-              <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text"> Get the latest crypto trading signals, market updates, investment strategies, and exclusive crypto offers delivered straight to your inbox. </p>
-              <div id="custom-substack-2" class="mt-6 form-box">
-                <div id="custom-substack-2" class="mt-6 form-box">
-                  <form id="join-club-form" class="flex items-center justify-center">
-                    <div style="display: flex; width: 100%; max-width: 420px; height: 44px;">
-                      <input id="join-email-input" type="email" name="email" placeholder="Type Your Email..." required style="
+              <div class="footer-item">
+                <div class="newsletter">
+                  <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Subscribe</h2>
+                  <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text"> Get the latest crypto
+                    trading signals, market updates, investment strategies, and exclusive crypto offers delivered
+                    straight to your inbox. </p>
+                  <div id="custom-substack-2" class="mt-6 form-box">
+                    <div id="custom-substack-2" class="mt-6 form-box">
+                      <form id="join-club-form" class="flex items-center justify-center">
+                        <div style="display: flex; width: 100%; max-width: 420px; height: 44px;">
+                          <input id="join-email-input" type="email" name="email" placeholder="Type Your Email..."
+                            required style="
           flex: 1;
           border-top-left-radius: 7px;
           border-bottom-left-radius: 7px;
@@ -892,7 +1031,7 @@ document.addEventListener('DOMContentLoaded', () => {
           outline: none;
           border-right: none;
         " />
-                      <button id="join-submit-btn" type="submit" style="
+                          <button id="join-submit-btn" type="submit" style="
           width: 125px;
           height: 100%;
           border-top-right-radius: 7px;
@@ -907,149 +1046,155 @@ document.addEventListener('DOMContentLoaded', () => {
           cursor: pointer;
           box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
           transition: background-color 0.2s;
-        " onmouseover="this.style.background='#B91C1C'" onmouseout="this.style.background='#DC2626'">Get Signals</button>
+        " onmouseover="this.style.background='#B91C1C'" onmouseout="this.style.background='#DC2626'">Get
+                            Signals</button>
+                        </div>
+                        <input type="hidden" name="utm_source" value="website" />
+                        <input type="hidden" name="utm_medium" value="footer_form" />
+                      </form>
+                      <div id="join-form-message" style="display: none; margin-top: 10px; font-size: 14px;"></div>
                     </div>
-                    <input type="hidden" name="utm_source" value="website" />
-                    <input type="hidden" name="utm_medium" value="footer_form" />
-                  </form>
-                  <div id="join-form-message" style="display: none; margin-top: 10px; font-size: 14px;"></div>
-                </div>
-                <script>
-                  // Join the Club form logic
-                  document.getElementById('join-club-form').addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    const email = document.getElementById('join-email-input').value;
-                    const submitBtn = document.getElementById('join-submit-btn');
-                    const messageDiv = document.getElementById('join-form-message');
-                    if (!email || !isValidEmail(email)) {
-                      showMessageJoin('Please enter a valid email address.', 'error');
-                      return;
-                    }
-                    submitBtn.innerHTML = 'Subscribing...';
-                    submitBtn.disabled = true;
-                    messageDiv.style.display = 'none';
-                    try {
-                      await submitToSubstackViaIframe(email);
-                      showMessageJoin('🎉 Successfully subscribed!', 'success');
-                      document.getElementById('join-email-input').value = '';
-                    } catch (error) {
-                      console.error('Subscription error:', error);
-                      showMessageJoin('Something went wrong. Please try again or contact support.', 'error');
-                    } finally {
-                      submitBtn.innerHTML = 'Join The Club';
-                      submitBtn.disabled = false;
-                    }
-                  });
-
-                  function showMessageJoin(message, type) {
-                    const messageDiv = document.getElementById('join-form-message');
-                    messageDiv.innerHTML = message;
-                    messageDiv.style.display = 'block';
-                    messageDiv.style.color = type === 'success' ? '#34C759' : '#FF3B30';
-                    if (type === 'success') {
-                      setTimeout(() => {
-                        messageDiv.style.display = 'none';
-                      }, 5000);
-                    }
-                  }
-                  // Email validation (shared)
-                  function isValidEmail(email) {
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    return emailRegex.test(email);
-                  }
-                  // Hidden iframe Substack submission (shared)
-                  function submitToSubstackViaIframe(email) {
-                    return new Promise((resolve, reject) => {
-                      const iframe = document.createElement('iframe');
-                      iframe.style.display = 'none';
-                      iframe.name = 'substack-frame-' + Date.now();
-                      document.body.appendChild(iframe);
-                      const form = document.createElement('form');
-                      form.method = 'POST';
-                      form.action = 'https://wealthmasters.substack.com/api/v1/free';
-                      form.target = iframe.name;
-                      form.style.display = 'none';
-                      const emailInput = document.createElement('input');
-                      emailInput.type = 'hidden';
-                      emailInput.name = 'email';
-                      emailInput.value = email;
-                      const utmSource = document.createElement('input');
-                      utmSource.type = 'hidden';
-                      utmSource.name = 'utm_source';
-                      utmSource.value = 'website';
-                      const utmMedium = document.createElement('input');
-                      utmMedium.type = 'hidden';
-                      utmMedium.name = 'utm_medium';
-                      utmMedium.value = 'footer_form';
-                      form.appendChild(emailInput);
-                      form.appendChild(utmSource);
-                      form.appendChild(utmMedium);
-                      document.body.appendChild(form);
-                      iframe.onload = function() {
-                        setTimeout(() => {
-                          try {
-                            document.body.removeChild(form);
-                            document.body.removeChild(iframe);
-                            resolve();
-                          } catch (cleanupError) {
-                            console.warn('Cleanup error:', cleanupError);
-                            resolve();
-                          }
-                        }, 1000);
-                      };
-                      iframe.onerror = function() {
-                        reject(new Error('Network error'));
-                      };
-                      form.submit();
-                      setTimeout(() => {
-                        try {
-                          document.body.removeChild(form);
-                          document.body.removeChild(iframe);
-                          resolve();
-                        } catch (e) {
-                          resolve();
+                    <script>
+                      // Join the Club form logic
+                      document.getElementById('join-club-form').addEventListener('submit', async function (e) {
+                        e.preventDefault();
+                        const email = document.getElementById('join-email-input').value;
+                        const submitBtn = document.getElementById('join-submit-btn');
+                        const messageDiv = document.getElementById('join-form-message');
+                        if (!email || !isValidEmail(email)) {
+                          showMessageJoin('Please enter a valid email address.', 'error');
+                          return;
                         }
-                      }, 5000);
-                    });
-                  }
-                </script>
+                        submitBtn.innerHTML = 'Subscribing...';
+                        submitBtn.disabled = true;
+                        messageDiv.style.display = 'none';
+                        try {
+                          await submitToSubstackViaIframe(email);
+                          showMessageJoin('🎉 Successfully subscribed!', 'success');
+                          document.getElementById('join-email-input').value = '';
+                        } catch (error) {
+                          console.error('Subscription error:', error);
+                          showMessageJoin('Something went wrong. Please try again or contact support.', 'error');
+                        } finally {
+                          submitBtn.innerHTML = 'Join The Club';
+                          submitBtn.disabled = false;
+                        }
+                      });
+
+                      function showMessageJoin(message, type) {
+                        const messageDiv = document.getElementById('join-form-message');
+                        messageDiv.innerHTML = message;
+                        messageDiv.style.display = 'block';
+                        messageDiv.style.color = type === 'success' ? '#34C759' : '#FF3B30';
+                        if (type === 'success') {
+                          setTimeout(() => {
+                            messageDiv.style.display = 'none';
+                          }, 5000);
+                        }
+                      }
+                      // Email validation (shared)
+                      function isValidEmail(email) {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        return emailRegex.test(email);
+                      }
+                      // Hidden iframe Substack submission (shared)
+                      function submitToSubstackViaIframe(email) {
+                        return new Promise((resolve, reject) => {
+                          const iframe = document.createElement('iframe');
+                          iframe.style.display = 'none';
+                          iframe.name = 'substack-frame-' + Date.now();
+                          document.body.appendChild(iframe);
+                          const form = document.createElement('form');
+                          form.method = 'POST';
+                          form.action = 'https://wealthmasters.substack.com/api/v1/free';
+                          form.target = iframe.name;
+                          form.style.display = 'none';
+                          const emailInput = document.createElement('input');
+                          emailInput.type = 'hidden';
+                          emailInput.name = 'email';
+                          emailInput.value = email;
+                          const utmSource = document.createElement('input');
+                          utmSource.type = 'hidden';
+                          utmSource.name = 'utm_source';
+                          utmSource.value = 'website';
+                          const utmMedium = document.createElement('input');
+                          utmMedium.type = 'hidden';
+                          utmMedium.name = 'utm_medium';
+                          utmMedium.value = 'footer_form';
+                          form.appendChild(emailInput);
+                          form.appendChild(utmSource);
+                          form.appendChild(utmMedium);
+                          document.body.appendChild(form);
+                          iframe.onload = function () {
+                            setTimeout(() => {
+                              try {
+                                document.body.removeChild(form);
+                                document.body.removeChild(iframe);
+                                resolve();
+                              } catch (cleanupError) {
+                                console.warn('Cleanup error:', cleanupError);
+                                resolve();
+                              }
+                            }, 1000);
+                          };
+                          iframe.onerror = function () {
+                            reject(new Error('Network error'));
+                          };
+                          form.submit();
+                          setTimeout(() => {
+                            try {
+                              document.body.removeChild(form);
+                              document.body.removeChild(iframe);
+                              resolve();
+                            } catch (e) {
+                              resolve();
+                            }
+                          }, 5000);
+                        });
+                      }
+                    </script>
+                  </div>
+                </div>
               </div>
             </div>
-			</div>
-			</div>
             <div class="copy-right-area w-full pt-8 mt-8 justify-between border-t border-[#1F2937]">
               <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
                 <div class="item-text">
-                  <p class="text-sm text-footer" data-i18n="copyright"> Wealth Masters &copy2025. All rights reserved. </p>
+                  <p class="text-sm text-footer" data-i18n="copyright"> Wealth Masters &copy2025. All rights reserved.
+                  </p>
                 </div>
                 <div class="item-box">
                   <ul class="flex md:gap-6 gap-3 items-center text-footer">
                     <li>
-                      <a class="hover:text-primary-200 duration-500 text-sm" href="/privacy-policy.html" data-i18n="privacy_policy">Privacy Policy</a>
+                      <a class="hover:text-primary-200 duration-500 text-sm" href="/privacy-policy.html"
+                        data-i18n="privacy_policy">Privacy Policy</a>
                     </li>
                     <li>
-                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="terms_service">Terms of Service</a>
+                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="terms_service">Terms of
+                        Service</a>
                     </li>
                     <li>
-                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="cookie_policy">Cookie Policy</a>
+                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="cookie_policy">Cookie
+                        Policy</a>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-		  </div>
-        </footer>
-      </div>
-      <!--  ====================== Footer Area End =============================  -->
-      <!-- gulp:js -->
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-      <script src="assets/js/jquery.nice-select.min.js"></script>
-      <script src="assets/js/app.js"></script>
-      <!-- Replace the chart script with this working version -->
-      <script src="assets/js/chart.js"></script>
-      <!-- endgulp -->
-    </main>
-  </body>
+        </div>
+      </footer>
+    </div>
+    <!--  ====================== Footer Area End =============================  -->
+    <!-- gulp:js -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <!-- Replace the chart script with this working version -->
+    <script src="assets/js/chart.js"></script>
+    <!-- endgulp -->
+  </main>
+</body>
+
 </html>
