@@ -479,9 +479,7 @@ img#image0_61_3589 {
 }
 
 /* Styles for the "open" (cross) state */
-.hamburger.open {
-  /* The transform in the 'open' state is now applied to the lines */
-}
+/* The transform in the 'open' state is now applied to the lines */
 
 /* Rotate the top line to form one part of the "X" */
 .hamburger.open .hamburger-top {
