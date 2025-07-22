@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
     <link rel="stylesheet" href="/assets/css/custom.css">
     <!-- endgulp -->
-    <script src="/assets/js/i18n.js"></script>
+    <script src="/assets/js/i18n.js" defer></script>
     <script src="/assets/js/plotly-2.26.0.min.js"></script>
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -428,10 +428,10 @@
                                     </select>
                                 </div>
 
-                                <button id="hamburger-button" class="hamburger z-50" aria-label="Open menu"></button>
-                                <span class="hamburger-top"></span>
-                                <span class="hamburger-middle"></span>
-                                <span class="hamburger-bottom"></span>
+                                <button id="hamburger-button" class="hamburger z-50">
+                                    <span class="hamburger-top"></span>
+                                    <span class="hamburger-middle"></span>
+                                    <span class="hamburger-bottom"></span>
                                 </button>
                             </div>
 
