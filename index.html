@@ -2163,9 +2163,42 @@
       }
     }
   </style>
+  <script>
+    async function fetchPrices() {
+      try {
+        const response = await fetch('https://api.coinpaprika.com/v1/tickers');
+        const data = await response.json();
+
+        // Select top 15 coins
+        const topCoins = data.slice(0, 15);
+
+        let html = '';
+        topCoins.forEach(coin => {
+          const symbol = coin.symbol;
+          const price = parseFloat(coin.quotes.USD.price).toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          });
+          html += `${symbol}: $${price} &nbsp;&nbsp;•&nbsp;&nbsp; `;
+        });
+
+        document.getElementById('crypto-ticker').innerHTML = html;
+      } catch (e) {
+        console.error(e);
+        document.getElementById('crypto-ticker').innerText = 'Error loading prices';
+      }
+    }
+
+    fetchPrices();
+    setInterval(fetchPrices, 10000);
+  </script>
+
 </head>
 
 <body class="  font-base  font-normal bg-[#000000]">
+  <div id="crypto-ticker-bar">
+    <div id="crypto-ticker">Loading prices...</div>
+  </div>
   <main class="overflow-hidden">
     <!--  ====================== Header Area Start =============================  -->
     <div class="top-box pt-4 lg:pt-[40px] relative">

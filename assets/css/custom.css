@@ -711,3 +711,46 @@ img#image0_61_3589 {
   color: #DC2626;
   /* red text on hover */
 }
+
+#crypto-ticker-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #000;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 9999;
+  border-bottom: 2px solid #111;
+  box-shadow: 0 2px 5px rgba(255, 0, 0, 0.3);
+}
+
+#crypto-ticker {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 30s linear infinite;
+  color: red;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: 0 0 3px #f00;
+}
+
+#crypto-ticker-bar:hover #crypto-ticker {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Push content below ticker */
+.page-content {
+  margin-top: 40px;
+  padding: 20px;
+}
