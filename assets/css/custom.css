@@ -533,14 +533,13 @@ img#image0_61_3589 {
 }
 
 .trust-section-content .section-header h2 {
-  font-size: 2.75rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .trust-section-content .section-header p {
-  font-size: 1.2rem;
+  font-size: 16px;
   max-width: 700px;
   margin: 0 auto;
   color: #a0a0a0;
