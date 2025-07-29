@@ -654,3 +654,30 @@ img#image0_61_3589 {
     /* 2 columns on larger screens */
   }
 }
+
+.pb-\[178px\] {
+  padding-bottom: 0;
+}
+
+.why-us-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 16px;
+  /* optional spacing below icon */
+}
+
+@media (min-width: 768px) {
+  .md\:pt-\[113px\] {
+    padding-top: 40px;
+  }
+}
