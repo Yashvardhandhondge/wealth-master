@@ -680,3 +680,34 @@ img#image0_61_3589 {
     padding-top: 40px;
   }
 }
+
+.start-earning-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.start-earning-button {
+  background-color: #DC2626;
+  /* red by default */
+  color: #ffffff;
+  /* white text */
+  border: 2px solid #DC2626;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+  position: relative;
+  z-index: 10;
+}
+
+.start-earning-button:hover {
+  background-color: #270501;
+  /* dark on hover */
+  color: #DC2626;
+  /* red text on hover */
+}
