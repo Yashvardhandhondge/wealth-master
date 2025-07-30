@@ -754,3 +754,8 @@ img#image0_61_3589 {
   margin-top: 40px;
   padding: 20px;
 }
+
+img.coin-icon {
+  height: 40px;
+  width: auto;
+}
