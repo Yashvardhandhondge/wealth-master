@@ -759,3 +759,182 @@ img.coin-icon {
   height: 40px;
   width: auto;
 }
+
+/* =================================== */
+/*   Glassy Menu & Styled Links        */
+/* =================================== */
+
+/* The main container for the mobile menu overlay */
+.glassy-menu {
+  /* Semi-transparent background */
+  background-color: rgba(12, 12, 12, 0.6);
+
+  /* The "frosted glass" effect */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
+  /* A subtle border to define the glass pane */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Add a fade-in animation */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Keyframes for the fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Individual links within the mobile menu */
+#mobile-menu a {
+  width: 80%;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  /* 20px */
+  font-weight: 500;
+  /* medium */
+  border-radius: 8px;
+  border: 1px solid transparent;
+  /* Prepare for hover effect */
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the links */
+#mobile-menu a:hover {
+  /* Highlight with a semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.05);
+
+  /* Change text color to your primary red */
+  color: #dc2626;
+
+  /* Add a border to make it pop */
+  border-color: rgba(220, 38, 38, 0.5);
+
+  transform: scale(1.05);
+}
+
+/* --- Desktop Navigation --- */
+
+.desktop-nav-link {
+  position: relative;
+  padding: 8px 4px;
+  color: #d1d5db;
+  /* A slightly softer white */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.desktop-nav-link:hover {
+  color: #ffffff;
+  /* Brighter white on hover */
+}
+
+/* Underline effect */
+.desktop-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #dc2626;
+  /* Your primary red color */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.desktop-nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+/* --- Mobile Glassy Menu & Links --- */
+
+.glassy-menu {
+  /* Semi-transparent background with a glass effect */
+  background-color: rgba(10, 10, 10, 0.65);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+
+  /* A very subtle border to mimic a glass edge */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Animation for a smooth appearance */
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+
+  to {
+    opacity: 1;
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Individual links within the mobile menu */
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  max-width: 300px;
+  padding: 1rem;
+  font-size: 1.25rem;
+  /* 20px */
+  font-weight: 500;
+  /* medium */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Hover/active effect for mobile links */
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
+  background-color: rgba(220, 38, 38, 0.15);
+  /* Faint red glow */
+  color: #ffffff;
+  border-color: #dc2626;
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.3);
+}
+
+header.relative.px-4.py-4.lg\:pt-6 {
+  z-index: 999;
+  margin-top: 15px;
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex {
+    display: flex;
+    gap: 15px;
+  }
+}
+
+.flex.items-center.gap-4 {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+a.relative.z-50 {
+  width: 100%;
+}
+
+nav.hidden.lg\:flex.items-center.gap-8.text-white.font-medium {
+  width: 100%;
+}
