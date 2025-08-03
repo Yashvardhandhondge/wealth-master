@@ -825,6 +825,7 @@ img.coin-icon {
 /* --- Desktop Navigation --- */
 
 .desktop-nav-link {
+  font-size: 15px;
   position: relative;
   padding: 8px 4px;
   color: #d1d5db;
