@@ -520,6 +520,7 @@ img#image0_61_3589 {
   color: var(--text-secondary);
   padding: 5rem 1.5rem;
   font-family: inherit;
+  margin-bottom: -150px;
 }
 
 .trust-section-content {
@@ -587,6 +588,7 @@ img#image0_61_3589 {
   gap: 3rem;
   align-items: center;
   margin-bottom: 6rem;
+  margin-top: 6rem;
 }
 
 .feature-row:last-child {

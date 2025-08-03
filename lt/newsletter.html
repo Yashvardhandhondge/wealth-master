@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Išskirtinis tyrimas apie potencialių klientų paiešką „LinkedIn“</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue-dark: #0d2d5e;
+            --primary-text-dark: #1e2b48;
+            --text-light: #5f6c83;
+            --border-color: #e0e0e0;
+            --star-color: #fccc24;
+            --bg-gradient-start: #4c89e1;
+            --bg-gradient-end: #2a4ac7;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .popup-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 50px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            color: #aaa;
+            text-decoration: none;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .popup-card h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--primary-text-dark);
+            margin-top: 0;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .ebook-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .ebook-image img {
+            max-width: 100%;
+            width: 280px;
+        }
+
+        .form-container {
+            flex: 1.2;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"] {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .consent-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .consent-group input[type="checkbox"] {
+            margin-top: 4px;
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .consent-group a {
+            color: var(--primary-blue-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .consent-group a:hover {
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-blue-dark);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #081d3d;
+        }
+
+        .submit-btn svg {
+            width: 21px;
+            height: 21px;
+        }
+
+        .form-footer {
+            margin-top: 25px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px 30px;
+        }
+
+        .downloads {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .downloads img {
+            height: 34px;
+        }
+
+        .downloads span {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .rating-score {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .stars {
+            display: flex;
+            gap: 3px;
+        }
+
+        .stars svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--star-color);
+        }
+
+        .company-section {
+            text-align: center;
+            color: white;
+            width: 100%;
+            max-width: 950px;
+        }
+
+        .company-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .logos img {
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .logos img:hover {
+            opacity: 1;
+        }
+
+        /* Adjusting logo sizes to be visually balanced */
+        .logos .logo-hp {
+            height: 35px;
+        }
+
+        .logos .logo-ibm {
+            height: 30px;
+        }
+
+        .logos .logo-apple {
+            height: 30px;
+        }
+
+        .logos .logo-microsoft {
+            height: 26px;
+        }
+
+        .logos .logo-meta {
+            height: 18px;
+        }
+
+        .logos .logo-google {
+            height: 30px;
+        }
+
+        .logos .logo-amazon {
+            height: 25px;
+        }
+
+        .logos .logo-mcdonalds {
+            height: 30px;
+        }
+
+        .logos .logo-jj {
+            height: 28px;
+        }
+
+        .logos .logo-unilever {
+            height: 28px;
+        }
+
+
+        @media (max-width: 920px) {
+            .content-wrapper {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .popup-card h3 {
+                font-size: 2rem;
+                margin-bottom: 25px;
+            }
+
+            .popup-card {
+                padding: 30px;
+            }
+
+            .ebook-image {
+                margin-bottom: 20px;
+            }
+
+            .ebook-image img {
+                width: 220px;
+            }
+
+            .form-footer {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .popup-card {
+                padding: 20px;
+            }
+
+            .popup-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .logos {
+                gap: 20px 25px;
+            }
+
+            .logos img {
+                height: auto;
+                max-width: 80px;
+            }
+
+            .logos .logo-hp,
+            .logos .logo-ibm,
+            .logos .logo-apple,
+            .logos .logo-microsoft,
+            .logos .logo-meta,
+            .logos .logo-google,
+            .logos .logo-amazon,
+            .logos .logo-mcdonalds,
+            .logos .logo-jj,
+            .logos .logo-unilever {
+                height: auto;
+            }
+
+            .logos .logo-jj {
+                max-width: 60px;
+            }
+
+            .logos .logo-unilever {
+                max-width: 100px;
+            }
+
+            .company-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-container">
+        <div class="popup-card">
+            <a class="close-btn" title="Uždaryti">×</a>
+
+            <h3>Išskirtinis tyrimas apie tai, kas iš tikrųjų veikia ieškant potencialių klientų „LinkedIn“</h3>
+
+            <div class="content-wrapper">
+                <div class="ebook-image">
+                    <img src="/assets/images/book_magazine_mockup_free_by_viscondesign-copie-6-768x1020.png"
+                        alt="Elektroninės knygos viršelis apie „LinkedIn“ potencialių klientų paieškos tyrimą">
+                </div>
+
+                <div class="form-container">
+                    <form action="https://forms.monday.com/forms/dbabe75a18d9e994e8466db8451f6864?r=euc1" method="post"
+                        onsubmit="return false;">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Jūsų vardas" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Jūsų el. pašto adresas" required>
+                        </div>
+                        <div class="consent-group">
+                            <input type="checkbox" id="consent" name="consent">
+                            <label for="consent">
+                                Sutinku, kad „Waalaxy“ siųstų man rinkodaros pranešimus, kaip aprašyta jų <a href="#"
+                                    target="_blank">duomenų naudojimo sąlygose</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            Gauti mano el. knygą nemokamai
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                                fill="none">
+                                <path
+                                    d="M10.2199 6.39022L10.1473 6.47432C9.9294 6.76792 9.9536 7.18462 10.2199 7.45082L12.9392 10.1702L6.24951 10.1705L6.14774 10.1774C5.78167 10.227 5.49951 10.5408 5.49951 10.9205L5.50636 11.0223C5.55602 11.3884 5.86982 11.6705 6.24951 11.6705L12.9412 11.6702L10.2193 14.3909L10.1466 14.475C9.9287 14.7686 9.9529 15.1853 10.2191 15.4516C10.5119 15.7445 10.9868 15.7446 11.2797 15.4518L15.2813 11.4518L15.3539 11.3676C15.5718 11.074 15.5477 10.6573 15.2814 10.391L11.2805 6.39022L11.1964 6.31762C10.9028 6.09972 10.4862 6.12392 10.2199 6.39022ZM10.5 20.9209C16.0228 20.9209 20.5 16.4437 20.5 10.9209C20.5 5.39802 16.0228 0.920918 10.5 0.920918C4.97715 0.920918 0.5 5.39802 0.5 10.9209C0.5 16.4437 4.97715 20.9209 10.5 20.9209ZM10.5 2.42092C15.1944 2.42092 19 6.22652 19 10.9209C19 15.6153 15.1944 19.4209 10.5 19.4209C5.80558 19.4209 2 15.6153 2 10.9209C2 6.22652 5.80558 2.42092 10.5 2.42092Z"
+                                    fill="white"></path>
+                            </svg>
+                        </button>
+                    </form>
+
+                    <div class="form-footer">
+                        <div class="downloads">
+                            <img src="/assets/images/avatars.png" alt="Vartotojų avatarai">
+                            <span>950+ atsisiuntimų</span>
+                        </div>
+                        <div class="rating">
+                            <span class="rating-score">4,9</span>
+                            <div class="stars">
+                                <svg aria-hidden="true" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                    </path>
+                                </svg>
+                                <svg aria-hidden="true" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                    </path>
+                                </svg>
+                                <svg aria-hidden="true" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                    </path>
+                                </svg>
+                                <svg aria-hidden="true" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                    </path>
+                                </svg>
+                                <svg aria-hidden="true" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="company-section">
+            <p>+9800 žmonių iš geriausiai veikiančių technologijų įmonių skaito mūsų el. knygas</p>
+            <div class="logos">
+                <img src="/assets/images//hp.svg" alt="HP logotipas" class="logo-hp">
+                <img src="/assets/images//ibm.svg" alt="IBM logotipas" class="logo-ibm">
+                <img src="/assets/images//apple.svg" alt="Apple logotipas" class="logo-apple">
+                <img src="/assets/images//microsoft.svg" alt="Microsoft logotipas" class="logo-microsoft">
+                <img src="/assets/images//meta.svg" alt="Meta logotipas" class="logo-meta">
+                <img src="/assets/images//google.svg" alt="Google logotipas" class="logo-google">
+                <img src="/assets/images//amazon.svg" alt="Amazon logotipas" class="logo-amazon">
+                <img src="/assets/images//mcdonalds.svg" alt="McDonald's logotipas" class="logo-mcdonalds">
+                <img src="/assets/images//jj.svg" alt="Johnson & Johnson logotipas" class="logo-jj">
+                <img src="/assets/images//unilever.svg" alt="Unilever logotipas" class="logo-unilever">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

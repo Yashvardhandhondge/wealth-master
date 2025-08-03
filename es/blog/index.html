@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Wealth Masters</title>
+    <meta name="description"
+        content="Únase a Wealth Masters para obtener señales de criptomonedas de expertos, estrategias VIP e información para aumentar sus ingresos pasivos en Europa y Francia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/assets/images/image1.webp" type="image/png" sizes="32x32" style="border-radius: 50%;">
+    <link rel="apple-touch-icon" href="/assets/images/image1.webp" style="border-radius: 50%;">
+    <link rel="mask-icon" href="/assets/images/image1.webp" color="#000000" style="border-radius: 50%;">
+    <!-- Dynamic Canonical Tag -->
+    <script>
+        const link = document.createElement("link");
+        link.rel = "canonical";
+        link.href = window.location.origin + window.location.pathname;
+        document.head.appendChild(link);
+    </script>
+    <!-- gulp:css -->
+    <link rel="stylesheet" href="/assets/css/nice-select.css">
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <!-- endgulp -->
+    <script src="/assets/js/i18n.js"></script>
+    <script src="/assets/js/plotly-2.26.0.min.js"></script>
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Wealth Masters",
+        "url": "http://wealthmasters.pro/",
+        "logo": "http://wealthmasters.pro/assets/images/image1.webp",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contact@wealthmasters.pro",
+          "contactType": "servicio al cliente"
+        },
+        "sameAs": ["https://www.linkedin.com/company/wealthmasters-club/", "https://www.instagram.com/wealth.mastersclub"]
+      }
+    </script>
+
+    <!--Nav Menu-->
+    <script>
+        // File: /assets/js/menu.js
+
+        // Wait for the entire HTML document to be parsed before running the script
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Find the button and the menu by their unique IDs
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // IMPORTANT: Check if both elements actually exist before trying to add a click listener
+            if (hamburgerButton && mobileMenu) {
+
+                hamburgerButton.addEventListener('click', () => {
+                    // This function runs every time the button is clicked
+
+                    // Toggle the 'open' class on the button itself for the 'X' animation
+                    hamburgerButton.classList.toggle('open');
+
+                    // Toggle the 'hidden' class on the menu panel to show/hide it
+                    mobileMenu.classList.toggle('hidden');
+
+                    // Optional but recommended: Prevent the page from scrolling when the menu is open
+                    if (mobileMenu.classList.contains('hidden')) {
+                        // If menu is now hidden, allow scrolling again
+                        document.body.style.overflow = 'auto';
+                    } else {
+                        // If menu is now visible, prevent scrolling
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            } else {
+                // If the script can't find the elements, it will log an error in the developer console
+                console.error('Hamburger menu script could not find the button or menu panel. Check that the IDs in your HTML are correct: #hamburger-button and #mobile-menu.');
+            }
+        });
+    </script>
+
+    <script>
+        // File: /assets/js/schema-generator.js
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // This function will only run if it finds an element with the ID 'blog-post-title',
+            // meaning it will only activate on your blog post pages.
+            const blogTitleElement = document.getElementById('blog-post-title');
+            if (blogTitleElement) {
+                try {
+                    // 1. Automatically read data from the page
+                    const headline = blogTitleElement.textContent.trim();
+                    const metaDescription = document.querySelector('meta[name="description"]').getAttribute('content');
+                    const pageUrl = window.location.href;
+                    const imageUrl = document.getElementById('featured-image').src;
+                    const datePublished = document.getElementById('publication-date').getAttribute('datetime');
+
+                    // 2. Define the schema object using the data we just read
+                    const articleSchema = {
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": pageUrl
+                        },
+                        "headline": headline,
+                        "description": metaDescription,
+                        "image": imageUrl,
+                        "author": {
+                            "@type": "Organization",
+                            "name": "Wealth Masters"
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "Wealth Masters",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "http://wealthmasters.pro//assets/images/image1.webp" // Your site's logo URL
+                            }
+                        },
+                        "datePublished": datePublished,
+                        "dateModified": datePublished // For simplicity, use the same date. Can be changed if you have a modified date.
+                    };
+
+                    // 3. Create a new <script> tag for the schema
+                    const schemaScript = document.createElement('script');
+                    schemaScript.type = 'application/ld+json';
+                    schemaScript.textContent = JSON.stringify(articleSchema, null, 2);
+
+                    // 4. Inject the new script tag into the <head> of the document
+                    document.head.appendChild(schemaScript);
+
+                } catch (error) {
+                    console.error('Error generating Article schema:', error);
+                }
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if we are on the blog listing page by looking for the #blog-grid element
+            const blogGrid = document.getElementById('blog-grid');
+            if (!blogGrid) return; // Exit if this isn't the blog page
+
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+            const pageIndicator = document.getElementById('page-indicator');
+
+            const postsPerPage = 6;
+            let currentPage = 1;
+            let posts = [];
+
+            // Main function to fetch data and render the page
+            async function loadBlogPosts() {
+                try {
+                    const response = await fetch('/en/blog/posts.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    posts = await response.json();
+                    renderPage(currentPage);
+                    setupPagination();
+                } catch (error) {
+                    console.error("Could not load blog posts:", error);
+                    blogGrid.innerHTML = `<p class="text-center text-red-500 col-span-full">Failed to load blog posts. Please try again later.</p>`;
+                }
+            }
+
+            // Function to render the posts for a specific page
+            function renderPage(page) {
+                currentPage = page;
+                blogGrid.innerHTML = ''; // Clear existing posts
+
+                const startIndex = (page - 1) * postsPerPage;
+                const endIndex = startIndex + postsPerPage;
+                const paginatedPosts = posts.slice(startIndex, endIndex);
+
+                paginatedPosts.forEach(post => {
+                    const postCard = `
+                <a href="/en/blog/${post.url}" class="blog-card">
+                    <img src="${post.image}" alt="${post.title}" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <p class="blog-card-date">${post.date}</p>
+                        <h3 class="blog-card-title">${post.title}</h3>
+                        <p class="blog-card-description">${post.description}</p>
+                    </div>
+                </a>
+            `;
+                    blogGrid.insertAdjacentHTML('beforeend', postCard);
+                });
+
+                updatePaginationUI();
+            }
+
+            // Function to set up the pagination buttons
+            function setupPagination() {
+                nextButton.addEventListener('click', () => {
+                    const totalPages = Math.ceil(posts.length / postsPerPage);
+                    if (currentPage < totalPages) {
+                        renderPage(currentPage + 1);
+                    }
+                });
+
+                prevButton.addEventListener('click', () => {
+                    if (currentPage > 1) {
+                        renderPage(currentPage - 1);
+                    }
+                });
+            }
+
+            // Function to update the disabled state and page indicator
+            function updatePaginationUI() {
+                const totalPages = Math.ceil(posts.length / postsPerPage);
+
+                // Update page indicator text
+                pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
+
+                // Update button states
+                prevButton.disabled = currentPage === 1;
+                nextButton.disabled = currentPage === totalPages;
+            }
+
+            // Initial load
+            loadBlogPosts();
+        });
+    </script>
+    <style>
+        .blog-listing-section {
+            margin-top: 150px;
+            margin-bottom: 150px;
+            position: relative;
+            overflow: hidden;
+            color: #E5E5E5;
+        }
+
+        .blog-glow-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.1) 0%, rgba(220, 38, 38, 0) 65%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .blog-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* As requested: 40px title */
+        .blog-list-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .blog-list-title .highlight {
+            color: #DC2626;
+        }
+
+        /* Individual blog post card styling */
+        .blog-card {
+            background-color: rgba(23, 23, 23, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 40px rgba(220, 38, 38, 0.15);
+            border-color: #DC2626;
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            /* Ensures image covers the area without distortion */
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            /* Makes content area fill remaining space */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-date {
+            color: #A1A1AA;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-bottom: 0.75rem;
+            flex-grow: 1;
+            /* Pushes the description down */
+        }
+
+        .blog-card-description {
+            color: #A1A1AA;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Pagination controls styling */
+        .pagination-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            gap: 1rem;
+        }
+
+        .pagination-button {
+            background-color: #DC2626;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .pagination-button:hover {
+            background-color: #B91C1C;
+        }
+
+        .pagination-button:disabled {
+            background-color: #374151;
+            /* Gray for disabled state */
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .page-indicator {
+            color: #A1A1AA;
+            font-weight: 500;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J54BR3Y9QG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-J54BR3Y9QG');
+    </script>
+</head>
+
+<body class="  font-base  font-normal bg-[#000000]">
+    <main class="overflow-hidden">
+        <!--  ====================== Header Area Start =============================  -->
+        <div class="top-box pt-4 lg:pt-[40px] relative">
+            <div class="container">
+                <header class="relative px-4 py-4 lg:pt-6">
+                    <!-- Main header bar: a flex container that justifies content to the ends -->
+                    <div class="container mx-auto flex w-full items-center justify-between gap-4">
+
+                        <!-- 1. Desktop Navigation (Left side on desktop, hidden on mobile) -->
+                        <nav class="hidden lg:flex items-center gap-8 text-white font-medium">
+                            <a href="/es/index.html" class="desktop-nav-link" data-i18n="mb_home">Inicio</a>
+                            <a href="/es/about.html" class="desktop-nav-link" data-i18n="mb_about">Sobre Nosotros</a>
+                            <a href="/es/contact.html" class="desktop-nav-link" data-i18n="mb_contect">Contacto</a>
+                            <a href="/es/blog/index.html" class="desktop-nav-link" data-i18n="mb_blog">Blog</a>
+                        </nav>
+
+                        <!-- 2. Logo (Center on desktop, Left on mobile) -->
+                        <!-- On desktop, it's pushed to the center by the nav and controls. -->
+                        <!-- On mobile, the nav is hidden, so the logo sits on the left. -->
+                        <a href="/es/index.html" class="relative z-50">
+                            <!-- Desktop Logo -->
+                            <div class="hidden lg:flex flex-col items-center gap-1">
+                                <figure class="flex gap-1 items-center">
+                                    <img src="/assets/images/l1.webp" loading="lazy" alt="l1"
+                                        class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10 h-5">
+                                    <img src="/assets/images/l2.webp" loading="lazy" alt="l2"
+                                        class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10 h-5">
+                                    <img src="/assets/images/l3.webp" loading="lazy" alt="l3"
+                                        class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10 h-5">
+                                    <img src="/assets/images/l4.webp" loading="lazy" alt="l4"
+                                        class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start h-5">
+                                </figure>
+                                <img src="/assets/images/l-body.svg" loading="lazy" class="h-4" alt="Wealth Masters">
+                            </div>
+                            <!-- Mobile Logo -->
+                            <div class="flex lg:hidden flex-col items-center gap-1">
+                                <figure class="flex gap-1 items-center">
+                                    <img src="/assets/images/l1.webp" loading="lazy" alt="l1" class="h-5">
+                                    <img src="/assets/images/l2.webp" loading="lazy" alt="l2" class="h-5">
+                                    <img src="/assets/images/l3.webp" loading="lazy" alt="l3" class="h-5">
+                                    <img src="/assets/images/l4.webp" loading="lazy" alt="l4"
+                                        class="h-5 place-self-start">
+                                </figure>
+                                <img src="/assets/images/l-body.svg" loading="lazy" class="h-4" alt="Wealth Masters">
+                            </div>
+                        </a>
+
+                        <!-- 3. Controls (Right side on all screens) -->
+                        <div class="flex items-center gap-4">
+                            <!-- Language Selector -->
+                            <div
+                                class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_81_471)">
+                                        <path
+                                            d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z"
+                                            fill="#DC2626" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_81_471">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <select id="languageSwitcher" class="nice-select font-bold"
+                                    onchange="setLanguage(this.value)">
+                                    <option value="en" data-display="EN">Inglés</option>
+                                    <option value="lt" data-display="LT">Lituano</option>
+                                    <option value="de" data-display="DE">Alemán</option>
+                                    <option value="es" data-display="ES">Español</option>
+                                </select>
+                            </div>
+
+                            <!-- Hamburger Button (hidden on large screens) -->
+                            <button id="hamburger-button" class="hamburger z-50 lg:hidden" aria-label="Abrir menú">
+                                <span class="hamburger-top"></span>
+                                <span class="hamburger-middle"></span>
+                                <span class="hamburger-bottom"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Panel (with glassy class) -->
+                    <div id="mobile-menu" class="glassy-menu hidden fixed inset-0 z-40">
+                        <div
+                            class="flex flex-col items-center justify-center w-full h-full text-white text-2xl space-y-4 pt-20">
+                            <a href="/es/index.html" class="mobile-nav-link" data-i18n="mb_home">Inicio</a>
+                            <a href="/es/about.html" class="mobile-nav-link" data-i18n="mb_about">Sobre Nosotros</a>
+                            <a href="/es/contact.html" class="mobile-nav-link" data-i18n="mb_contect">Contacto</a>
+                            <a href="/es/privacy-policy.html" class="mobile-nav-link"
+                                data-i18n="privacy_policy">Política
+                                de Privacidad</a>
+                            <a href="/es/blog/index.html" class="mobile-nav-link" data-i18n="mb_blog">Blog</a>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div class="shape-item absolute -top-44 lg:top-0 right-0">
+                <img src="/assets/images/header-top-left.webp" loading="lazy" alt="imágenes">
+            </div>
+            <div class="shape-item absolute -top-44 lg:top-0 left-0">
+                <img src="/assets/images/header-top-right.webp" loading="lazy" alt="imágenes">
+            </div>
+        </div>
+        <!--  ====================== Header Area End =============================  -->
+
+
+        <!-- ====================== Blog Listing Section Start ============================= -->
+        <style>
+            .blog-listing-section {
+                margin-top: 150px;
+                margin-bottom: 150px;
+                position: relative;
+                overflow: hidden;
+                color: #E5E5E5;
+            }
+
+            /* Consistent glow effect for background ambience */
+            .blog-list-glow-effect {
+                position: absolute;
+                top: 25%;
+                left: 50%;
+                width: 900px;
+                height: 900px;
+                background: radial-gradient(circle, rgba(220, 38, 38, 0.08) 0%, rgba(220, 38, 38, 0) 65%);
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            .blog-list-content {
+                position: relative;
+                z-index: 1;
+            }
+
+            .blog-list-title {
+                font-family: 'Outfit', sans-serif;
+                font-weight: 600;
+                color: #FFFFFF;
+                text-align: center;
+            }
+
+            .blog-list-title .highlight {
+                color: #DC2626;
+            }
+
+            /* ================== KEY CHANGE START ================== */
+            /* Added a larger grid gap for better spacing */
+            .blog-grid {
+                margin-top: 30px;
+                display: grid;
+                gap: 2.5rem;
+                /* 40px. Increased from the default for more breathing room. */
+            }
+
+            /* ================== KEY CHANGE END ================== */
+
+            /* Styling for each blog post card */
+            .blog-card {
+                display: block;
+                /* Makes the whole card clickable */
+                background-color: rgba(15, 15, 15, 0.6);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                overflow: hidden;
+                /* Ensures image corners are rounded */
+                transition: all 0.3s ease;
+                backdrop-filter: blur(5px);
+            }
+
+            .blog-card:hover {
+                transform: translateY(-8px);
+                border-color: #DC2626;
+                box-shadow: 0 15px 40px rgba(220, 38, 38, 0.1);
+            }
+
+            .card-image {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                /* Ensures image covers the area without distortion */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .card-content {
+                padding: 1.5rem;
+            }
+
+            .card-category {
+                display: inline-block;
+                background-color: rgba(220, 38, 38, 0.1);
+                color: #DC2626;
+                padding: 0.25rem 0.75rem;
+                border-radius: 9999px;
+                /* Pill shape */
+                font-size: 0.75rem;
+                font-weight: 500;
+                margin-bottom: 0.75rem;
+            }
+
+            .card-title {
+                font-family: 'Outfit', sans-serif;
+                font-size: 1.25rem;
+                font-weight: 500;
+                color: #FFFFFF;
+                margin-bottom: 0.5rem;
+                line-height: 1.3;
+            }
+
+            .card-excerpt {
+                color: #A1A1AA;
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .read-more-link {
+                display: inline-block;
+                margin-top: 1rem;
+                color: #E5E5E5;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+            .blog-card:hover .read-more-link {
+                color: #DC2626;
+            }
+
+            /* Pagination Styles */
+            .pagination-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 4rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding-top: 2rem;
+            }
+
+            .pagination-button {
+                display: inline-flex;
+                align-items: center;
+                padding: 0.5rem 1.5rem;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                color: #E5E5E5;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+
+            .pagination-button:hover {
+                background-color: #DC2626;
+                border-color: #DC2626;
+                color: #FFFFFF;
+            }
+
+            .pagination-button.disabled {
+                color: #737373;
+                /* Gray out disabled buttons */
+                border-color: rgba(255, 255, 255, 0.1);
+                pointer-events: none;
+                /* Make them unclickable */
+            }
+        </style>
+
+        <section class="blog-listing-section">
+            <div class="blog-list-glow-effect"></div>
+
+            <div class="container mx-auto px-6 blog-list-content">
+
+                <!-- Page Title -->
+                <header class="text-center mb-12">
+                    <h1 class="blog-list-title text-3xl md:text-5xl">
+                        El Libro Mayor de <span class="highlight">Wealth Masters</span>
+                    </h1>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                        Análisis, estrategias y profundizaciones en el mundo del trading de criptomonedas. Su recurso
+                        esencial para navegar los mercados con confianza.
+                    </p>
+                </header>
+
+                <!-- Responsive Blog Grid -->
+                <!-- KEY CHANGE: Replaced Tailwind `gap` with `blog-grid` class for custom gap styling -->
+                <div class="blog-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+                    <!-- Blog Post Card 1 -->
+                    <a href="/en/blog/post.html" class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop"
+                            alt="Ilustración 3D abstracta de bloques de criptomonedas" class="card-image">
+                        <div class="card-content">
+                            <span class="card-category">Estrategia</span>
+                            <h3 class="card-title">Más allá del Hype: 3 Pilares del Trading de Criptomonedas Sostenible
+                            </h3>
+                            <p class="card-excerpt">Aprenda los pilares fundamentales del trading exitoso: dominar la
+                                psicología, implementar una gestión de riesgos férrea y ejecutar una estrategia
+                                repetible.</p>
+                            <span class="read-more-link">Leer Más →</span>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 2 -->
+                    <a href="#" class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop"
+                            alt="Gráfico con el Índice de Miedo y Codicia" class="card-image">
+                        <div class="card-content">
+                            <span class="card-category">Análisis de Mercado</span>
+                            <h3 class="card-title">Decodificando el Índice de Miedo y Codicia: Su Arma Secreta</h3>
+                            <p class="card-excerpt">Descubra cómo usar el sentimiento del mercado a su favor.
+                                Desglosamos cómo funciona el Índice de Miedo y Codicia y cuándo prestarle atención.</p>
+                            <span class="read-more-link">Leer Más →</span>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 3 -->
+                    <a href="#" class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop"
+                            alt="Primer plano de una moneda de Bitcoin" class="card-image">
+                        <div class="card-content">
+                            <span class="card-category">Altcoins</span>
+                            <h3 class="card-title">Análisis Profundo de Altcoins: Encontrando Joyas en un Mercado
+                                Abarrotado</h3>
+                            <p class="card-excerpt">No todas las monedas son iguales. Aprenda nuestro marco para
+                                investigar e identificar proyectos de altcoins con un potencial real a largo plazo.</p>
+                            <span class="read-more-link">Leer Más →</span>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 4 -->
+                    <a href="#" class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop"
+                            alt="Persona gestionando el riesgo financiero en un portátil" class="card-image">
+                        <div class="card-content">
+                            <span class="card-category">Gestión de Riesgos</span>
+                            <h3 class="card-title">Gestión de Riesgos 101: Cómo no Perderlo Todo en Cripto</h3>
+                            <p class="card-excerpt">La lección más importante en el trading es la supervivencia.
+                                Cubrimos el tamaño de la posición, los stop-loss y la protección de su capital a toda
+                                costa.</p>
+                            <span class="read-more-link">Leer Más →</span>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 5 -->
+                    <a href="#" class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop"
+                            alt="Gráficos del mercado de valores mostrando volatilidad" class="card-image">
+                        <div class="card-content">
+                            <span class="card-category">Psicología</span>
+                            <h3 class="card-title">La Mentalidad del Trader: Superando el FOMO, FUD y la Codicia</h3>
+                            <p class="card-excerpt">Su mayor enemigo en el mercado suele ser usted mismo. Aprenda a
+                                reconocer y conquistar los sesgos psicológicos que conducen a malas decisiones.</p>
+                            <span class="read-more-link">Leer Más →</span>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 6 -->
+                    <a href="#" class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop"
+                            alt="Gráficos de análisis técnico en una pantalla" class="card-image">
+                        <div class="card-content">
+                            <span class="card-category">Principiantes</span>
+                            <h3 class="card-title">Análisis Técnico Explicado: Una Guía para Principiantes sobre
+                                Gráficos</h3>
+                            <p class="card-excerpt">Soporte, resistencia, medias móviles y más. Desglosamos los
+                                conceptos esenciales del análisis técnico en términos fáciles de entender.</p>
+                            <span class="read-more-link">Leer Más →</span>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 7 -->
+                    <a href="#" class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop"
+                            alt="Visualización de datos de la blockchain" class="card-image">
+                        <div class="card-content">
+                            <span class="card-category">Avanzado</span>
+                            <h3 class="card-title">¿Qué es el Análisis On-Chain y Por Qué Importa?</h3>
+                            <p class="card-excerpt">Vaya más allá de los gráficos. Aprenda a analizar los datos de la
+                                blockchain para entender qué está haciendo el dinero inteligente y obtener una poderosa
+                                ventaja en el trading.</p>
+                            <span class="read-more-link">Leer Más →</span>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 8 -->
+                    <a href="#" class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop"
+                            alt="Portafolio de diferentes criptomonedas" class="card-image">
+                        <div class="card-content">
+                            <span class="card-category">Portafolio</span>
+                            <h3 class="card-title">Construyendo un Portafolio de Criptomonedas Diversificado para 2025
+                            </h3>
+                            <p class="card-excerpt">No ponga todos los huevos en la misma canasta. Exploramos
+                                estrategias para construir un portafolio equilibrado que pueda soportar los ciclos del
+                                mercado.</p>
+                            <span class="read-more-link">Leer Más →</span>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 9 -->
+                    <a href="#" class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop"
+                            alt="Visualización de un flujo de ingresos pasivos" class="card-image">
+                        <div class="card-content">
+                            <span class="card-category">Ingresos Pasivos</span>
+                            <h3 class="card-title">Ingresos Pasivos con Cripto: Staking, Préstamos y Más</h3>
+                            <p class="card-excerpt">El trading no es la única forma de hacer crecer su capital. Aprenda
+                                sobre las diferentes formas de obtener rendimientos pasivos de sus activos
+                                criptográficos de forma segura.</p>
+                            <span class="read-more-link">Leer Más →</span>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-container">
+                    <a href="#" class="pagination-button disabled">
+                        ← Anterior
+                    </a>
+                    <a href="#" class="pagination-button">
+                        Siguiente →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        <!-- ====================== Blog Listing Section End =============================== -->
+
+        <!--  ====================== start-earning  Area Start =============================  -->
+        <div class="relative">
+            <img src="/assets/images/footer-ellipse.webp" loading="lazy" alt="imágenes"
+                class="absolute hidden sm:inline top-24 left-1/2 transform -translate-y-1/2 -translate-x-1/2 m-auto z-0" />
+            <img src="/assets/images/mobile-footer.webp" loading="lazy" alt="imágenes"
+                class="absolute  inline sm:hidden bottom-full top-0 right-0 left-0 m-auto z-0" />
+            <footer
+                class="footer-area border-t border-[#FFFFFF33] md:pt-[113px] pt-[74px] pb-[35px] bg-[#000000] relative z-10">
+                <div class="footer-colo">
+                    <div class="container">
+                        <div class="ft-top-wrap">
+                            <div class="footer-item">
+                                <div class="site-logo">
+                                    <a href="/es/index.html">
+                                        <img id="image0_61_3589" width="500" height="500" preserveAspectRatio="none"
+                                            src="/assets/images/wealth-masters-logo.webp"
+                                            alt="logo de wealth masters" />
+                                    </a>
+                                </div>
+                                <div class="text-box mt-6 ">
+                                    <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Únase a
+                                        Wealth Masters para obtener análisis expertos del mercado de criptomonedas,
+                                        estrategias VIP e información para aumentar sus ingresos pasivos.</p>
+                                </div>
+                                <div class="footer-social-icon mt-6">
+                                    <ul class="flex items-center gap-4 justify-center lg:justify-start text-footer">
+                                        <li>
+                                            <a href="https://www.facebook.com/wealthmastersclub" target="_blank"
+                                                aria-label="Facebook">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    fill="currentColor" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M22 12.073C22 6.505 17.523 2 12 2S2 6.505 2 12.073c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.2 22 17.064 22 12.073Z" />
+                                                </svg>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://x.com/thewealthm" target="_blank" aria-label="X (Twitter)">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    fill="currentColor" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M17.53 3H20.5L13.86 10.29L21.75 21H15.38L10.43 14.63L4.76 21H1.75L8.82 13.22L1.25 3H7.78L12.3 8.84L17.53 3ZM16.4 19H18.2L7.44 4.89H5.53L16.4 19Z" />
+                                                </svg>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://www.linkedin.com/company/wealthmasters-club/"
+                                                target="_blank">
+                                                <!-- <img src="/assets/images/download.svg" alt="LinkedIn icon" width="20" height="20"> -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <rect x="2" y="2" width="20" height="20" rx="4"
+                                                        stroke="currentColor" stroke-width="2" />
+                                                    <path
+                                                        d="M8 10H6V18H8V10ZM7 6C6.44772 6 6 6.44772 6 7C6 7.55228 6.44772 8 7 8C7.55228 8 8 7.55228 8 7C8 6.44772 7.55228 6 7 6ZM18 18H16V14C16 13.4477 15.5523 13 15 13H14C13.4477 13 13 13.4477 13 14V18H11V10H13V11C13.5523 10.4477 14.2761 10 15 10C16.6569 10 18 11.3431 18 13V18Z"
+                                                        fill="currentColor" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.instagram.com/wealth.mastersclub" target="_blank">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M14.1666 1.66675H5.83329C3.53211 1.66675 1.66663 3.53223 1.66663 5.83341V14.1667C1.66663 16.4679 3.53211 18.3334 5.83329 18.3334H14.1666C16.4678 18.3334 18.3333 16.4679 18.3333 14.1667V5.83341C18.3333 3.53223 16.4678 1.66675 14.1666 1.66675Z"
+                                                        stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                    </path>
+                                                    <path
+                                                        d="M13.3334 9.47501C13.4362 10.1685 13.3178 10.8769 12.9948 11.4992C12.6719 12.1215 12.161 12.6262 11.5347 12.9414C10.9085 13.2566 10.1987 13.3663 9.50653 13.255C8.81431 13.1436 8.17484 12.8167 7.67907 12.321C7.1833 11.8252 6.85648 11.1857 6.7451 10.4935C6.63371 9.8013 6.74343 9.09159 7.05865 8.46532C7.37386 7.83905 7.87853 7.32812 8.50086 7.00521C9.12319 6.68229 9.8315 6.56383 10.525 6.66667C11.2325 6.77158 11.8874 7.10123 12.3931 7.60693C12.8988 8.11263 13.2285 8.76757 13.3334 9.47501Z"
+                                                        stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                    </path>
+                                                    <path d="M14.5834 5.41675H14.5917" stroke="#9CA3AF"
+                                                        stroke-width="1.66667" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="mailto:contact@wealthmasters.pro" target="_blank">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M16.6666 3.33325H3.33329C2.41282 3.33325 1.66663 4.07944 1.66663 4.99992V14.9999C1.66663 15.9204 2.41282 16.6666 3.33329 16.6666H16.6666C17.5871 16.6666 18.3333 15.9204 18.3333 14.9999V4.99992C18.3333 4.07944 17.5871 3.33325 16.6666 3.33325Z"
+                                                        stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                    </path>
+                                                    <path
+                                                        d="M18.3333 5.83325L10.8583 10.5833C10.601 10.7444 10.3036 10.8299 9.99996 10.8299C9.69636 10.8299 9.3989 10.7444 9.14163 10.5833L1.66663 5.83325"
+                                                        stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!--New Box-->
+                            <div class="footer-item">
+                                <h2 data-i18n="footer_heading"
+                                    class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explorar
+                                </h2>
+                                <ul class="footer-links">
+                                    <li><a data-i18n="footer_home" href="/es/index.html"
+                                            title="Ir a la página de inicio">Inicio</a>
+                                    </li>
+                                    <li><a data-i18n="footer_about" href="/es/about.html"
+                                            title="Conoce más sobre nosotros">Sobre Nosotros</a></li>
+                                    <li><a data-i18n="footer_contact" href="/es/contact.html"
+                                            title="Contactar a Wealth Masters">Contacto</a></li>
+                                    <li><a data-i18n="footer_privacy" href="/es/privacy-policy.html"
+                                            title="Lea nuestra Política de Privacidad">Privacidad</a></li>
+                                </ul>
+                            </div>
+                            <!--New Box end here-->
+                            <div class="footer-item">
+                                <div class="newsletter">
+                                    <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left"
+                                        data-i18n="subscribe">Suscríbete</h2>
+                                    <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text">Recibe
+                                        las últimas configuraciones de trading de criptomonedas, actualizaciones del
+                                        mercado, estrategias de inversión y ofertas exclusivas de cripto directamente en
+                                        tu bandeja de entrada.</p>
+                                    <div id="custom-substack-2" class="mt-6 form-box">
+                                        <div id="custom-substack-2" class="mt-6 form-box">
+                                            <form id="join-club-form" class="flex items-center justify-center">
+                                                <div
+                                                    style="display: flex; width: 100%; max-width: 420px; height: 44px;">
+                                                    <input id="join-email-input" type="email" name="email"
+                                                        placeholder="Escribe tu correo electrónico..." required style="
+          flex: 1;
+          border-top-left-radius: 7px;
+          border-bottom-left-radius: 7px;
+          border: 1px solid #666;
+          padding: 10px 15px;
+          background: #111111;
+          font-size: 14px;
+          color: #fff;
+          box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+          outline: none;
+          border-right: none;
+        " />
+                                                    <button id="join-submit-btn" type="submit" style="
+          width: 125px;
+          height: 100%;
+          border-top-right-radius: 7px;
+          border-bottom-right-radius: 7px;
+          padding: 0px 0px;
+          background: #DC2626;
+          color: white;
+          border: 1px solid #666;
+          border-left: none;
+          font-weight: 600;
+          font-size: 14px;
+          cursor: pointer;
+          box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
+          transition: background-color 0.2s;
+        " onmouseover="this.style.background='#B91C1C'" onmouseout="this.style.background='#DC2626'">Regístrate
+                                                        GRATIS</button>
+                                                </div>
+                                                <input type="hidden" name="utm_source" value="website" />
+                                                <input type="hidden" name="utm_medium" value="footer_form" />
+                                            </form>
+                                            <div id="join-form-message"
+                                                style="display: none; margin-top: 10px; font-size: 14px;"></div>
+                                        </div>
+                                        <script>
+                                            // Join the Club form logic
+                                            document.getElementById('join-club-form').addEventListener('submit', async function (e) {
+                                                e.preventDefault();
+                                                const email = document.getElementById('join-email-input').value;
+                                                const submitBtn = document.getElementById('join-submit-btn');
+                                                const messageDiv = document.getElementById('join-form-message');
+                                                if (!email || !isValidEmail(email)) {
+                                                    showMessageJoin('Por favor, introduce una dirección de correo electrónico válida.', 'error');
+                                                    return;
+                                                }
+                                                submitBtn.innerHTML = 'Suscribiendo...';
+                                                submitBtn.disabled = true;
+                                                messageDiv.style.display = 'none';
+                                                try {
+                                                    await submitToSubstackViaIframe(email);
+                                                    showMessageJoin('🎉 ¡Suscrito con éxito!', 'success');
+                                                    document.getElementById('join-email-input').value = '';
+                                                } catch (error) {
+                                                    console.error('Subscription error:', error);
+                                                    showMessageJoin('Algo salió mal. Por favor, inténtalo de nuevo o contacta con soporte.', 'error');
+                                                } finally {
+                                                    submitBtn.innerHTML = 'Únete al Club';
+                                                    submitBtn.disabled = false;
+                                                }
+                                            });
+
+                                            function showMessageJoin(message, type) {
+                                                const messageDiv = document.getElementById('join-form-message');
+                                                messageDiv.innerHTML = message;
+                                                messageDiv.style.display = 'block';
+                                                messageDiv.style.color = type === 'success' ? '#34C759' : '#FF3B30';
+                                                if (type === 'success') {
+                                                    setTimeout(() => {
+                                                        messageDiv.style.display = 'none';
+                                                    }, 5000);
+                                                }
+                                            }
+                                            // Email validation (shared)
+                                            function isValidEmail(email) {
+                                                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                                return emailRegex.test(email);
+                                            }
+                                            // Hidden iframe Substack submission (shared)
+                                            function submitToSubstackViaIframe(email) {
+                                                return new Promise((resolve, reject) => {
+                                                    const iframe = document.createElement('iframe');
+                                                    iframe.style.display = 'none';
+                                                    iframe.name = 'substack-frame-' + Date.now();
+                                                    document.body.appendChild(iframe);
+                                                    const form = document.createElement('form');
+                                                    form.method = 'POST';
+                                                    form.action = 'https://wealthmasters.substack.com/api/v1/free';
+                                                    form.target = iframe.name;
+                                                    form.style.display = 'none';
+                                                    const emailInput = document.createElement('input');
+                                                    emailInput.type = 'hidden';
+                                                    emailInput.name = 'email';
+                                                    emailInput.value = email;
+                                                    const utmSource = document.createElement('input');
+                                                    utmSource.type = 'hidden';
+                                                    utmSource.name = 'utm_source';
+                                                    utmSource.value = 'website';
+                                                    const utmMedium = document.createElement('input');
+                                                    utmMedium.type = 'hidden';
+                                                    utmMedium.name = 'utm_medium';
+                                                    utmMedium.value = 'footer_form';
+                                                    form.appendChild(emailInput);
+                                                    form.appendChild(utmSource);
+                                                    form.appendChild(utmMedium);
+                                                    document.body.appendChild(form);
+                                                    iframe.onload = function () {
+                                                        setTimeout(() => {
+                                                            try {
+                                                                document.body.removeChild(form);
+                                                                document.body.removeChild(iframe);
+                                                                resolve();
+                                                            } catch (cleanupError) {
+                                                                console.warn('Cleanup error:', cleanupError);
+                                                                resolve();
+                                                            }
+                                                        }, 1000);
+                                                    };
+                                                    iframe.onerror = function () {
+                                                        reject(new Error('Network error'));
+                                                    };
+                                                    form.submit();
+                                                    setTimeout(() => {
+                                                        try {
+                                                            document.body.removeChild(form);
+                                                            document.body.removeChild(iframe);
+                                                            resolve();
+                                                        } catch (e) {
+                                                            resolve();
+                                                        }
+                                                    }, 5000);
+                                                });
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copy-right-area w-full pt-8 mt-8 justify-between border-t border-[#1F2937]">
+                            <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
+                                <div class="item-text">
+                                    <p class="text-sm text-footer" data-i18n="copyright"> Wealth Masters ©2025. Todos
+                                        los derechos reservados.
+                                    </p>
+                                </div>
+                                <div class="item-box">
+                                    <ul class="flex md:gap-6 gap-3 items-center text-footer">
+                                        <li>
+                                            <a class="hover:text-primary-200 duration-500 text-sm"
+                                                href="/es/privacy-policy.html" data-i18n="privacy_policy">Política de
+                                                Privacidad</a>
+                                        </li>
+                                        <li>
+                                            <a class="hover:text-primary-200 duration-500 text-sm" href="#"
+                                                data-i18n="terms_service">Términos de Servicio</a>
+                                        </li>
+                                        <li>
+                                            <a class="hover:text-primary-200 duration-500 text-sm" href="#"
+                                                data-i18n="cookie_policy">Política de Cookies</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!--  ====================== Footer Area End =============================  -->
+        <!-- gulp:js -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <script src="/assets/js/jquery.nice-select.min.js"></script>
+        <script src="/assets/js/app.js"></script>
+        <!-- Replace the chart script with this working version --> <!-- endgulp -->
+    </main>
+</body>
+
+</html>

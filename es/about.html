@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Wealth Masters</title>
   <meta name="description"
-    content="Join Wealth Masters for expert crypto signals, VIP strategies, and insights to grow your passive income across Europe and France.">
+    content="Únase a Wealth Masters para obtener señales de criptomonedas de expertos, estrategias VIP e información para aumentar sus ingresos pasivos en Europa y Francia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -22,11 +22,16 @@
     link.href = window.location.origin + window.location.pathname;
     document.head.appendChild(link);
   </script>
-  <!-- gulp:css -->
-  <link rel="stylesheet" href="/assets/css/nice-select.css">
-  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
-  <!-- endgulp -->
+  <!-- Lazy CSS load trick -->
+  <link rel="stylesheet" href="/assets/css/nice-select.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/tailwind.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/custom.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/css/nice-select.css">
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+  </noscript>
+
   <script src="/assets/js/i18n.js"></script>
   <script src="/assets/js/plotly-2.26.0.min.js"></script>
   <!-- Schema.org Markup -->
@@ -87,7 +92,6 @@
         }]
       }
     </script>
-
   <!--Nav Menu-->
   <script>
     // File: assets/js/menu.js
@@ -148,16 +152,16 @@
 
             <!-- 1. Desktop Navigation (Left side on desktop, hidden on mobile) -->
             <nav class="hidden lg:flex items-center gap-8 text-white font-medium">
-              <a href="/" class="desktop-nav-link" data-i18n="mb_home">Home</a>
-              <a href="/about.html" class="desktop-nav-link" data-i18n="mb_about">About Us</a>
-              <a href="/contact.html" class="desktop-nav-link" data-i18n="mb_contect">Contact</a>
-              <a href="/en/blog/index.html" class="desktop-nav-link" data-i18n="mb_blog">Blog</a>
+              <a href="/es/index.html" class="desktop-nav-link" data-i18n="mb_home">Inicio</a>
+              <a href="/es/about.html" class="desktop-nav-link" data-i18n="mb_about">Sobre Nosotros</a>
+              <a href="/es/contact.html" class="desktop-nav-link" data-i18n="mb_contect">Contacto</a>
+              <a href="/es/blog/index.html" class="desktop-nav-link" data-i18n="mb_blog">Blog</a>
             </nav>
 
             <!-- 2. Logo (Center on desktop, Left on mobile) -->
             <!-- On desktop, it's pushed to the center by the nav and controls. -->
             <!-- On mobile, the nav is hidden, so the logo sits on the left. -->
-            <a href="/" class="relative z-50">
+            <a href="/es/index.html" class="relative z-50">
               <!-- Desktop Logo -->
               <div class="hidden lg:flex flex-col items-center gap-1">
                 <figure class="flex gap-1 items-center">
@@ -202,15 +206,15 @@
                   </defs>
                 </svg>
                 <select id="languageSwitcher" class="nice-select font-bold" onchange="setLanguage(this.value)">
-                  <option value="en" data-display="EN">English</option>
-                  <option value="lt" data-display="LT">Lithuanian</option>
-                  <option value="de" data-display="DE">German</option>
-                  <option value="es" data-display="ES">Spanish</option>
+                  <option value="en" data-display="EN">Inglés</option>
+                  <option value="lt" data-display="LT">Lituano</option>
+                  <option value="de" data-display="DE">Alemán</option>
+                  <option value="es" data-display="ES">Español</option>
                 </select>
               </div>
 
               <!-- Hamburger Button (hidden on large screens) -->
-              <button id="hamburger-button" class="hamburger z-50 lg:hidden" aria-label="Open menu">
+              <button id="hamburger-button" class="hamburger z-50 lg:hidden" aria-label="Abrir menú">
                 <span class="hamburger-top"></span>
                 <span class="hamburger-middle"></span>
                 <span class="hamburger-bottom"></span>
@@ -221,11 +225,12 @@
           <!-- Mobile Menu Panel (with glassy class) -->
           <div id="mobile-menu" class="glassy-menu hidden fixed inset-0 z-40">
             <div class="flex flex-col items-center justify-center w-full h-full text-white text-2xl space-y-4 pt-20">
-              <a href="/" class="mobile-nav-link" data-i18n="mb_home">Home</a>
-              <a href="/about.html" class="mobile-nav-link" data-i18n="mb_about">About Us</a>
-              <a href="/contact.html" class="mobile-nav-link" data-i18n="mb_contect">Contact</a>
-              <a href="/privacy-policy.html" class="mobile-nav-link" data-i18n="privacy_policy">Privacy Policy</a>
-              <a href="/en/blog/index.html" class="mobile-nav-link" data-i18n="mb_blog">Blog</a>
+              <a href="/es/index.html" class="mobile-nav-link" data-i18n="mb_home">Inicio</a>
+              <a href="/es/about.html" class="mobile-nav-link" data-i18n="mb_about">Sobre Nosotros</a>
+              <a href="/es/contact.html" class="mobile-nav-link" data-i18n="mb_contect">Contacto</a>
+              <a href="/es/privacy-policy.html" class="mobile-nav-link" data-i18n="privacy_policy">Política de
+                Privacidad</a>
+              <a href="/es/blog/index.html" class="mobile-nav-link" data-i18n="mb_blog">Blog</a>
             </div>
           </div>
         </header>
@@ -238,9 +243,9 @@
       </div>
     </div>
     <!--  ====================== Header Area End =============================  -->
-    <!-- ====================== Privacy Policy Section Start ============================= -->
+    <!-- ====================== About Us Section Start ============================= -->
     <style>
-      .privacy-section {
+      .about-section {
         margin-top: 150px;
         position: relative;
         overflow: hidden;
@@ -248,176 +253,250 @@
         margin-bottom: 150px;
       }
 
-      /* Re-using the glow effect for consistency */
-      .privacy-glow-effect {
+      /* Adds the subtle red glow effect */
+      .glow-effect {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 800px;
-        /* Made slightly larger for a wider glow */
-        height: 800px;
-        background: radial-gradient(circle, rgba(220, 38, 38, 0.1) 0%, rgba(220, 38, 38, 0) 65%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, rgba(220, 38, 38, 0) 60%);
         transform: translate(-50%, -50%);
         pointer-events: none;
+        /* Allows clicks to pass through */
         z-index: 0;
       }
 
-      .privacy-content {
+      .about-content {
         position: relative;
+        /* Ensures content is on top of the glow */
         z-index: 1;
+      }
+
+      .about-title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        color: #FFFFFF;
+        font-size: 25px;
+      }
+
+      .about-title .highlight {
+        color: #DC2626;
+        /* Red color from your theme */
+      }
+
+      .mission-text {
+        font-size: 1.125rem;
+        /* 18px */
+        line-height: 1.75rem;
+        /* 28px */
+        color: #A1A1AA;
+        /* Slightly darker gray for contrast */
         max-width: 800px;
-        /* Optimal width for long-form text readability */
+        /* Constrain line length for readability */
         margin-left: auto;
         margin-right: auto;
       }
 
-      .privacy-title {
-        font-family: 'Outfit', sans-serif;
-        font-weight: 600;
-        color: #FFFFFF;
-        text-align: center;
-        margin-bottom: 0.5rem;
-        font-size: 25px;
+      /* Styling for the value cards */
+      .grid {
+        gap: 2.5rem;
+        margin-top: 30px;
       }
 
-      .privacy-title .highlight {
+      .value-card {
+        background-color: rgba(23, 23, 23, 0.7);
+        /* Dark, semi-transparent background */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+        /* Frosted glass effect */
+      }
+
+      .value-card:hover {
+        border-color: #DC2626;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(220, 38, 38, 0.1);
+      }
+
+      .value-card-icon {
+        background-color: rgba(220, 38, 38, 0.1);
         color: #DC2626;
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        gap: 2.5rem;
       }
 
-      .last-updated {
-        text-align: center;
-        color: #A1A1AA;
-        margin-bottom: 3rem;
-      }
-
-      /* Styling for content headings */
-      .privacy-content h3 {
+      .value-card-title {
         font-family: 'Outfit', sans-serif;
         font-weight: 500;
-        font-size: 1.5rem;
-        /* 24px */
+        font-size: 1.25rem;
         color: #FFFFFF;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 0.5rem;
       }
 
-      /* Styling for paragraphs for better readability */
-      .privacy-content p {
+      .value-card-text {
         color: #A1A1AA;
-        line-height: 1.7;
-        margin-bottom: 1rem;
+        line-height: 1.6;
       }
-
-      /* Styling for lists */
-      .privacy-content ul {
-        list-style-type: none;
-        padding-left: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .privacy-content ul li {
-        color: #A1A1AA;
-        margin-bottom: 0.75rem;
-        position: relative;
-        padding-left: 1.5rem;
-      }
-
-      /* Custom list bullet using the theme's red color */
-      .privacy-content ul li::before {
-        content: '■';
-        position: absolute;
-        left: 0;
-        color: #DC2626;
-        font-size: 0.8rem;
-        top: 0.3rem;
-      }
-
-      /* Styling for links within the text */
-      .privacy-content a {
-        color: #DC2626;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .privacy-content a:hover {
-        text-decoration: underline;
-        color: #F87171;
-        /* A lighter red for hover */
-      }
-
-      h2
     </style>
 
-    <section class="privacy-section py-20 lg:py-32">
-      <div class="privacy-glow-effect"></div>
+    <section class="about-section py-20 lg:py-32">
+      <!-- Red glow background effect -->
+      <div class="glow-effect"></div>
 
-      <div class="container px-6 privacy-content">
+      <div class="container mx-auto px-6 about-content">
 
-        <h1 class="privacy-title text-3xl md:text-5xl">
-          Privacy <span class="highlight">Policy</span>
-        </h1>
-        <p class="last-updated">Last Updated: July 20, 2025</p>
+        <!-- Section Title -->
+        <div class="text-center mb-12">
+          <h1 class="about-title text-3xl md:text-5xl">
+            Quiénes <span class="highlight">Somos</span>
+          </h1>
+          <p class="mission-text mt-4">
+            Wealth Masters fue creado con una única misión: empoderar a los inversores proporcionando estrategias
+            sofisticadas de trading de criptomonedas y análisis de mercado. Ayudamos a nuestros clientes a navegar por
+            las complejidades del trading de criptomonedas, permitiéndoles usar la volatilidad del mercado a su favor
+            mientras gestionan el riesgo de manera efectiva.
+          </p>
+        </div>
 
-        <p>Your privacy is of paramount importance to us. This Privacy Policy outlines the types of information we
-          collect from our users, how we use it, and the steps we take to safeguard it. This policy applies to all
-          services offered by Wealth Masters.</p>
+        <!-- Core Values Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <h3>1. Information We Collect</h3>
-        <p>We collect information to provide better services to all our users. The types of information we gather
-          include:</p>
-        <ul>
-          <li><strong>Personal Information:</strong> This is information you voluntarily provide to us when you
-            subscribe to our newsletter or join our club, such as your name and email address.</li>
-          <li><strong>Usage Data:</strong> We automatically collect information when you interact with our website. This
-            may include your IP address, browser type, device information, pages visited, and the time and date of your
-            visit.</li>
-          <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar technologies to track
-            activity on our service and hold certain information. This helps us analyze our web traffic and improve your
-            user experience.</li>
-        </ul>
+          <!-- Card 1: Precision -->
+          <div class="value-card">
+            <div class="value-card-icon">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="value-card-title">Enfoque Estratégico, No Ruido</h3>
+            <p class="value-card-text">
+              A diferencia de muchos servicios que te inundan con señales constantes, Wealth Masters se enfoca en
+              entregar estrategias de trading bien investigadas y de alta convicción, diseñadas para producir
+              rendimientos consistentes. Nuestro enfoque enfatiza el trading estratégico en lugar de mantener posiciones
+              durante las caídas del mercado, lo que te permite maximizar el ROI potencial y minimizar la exposición a
+              los mercados bajistas.
+            </p>
+          </div>
 
-        <h3>2. How We Use Your Information</h3>
-        <p>The information we collect is used in the following ways:</p>
-        <ul>
-          <li>To provide, operate, and maintain our services, including our crypto signal alerts and newsletters.</li>
-          <li>To improve, personalize, and expand our services and website content.</li>
-          <li>To understand and analyze how you use our website for analytics and optimization.</li>
-          <li>To communicate with you, either directly or through one of our partners, for customer service, to provide
-            you with updates and other information relating to the website, and for marketing purposes.</li>
-          <li>To detect and prevent fraudulent activity.</li>
-        </ul>
+          <!-- Card 2: Transparency -->
+          <div class="value-card">
+            <div class="value-card-icon">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="value-card-title">Gestión de Riesgos y Consistencia</h3>
+            <p class="value-card-text">
+              No creemos en esperar lo mejor. Nuestras estrategias están diseñadas para gestionar los riesgos,
+              especialmente durante las caídas del mercado, y asegurar que estés posicionado para obtener rendimientos
+              consistentes a largo plazo. Nuestro compromiso con el trading disciplinado significa que nos enfocamos en
+              gestionar los riesgos de caída, no solo en buscar ganancias a corto plazo.
+            </p>
+          </div>
 
-        <h3>3. Data Security</h3>
-        <p>We are committed to protecting your data. We implement a variety of security measures to maintain the safety
-          of your personal information. However, please remember that no method of transmission over the Internet or
-          method of electronic storage is 100% secure.</p>
+          <!-- Card 3: Empowerment -->
+          <div class="value-card">
+            <div class="value-card-icon">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="value-card-title">Alineados con Tu Éxito</h3>
+            <p class="value-card-text">
+              No hay tarifas iniciales: nuestro éxito está directamente ligado al tuyo. Utilizamos nuestras herramientas
+              y estrategias patentadas para ayudarte a optimizar tu portafolio, con el objetivo de generar rendimientos
+              consistentes que se alineen con tus objetivos financieros a largo plazo.
+            </p>
+          </div>
+        </div>
 
-        <h3>4. Data Sharing and Disclosure</h3>
-        <p>We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties.
-          This does not include trusted third parties who assist us in operating our website, conducting our business,
-          or serving our users, so long as those parties agree to keep this information confidential. We may also
-          release information when its release is appropriate to comply with the law or protect ours or others' rights,
-          property, or safety.</p>
+        <!-- "Our Mission" Section (Text left, Image right) -->
+        <div class="feature-row">
+          <div class="feature-text">
+            <h3 data-i18n="our_mission">Nuestra Misión</h3>
+            <p data-i18n="our_mission_desc">
+              Nuestra misión es empoderar a la <strong>comunidad de trading</strong> global. Existimos para ayudar a
+              cada
+              <strong>trader de cripto</strong> a navegar las complejidades del mundo de las
+              <strong>criptomonedas</strong> con
+              confianza. Proporcionamos las <strong>herramientas de trading</strong> y los <strong>análisis de
+                mercado</strong> necesarios para
+              tomar decisiones informadas, yendo más allá del bombo publicitario visto en <strong>plataformas como
+                Reddit</strong> y centrándonos en un
+              valor real y sostenible.
+            </p>
+          </div>
+          <div class="feature-image">
+            <!-- !!! REPLACE THIS with your own image for "Our Mission" !!! -->
+            <img src="/assets/images/mission-img.webp"
+              alt="Un gráfico que muestra el enfoque estratégico y el análisis de mercado">
+          </div>
+        </div>
 
-        <h3>5. Your Data Rights</h3>
-        <p>Depending on your location, you may have certain rights regarding your personal information, such as the
-          right to access, correct, or delete the data we hold about you. If you wish to exercise any of these rights,
-          please contact us.</p>
+        <!-- "Our Values" Section (Image left, Text right) -->
+        <div class="feature-row">
+          <div class="feature-image">
+            <!-- !!! REPLACE THIS with your own image for "Our Values" !!! -->
+            <img src="/assets/images/values-img.webp"
+              alt="Una imagen abstracta que representa comunidad, confianza e integridad">
+          </div>
+          <div class="feature-text">
+            <h3 data-i18n="our_values">Nuestros Valores</h3>
+            <p data-i18n="our_values_desc">
+              Estos valores fundamentales guían cada señal que enviamos y cada interacción que tenemos:
+            </p>
+            <ul class="values-list">
+              <li>
+                <strong data-i18n="our_values_ul-1_strong">Transparencia:</strong>
+                <span data-i18n="our_values_ul-1_text">
+                  <strong>Ofrecemos</strong> pruebas <strong>gratuitas</strong> y un popular canal de <strong>señales de
+                    cripto gratuitas</strong>,
+                  para que puedas ver nuestra calidad antes de comprometerte con nuestras <strong>señales de
+                    pago</strong>.
+                </span>
+              </li>
+              <li>
+                <strong data-i18n="our_values_ul-2_strong">Comunidad:</strong>
+                <span data-i18n="our_values_ul-2_text">
+                  Nuestro <strong>mejor grupo de señales de cripto</strong> es más que una simple transmisión;
+                  es un <strong>círculo interno de cripto</strong> de apoyo donde los miembros aprenden y crecen juntos.
+                </span>
+              </li>
+              <li>
+                <strong data-i18n="our_values_ul-3_strong">Integridad:</strong>
+                <span data-i18n="our_values_ul-3_text">
+                  Proporcionamos análisis de expertos, no <strong>asesoramiento de inversión</strong> formal.
+                  Nuestro objetivo es convertirte en un <strong>trader</strong> más inteligente y autosuficiente.
+                </span>
+              </li>
+            </ul>
+          </div>
 
-        <h3>6. Changes to This Privacy Policy</h3>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new
-          Privacy Policy on this page and updating the "Last Updated" date. We advise you to review this Privacy Policy
-          periodically for any changes.</p>
-
-        <h3>7. Contact Us</h3>
-        <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a
-            href="mailto:contact@wealthmasters.pro">contact@wealthmasters.pro</a>.</p>
+        </div>
 
       </div>
     </section>
-    <!-- ====================== Privacy Policy Section End =============================== -->
+    <!-- ====================== About Us Section End =============================== -->
+
     <!--  ====================== start-earning  Area Start =============================  -->
     <div class="relative">
       <img src="/assets/images/footer-ellipse.webp" loading="lazy" alt="images"
@@ -431,14 +510,15 @@
             <div class="ft-top-wrap">
               <div class="footer-item">
                 <div class="site-logo">
-                  <a href="/">
+                  <a href="/es/index.html">
                     <img id="image0_61_3589" width="500" height="500" preserveAspectRatio="none"
-                      src="/assets/images/wealth-masters-logo.webp" alt="wealth masters logo" />
+                      src="/assets/images/wealth-masters-logo.webp" alt="logo de wealth masters" />
                   </a>
                 </div>
                 <div class="text-box mt-6 ">
-                  <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Join Wealth Masters for
-                    expert crypto market analysis, VIP strategies, and insights to grow your passive income.</p>
+                  <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Únase a Wealth Masters para
+                    obtener análisis expertos del mercado de criptomonedas, estrategias VIP e información para aumentar
+                    sus ingresos pasivos.</p>
                 </div>
                 <div class="footer-social-icon mt-6">
                   <ul class="flex items-center gap-4 justify-center lg:justify-start text-footer">
@@ -511,28 +591,32 @@
               <!--New Box-->
               <div class="footer-item">
                 <h2 data-i18n="footer_heading"
-                  class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explore</h2>
+                  class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explorar</h2>
                 <ul class="footer-links">
-                  <li><a data-i18n="footer_home" href="/" title="Go to Home">Home</a></li>
-                  <li><a data-i18n="footer_about" href="/about.html" title="Learn About Us">About Us</a></li>
-                  <li><a data-i18n="footer_contact" href="/contact.html" title="Contact Wealth Masters">Contact</a></li>
-                  <li><a data-i18n="footer_privacy" href="/privacy-policy.html"
-                      title="Read Our Privacy Policy">Privacy</a></li>
+                  <li><a data-i18n="footer_home" href="/es/index.html" title="Ir a la página de inicio">Inicio</a></li>
+                  <li><a data-i18n="footer_about" href="/es/about.html" title="Conoce más sobre nosotros">Sobre
+                      Nosotros</a></li>
+                  <li><a data-i18n="footer_contact" href="/es/contact.html"
+                      title="Contactar a Wealth Masters">Contacto</a>
+                  </li>
+                  <li><a data-i18n="footer_privacy" href="/es/privacy-policy.html"
+                      title="Lea nuestra Política de Privacidad">Privacidad</a></li>
                 </ul>
               </div>
               <!--New Box end here-->
               <div class="footer-item">
                 <div class="newsletter">
-                  <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Subscribe</h2>
-                  <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text"> Get the latest crypto
-                    trading setups, market updates, investment strategies, and exclusive crypto offers delivered
-                    straight to your inbox.</p>
+                  <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Suscríbete
+                  </h2>
+                  <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text"> Recibe las últimas
+                    configuraciones de trading de criptomonedas, actualizaciones del mercado, estrategias de inversión y
+                    ofertas exclusivas de cripto directamente en tu bandeja de entrada.</p>
                   <div id="custom-substack-2" class="mt-6 form-box">
                     <div id="custom-substack-2" class="mt-6 form-box">
                       <form id="join-club-form" class="flex items-center justify-center">
                         <div style="display: flex; width: 100%; max-width: 420px; height: 44px;">
-                          <input id="join-email-input" type="email" name="email" placeholder="Type Your Email..."
-                            required style="
+                          <input id="join-email-input" type="email" name="email"
+                            placeholder="Escribe tu correo electrónico..." required style="
           flex: 1;
           border-top-left-radius: 7px;
           border-bottom-left-radius: 7px;
@@ -560,8 +644,8 @@
           cursor: pointer;
           box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
           transition: background-color 0.2s;
-        " onmouseover="this.style.background='#B91C1C'" onmouseout="this.style.background='#DC2626'">Sign up
-                            FREE</button>
+        " onmouseover="this.style.background='#B91C1C'" onmouseout="this.style.background='#DC2626'">Regístrate
+                            GRATIS</button>
                         </div>
                         <input type="hidden" name="utm_source" value="website" />
                         <input type="hidden" name="utm_medium" value="footer_form" />
@@ -576,21 +660,21 @@
                         const submitBtn = document.getElementById('join-submit-btn');
                         const messageDiv = document.getElementById('join-form-message');
                         if (!email || !isValidEmail(email)) {
-                          showMessageJoin('Please enter a valid email address.', 'error');
+                          showMessageJoin('Por favor, introduce una dirección de correo electrónico válida.', 'error');
                           return;
                         }
-                        submitBtn.innerHTML = 'Subscribing...';
+                        submitBtn.innerHTML = 'Suscribiendo...';
                         submitBtn.disabled = true;
                         messageDiv.style.display = 'none';
                         try {
                           await submitToSubstackViaIframe(email);
-                          showMessageJoin('🎉 Successfully subscribed!', 'success');
+                          showMessageJoin('🎉 ¡Suscrito con éxito!', 'success');
                           document.getElementById('join-email-input').value = '';
                         } catch (error) {
                           console.error('Subscription error:', error);
-                          showMessageJoin('Something went wrong. Please try again or contact support.', 'error');
+                          showMessageJoin('Algo salió mal. Por favor, inténtalo de nuevo o contacta con soporte.', 'error');
                         } finally {
-                          submitBtn.innerHTML = 'Join The Club';
+                          submitBtn.innerHTML = 'Únete al Club';
                           submitBtn.disabled = false;
                         }
                       });
@@ -674,22 +758,23 @@
             <div class="copy-right-area w-full pt-8 mt-8 justify-between border-t border-[#1F2937]">
               <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
                 <div class="item-text">
-                  <p class="text-sm text-footer" data-i18n="copyright"> Wealth Masters &copy2025. All rights reserved.
+                  <p class="text-sm text-footer" data-i18n="copyright"> Wealth Masters ©2025. Todos los derechos
+                    reservados.
                   </p>
                 </div>
                 <div class="item-box">
                   <ul class="flex md:gap-6 gap-3 items-center text-footer">
                     <li>
-                      <a class="hover:text-primary-200 duration-500 text-sm" href="/privacy-policy.html"
-                        data-i18n="privacy_policy">Privacy Policy</a>
+                      <a class="hover:text-primary-200 duration-500 text-sm" href="/es/privacy-policy.html"
+                        data-i18n="privacy_policy">Política de Privacidad</a>
                     </li>
                     <li>
-                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="terms_service">Terms of
-                        Service</a>
+                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="terms_service">Términos
+                        de Servicio</a>
                     </li>
                     <li>
-                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="cookie_policy">Cookie
-                        Policy</a>
+                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="cookie_policy">Política
+                        de Cookies</a>
                     </li>
                   </ul>
                 </div>
