@@ -938,3 +938,8 @@ a.relative.z-50 {
 nav.hidden.lg\:flex.items-center.gap-8.text-white.font-medium {
   width: 100%;
 }
+
+ul.flex.items-center.gap-4.justify-center.lg\:justify-start.text-footer {
+  display: flex;
+  justify-content: flex-start;
+}
