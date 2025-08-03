@@ -148,75 +148,89 @@
     <div class="top-box pt-4 lg:pt-[40px] relative">
       <div class="container">
         <header class="relative px-4 py-4 lg:pt-6">
-          <div class="relative">
-            <!-- Desktop Navigation -->
-            <div class="flex justify-between items-center pb-12 sm:pb-0">
+          <!-- Main header bar: a flex container that justifies content to the ends -->
+          <div class="container mx-auto flex w-full items-center justify-between gap-4">
 
-              <!-- 1. Left Spacer -->
-              <span class="w-24"></span>
+            <!-- 1. Desktop Navigation (Left side on desktop, hidden on mobile) -->
+            <nav class="hidden lg:flex items-center gap-8 text-white font-medium">
+              <a href="/" class="desktop-nav-link" data-i18n="mb_home">Home</a>
+              <a href="/about.html" class="desktop-nav-link" data-i18n="mb_about">About Us</a>
+              <a href="/contact.html" class="desktop-nav-link" data-i18n="mb_contect">Contact</a>
+              <a href="/en/blog/index.html" class="desktop-nav-link" data-i18n="mb_blog">Blog</a>
+            </nav>
 
-              <!-- 2. Center Animated Logo -->
-              <div class="gap-[6px] flex-col items-center relative z-50 hidden lg:flex">
-                <div class="flex flex-col items-center gap-1">
-                  <figure class="flex gap-1 items-center">
-                    <img src="assets/images/l1.webp" loading="lazy" alt="stack_0.5s_ease-out_1s_forwards"
-                      class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10">
-                    <img src="assets/images/l2.webp" loading="lazy" alt="l2"
-                      class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10">
-                    <img src="assets/images/l3.webp" loading="lazy" alt="l3"
-                      class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10">
-                    <img src="assets/images/l4.webp" loading="lazy" alt="l4"
-                      class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start">
-                  </figure>
-                  <img src="assets/images/l-body.svg" loading="lazy" class="rishi-img" alt="images">
-                </div>
+            <!-- 2. Logo (Center on desktop, Left on mobile) -->
+            <!-- On desktop, it's pushed to the center by the nav and controls. -->
+            <!-- On mobile, the nav is hidden, so the logo sits on the left. -->
+            <a href="/" class="relative z-50">
+              <!-- Desktop Logo -->
+              <div class="hidden lg:flex flex-col items-center gap-1">
+                <figure class="flex gap-1 items-center">
+                  <img src="assets/images/l1.webp" loading="lazy" alt="l1"
+                    class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10 h-5">
+                  <img src="assets/images/l2.webp" loading="lazy" alt="l2"
+                    class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10 h-5">
+                  <img src="assets/images/l3.webp" loading="lazy" alt="l3"
+                    class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10 h-5">
+                  <img src="assets/images/l4.webp" loading="lazy" alt="l4"
+                    class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start h-5">
+                </figure>
+                <img src="assets/images/l-body.svg" loading="lazy" class="h-4" alt="Wealth Masters">
+              </div>
+              <!-- Mobile Logo -->
+              <div class="flex lg:hidden flex-col items-center gap-1">
+                <figure class="flex gap-1 items-center">
+                  <img src="assets/images/l1.webp" loading="lazy" alt="l1" class="h-5">
+                  <img src="assets/images/l2.webp" loading="lazy" alt="l2" class="h-5">
+                  <img src="assets/images/l3.webp" loading="lazy" alt="l3" class="h-5">
+                  <img src="assets/images/l4.webp" loading="lazy" alt="l4" class="h-5 place-self-start">
+                </figure>
+                <img src="assets/images/l-body.svg" loading="lazy" class="h-4" alt="Wealth Masters">
+              </div>
+            </a>
+
+            <!-- 3. Controls (Right side on all screens) -->
+            <div class="flex items-center gap-4">
+              <!-- Language Selector -->
+              <div
+                class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_81_471)">
+                    <path
+                      d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z"
+                      fill="#DC2626" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_81_471">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <select id="languageSwitcher" class="nice-select font-bold" onchange="setLanguage(this.value)">
+                  <option value="en" data-display="EN">English</option>
+                  <option value="lt" data-display="LT">Lithuanian</option>
+                  <option value="de" data-display="DE">German</option>
+                  <option value="es" data-display="ES">Spanish</option>
+                </select>
               </div>
 
-              <!-- 3. Right-Side Group (Language Selector + Hamburger) -->
-              <div class="flex items-center gap-2 sm:gap-4">
-
-                <!-- Language Selector -->
-                <div
-                  class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl hover:border-[#FFFFFF1A] ">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_81_471)">
-                      <path
-                        d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z"
-                        fill="#DC2626" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_81_471">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <select id="languageSwitcher" class="nice-select font-bold" onchange="setLanguage(this.value)">
-                    <option value="en" data-display="EN">English</option>
-                    <option value="lt" data-display="LT">Lithuanian</option>
-                    <option value="de" data-display="DE">German</option>
-                    <option value="es" data-display="ES">Spanish</option>
-                  </select>
-                </div>
-
-                <button id="hamburger-button" class="hamburger z-50" aria-label="Open menu"></button>
+              <!-- Hamburger Button (hidden on large screens) -->
+              <button id="hamburger-button" class="hamburger z-50 lg:hidden" aria-label="Open menu">
                 <span class="hamburger-top"></span>
                 <span class="hamburger-middle"></span>
                 <span class="hamburger-bottom"></span>
-                </button>
-              </div>
-
+              </button>
             </div>
           </div>
 
-          <!-- Mobile Menu Panel -->
-          <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black bg-opacity-95">
-            <!-- KEY CHANGE: Increased spacing from space-y-6 to space-y-10 -->
-            <div class="flex flex-col items-center justify-center w-full h-full text-white text-2xl space-y-10">
-              <a href="/" class="hover:text-primary-200">Home</a>
-              <a href="/about.html" class="hover:text-primary-200">About Us</a>
-              <a href="/contact.html" class="hover:text-primary-200">Contact</a>
-              <a href="/policy-policy.html" class="hover:text-primary-200">Privacy</a>
-              <a href="/en/blog/index.html" class="hover:text-primary-200">Blog</a>
+          <!-- Mobile Menu Panel (with glassy class) -->
+          <div id="mobile-menu" class="glassy-menu hidden fixed inset-0 z-40">
+            <div class="flex flex-col items-center justify-center w-full h-full text-white text-2xl space-y-4 pt-20">
+              <a href="/" class="mobile-nav-link" data-i18n="mb_home">Home</a>
+              <a href="/about.html" class="mobile-nav-link" data-i18n="mb_about">About Us</a>
+              <a href="/contact.html" class="mobile-nav-link" data-i18n="mb_contect">Contact</a>
+              <a href="/privacy-policy.html" class="mobile-nav-link" data-i18n="privacy_policy">Privacy Policy</a>
+              <a href="/en/blog/index.html" class="mobile-nav-link" data-i18n="mb_blog">Blog</a>
             </div>
           </div>
         </header>
@@ -429,12 +443,31 @@
                   </a>
                 </div>
                 <div class="text-box mt-6 ">
-                  <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Premium cryptocurrency
-                    signals, market analysis, and trading strategies for investors in France and Europe building
-                    long-term crypto wealth. </p>
+                  <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Join Wealth Masters for
+                    expert crypto market analysis, VIP strategies, and insights to grow your passive income.</p>
                 </div>
                 <div class="footer-social-icon mt-6">
                   <ul class="flex items-center gap-4 justify-center lg:justify-start text-footer">
+                    <li>
+                      <a href="https://www.facebook.com/wealthmastersclub" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                          viewBox="0 0 24 24">
+                          <path
+                            d="M22 12.073C22 6.505 17.523 2 12 2S2 6.505 2 12.073c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.2 22 17.064 22 12.073Z" />
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://x.com/thewealthm" target="_blank" aria-label="X (Twitter)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                          viewBox="0 0 24 24">
+                          <path
+                            d="M17.53 3H20.5L13.86 10.29L21.75 21H15.38L10.43 14.63L4.76 21H1.75L8.82 13.22L1.25 3H7.78L12.3 8.84L17.53 3ZM16.4 19H18.2L7.44 4.89H5.53L16.4 19Z" />
+                        </svg>
+                      </a>
+                    </li>
+
                     <li>
                       <a href="https://www.linkedin.com/company/wealthmasters-club/" target="_blank">
                         <!-- <img src="/assets/images/download.svg" alt="LinkedIn icon" width="20" height="20"> -->
@@ -483,12 +516,14 @@
 
               <!--New Box-->
               <div class="footer-item">
-                <h2 class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explore</h2>
+                <h2 data-i18n="footer_heading"
+                  class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explore</h2>
                 <ul class="footer-links">
-                  <li><a href="/" title="Go to Home">Home</a></li>
-                  <li><a href="/about.html" title="Learn About Us">About Us</a></li>
-                  <li><a href="/contact.html" title="Contact Wealth Masters">Contact</a></li>
-                  <li><a href="/privacy-policy.html" title="Read Our Privacy Policy">Privacy</a></li>
+                  <li><a data-i18n="footer_home" href="/" title="Go to Home">Home</a></li>
+                  <li><a data-i18n="footer_about" href="/about.html" title="Learn About Us">About Us</a></li>
+                  <li><a data-i18n="footer_contact" href="/contact.html" title="Contact Wealth Masters">Contact</a></li>
+                  <li><a data-i18n="footer_privacy" href="/privacy-policy.html"
+                      title="Read Our Privacy Policy">Privacy</a></li>
                 </ul>
               </div>
               <!--New Box end here-->
@@ -496,8 +531,8 @@
                 <div class="newsletter">
                   <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Subscribe</h2>
                   <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text"> Get the latest crypto
-                    trading signals, market updates, investment strategies, and exclusive crypto offers delivered
-                    straight to your inbox. </p>
+                    trading setups, market updates, investment strategies, and exclusive crypto offers delivered
+                    straight to your inbox.</p>
                   <div id="custom-substack-2" class="mt-6 form-box">
                     <div id="custom-substack-2" class="mt-6 form-box">
                       <form id="join-club-form" class="flex items-center justify-center">
@@ -521,7 +556,7 @@
           height: 100%;
           border-top-right-radius: 7px;
           border-bottom-right-radius: 7px;
-          padding: 10px 15px;
+          padding: 0px 0px;
           background: #DC2626;
           color: white;
           border: 1px solid #666;
@@ -531,8 +566,8 @@
           cursor: pointer;
           box-shadow: 2px 2px 1px 0px #FFFFFF59 inset;
           transition: background-color 0.2s;
-        " onmouseover="this.style.background='#B91C1C'" onmouseout="this.style.background='#DC2626'">Get
-                            Signals</button>
+        " onmouseover="this.style.background='#B91C1C'" onmouseout="this.style.background='#DC2626'">Sign up
+                            FREE</button>
                         </div>
                         <input type="hidden" name="utm_source" value="website" />
                         <input type="hidden" name="utm_medium" value="footer_form" />
@@ -651,8 +686,8 @@
                 <div class="item-box">
                   <ul class="flex md:gap-6 gap-3 items-center text-footer">
                     <li>
-                      <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="privacy_policy">Privacy
-                        Policy</a>
+                      <a class="hover:text-primary-200 duration-500 text-sm" href="/privacy-policy.html"
+                        data-i18n="privacy_policy">Privacy Policy</a>
                     </li>
                     <li>
                       <a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="terms_service">Terms of
