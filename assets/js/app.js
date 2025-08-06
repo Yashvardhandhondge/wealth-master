@@ -85,13 +85,3 @@ function setLanguage(lang) {
         window.location.href = '/' + lang + '/index.html';
     }
 }
-window.addEventListener('DOMContentLoaded', function () {
-    const path = window.location.pathname.split('/')[1]; // get lang from path
-    const langSwitcher = document.getElementById('languageSwitcher');
-
-    if (path === '' || path === 'index.html') {
-        langSwitcher.value = 'en';
-    } else {
-        langSwitcher.value = path;
-    }
-});
