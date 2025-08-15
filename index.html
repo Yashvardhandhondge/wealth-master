@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="wm_title">Expert Crypto Analysis & VIP Strategies | Wealth Masters</title>
+  <title data-i18n="wm_title">Wealth Masters – English Version</title>
   <meta name="description"
     content="Join Wealth Masters for expert crypto market analysis, VIP strategies, and insights to grow your passive income.">
   <!-- Open Graph / Facebook / LinkedIn -->
@@ -22,6 +22,7 @@
   <meta name="twitter:description"
     content="Learn to master your wealth through expert guides, market insights, and crypto strategies. Join the financial revolution.">
   <meta name="twitter:image" content="https://wealthmasters.pro/assets/images/wealth-masters-logo.webp">
+  <script src="https://ocixyipglvsfmybqimen.supabase.co/storage/v1/object/public/freeoff/prices.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +32,7 @@
   <link rel="icon" href="/assets/images/image1.webp" type="image/png" sizes="32x32" style="border-radius: 50%;">
   <link rel="apple-touch-icon" href="/assets/images/image1.webp" style="border-radius: 50%;">
   <link rel="mask-icon" href="/assets/images/image1.webp" color="#000000" style="border-radius: 50%;">
+
   <!-- Dynamic Canonical Tag -->
   <script>
     const link = document.createElement("link");
@@ -102,8 +104,6 @@
     </script>
   <!--Nav Menu-->
   <script>
-    // File: assets/js/menu.js
-
     // Wait for the entire HTML document to be parsed before running the script
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -2170,7 +2170,7 @@
         const data = await response.json();
 
         // Select top 15 coins
-        const topCoins = data.slice(0, 15);
+        const topCoins = data.slice(0, 14);
 
         let html = '';
         topCoins.forEach(coin => {
@@ -2192,13 +2192,17 @@
     fetchPrices();
     setInterval(fetchPrices, 10000);
   </script>
-
 </head>
 
 <body class="  font-base  font-normal bg-[#000000]">
   <div id="crypto-ticker-bar">
-    <div id="crypto-ticker">Loading prices...</div>
+    <div id="crypto-ticker">
+      Crypto Prices | BTC: $120,561.89 | ETH: $4,200.70 | XRP: $3.23 | USDT: $1.00 | BNB: $798.96 | SOL: $179.24 | USDC:
+      $1.00 | STETH: $4,190.87 | DOGE: $0.23 | ADA: $0.79 | TRX: $0.34 | WSTETH: $5,074.46 | WETH: $4,200.64 | WBTC:
+      $120,358.56 | HYPE: $44.91
+    </div>
   </div>
+
   <main class="overflow-hidden">
     <!--  ====================== Header Area Start =============================  -->
     <div class="top-box pt-4 lg:pt-[40px] relative">
@@ -2319,16 +2323,16 @@
         <div
           class="flex px-[9px] py-[4px] gap-[6px] items-center justify-center bg-primary-100 max-w-[370px] mx-auto rounded-full">
           <img src="/assets/images/hero-man-logo.webp" loading="lazy" class="h-6 sm:h-auto" alt="images">
-          <p class="sm:text-sm text-xs font-medium" data-i18n="cta">Join +1,000 daily traders for 100% free</p>
+          <p class="sm:text-sm text-xs font-medium" data-i18n="cta">Join over 1,000 daily traders — 100% free.</p>
         </div>
         <div class="max-w-[680px] mx-auto relative z-10">
           <h1 class="font-medium lg:text-[46px] md:text-[40px] text-[24px] xd:text-[28px] sm:text-[32px] text-center">
-            <span data-i18n="hero_heading">Join 1% Of Traders Club And Get</span>
-            <span class="text-primary-200" data-i18n="hero_highlight"> Full Access</span>
-            <span data-i18n="hero_end"> To VIP Strategies</span>
+            <span data-i18n="hero_heading">Join the top 1% of traders and get</span>
+            <span class="text-primary-200" data-i18n="hero_highlight"> full access</span>
+            <span data-i18n="hero_end"> to VIP strategies.</span>
           </h1>
-          <p class="text-sm sm:text-base text-center mt-[22px]" data-i18n="subtext"> We help to earn consistent returns
-            with crypto and manage the risks. Start building your crypto portfolio today </p>
+          <p class="text-sm sm:text-base text-center mt-[22px]" data-i18n="subtext"> We help you earn consistent returns
+            with crypto and manage risk effectively. Start building your crypto portfolio today.</p>
           <div class="email-box mt-[25px] max-w-[420px] w-full px-8 sm:px-0 mx-auto">
             <form id="newsletter-form" class="flex items-center justify-center">
               <div style="display: flex; width: 100%; max-width: 420px; height: 44px;">
@@ -2450,7 +2454,7 @@
           </script>
         </div>
         <div class="start-earning-wrapper">
-          <a href="https://forms.monday.com/forms/dbabe75a18d9e994e8466db8451f6864?r=euc1" target="_blank"
+          <a href="https://forms.monday.com/forms/042c8decc022a78bf1762c041c1affa2?r=euc1" target="_blank"
             class="start-earning-button">
             Start Earning
           </a>
@@ -2477,8 +2481,8 @@
                           fill="white" />
                       </svg>
                     </div>
-                    <h2 class="md:text-[20px] text-[16px] font-bold gap-[5px]" data-i18n="index_heading"> Bitcoin: Fear
-                      And Greed Index </h2>
+                    <h2 class="md:text-[20px] text-[16px] font-bold gap-[5px]" data-i18n="index_heading">Bitcoin Fear
+                      and Greed Index</h2>
                   </div>
                 </div>
                 <div class="flex gap-2 items-center">
@@ -2546,8 +2550,8 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_fear_label"> Extreme Fear
-                        (0–24) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_fear_label">Extreme Fear
+                        (0–24)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2573,7 +2577,7 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="fear_label"> Fear (25-49) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="fear_label">Fear (25–49)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2600,7 +2604,7 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="neutral_label"> Neutral (50) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="neutral_label">Neutral (50)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2627,7 +2631,7 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="greed_label"> Greed (51-74) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="greed_label">Greed (51–74)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2654,8 +2658,8 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_greed_label"> Extreme Greed
-                        (75–100) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_greed_label">Extreme Greed
+                        (75–100)</p>
                     </div>
                   </div>
                 </div>
@@ -2671,31 +2675,28 @@
         <div class="section-title mb-[70px]">
           <h2 class="lg:text-[32px] text-[24px] font-medium text-center">
             <span data-i18n="featured_partners_before">Featured</span>
-            <span class="text-primary-200" data-i18n="featured_partners_highlight">Partners</span>
+            <span class="text-primary-200" data-i18n="featured_partners_highlight">Partners:</span>
           </h2>
         </div>
         <div class="space-y-2 sm:space-y-10">
           <!-- Desktop view - show the 3 logos in a clean row -->
           <div
             class="flex flex-col space-y-4 sm:flex-row justify-between sm:justify-between sm:items-center sm:space-y-0 w-full">
-            <div class="relative w-fit mx-auto sm:mx-0">
-              <img src="/assets/images/bitmex.png" loading="lazy" alt="MarketWatch" class="block h-12" />
-              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none">
-              </div>
 
-            </div>
             <div class="relative w-fit mx-auto sm:mx-0">
-              <img src="/assets/images/binance.png" loading="lazy" alt="MarketWatch" class="block h-12" />
-              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none">
-              </div>
+              <img src="/assets/images/binance.png" loading="lazy" alt="TradingView" class="block h-12" />
+              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none"></div>
+            </div>
 
-            </div>
-            <img src="/assets/images/bybit.png" loading="lazy" alt="TradingView" class="h-12 mx-auto sm:mx-0">
             <div class="relative w-fit mx-auto sm:mx-0">
-              <img src="/assets/images/coinbase.png" loading="lazy" alt="Bitcoin.com" class="block h-12" />
-              <div class="absolute inset-0 bg-gradient-to-r from-white/0 to-black/80 pointer-events-none"></div>
+              <img src="/assets/images/bitmex.png" loading="lazy" alt="Bitmex" class="block h-12" />
+              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none"></div>
             </div>
+
+            <img src="/assets/images/bybit.png" loading="lazy" alt="Bitcoin.com" class="h-12 mx-auto sm:mx-0">
+
           </div>
+
         </div>
       </div>
     </section>
@@ -2710,8 +2711,8 @@
           <h2 class="lg:text-[32px] text-[24px] font-medium text-center">
             <span data-i18n="hero_text_before">At</span>
             <span class="text-primary-200" data-i18n="hero_text_highlight">Wealth Master Club</span>, <span
-              data-i18n="hero_text_after">We trade the highest conviction setups and help to earn passive income with
-              crypto</span>
+              data-i18n="hero_text_after">we trade only the highest-conviction setups and help you generate passive
+              income with crypto.</span>
           </h2>
         </div>
         <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
@@ -2742,8 +2743,8 @@
             </div>
             <div class="content-box flex items-center justify-between">
               <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">April 6th 2025</p>
-                <p data-i18n="signal_strength">- Strong Signal</p>
+                <p data-i18n="date_format">April 6, 2025</p>
+                <p data-i18n="signal_strength">– Strong Signal</p>
               </div>
               <div class="right-box flex items-center gap-[10px]">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2782,8 +2783,8 @@
             </div>
             <div class="content-box flex items-center justify-between">
               <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">April 15th 2025</p>
-                <p data-i18n="signal_strength">- Strong Signal</p>
+                <p data-i18n="date_format">April 15, 2025</p>
+                <p data-i18n="signal_strength">– Strong Signal</p>
               </div>
               <div class="right-box flex items-center gap-[10px]">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2792,46 +2793,6 @@
                     fill="#22C55E" />
                 </svg>
                 <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">152.86%</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[#2a3a57] transition-shadow duration-300">
-            <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
-              <div class="images-box flex items-center gap-[11px] ">
-                <img class="coin-icon" src="/assets/images/ton.png" loading="lazy" alt="images">
-                <h3 class="uppercase font-medium text-[16px]">SUI</h3>
-              </div>
-              <div class="shape-box">
-                <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M1 32.7525C3.33333 25.7525 12 12.1525 28 13.7525C48 15.7525 43 -8.24729 62.5 8.25271C82 24.7527 89.5 -2.74766 97 1.75234"
-                    stroke="#22C55E" stroke-opacity="0.8" />
-                  <path
-                    d="M28 13.7525C8.5 12.7473 1 32.7525 1 32.7525H97V1.75234C89.5 -2.74766 82 24.7527 62.5 8.25271C43 -8.24729 48.0731 14.7873 28 13.7525Z"
-                    fill="url(#paint0_linear_103_7747)" />
-                  <defs>
-                    <linearGradient id="paint0_linear_103_7747" x1="49.5" y1="3.75269" x2="49.5" y2="32.7527"
-                      gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#22C55E" stop-opacity="0.2" />
-                      <stop offset="1" stop-color="#22C55E" stop-opacity="0" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-            </div>
-            <div class="content-box flex items-center justify-between">
-              <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">June 27th 2025</p>
-                <p data-i18n="signal_strength">- Strong Signal</p>
-              </div>
-              <div class="right-box flex items-center gap-[10px]">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
-                    fill="#22C55E" />
-                </svg>
-                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">71.23%</p>
               </div>
             </div>
           </div>
@@ -2862,8 +2823,48 @@
             </div>
             <div class="content-box flex items-center justify-between">
               <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">June 23th 2025</p>
-                <p data-i18n="signal_strength">- Strong Signal</p>
+                <p data-i18n="date_format">June 27, 2025</p>
+                <p data-i18n="signal_strength">– Strong Signal</p>
+              </div>
+              <div class="right-box flex items-center gap-[10px]">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
+                    fill="#22C55E" />
+                </svg>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">71.23%</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card-item bg-[#141C27] px-[15px] py-[20px] rounded-[20px] border border-[#1B232D] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[#2a3a57] transition-shadow duration-300">
+            <div class="top-box flex items-center justify-between border-b border-[#1F2632] pb-5 mb-5">
+              <div class="images-box flex items-center gap-[11px] ">
+                <img class="coin-icon" src="/assets/images/ton.png" loading="lazy" alt="images">
+                <h3 class="uppercase font-medium text-[16px]">SUI</h3>
+              </div>
+              <div class="shape-box">
+                <svg width="98" height="33" viewBox="0 0 98 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 32.7525C3.33333 25.7525 12 12.1525 28 13.7525C48 15.7525 43 -8.24729 62.5 8.25271C82 24.7527 89.5 -2.74766 97 1.75234"
+                    stroke="#22C55E" stroke-opacity="0.8" />
+                  <path
+                    d="M28 13.7525C8.5 12.7473 1 32.7525 1 32.7525H97V1.75234C89.5 -2.74766 82 24.7527 62.5 8.25271C43 -8.24729 48.0731 14.7873 28 13.7525Z"
+                    fill="url(#paint0_linear_103_7747)" />
+                  <defs>
+                    <linearGradient id="paint0_linear_103_7747" x1="49.5" y1="3.75269" x2="49.5" y2="32.7527"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#22C55E" stop-opacity="0.2" />
+                      <stop offset="1" stop-color="#22C55E" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <div class="content-box flex items-center justify-between">
+              <div class="left-text text-sm text-white font-semibold">
+                <p data-i18n="date_format">June 23, 2025</p>
+                <p data-i18n="signal_strength">– Strong Signal</p>
               </div>
               <div class="right-box flex items-center gap-[10px]">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2905,10 +2906,10 @@
               </svg>
             </div>
             <div class="content-text mt-5">
-              <h3 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="feature1_title"> Start earning
-                consistent passive income with crypto </h3>
-              <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="feature1_desc"> Every month, we do
-                the digging — so you don't have to. </p>
+              <h3 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="feature1_title">Start earning consistent
+                passive income with crypto.</h3>
+              <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="feature1_desc">Every month, we do
+                the digging — so you don’t have to.</p>
             </div>
           </div>
           <div class="item-box hover:bg-[#0F0A08] p-6 rounded-xl transition-all duration-200 cursor-pointer">
@@ -2932,8 +2933,8 @@
               </svg>
             </div>
             <div class="content-text mt-5">
-              <h3 class="text-[24px] font-bold" data-i18n="feature2_title">Access to crypto portfolio strategies</h3>
-              <p class="text-base mt-2 text-footer" data-i18n="feature2_desc">Save +80 hours of research</p>
+              <h3 class="text-[24px] font-bold" data-i18n="feature2_title">Access to crypto portfolio strategies:</h3>
+              <p class="text-base mt-2 text-footer" data-i18n="feature2_desc">Save 80+ hours of research.</p>
             </div>
           </div>
           <div class="item-box hover:bg-[#0F0A08] p-6 rounded-xl transition-all duration-200 cursor-pointer">
@@ -2959,7 +2960,7 @@
               </svg>
             </div>
             <div class="content-text mt-5">
-              <h3 class="text-[24px] font-bold" data-i18n="feature3_title">Get the highest conviction trades</h3>
+              <h3 class="text-[24px] font-bold" data-i18n="feature3_title">Get the highest-conviction trades:</h3>
               <p class="text-base mt-2 text-footer" data-i18n="feature3_desc">Unique insights balancing upside with
                 objective risk assessment.</p>
             </div>
@@ -3001,11 +3002,9 @@
               </svg>
             </div>
 
-            <h3 data-i18n="accuracy_rel">Strategic Focus, Not Noise</h3>
-            <p data-i18n="accuracy_rel_desc">Unlike many services that inundate you with constant signals, Wealth
-              Masters focuses on delivering well-researched, high-conviction trading strategies that are designed to
-              produce consistent returns. Our approach emphasizes strategic trading rather than holding positions
-              through market downturns, allowing you to maximize potential ROI and minimize exposure to bear markets.
+            <h3 data-i18n="accuracy_rel">Strategic Focus, Not Noise:</h3>
+            <p data-i18n="accuracy_rel_desc">We deliver well-researched, high-conviction strategies instead of
+              overwhelming you with low-quality signals.
             </p>
           </div>
           <div class="why-us-card">
@@ -3025,12 +3024,9 @@
               </svg>
             </div>
 
-            <h3 data-i18n="actionable">Risk Management & Consistency</h3>
-            <p data-i18n="actionable_desc"> We don’t believe in hoping for the best. Our strategies are built to manage
-              risks, particularly during market downturns, and ensure that you are positioned for consistent, long-term
-              returns. Our commitment to disciplined trading means that we focus on managing downside risks, not just
-              aiming for short-term profits.
-
+            <h3 data-i18n="actionable">Risk Management & Consistency:</h3>
+            <p data-i18n="actionable_desc">Our strategies are designed to protect capital during market downturns and
+              deliver steady, long-term returns.
             </p>
           </div>
           <div class="why-us-card">
@@ -3050,10 +3046,8 @@
               </svg>
             </div>
 
-            <h3 data-i18n="real_time_alerts">Aligned With Your Success</h3>
-            <p data-i18n="real_time_alerts_desc">There are no upfront fees — our success is tied directly to yours. We
-              use our proprietary tools and strategies to help you optimize your portfolio, with the goal of generating
-              consistent returns that align with your long-term financial objectives.
+            <h3 data-i18n="real_time_alerts">Aligned With Your Success:</h3>
+            <p data-i18n="real_time_alerts_desc">No upfront fees — we only succeed when you do.
             </p>
           </div>
           <div class="why-us-card">
@@ -3073,12 +3067,10 @@
               </svg>
             </div>
 
-            <h3 data-i18n="real_time_alerts">A Community of Empowered Traders
+            <h3 data-i18n="real_time_alerts">A Community of Empowered Traders:
             </h3>
-            <p data-i18n="real_time_alerts_desc">More than just a service, Wealth Masters is a community where
-              like-minded traders collaborate, share insights, and support each other in achieving their financial
-              goals. Whether you're a seasoned investor or just starting out, we provide you with the knowledge and
-              resources to thrive in the crypto market.
+            <p data-i18n="real_time_alerts_desc">A space where like-minded traders share knowledge and support each
+              other to achieve their financial goals.
             </p>
           </div>
         </div>
@@ -3094,68 +3086,63 @@
             <h3 data-i18n="faq_1" onclick="toggleFaq(this)">What services does Wealth Masters offer?
               <span>+</span>
             </h3>
-            <p data-i18n="faqs_11" class="faq-answer">At Wealth Masters, we specialize in crypto trading strategies and
-              market analysis. Rather than providing direct trade signals, we empower our clients to actively trade
-              cryptocurrencies with a focus on market volatility and risk management. Our approach aims to maximize
-              passive income potential by optimizing returns through consistent trading, instead of relying on the HODL
-              strategy, which often results in significant losses during bear markets. </p>
+            <p data-i18n="faqs_11" class="faq-answer">We specialize in crypto trading strategies and market analysis.
+              Instead of providing direct trade signals, we empower our clients to actively trade cryptocurrencies,
+              focusing on market volatility and risk management. Our approach aims to maximize passive income potential
+              through consistent trading rather than relying on the HODL strategy, which often leads to significant
+              losses during bear markets.</p>
           </div>
           <div class="faq-item">
             <h3 data-i18n="faq_2" onclick="toggleFaq(this)">How does Wealth Masters help clients manage risks and
               maximize ROI?
               <span>+</span>
             </h3>
-            <p data-i18n="faq_22" class="faq-answer"> We focus on maximizing the potential return on investment (ROI) by
-              consistently trading and leveraging market volatility. HODLing, while popular, is not proven to be the
-              most efficient strategy, especially when markets are down by 80-90%. By applying calculated trading
-              strategies, we ensure that your investments work harder for you, optimizing both growth and risk
-              management. </p>
+            <p data-i18n="faq_22" class="faq-answer">We focus on maximizing ROI by consistently trading and leveraging
+              market volatility. While HODLing is popular, it’s not the most efficient strategy — especially when
+              markets drop 80–90%. Through calculated trading strategies, we make your investments work harder,
+              optimizing both growth and risk control.</p>
           </div>
           <div class="faq-item">
-            <h3 data-i18n="faq_3" onclick="toggleFaq(this)">Is it FREE to join?
+            <h3 data-i18n="faq_3" onclick="toggleFaq(this)">Is it free to join?
               <span>+</span>
             </h3>
-            <p data-i18n="faq_33" class="faq-answer"> We work on a profit-sharing basis, which means there are no
-              upfront fees for joining Wealth Masters. Instead, we use our proprietary software to analyze and develop
-              strategies, and our compensation is based on the profits generated through the strategies we implement for
-              you. This ensures that our interests are aligned with yours, as we only succeed when you do. </p>
+            <p data-i18n="faq_33" class="faq-answer">Yes. We operate on a profit-sharing model, meaning there are no
+              upfront fees. We use proprietary software to develop and execute strategies, and our compensation is based
+              on the profits generated for you. This ensures our interests are fully aligned with yours — we only
+              succeed when you do.</p>
           </div>
           <div class="faq-item">
             <h3 data-i18n="faq_4" onclick="toggleFaq(this)">Is Wealth Masters a good option for generating passive
               income?
               <span>+</span>
             </h3>
-            <p data-i18n="faq_44" class="faq-answer"> Yes, Wealth Masters provides an excellent opportunity for
-              generating passive income through strategic crypto trading. Our focus on market volatility and risk
-              management allows us to unlock consistent returns, making it a more effective strategy than HODLing
-              through extended bear markets.</p>
+            <p data-i18n="faq_44" class="faq-answer">Absolutely. Our focus on market volatility and disciplined risk
+              management helps unlock consistent returns, making our approach more effective than holding through
+              prolonged bear markets.</p>
           </div>
           <div class="faq-item">
             <h3 data-i18n="faq_5" onclick="toggleFaq(this)">How can I contact Wealth Masters?<span>+</span>
             </h3>
-            <p data-i18n="faq_55" class="faq-answer"> You can easily reach us through the contact form on our website or
-              by emailing support@wealthmasters.pro. Our dedicated team is ready to assist with any questions or
-              concerns you might have.
+            <p data-i18n="faq_55" class="faq-answer">You can reach us through the contact form on our website or by
+              emailing support@wealthmasters.pro. Our dedicated team will be happy to help.
             </p>
           </div>
           <div class="faq-item">
             <h3 data-i18n="faq_6" onclick="toggleFaq(this)">How can I join Wealth Masters?<span>+</span>
             </h3>
-            <p data-i18n="faq_66" class="faq-answer"> Joining Wealth Masters is simple. Just click the "Sign up now"
-              button on our homepage, and after completing the registration process, you'll gain access to our premium
-              content, including crypto trading strategies, market analysis, and more. We’ll guide you through every
-              step to ensure you’re equipped for success in the crypto market.
+            <p data-i18n="faq_66" class="faq-answer">Simply click the “Sign up now” button on our homepage. After
+              completing registration, you’ll gain access to premium content, including crypto trading strategies,
+              market analysis, and more. We’ll guide you step-by-step to set you up for success in the crypto market.
             </p>
           </div>
           <div class="faq-item">
             <h3 data-i18n="faq_7" onclick="toggleFaq(this)">Why choose Wealth Masters over other crypto trading
               services?<span>+</span>
             </h3>
-            <p data-i18n="faq_77" class="faq-answer"> Wealth Masters stands out by offering not just crypto trading
-              strategies, but a comprehensive, data-driven approach that maximizes passive income potential. Our
-              consistent trading strategies are designed to make the most of market volatility, and our profit-sharing
-              model aligns our success with yours. With no upfront fees and a focus on long-term growth, Wealth Masters
-              is the ideal choice for serious traders seeking reliable returns.
+            <p data-i18n="faq_77" class="faq-answer">We offer more than just signals — we provide a comprehensive,
+              data-driven approach to maximize passive income potential. Our consistent strategies capitalize on market
+              volatility, and our profit-sharing model aligns our success with yours. With no upfront fees and a focus
+              on long-term growth, Wealth Masters is the ideal choice for serious traders seeking reliable returns.
             </p>
           </div>
       </section>
@@ -3270,7 +3257,7 @@
               <!--New Box-->
               <div class="footer-item">
                 <h2 data-i18n="footer_heading"
-                  class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explore</h2>
+                  class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Links</h2>
                 <ul class="footer-links">
                   <li><a data-i18n="footer_home" href="/" title="Go to Home">Home</a></li>
                   <li><a data-i18n="footer_about" href="/about.html" title="Learn About Us">About Us</a></li>
@@ -3282,8 +3269,9 @@
               <!--New Box end here-->
               <div class="footer-item">
                 <div class="newsletter">
-                  <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Subscribe</h2>
-                  <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text"> Get the latest crypto
+                  <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Subscribe:
+                  </h2>
+                  <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text">Get the latest crypto
                     trading setups, market updates, investment strategies, and exclusive crypto offers delivered
                     straight to your inbox.</p>
                   <div id="custom-substack-2" class="mt-6 form-box">
@@ -3433,8 +3421,7 @@
             <div class="copy-right-area w-full pt-8 mt-8 justify-between border-t border-[#1F2937]">
               <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
                 <div class="item-text">
-                  <p class="text-sm text-footer" data-i18n="copyright"> Wealth Masters &copy2025. All rights reserved.
-                  </p>
+                  <p class="text-sm text-footer" data-i18n="copyright">Wealth Masters © 2025.</p>
                 </div>
                 <div class="item-box">
                   <ul class="flex md:gap-6 gap-3 items-center text-footer">

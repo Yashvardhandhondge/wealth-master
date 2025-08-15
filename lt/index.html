@@ -22,6 +22,7 @@
   <meta name="twitter:description"
     content="Išmokite valdyti savo turtą pasitelkdami ekspertų vadovus, rinkos įžvalgas ir kriptovaliutų strategijas. Prisijunkite prie finansinės revoliucijos.">
   <meta name="twitter:image" content="https://wealthmasters.pro/assets/images/wealth-masters-logo.webp">
+  <script src="https://ocixyipglvsfmybqimen.supabase.co/storage/v1/object/public/freeoff/prices.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +32,15 @@
   <link rel="icon" href="/assets/images/image1.webp" type="image/png" sizes="32x32" style="border-radius: 50%;">
   <link rel="apple-touch-icon" href="/assets/images/image1.webp" style="border-radius: 50%;">
   <link rel="mask-icon" href="/assets/images/image1.webp" color="#000000" style="border-radius: 50%;">
-  <!-- Dynamic Canonical Tag -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J54BR3Y9QG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-J54BR3Y9QG');
+  </script>
   <script>
     const link = document.createElement("link");
     link.rel = "canonical";
@@ -138,15 +147,7 @@
       }
     });
   </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J54BR3Y9QG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'G-J54BR3Y9QG');
-  </script>
   <!--criticle CSS -->
   <style>
     a.desktop-nav-link {
@@ -2216,7 +2217,7 @@
               <a href="/lt/index.html" class="desktop-nav-link" data-i18n="mb_home">Pagrindinis</a>
               <a href="/lt/about.html" class="desktop-nav-link" data-i18n="mb_about">Apie mus</a>
               <a href="/lt/contact.html" class="desktop-nav-link" data-i18n="mb_contect">Kontaktai</a>
-              <a href="/lt/blog/index.html" class="desktop-nav-link" data-i18n="mb_blog">Tinklaraštis</a>
+              <a href="/lt/blog/index.html" class="desktop-nav-link" data-i18n="mb_blog">Naujienos</a>
             </nav>
 
             <!-- 2. Logo (Center on desktop, Left on mobile) -->
@@ -2291,7 +2292,7 @@
               <a href="/lt/contact.html" class="mobile-nav-link" data-i18n="mb_contect">Kontaktai</a>
               <a href="/lt/privacy-policy.html" class="mobile-nav-link" data-i18n="privacy_policy">Privatumo
                 politika</a>
-              <a href="/lt/blog/index.html" class="mobile-nav-link" data-i18n="mb_blog">Tinklaraštis</a>
+              <a href="/lt/blog/index.html" class="mobile-nav-link" data-i18n="mb_blog">Naujienos</a>
             </div>
           </div>
         </header>
@@ -2324,24 +2325,22 @@
         <div
           class="flex px-[9px] py-[4px] gap-[6px] items-center justify-center bg-primary-100 max-w-[370px] mx-auto rounded-full">
           <img src="/assets/images/hero-man-logo.webp" loading="lazy" class="h-6 sm:h-auto" alt="paveikslėlis">
-          <p class="sm:text-sm text-xs font-medium" data-i18n="cta">Prisijunkite prie +1 000 kasdienių prekiautojų 100%
+          <p class="sm:text-sm text-xs font-medium" data-i18n="cta">Prisijunk prie daugiau nei 1 000 klientų visiškai
             nemokamai</p>
         </div>
         <div class="max-w-[680px] mx-auto relative z-10">
           <h1 class="font-medium lg:text-[46px] md:text-[40px] text-[24px] xd:text-[28px] sm:text-[32px] text-center">
-            <span data-i18n="hero_heading">Prisijunkite prie 1% prekiautojų klubo ir gaukite</span>
-            <span class="text-primary-200" data-i18n="hero_highlight"> visišką prieigą</span>
-            <span data-i18n="hero_end"> prie VIP strategijų</span>
+            Prisijunk prie 1% klubo ir gauk VIP strategijas
           </h1>
-          <p class="text-sm sm:text-base text-center mt-[22px]" data-i18n="subtext"> Mes padedame uždirbti stabilias
-            pajamas iš kriptovaliutų ir valdyti riziką. Pradėkite kurti savo kriptovaliutų portfelį jau šiandien </p>
+          <p class="text-sm sm:text-base text-center mt-[22px]" data-i18n="subtext">Mes padedame uždirbti stabilias
+            pajamas iš kriptovaliutų ir valdome riziką. Pradėk kurti savo kriptovaliutų portfelį šiandien.</p>
           <div class="email-box mt-[25px] max-w-[420px] w-full px-8 sm:px-0 mx-auto">
             <form id="newsletter-form" class="flex items-center justify-center">
               <div style="display: flex; width: 100%; max-width: 420px; height: 44px;">
                 <input type="email" id="email-input" name="email" placeholder="Įveskite savo el. paštą..." required
                   class="custom-email-input" />
 
-                <button type="submit" id="submit-btn" class="custom-submit-btn"> Pradėti uždirbti </button>
+                <button type="submit" id="submit-btn" class="custom-submit-btn">Prisijunk dabar</button>
               </div>
             </form>
             <!-- Success/Error Messages -->
@@ -2372,7 +2371,7 @@
                 showMessage('Kažkas nutiko. Bandykite dar kartą arba susisiekite su palaikymo komanda.', 'error');
               } finally {
                 // Reset button
-                submitBtn.innerHTML = 'Pradėti uždirbti';
+                submitBtn.innerHTML = 'Prisijunk dabar';
                 submitBtn.disabled = false;
               }
             });
@@ -2456,7 +2455,7 @@
           </script>
         </div>
         <div class="start-earning-wrapper">
-          <a href="https://forms.monday.com/forms/dbabe75a18d9e994e8466db8451f6864?r=euc1" target="_blank"
+          <a href="https://forms.monday.com/forms/042c8decc022a78bf1762c041c1affa2?r=euc1" target="_blank"
             class="start-earning-button">
             Pradėti uždirbti
           </a>
@@ -2483,8 +2482,8 @@
                           fill="white" />
                       </svg>
                     </div>
-                    <h2 class="md:text-[20px] text-[16px] font-bold gap-[5px]" data-i18n="index_heading"> Bitcoin:
-                      Baimės ir godumo indeksas </h2>
+                    <h2 class="md:text-[20px] text-[16px] font-bold gap-[5px]" data-i18n="index_heading">Bitcoin baimės
+                      ir godumo indeksas</h2>
                   </div>
                 </div>
                 <div class="flex gap-2 items-center">
@@ -2552,8 +2551,8 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_fear_label"> Ypatinga baimė
-                        (0–24) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_fear_label">Didelė baimė
+                        (0–24)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2579,7 +2578,7 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="fear_label"> Baimė (25-49) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="fear_label">Baimė (25–49)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2606,7 +2605,7 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="neutral_label"> Neutralu (50) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="neutral_label">Neutralu (50)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2633,7 +2632,7 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="greed_label"> Godumas (51-74) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="greed_label">Godumas (51–74)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2660,8 +2659,8 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_greed_label"> Ypatingas
-                        godumas (75–100) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_greed_label">Didelis godumas
+                        (75–100)</p>
                     </div>
                   </div>
                 </div>
@@ -2684,24 +2683,21 @@
           <!-- Desktop view - show the 3 logos in a clean row -->
           <div
             class="flex flex-col space-y-4 sm:flex-row justify-between sm:justify-between sm:items-center sm:space-y-0 w-full">
-            <div class="relative w-fit mx-auto sm:mx-0">
-              <img src="/assets/images/bitmex.png" loading="lazy" alt="MarketWatch" class="block h-12" />
-              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none">
-              </div>
 
-            </div>
             <div class="relative w-fit mx-auto sm:mx-0">
-              <img src="/assets/images/binance.png" loading="lazy" alt="MarketWatch" class="block h-12" />
-              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none">
-              </div>
+              <img src="/assets/images/binance.png" loading="lazy" alt="TradingView" class="block h-12" />
+              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none"></div>
+            </div>
 
-            </div>
-            <img src="/assets/images/bybit.png" loading="lazy" alt="TradingView" class="h-12 mx-auto sm:mx-0">
             <div class="relative w-fit mx-auto sm:mx-0">
-              <img src="/assets/images/coinbase.png" loading="lazy" alt="Bitcoin.com" class="block h-12" />
-              <div class="absolute inset-0 bg-gradient-to-r from-white/0 to-black/80 pointer-events-none"></div>
+              <img src="/assets/images/bitmex.png" loading="lazy" alt="Bitmex" class="block h-12" />
+              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none"></div>
             </div>
+
+            <img src="/assets/images/bybit.png" loading="lazy" alt="Bitcoin.com" class="h-12 mx-auto sm:mx-0">
+
           </div>
+
         </div>
       </div>
     </section>
@@ -2714,10 +2710,8 @@
       <div class="container">
         <div class="section-title mb-[70px] max-w-[900px] m-auto">
           <h2 class="lg:text-[32px] text-[24px] font-medium text-center">
-            <span data-i18n="hero_text_before">„Wealth Master Club“,</span>
-            <span class="text-primary-200" data-i18n="hero_text_highlight"></span> <span data-i18n="hero_text_after">mes
-              prekiaujame pagal labiausiai pagrįstas strategijas ir padedame uždirbti pasyvias pajamas iš
-              kriptovaliutų</span>
+            Wealth Master Club prekiauja tik patikrintos rizikos sandoriais ir padeda uždirbti pasyvias pajamas iš
+            kriptovaliutų.
           </h2>
         </div>
         <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
@@ -2748,8 +2742,8 @@
             </div>
             <div class="content-box flex items-center justify-between">
               <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">April 6th 2025</p>
-                <p data-i18n="signal_strength">- Stiprus signalas</p>
+                <p data-i18n="date_format">2025 m. balandžio 6 d.</p>
+                <p data-i18n="signal_strength">Stiprus signalas</p>
               </div>
               <div class="right-box flex items-center gap-[10px]">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2757,7 +2751,7 @@
                     d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
                     fill="#22C55E" />
                 </svg>
-                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">60.50%</p>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">61,50%</p>
               </div>
             </div>
           </div>
@@ -2788,8 +2782,8 @@
             </div>
             <div class="content-box flex items-center justify-between">
               <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">April 15th 2025</p>
-                <p data-i18n="signal_strength">- Stiprus signalas</p>
+                <p data-i18n="date_format">2025 m. balandžio 15 d.</p>
+                <p data-i18n="signal_strength">Stiprus signalas</p>
               </div>
               <div class="right-box flex items-center gap-[10px]">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2797,7 +2791,7 @@
                     d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
                     fill="#22C55E" />
                 </svg>
-                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">152.86%</p>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">152,86%</p>
               </div>
             </div>
           </div>
@@ -2828,8 +2822,8 @@
             </div>
             <div class="content-box flex items-center justify-between">
               <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">June 23th 2025</p>
-                <p data-i18n="signal_strength">- Stiprus signalas</p>
+                <p data-i18n="date_format">2025 m. birželio 23 d.</p>
+                <p data-i18n="signal_strength">Stiprus signalas</p>
               </div>
               <div class="right-box flex items-center gap-[10px]">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2837,7 +2831,7 @@
                     d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
                     fill="#22C55E" />
                 </svg>
-                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">84.35%</p>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">84,35%</p>
               </div>
             </div>
           </div>
@@ -2868,8 +2862,8 @@
             </div>
             <div class="content-box flex items-center justify-between">
               <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">June 27th 2025</p>
-                <p data-i18n="signal_strength">- Stiprus signalas</p>
+                <p data-i18n="date_format">2025 m. birželio 27 d.</p>
+                <p data-i18n="signal_strength">Stiprus signalas</p>
               </div>
               <div class="right-box flex items-center gap-[10px]">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2877,7 +2871,7 @@
                     d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
                     fill="#22C55E" />
                 </svg>
-                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">71.23%</p>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">71,23%</p>
               </div>
             </div>
           </div>
@@ -2911,10 +2905,10 @@
               </svg>
             </div>
             <div class="content-text mt-5">
-              <h3 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="feature1_title"> Pradėkite uždirbti
-                stabilias pasyvias pajamas iš kriptovaliutų </h3>
-              <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="feature1_desc"> Kiekvieną mėnesį mes
-                atliekame tyrimą — kad jums nereikėtų. </p>
+              <h3 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="feature1_title">Pradėk uždirbti
+                stabilias pasyvias pajamas iš kriptovaliutų</h3>
+              <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="feature1_desc">Kiekvieną mėnesį mes
+                atliekame visą analizę– kad tau nereikėtų.</p>
             </div>
           </div>
           <div class="item-box hover:bg-[#0F0A08] p-6 rounded-xl transition-all duration-200 cursor-pointer">
@@ -2940,7 +2934,8 @@
             <div class="content-text mt-5">
               <h3 class="text-[24px] font-bold" data-i18n="feature2_title">Prieiga prie kriptovaliutų portfelio
                 strategijų</h3>
-              <p class="text-base mt-2 text-footer" data-i18n="feature2_desc">Sutaupykite +80 valandų tyrimų</p>
+              <p class="text-base mt-2 text-footer" data-i18n="feature2_desc">Sutaupyk daugiau nei 10 valandų analizei
+                kasdien</p>
             </div>
           </div>
           <div class="item-box hover:bg-[#0F0A08] p-6 rounded-xl transition-all duration-200 cursor-pointer">
@@ -2966,10 +2961,9 @@
               </svg>
             </div>
             <div class="content-text mt-5">
-              <h3 class="text-[24px] font-bold" data-i18n="feature3_title">Gaukite patikimiausius prekybos sandorius
-              </h3>
-              <p class="text-base mt-2 text-footer" data-i18n="feature3_desc">Unikalios įžvalgos, suderinančios augimo
-                potencialą su objektyviu rizikos vertinimu.</p>
+              <h3 class="text-[24px] font-bold" data-i18n="feature3_title">Gauk aukščiausio įsitikinimo sandorius</h3>
+              <p class="text-base mt-2 text-footer" data-i18n="feature3_desc">Unikalios įžvalgos, derinančios pelno
+                galimybes su objektyviu rizikos vertinimu</p>
             </div>
           </div>
         </div>
@@ -2985,12 +2979,12 @@
 
         <!-- "Why Choose Us" Section -->
         <div class="section-header">
-          <h2 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="why_choose_us">Kodėl Rinktis Wealth Masters?
-          </h2>
-          <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="why_choose_us_desc">Wealth Masters buvo
-            sukurta su viena misija: suteikti investuotojams galių, teikiant sudėtingas kriptovaliutų prekybos
-            strategijas ir rinkos analizę. Mes padedame savo klientams įveikti kriptovaliutų prekybos sudėtingumą,
-            leisdami jiems išnaudoti rinkos nepastovumą savo naudai ir efektyviai valdyti riziką.</p>
+          <h2 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="why_choose_us">Kodėl verta rinktis Wealth
+            Masters?</h2>
+          <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="why_choose_us_desc">„Wealth Masters“
+            buvo įkurta turint vieną tikslą – suteikti investuotojams galimybę pasinaudoti pažangiomis kriptovaliutų
+            prekybos strategijomis ir rinkos analize. Mes padedame savo klientams orientuotis sudėtingoje kriptovaliutų
+            prekybos aplinkoje, leidžiame jiems išnaudoti rinkos svyravimus jų naudai ir veiksmingai valdyti riziką.</p>
         </div>
         <div class="why-us-grid">
           <!-- Card 1: Strategic Focus -->
@@ -3015,12 +3009,9 @@
                 </defs>
               </svg>
             </div>
-            <h3 data-i18n="accuracy_rel">Strateginis Dėmesys, o ne Triukšmas</h3>
-            <p data-i18n="accuracy_rel_desc">Skirtingai nuo daugelio paslaugų, kurios užverčia jus nuolatiniais
-              signalais, Wealth Masters orientuojasi į gerai ištirtų, didelio įsitikinimo prekybos strategijų teikimą,
-              kurios sukurtos siekiant užtikrinti nuoseklią grąžą. Mūsų požiūris pabrėžia strateginę prekybą, o ne
-              pozicijų laikymą per rinkos nuosmukius, leidžiant jums maksimaliai padidinti potencialią investicijų grąžą
-              ir sumažinti riziką meškų rinkose.</p>
+            <h3 data-i18n="accuracy_rel">Strateginis fokusas</h3>
+            <p data-i18n="accuracy_rel_desc">Siūlome tik gerai ištirtas, aukšto įsitikinimo strategijas, o ne
+              nuolatinius signalus be vertės.</p>
           </div>
           <!-- Card 2: Risk Management -->
           <div class="why-us-card">
@@ -3037,11 +3028,9 @@
                 </defs>
               </svg>
             </div>
-            <h3 data-i18n="actionable">Rizikos Valdymas ir Nuoseklumas</h3>
-            <p data-i18n="actionable_desc">Mes netikime, kad reikia tiesiog tikėtis geriausio. Mūsų strategijos yra
-              sukurtos valdyti riziką, ypač per rinkos nuosmukius, ir užtikrinti, kad būtumėte pasirengę nuosekliai,
-              ilgalaikei grąžai. Mūsų įsipareigojimas disciplinuotai prekybai reiškia, kad mes sutelkiame dėmesį į
-              nuostolių rizikos valdymą, o ne tik siekiame trumpalaikio pelno.</p>
+            <h3 data-i18n="actionable">Rizikos valdymas ir nuoseklumas</h3>
+            <p data-i18n="actionable_desc">Strategijos pritaikytos nuosmukių metu, kad būtų apsaugotas kapitalas ir
+              pasiekti ilgalaikiai rezultatai.</p>
           </div>
           <!-- Card 3: Aligned Success -->
           <div class="why-us-card">
@@ -3061,10 +3050,8 @@
                 </defs>
               </svg>
             </div>
-            <h3 data-i18n="real_time_alerts">Suderinta su Jūsų Sėkme</h3>
-            <p data-i18n="real_time_alerts_desc">Nėra jokių išankstinių mokesčių – mūsų sėkmė yra tiesiogiai susijusi su
-              jūsų. Mes naudojame savo patentuotus įrankius ir strategijas, kad padėtume jums optimizuoti savo portfelį,
-              siekdami generuoti nuoseklią grąžą, atitinkančią jūsų ilgalaikius finansinius tikslus.</p>
+            <h3 data-i18n="real_time_alerts">Sėkmės suderinimas</h3>
+            <p data-i18n="real_time_alerts_desc">Jokio išankstinio mokesčio; uždirbame tik tada, kai uždirbate Jūs.</p>
           </div>
           <!-- Card 4: Community -->
           <div class="why-us-card">
@@ -3085,11 +3072,9 @@
                 </defs>
               </svg>
             </div>
-            <h3 data-i18n="community_title">Įgalintų Prekiautojų Bendruomenė</h3>
-            <p data-i18n="community_desc">Wealth Masters yra daugiau nei paslauga – tai bendruomenė, kurioje
-              bendraminčiai prekiautojai bendradarbiauja, dalijasi įžvalgomis ir palaiko vieni kitus siekdami savo
-              finansinių tikslų. Nesvarbu, ar esate patyręs investuotojas, ar tik pradedate, mes suteikiame jums žinių
-              ir išteklių, kad klestėtumėte kriptovaliutų rinkoje.</p>
+            <h3 data-i18n="community_title">Įgalintų prekiautojų bendruomenė</h3>
+            <p data-i18n="community_desc">Vietą, kur prekiautojai dalinasi įžvalgomis ir padeda vieni kitiems siekti
+              finansinės sėkmės.</p>
           </div>
         </div>
       </div>
@@ -3099,77 +3084,64 @@
       <!-- FAQs -->
       <section id="faqs" class="faq-section">
         <div class="faq-container">
-          <h2 data-i18n="faqs_heading" class="faq-title">Dažnai užduodami klausimai</h2>
+          <h2 data-i18n="faqs_heading" class="faq-title">Dažniausiai užduodami klausimai (DUK)</h2>
           <div class="faq-item">
-            <h3 data-i18n="faq_1" onclick="toggleFaq(this)">Kokias paslaugas siūlo „Wealth Masters“?
+            <h3 data-i18n="faq_1" onclick="toggleFaq(this)">Kokias paslaugas teikia „Wealth Masters“?
               <span>+</span>
             </h3>
-            <p data-i18n="faqs_11" class="faq-answer">„Wealth Masters“ specializuojasi kriptovaliutų prekybos strategijų
-              ir rinkos analizės srityje. Užuot teikę tiesioginius prekybos signalus, mes suteikiame savo klientams
-              galimybę aktyviai prekiauti kriptovaliutomis, sutelkiant dėmesį į rinkos nepastovumą ir rizikos valdymą.
-              Mūsų požiūris skirtas maksimaliai padidinti pasyvių pajamų potencialą, optimizuojant grąžą nuoseklia
-              prekyba, o ne pasikliaujant HODL strategija, kuri dažnai sukelia didelius nuostolius meškų rinkose.</p>
+            <p data-i18n="faqs_11" class="faq-answer">„Wealth Masters“ specializuojasi kriptovaliutų prekybos
+              strategijose ir rinkos analizėje. Vietoje tiesioginių prekybos signalų mes įgaliname klientus aktyviai
+              prekiauti, sutelkdami dėmesį į rinkos nepastovumą ir rizikos valdymą. Mūsų tikslas – maksimaliai išnaudoti
+              pasyvių pajamų potencialą per nuoseklią prekybą, o ne remtis HODL strategija, kuri meškų rinkose dažnai
+              lemia didelius nuostolius.</p>
           </div>
           <div class="faq-item">
-            <h3 data-i18n="faq_2" onclick="toggleFaq(this)">Kaip „Wealth Masters“ padeda klientams valdyti riziką ir
-              maksimaliai padidinti investicijų grąžą (ROI)?
+            <h3 data-i18n="faq_2" onclick="toggleFaq(this)">Kaip „Wealth Masters“ padeda valdyti riziką ir maksimaliai
+              padidinti investicijų grąžą (ROI)?
               <span>+</span>
             </h3>
-            <p data-i18n="faq_22" class="faq-answer"> Mes sutelkiame dėmesį į potencialios investicijų grąžos (ROI)
-              maksimalizavimą nuolat prekiaudami ir išnaudodami rinkos nepastovumą. Nors HODL strategija yra populiari,
-              nėra įrodyta, kad ji yra efektyviausia, ypač kai rinkos krenta 80–90 %. Taikydami apgalvotas prekybos
-              strategijas, užtikriname, kad jūsų investicijos dirbtų efektyviau, optimizuojant tiek augimą, tiek rizikos
-              valdymą. </p>
+            <p data-i18n="faq_22" class="faq-answer">Mes siekiame maksimaliai padidinti ROI nuosekliai prekiaudami ir
+              išnaudodami nepastovumą. Nors HODL populiarus, tai nėra efektyviausia strategija, ypač kai rinka krenta
+              80–90 %. Taikydami apgalvotas prekybos strategijas užtikriname, kad jūsų kapitalas dirbtų intensyviau, o
+              augimas ir rizika būtų optimaliai valdomi.</p>
           </div>
           <div class="faq-item">
             <h3 data-i18n="faq_3" onclick="toggleFaq(this)">Ar prisijungti yra NEMOKAMA?
               <span>+</span>
             </h3>
-            <p data-i18n="faq_33" class="faq-answer"> Mes dirbame pelno pasidalijimo pagrindu, o tai reiškia, kad nėra
-              jokių išankstinių mokesčių norint prisijungti prie „Wealth Masters“. Mes naudojame savo patentuotą
-              programinę įrangą strategijoms analizuoti ir kurti, o mūsų atlygis priklauso nuo pelno, gauto įgyvendinant
-              strategijas jums. Tai užtikrina, kad mūsų interesai sutampa su jūsų, nes mes sėkmės sulaukiame tik tada,
-              kai jos sulaukiate jūs. </p>
+            <p data-i18n="faq_33" class="faq-answer">Dirbame pelno dalybų principu – jokių išankstinių mokesčių.
+              Naudojame nuosavą programinę įrangą strategijoms analizuoti ir kurti, o mūsų atlygis priklauso nuo
+              sugeneruoto pelno. Mūsų interesai visiškai suderinti su jūsiškiais: laimime tik tuomet, kai laimite jūs.
+            </p>
           </div>
           <div class="faq-item">
-            <h3 data-i18n="faq_4" onclick="toggleFaq(this)">Ar „Wealth Masters“ yra geras pasirinkimas pasyvioms
-              pajamoms generuoti?
+            <h3 data-i18n="faq_4" onclick="toggleFaq(this)">Ar „Wealth Masters“ tinka pasyvioms pajamoms generuoti?
               <span>+</span>
             </h3>
-            <p data-i18n="faq_44" class="faq-answer"> Taip, „Wealth Masters“ suteikia puikią galimybę generuoti pasyvias
-              pajamas pasitelkiant strateginę kriptovaliutų prekybą. Mūsų dėmesys rinkos nepastovumui ir rizikos
-              valdymui leidžia mums užtikrinti stabilią grąžą, todėl tai yra veiksmingesnė strategija nei HODL per ilgai
-              trunkančias meškų rinkas.</p>
+            <p data-i18n="faq_44" class="faq-answer">Taip. Dėmesys nepastovumui ir rizikos valdymui leidžia siekti
+              nuoseklių grąžų – veiksmingiau nei vien HODL ilgos meškų rinkos metu.</p>
           </div>
           <div class="faq-item">
             <h3 data-i18n="faq_5" onclick="toggleFaq(this)">Kaip galiu susisiekti su „Wealth Masters“?<span>+</span>
             </h3>
-            <p data-i18n="faq_55" class="faq-answer"> Galite lengvai susisiekti su mumis per kontaktų formą mūsų
-              svetainėje arba el. paštu support@wealthmasters.pro. Mūsų atsidavusi komanda yra pasirengusi padėti
-              iškilus bet kokiems klausimams ar problemoms.
-            </p>
+            <p data-i18n="faq_55" class="faq-answer">Per svetainės kontaktų formą arba el. paštu
+              support@wealthmasters.pro. Mūsų komanda pasirengusi padėti.</p>
           </div>
           <div class="faq-item">
-            <h3 data-i18n="faq_6" onclick="toggleFaq(this)">Kaip galiu prisijungti prie „Wealth Masters“?<span>+</span>
+            <h3 data-i18n="faq_6" onclick="toggleFaq(this)">Kaip prisijungti prie „Wealth Masters“?<span>+</span>
             </h3>
-            <p data-i18n="faq_66" class="faq-answer"> Prisijungti prie „Wealth Masters“ yra paprasta. Tiesiog
-              spustelėkite mygtuką „Registruotis dabar“ mūsų pagrindiniame puslapyje ir, užbaigę registracijos procesą,
-              gausite prieigą prie mūsų aukščiausios kokybės turinio, įskaitant kriptovaliutų prekybos strategijas,
-              rinkos analizę ir kt. Mes padėsime jums kiekviename žingsnyje, kad užtikrintume jūsų pasirengimą sėkmei
-              kriptovaliutų rinkoje.
-            </p>
+            <p data-i18n="faq_66" class="faq-answer">Spustelėkite „Sign up now“ pagrindiniame puslapyje. Užsiregistravę
+              gausite prieigą prie premium turinio – prekybos strategijų, rinkos analizės ir kt. Palydėsime kiekviename
+              žingsnyje, kad sėkmingai startuotumėte kripto rinkoje.</p>
           </div>
           <div class="faq-item">
-            <h3 data-i18n="faq_7" onclick="toggleFaq(this)">Kodėl verta rinktis „Wealth Masters“, o ne kitas
-              kriptovaliutų prekybos paslaugas?<span>+</span>
+            <h3 data-i18n="faq_7" onclick="toggleFaq(this)">Kodėl rinktis „Wealth Masters“, o ne kitas kripto prekybos
+              paslaugas?<span>+</span>
             </h3>
-            <p data-i18n="faq_77" class="faq-answer"> „Wealth Masters“ išsiskiria tuo, kad siūlo ne tik kriptovaliutų
-              prekybos strategijas, bet ir išsamų, duomenimis pagrįstą požiūrį, kuris maksimaliai padidina pasyvių
-              pajamų potencialą. Mūsų nuoseklios prekybos strategijos yra sukurtos siekiant kuo geriau išnaudoti rinkos
-              nepastovumą, o mūsų pelno pasidalijimo modelis suderina mūsų sėkmę su jūsų. Be jokių išankstinių mokesčių
-              ir su dėmesiu ilgalaikiam augimui, „Wealth Masters“ yra idealus pasirinkimas rimtiems prekiautojams,
-              siekiantiems patikimos grąžos.
-            </p>
+            <p data-i18n="faq_77" class="faq-answer">Siūlome ne tik strategijas, bet ir visapusišką, duomenimis paremtą
+              požiūrį, maksimaliai išnaudojantį pasyvių pajamų potencialą. Nuoseklios strategijos leidžia išnaudoti
+              nepastovumą, o pelno dalybų modelis suderina mūsų ir jūsų interesus. Jokie išankstiniai mokesčiai, dėmesys
+              ilgalaikei grąžai – idealu rimtiems investuotojams, siekiantiems patikimų rezultatų.</p>
           </div>
       </section>
       <script>
@@ -3209,9 +3181,9 @@
                   </a>
                 </div>
                 <div class="text-box mt-6 ">
-                  <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Prisijunkite prie „Wealth
-                    Masters“ ir gaukite ekspertinę kriptovaliutų rinkos analizę, VIP strategijas bei įžvalgas, kaip
-                    auginti pasyvias pajamas.</p>
+                  <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Prisijunk prie „Wealth
+                    Masters“ ir gauk profesionalią kriptovaliutų rinkos analizę, VIP strategijas ir įžvalgas, kurios
+                    padės auginti tavo pasyvias pajamas.</p>
                 </div>
                 <div class="footer-social-icon mt-6">
                   <ul class="flex items-center gap-4 justify-center lg:justify-start text-footer">
@@ -3284,7 +3256,7 @@
               <!--New Box-->
               <div class="footer-item">
                 <h2 data-i18n="footer_heading"
-                  class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Naršyti</h2>
+                  class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Nuorodos</h2>
                 <ul class="footer-links">
                   <li><a data-i18n="footer_home" href="/lt/index.html" title="Eiti į pagrindinį puslapį">Pagrindinis</a>
                   </li>
@@ -3298,11 +3270,11 @@
               <!--New Box end here-->
               <div class="footer-item">
                 <div class="newsletter">
-                  <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Prenumeruoti
+                  <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Prenumerata
                   </h2>
-                  <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text"> Gaukite naujausias
-                    kriptovaliutų prekybos strategijas, rinkos naujienas, investavimo patarimus ir išskirtinius
-                    kriptovaliutų pasiūlymus tiesiai į savo pašto dėžutę.</p>
+                  <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text">Gauk naujausius
+                    kriptovaliutų prekybos pasiūlymus, rinkos naujienas, investavimo strategijas ir išskirtinius kripto
+                    pasiūlymus tiesiai į savo el. pašto dėžutę.</p>
                   <div id="custom-substack-2" class="mt-6 form-box">
                     <div id="custom-substack-2" class="mt-6 form-box">
                       <form id="join-club-form" class="flex items-center justify-center">
@@ -3450,8 +3422,7 @@
             <div class="copy-right-area w-full pt-8 mt-8 justify-between border-t border-[#1F2937]">
               <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
                 <div class="item-text">
-                  <p class="text-sm text-footer" data-i18n="copyright"> Wealth Masters ©2025. Visos teisės saugomos.
-                  </p>
+                  <p class="text-sm text-footer" data-i18n="copyright">Wealth Masters © 2025.</p>
                 </div>
                 <div class="item-box">
                   <ul class="flex md:gap-6 gap-3 items-center text-footer">

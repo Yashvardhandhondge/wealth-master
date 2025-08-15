@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="wm_title">Experten-Krypto-Analysen & VIP-Strategien | Wealth Masters</title>
   <meta name="description"
-    content="Treten Sie Wealth Masters bei für Experten-Kryptomarktanalysen, VIP-Strategien und Einblicke, um Ihr passives Einkommen zu steigern.">
+    content="Treten Sie Wealth Masters bei und erhalten Sie fachkundige Krypto-Marktanalysen, VIP-Strategien und Einblicke, um Ihr passives Einkommen zu steigern.">
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wealthmasters.pro/">
@@ -22,6 +22,7 @@
   <meta name="twitter:description"
     content="Lernen Sie, Ihr Vermögen durch Expertenleitfäden, Marktkenntnisse und Krypto-Strategien zu meistern. Schließen Sie sich der finanziellen Revolution an.">
   <meta name="twitter:image" content="https://wealthmasters.pro/assets/images/wealth-masters-logo.webp">
+  <script src="https://ocixyipglvsfmybqimen.supabase.co/storage/v1/object/public/freeoff/prices.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2192,12 +2193,18 @@
     fetchPrices();
     setInterval(fetchPrices, 10000);
   </script>
-
 </head>
 
 <body class="  font-base  font-normal bg-[#000000]">
   <div id="crypto-ticker-bar">
-    <div id="crypto-ticker">Lade Preise...</div>
+    <div id="crypto-ticker"><span>German – Vollständige
+        Version&nbsp;&nbsp;</span><span>Kryptowährungspreise&nbsp;&nbsp;</span><span> BTC:
+        $120,561.89&nbsp;&nbsp;</span><span> ETH: $4,200.70&nbsp;&nbsp;</span><span> XRP: $3.23&nbsp;&nbsp;</span><span>
+        USDT: $1.00&nbsp;&nbsp;</span><span> BNB: $798.96&nbsp;&nbsp;</span><span> SOL: $179.24&nbsp;&nbsp;</span><span>
+        USDC: $1.00&nbsp;&nbsp;</span><span> STETH: $4,190.87&nbsp;&nbsp;</span><span> DOGE:
+        $0.23&nbsp;&nbsp;</span><span> ADA: $0.79&nbsp;&nbsp;</span><span> TRX: $0.34&nbsp;&nbsp;</span><span> WSTETH:
+        $5,074.46&nbsp;&nbsp;</span><span> WETH: $4,200.64&nbsp;&nbsp;</span><span> WBTC:
+        $120,358.56&nbsp;&nbsp;</span><span> HYPE: $44.91</span></div>
   </div>
   <main class="overflow-hidden">
     <!--  ====================== Header Area Start =============================  -->
@@ -2320,25 +2327,25 @@
         <div
           class="flex px-[9px] py-[4px] gap-[6px] items-center justify-center bg-primary-100 max-w-[370px] mx-auto rounded-full">
           <img src="/assets/images/hero-man-logo.webp" loading="lazy" class="h-6 sm:h-auto" alt="images">
-          <p class="sm:text-sm text-xs font-medium" data-i18n="cta">Schließen Sie sich +1.000 täglichen Tradern 100%
-            kostenlos an</p>
+          <p class="sm:text-sm text-xs font-medium" data-i18n="cta">Treten Sie über 1.000 täglichen Tradern kostenlos
+            bei</p>
         </div>
         <div class="max-w-[680px] mx-auto relative z-10">
           <h1 class="font-medium lg:text-[46px] md:text-[40px] text-[24px] xd:text-[28px] sm:text-[32px] text-center">
-            <span data-i18n="hero_heading">Treten Sie dem Club der 1% Trader bei und erhalten Sie</span>
+            <span data-i18n="hero_heading">Treten Sie dem 1%-Trader-Club bei und erhalten Sie</span>
             <span class="text-primary-200" data-i18n="hero_highlight"> vollen Zugang</span>
             <span data-i18n="hero_end"> zu VIP-Strategien</span>
           </h1>
-          <p class="text-sm sm:text-base text-center mt-[22px]" data-i18n="subtext"> Wir helfen Ihnen, mit Krypto
-            konstante Erträge zu erzielen und die Risiken zu managen. Beginnen Sie noch heute mit dem Aufbau Ihres
-            Krypto-Portfolios </p>
+          <p class="text-sm sm:text-base text-center mt-[22px]" data-i18n="subtext">Wir helfen Ihnen, mit Krypto
+            beständige Renditen zu erzielen und Risiken zu managen. Starten Sie noch heute mit dem Aufbau Ihres
+            Krypto-Portfolios.</p>
           <div class="email-box mt-[25px] max-w-[420px] w-full px-8 sm:px-0 mx-auto">
             <form id="newsletter-form" class="flex items-center justify-center">
               <div style="display: flex; width: 100%; max-width: 420px; height: 44px;">
                 <input type="email" id="email-input" name="email" placeholder="Ihre E-Mail-Adresse..." required
                   class="custom-email-input" />
 
-                <button type="submit" id="submit-btn" class="custom-submit-btn"> Jetzt verdienen </button>
+                <button type="submit" id="submit-btn" class="custom-submit-btn"> Jetzt starten </button>
               </div>
             </form>
             <!-- Success/Error Messages -->
@@ -2369,7 +2376,7 @@
                 showMessage('Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support.', 'error');
               } finally {
                 // Reset button
-                submitBtn.innerHTML = 'Jetzt verdienen';
+                submitBtn.innerHTML = 'Jetzt starten';
                 submitBtn.disabled = false;
               }
             });
@@ -2453,9 +2460,9 @@
           </script>
         </div>
         <div class="start-earning-wrapper">
-          <a href="https://forms.monday.com/forms/dbabe75a18d9e994e8466db8451f6864?r=euc1" target="_blank"
+          <a href="https://forms.monday.com/forms/042c8decc022a78bf1762c041c1affa2?r=euc1" target="_blank"
             class="start-earning-button">
-            Jetzt verdienen
+            Jetzt starten
           </a>
         </div>
 
@@ -2480,9 +2487,8 @@
                           fill="white" />
                       </svg>
                     </div>
-                    <h2 class="md:text-[20px] text-[16px] font-bold gap-[5px]" data-i18n="index_heading"> Bitcoin:
-                      Angst-
-                      und Gier-Index </h2>
+                    <h2 class="md:text-[20px] text-[16px] font-bold gap-[5px]" data-i18n="index_heading">Bitcoin Angst-
+                      und Gier-Index</h2>
                   </div>
                 </div>
                 <div class="flex gap-2 items-center">
@@ -2550,8 +2556,8 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_fear_label"> Extreme Angst
-                        (0–24) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_fear_label">Extreme Angst
+                        (0–24)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2577,7 +2583,7 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="fear_label"> Angst (25-49) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="fear_label">Angst (25–49)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2604,7 +2610,7 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="neutral_label"> Neutral (50) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="neutral_label">Neutral (50)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2631,7 +2637,7 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="greed_label"> Gier (51-74) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="greed_label">Gier (51–74)</p>
                     </div>
                   </div>
                   <div class="flex mt-2 items-center gap-2 bg-[#FFFFFF0D] px-1 sm:px-[8px] py-[5px] rounded-full">
@@ -2658,8 +2664,8 @@
                       </svg>
                     </div>
                     <div class="text-item">
-                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_greed_label"> Extreme Gier
-                        (75–100) </p>
+                      <p class="text-[8px] sm:text-[10px] font-medium" data-i18n="extreme_greed_label">Extreme Gier
+                        (75–100)</p>
                     </div>
                   </div>
                 </div>
@@ -2674,32 +2680,29 @@
       <div class="container">
         <div class="section-title mb-[70px]">
           <h2 class="lg:text-[32px] text-[24px] font-medium text-center">
-            <span data-i18n="featured_partners_before">Vorgestellte</span>
-            <span class="text-primary-200" data-i18n="featured_partners_highlight">Partner</span>
+            <span data-i18n="featured_partners_before">Top-Partner:</span>
+            <span class="text-primary-200" data-i18n="featured_partners_highlight"></span>
           </h2>
         </div>
         <div class="space-y-2 sm:space-y-10">
           <!-- Desktop view - show the 3 logos in a clean row -->
           <div
             class="flex flex-col space-y-4 sm:flex-row justify-between sm:justify-between sm:items-center sm:space-y-0 w-full">
-            <div class="relative w-fit mx-auto sm:mx-0">
-              <img src="/assets/images/bitmex.png" loading="lazy" alt="MarketWatch" class="block h-12" />
-              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none">
-              </div>
 
-            </div>
             <div class="relative w-fit mx-auto sm:mx-0">
-              <img src="/assets/images/binance.png" loading="lazy" alt="MarketWatch" class="block h-12" />
-              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none">
-              </div>
+              <img src="/assets/images/binance.png" loading="lazy" alt="TradingView" class="block h-12" />
+              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none"></div>
+            </div>
 
-            </div>
-            <img src="/assets/images/bybit.png" loading="lazy" alt="TradingView" class="h-12 mx-auto sm:mx-0">
             <div class="relative w-fit mx-auto sm:mx-0">
-              <img src="/assets/images/coinbase.png" loading="lazy" alt="Bitcoin.com" class="block h-12" />
-              <div class="absolute inset-0 bg-gradient-to-r from-white/0 to-black/80 pointer-events-none"></div>
+              <img src="/assets/images/bitmex.png" loading="lazy" alt="Bitmex" class="block h-12" />
+              <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-white/0 pointer-events-none"></div>
             </div>
+
+            <img src="/assets/images/bybit.png" loading="lazy" alt="Bitcoin.com" class="h-12 mx-auto sm:mx-0">
+
           </div>
+
         </div>
       </div>
     </section>
@@ -2714,9 +2717,8 @@
           <h2 class="lg:text-[32px] text-[24px] font-medium text-center">
             <span data-i18n="hero_text_before">Im</span>
             <span class="text-primary-200" data-i18n="hero_text_highlight">Wealth Master Club</span>, <span
-              data-i18n="hero_text_after">handeln wir die überzeugendsten Setups und helfen Ihnen, passives Einkommen
-              mit
-              Krypto zu verdienen</span>
+              data-i18n="hero_text_after">handeln wir nur Setups mit höchster Überzeugung und helfen Ihnen, passives
+              Einkommen mit Kryptowährungen zu erzielen.</span>
           </h2>
         </div>
         <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
@@ -2747,7 +2749,7 @@
             </div>
             <div class="content-box flex items-center justify-between">
               <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">April 6th 2025</p>
+                <p data-i18n="date_format">6. April 2025</p>
                 <p data-i18n="signal_strength">- Starkes Signal</p>
               </div>
               <div class="right-box flex items-center gap-[10px]">
@@ -2756,7 +2758,7 @@
                     d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
                     fill="#22C55E" />
                 </svg>
-                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">61.50%</p>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">61,50 %</p>
               </div>
             </div>
           </div>
@@ -2787,7 +2789,7 @@
             </div>
             <div class="content-box flex items-center justify-between">
               <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">April 15th 2025</p>
+                <p data-i18n="date_format">15. April 2025</p>
                 <p data-i18n="signal_strength">- Starkes Signal</p>
               </div>
               <div class="right-box flex items-center gap-[10px]">
@@ -2796,7 +2798,7 @@
                     d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
                     fill="#22C55E" />
                 </svg>
-                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">152.86%</p>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">152,86 %</p>
               </div>
             </div>
           </div>
@@ -2827,7 +2829,7 @@
             </div>
             <div class="content-box flex items-center justify-between">
               <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">June 23th 2025</p>
+                <p data-i18n="date_format">23. Juni 2025</p>
                 <p data-i18n="signal_strength">- Starkes Signal</p>
               </div>
               <div class="right-box flex items-center gap-[10px]">
@@ -2836,7 +2838,7 @@
                     d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
                     fill="#22C55E" />
                 </svg>
-                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">84.35%</p>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">84,35 %</p>
               </div>
             </div>
           </div>
@@ -2867,7 +2869,7 @@
             </div>
             <div class="content-box flex items-center justify-between">
               <div class="left-text text-sm text-white font-semibold">
-                <p data-i18n="date_format">June 27th 2025</p>
+                <p data-i18n="date_format">27. Juni 2025</p>
                 <p data-i18n="signal_strength">- Starkes Signal</p>
               </div>
               <div class="right-box flex items-center gap-[10px]">
@@ -2876,7 +2878,7 @@
                     d="M7.29289 0.292892C7.68342 -0.0976314 8.31658 -0.0976315 8.70711 0.292892L15.0711 6.65685C15.4616 7.04738 15.4616 7.68054 15.0711 8.07107C14.6805 8.46159 14.0474 8.46159 13.6569 8.07107L8 2.41421L2.34315 8.07107C1.95262 8.46159 1.31946 8.46159 0.928932 8.07107C0.538407 7.68054 0.538407 7.04738 0.928932 6.65685L7.29289 0.292892ZM7 16L7 0.999999L9 0.999999L9 16L7 16Z"
                     fill="#22C55E" />
                 </svg>
-                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">71.23%</p>
+                <p class="font-bold text-[18px] text-[#22C55E]" data-i18n="percentage_gain">71,23 %</p>
               </div>
             </div>
           </div>
@@ -2910,11 +2912,10 @@
               </svg>
             </div>
             <div class="content-text mt-5">
-              <h3 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="feature1_title"> Beginnen Sie, mit
-                Krypto
-                ein beständiges passives Einkommen zu verdienen </h3>
-              <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="feature1_desc"> Jeden Monat
-                übernehmen wir die Recherche – damit Sie es nicht tun müssen. </p>
+              <h3 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="feature1_title">Starten Sie, um
+                beständiges passives Einkommen mit Krypto zu erzielen</h3>
+              <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="feature1_desc">Jeden Monat
+                übernehmen wir die Recherche – damit Sie es nicht tun müssen.</p>
             </div>
           </div>
           <div class="item-box hover:bg-[#0F0A08] p-6 rounded-xl transition-all duration-200 cursor-pointer">
@@ -2965,9 +2966,10 @@
               </svg>
             </div>
             <div class="content-text mt-5">
-              <h3 class="text-[24px] font-bold" data-i18n="feature3_title">Erhalten Sie die überzeugendsten Trades</h3>
-              <p class="text-base mt-2 text-footer" data-i18n="feature3_desc">Einzigartige Einblicke, die potenzielle
-                Gewinne mit objektiver Risikobewertung in Einklang bringen.</p>
+              <h3 class="text-[24px] font-bold" data-i18n="feature3_title">Erhalten Sie die besten
+                High-Conviction-Trades</h3>
+              <p class="text-base mt-2 text-footer" data-i18n="feature3_desc">Einzigartige Einblicke, die Gewinnchancen
+                mit objektiver Risikobewertung ausbalancieren</p>
             </div>
           </div>
         </div>
@@ -2982,13 +2984,11 @@
 
         <!-- "Why Choose Us" Section -->
         <div class="section-header">
-          <h2 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="why_choose_us">Warum Wealth Masters wählen?
+          <h2 class="text-[24px] font-bold hover:text-[#F5F5F5]" data-i18n="why_choose_us">Warum Wealth Masters?
           </h2>
-          <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="why_choose_us_desc">Wealth Masters wurde
-            mit einer einzigen Mission gegründet: Investoren zu befähigen, indem wir anspruchsvolle
-            Krypto-Handelsstrategien und Marktanalysen bereitstellen. Wir helfen unseren Kunden, die Komplexität des
-            Kryptowährungshandels zu meistern, und ermöglichen es ihnen, die Marktvolatilität zu ihrem Vorteil zu nutzen
-            und gleichzeitig das Risiko effektiv zu managen.</p>
+          <p class="text-base mt-2 text-footer hover:text-[#E5E5E5]" data-i18n="why_choose_us_desc">Mission – Investoren
+            mit fortschrittlichen Krypto-Handelsstrategien und Marktanalysen befähigen, um Volatilität zu nutzen und
+            Risiken zu managen.</p>
         </div>
         <div class="why-us-grid">
           <!-- Card 1: Strategic Focus -->
@@ -3013,12 +3013,9 @@
                 </defs>
               </svg>
             </div>
-            <h3 data-i18n="accuracy_rel">Strategischer Fokus, kein Lärm</h3>
-            <p data-i18n="accuracy_rel_desc">Im Gegensatz zu vielen Diensten, die Sie mit ständigen Signalen
-              überschwemmen, konzentriert sich Wealth Masters auf die Bereitstellung gut recherchierter, überzeugender
-              Handelsstrategien, die darauf ausgelegt sind, konsistente Renditen zu erzielen. Unser Ansatz betont den
-              strategischen Handel anstatt des Haltens von Positionen während Marktabschwüngen, was es Ihnen ermöglicht,
-              den potenziellen ROI zu maximieren und die Exposition gegenüber Bärenmärkten zu minimieren.</p>
+            <h3 data-i18n="accuracy_rel">Strategischer Fokus statt Lärm</h3>
+            <p data-i18n="accuracy_rel_desc">Wir liefern gut recherchierte, hoch überzeugende Strategien, anstatt Sie
+              mit minderwertigen Signalen zu überfluten.</p>
           </div>
           <!-- Card 2: Risk Management -->
           <div class="why-us-card">
@@ -3035,12 +3032,9 @@
                 </defs>
               </svg>
             </div>
-            <h3 data-i18n="actionable">Risikomanagement & Konsistenz</h3>
-            <p data-i18n="actionable_desc">Wir glauben nicht daran, auf das Beste zu hoffen. Unsere Strategien sind
-              darauf ausgelegt, Risiken zu managen, insbesondere während Marktabschwüngen, und sicherzustellen, dass Sie
-              für konsistente, langfristige Renditen positioniert sind. Unser Engagement für disziplinierten Handel
-              bedeutet, dass wir uns auf die Verwaltung von Abwärtsrisiken konzentrieren und nicht nur auf kurzfristige
-              Gewinne abzielen.</p>
+            <h3 data-i18n="actionable">Risikomanagement & Beständigkeit</h3>
+            <p data-i18n="actionable_desc">Unsere Strategien sind so konzipiert, dass sie in Abschwüngen Kapital
+              schützen und langfristige Renditen sichern.</p>
           </div>
           <!-- Card 3: Aligned Success -->
           <div class="why-us-card">
@@ -3060,11 +3054,8 @@
                 </defs>
               </svg>
             </div>
-            <h3 data-i18n="real_time_alerts">Ausgerichtet auf Ihren Erfolg</h3>
-            <p data-i18n="real_time_alerts_desc">Es gibt keine Vorabgebühren – unser Erfolg ist direkt mit Ihrem
-              verbunden. Wir nutzen unsere proprietären Tools und Strategien, um Ihnen bei der Optimierung Ihres
-              Portfolios zu helfen, mit dem Ziel, konsistente Renditen zu erzielen, die Ihren langfristigen finanziellen
-              Zielen entsprechen.</p>
+            <h3 data-i18n="real_time_alerts">Auf Ihren Erfolg ausgerichtet</h3>
+            <p data-i18n="real_time_alerts_desc">Keine Vorabgebühren; wir verdienen nur, wenn Sie verdienen.</p>
           </div>
           <!-- Card 4: Community -->
           <div class="why-us-card">
@@ -3085,11 +3076,9 @@
                 </defs>
               </svg>
             </div>
-            <h3 data-i18n="community_title">Eine Gemeinschaft von befähigten Händlern</h3>
-            <p data-i18n="community_desc">Mehr als nur ein Service ist Wealth Masters eine Gemeinschaft, in der
-              gleichgesinnte Händler zusammenarbeiten, Einblicke teilen und sich gegenseitig bei der Erreichung ihrer
-              finanziellen Ziele unterstützen. Ob Sie ein erfahrener Investor sind oder gerade erst anfangen, wir bieten
-              Ihnen das Wissen und die Ressourcen, um auf dem Kryptomarkt erfolgreich zu sein.</p>
+            <h3 data-i18n="community_title">Community gestärkter Trader</h3>
+            <p data-i18n="community_desc">Ein Ort, an dem Trader Wissen teilen und sich gegenseitig unterstützen, um
+              ihre finanziellen Ziele zu erreichen.</p>
           </div>
         </div>
       </div>
@@ -3098,79 +3087,66 @@
       <!-- FAQs -->
       <section id="faqs" class="faq-section">
         <div class="faq-container">
-          <h2 data-i18n="faqs_heading" class="faq-title">Häufig gestellte Fragen</h2>
+          <h2 data-i18n="faqs_heading" class="faq-title">Häufige Fragen</h2>
           <div class="faq-item">
-            <h3 data-i18n="faq_1" onclick="toggleFaq(this)">Welche Dienstleistungen bietet Wealth Masters an?
+            <h3 data-i18n="faq_1" onclick="toggleFaq(this)">Welche Leistungen bietet Wealth Masters an?
               <span>+</span>
             </h3>
-            <p data-i18n="faqs_11" class="faq-answer">Bei Wealth Masters sind wir auf Krypto-Handelsstrategien und
-              Marktanalysen spezialisiert. Anstatt direkte Handelssignale zu geben, befähigen wir unsere Kunden,
-              Kryptowährungen aktiv zu handeln, mit einem Fokus auf Marktvolatilität und Risikomanagement. Unser Ansatz
-              zielt darauf ab, das passive Einkommenspotenzial zu maximieren, indem wir die Renditen durch konsistenten
-              Handel optimieren, anstatt auf die HODL-Strategie zu setzen, die in Bärenmärkten oft zu erheblichen
+            <p data-i18n="faqs_11" class="faq-answer">Wealth Masters ist auf Krypto-Handelsstrategien und Marktanalyse
+              spezialisiert. Anstatt direkte Handelssignale zu liefern, befähigen wir unsere Kunden, aktiv zu handeln –
+              mit Fokus auf Marktvolatilität und Risikomanagement. Ziel ist es, das Potenzial passiver Erträge durch
+              kontinuierliches Trading zu maximieren, statt auf HODL zu setzen, das in Bärenmärkten oft zu hohen
               Verlusten führt.</p>
           </div>
           <div class="faq-item">
-            <h3 data-i18n="faq_2" onclick="toggleFaq(this)">Wie hilft Wealth Masters Kunden, Risiken zu managen und den
-              ROI zu maximieren?
+            <h3 data-i18n="faq_2" onclick="toggleFaq(this)">Wie hilft Wealth Masters, Risiken zu managen und den ROI zu
+              maximieren?
               <span>+</span>
             </h3>
-            <p data-i18n="faq_22" class="faq-answer">Wir konzentrieren uns auf die Maximierung des potenziellen Return
-              on Investment (ROI), indem wir konstant handeln und die Marktvolatilität nutzen. HODLing, obwohl beliebt,
-              hat sich nicht als die effizienteste Strategie erwiesen, insbesondere wenn die Märkte um 80-90 % gefallen
-              sind. Durch die Anwendung kalkulierter Handelsstrategien stellen wir sicher, dass Ihre Investitionen
-              härter für Sie arbeiten und sowohl Wachstum als auch Risikomanagement optimieren.</p>
+            <p data-i18n="faq_22" class="faq-answer">Wir maximieren den Return on Investment (ROI), indem wir konsequent
+              handeln und die Volatilität nutzen. HODL ist zwar beliebt, aber nicht die effizienteste Strategie –
+              insbesondere, wenn Märkte um 80–90 % fallen. Mit kalkulierten Handelsstrategien arbeitet Ihr Kapital
+              effektiver; Wachstum und Risiko werden optimal gesteuert.</p>
           </div>
           <div class="faq-item">
-            <h3 data-i18n="faq_3" onclick="toggleFaq(this)">Ist der Beitritt KOSTENLOS?
+            <h3 data-i18n="faq_3" onclick="toggleFaq(this)">Ist die Teilnahme KOSTENLOS?
               <span>+</span>
             </h3>
-            <p data-i18n="faq_33" class="faq-answer">Wir arbeiten auf einer Gewinnbeteiligungsbasis, was bedeutet, dass
-              keine Vorabgebühren für den Beitritt zu Wealth Masters anfallen. Stattdessen nutzen wir unsere
-              proprietäre Software, um Strategien zu analysieren und zu entwickeln, und unsere Vergütung basiert auf den
-              Gewinnen, die durch die von uns für Sie umgesetzten Strategien erzielt werden. Dies stellt sicher, dass
-              unsere Interessen mit Ihren übereinstimmen, da wir nur dann erfolgreich sind, wenn Sie es sind.</p>
+            <p data-i18n="faq_33" class="faq-answer">Wir arbeiten mit Gewinnbeteiligung; es fallen keine Vorabgebühren
+              an. Wir nutzen proprietäre Software zur Analyse und Entwicklung von Strategien, und unsere Vergütung
+              basiert auf den erzielten Gewinnen. Unsere Interessen sind damit auf Ihre ausgerichtet: Wir profitieren
+              nur, wenn Sie profitieren.</p>
           </div>
           <div class="faq-item">
-            <h3 data-i18n="faq_4" onclick="toggleFaq(this)">Ist Wealth Masters eine gute Option zur Generierung von
-              passivem Einkommen?
+            <h3 data-i18n="faq_4" onclick="toggleFaq(this)">Ist Wealth Masters geeignet, um passives Einkommen zu
+              generieren?
               <span>+</span>
             </h3>
-            <p data-i18n="faq_44" class="faq-answer">Ja, Wealth Masters bietet eine ausgezeichnete Möglichkeit, durch
-              strategischen Krypto-Handel passives Einkommen zu generieren. Unser Fokus auf Marktvolatilität und
-              Risikomanagement ermöglicht es uns, konstante Erträge zu erzielen, was es zu einer effektiveren Strategie
-              als dem HODLing während längerer Bärenmärkte macht.</p>
+            <p data-i18n="faq_44" class="faq-answer">Ja. Durch den Fokus auf Volatilität und Risikosteuerung sind
+              stetige Erträge möglich – wirkungsvoller als reines HODL während lang anhaltender Bärenmärkte.</p>
           </div>
           <div class="faq-item">
             <h3 data-i18n="faq_5" onclick="toggleFaq(this)">Wie kann ich Wealth Masters kontaktieren?<span>+</span>
             </h3>
-            <p data-i18n="faq_55" class="faq-answer">Sie können uns einfach über das Kontaktformular auf unserer Website
-              oder per E-Mail an support@wealthmasters.pro erreichen. Unser engagiertes Team steht Ihnen bei allen
-              Fragen oder Anliegen zur Seite.
-            </p>
+            <p data-i18n="faq_55" class="faq-answer">Über das Kontaktformular auf der Website oder per E-Mail an
+              support@wealthmasters.pro. Unser Team hilft Ihnen gern weiter.</p>
           </div>
           <div class="faq-item">
             <h3 data-i18n="faq_6" onclick="toggleFaq(this)">Wie kann ich Wealth Masters beitreten?<span>+</span>
             </h3>
-            <p data-i18n="faq_66" class="faq-answer">Der Beitritt zu Wealth Masters ist einfach. Klicken Sie einfach auf
-              die Schaltfläche "Jetzt anmelden" auf unserer Homepage. Nach Abschluss des Registrierungsprozesses
-              erhalten Sie Zugang zu unseren Premium-Inhalten, einschließlich Krypto-Handelsstrategien, Marktanalysen
-              und mehr. Wir führen Sie durch jeden Schritt, um sicherzustellen, dass Sie für den Erfolg auf dem
-              Kryptomarkt gerüstet sind.
-            </p>
+            <p data-i18n="faq_66" class="faq-answer">Klicken Sie auf der Startseite auf „Sign up now“. Nach der
+              Registrierung erhalten Sie Zugriff auf Premium-Inhalte wie Handelsstrategien und Marktanalysen. Wir
+              begleiten Sie Schritt für Schritt für einen erfolgreichen Einstieg in den Kryptomarkt.</p>
           </div>
           <div class="faq-item">
-            <h3 data-i18n="faq_7" onclick="toggleFaq(this)">Warum sollte man Wealth Masters anderen
-              Krypto-Handelsdiensten
-              vorziehen?<span>+</span>
+            <h3 data-i18n="faq_7" onclick="toggleFaq(this)">Warum Wealth Masters statt anderer
+              Krypto-Trading-Services?<span>+</span>
             </h3>
-            <p data-i18n="faq_77" class="faq-answer">Wealth Masters hebt sich dadurch ab, dass wir nicht nur
-              Krypto-Handelsstrategien anbieten, sondern einen umfassenden, datengesteuerten Ansatz, der das passive
-              Einkommenspotenzial maximiert. Unsere konsistenten Handelsstrategien sind darauf ausgelegt, das Beste aus
-              der Marktvolatilität herauszuholen, und unser Gewinnbeteiligungsmodell bringt unseren Erfolg mit Ihrem in
-              Einklang. Ohne Vorabgebühren und mit einem Fokus auf langfristiges Wachstum ist Wealth Masters die ideale
-              Wahl für ernsthafte Trader, die zuverlässige Renditen suchen.
-            </p>
+            <p data-i18n="faq_77" class="faq-answer">Wir bieten nicht nur Strategien, sondern einen ganzheitlichen,
+              datengetriebenen Ansatz, der das Potenzial passiver Erträge maximiert. Unsere konsistenten Strategien
+              nutzen die Volatilität; mit Gewinnbeteiligung sind unsere Interessen an die Ihren gekoppelt. Keine
+              Vorabgebühren und Fokus auf langfristiges Wachstum – die ideale Wahl für anspruchsvolle Trader, die
+              verlässliche Ergebnisse suchen.</p>
           </div>
       </section>
       <script>
@@ -3211,8 +3187,8 @@
                 </div>
                 <div class="text-box mt-6 ">
                   <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Treten Sie Wealth Masters
-                    bei für Experten-Kryptomarktanalysen, VIP-Strategien und Einblicke, um Ihr passives Einkommen zu
-                    steigern.</p>
+                    bei und erhalten Sie fachkundige Krypto-Marktanalysen, VIP-Strategien und Einblicke, um Ihr passives
+                    Einkommen zu steigern.</p>
                 </div>
                 <div class="footer-social-icon mt-6">
                   <ul class="flex items-center gap-4 justify-center lg:justify-start text-footer">
@@ -3285,7 +3261,7 @@
               <!--New Box-->
               <div class="footer-item">
                 <h2 data-i18n="footer_heading"
-                  class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Entdecken</h2>
+                  class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Links:</h2>
                 <ul class="footer-links">
                   <li><a data-i18n="footer_home" href="/de/index.html" title="Zur Startseite">Startseite</a></li>
                   <li><a data-i18n="footer_about" href="/de/about.html" title="Über uns">Über uns</a></li>
@@ -3299,10 +3275,10 @@
               <!--New Box end here-->
               <div class="footer-item">
                 <div class="newsletter">
-                  <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Abonnieren
+                  <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Abonnieren:
                   </h2>
-                  <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text"> Erhalten Sie die neuesten
-                    Krypto-Handels-Setups, Markt-Updates, Anlagestrategien und exklusive Krypto-Angebote direkt in Ihren
+                  <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text">Erhalten Sie die neuesten
+                    Krypto-Trading-Setups, Marktupdates, Anlagestrategien und exklusive Krypto-Angebote direkt in Ihren
                     Posteingang.</p>
                   <div id="custom-substack-2" class="mt-6 form-box">
                     <div id="custom-substack-2" class="mt-6 form-box">
@@ -3451,9 +3427,7 @@
             <div class="copy-right-area w-full pt-8 mt-8 justify-between border-t border-[#1F2937]">
               <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
                 <div class="item-text">
-                  <p class="text-sm text-footer" data-i18n="copyright"> Wealth Masters ©2025. Alle Rechte
-                    vorbehalten.
-                  </p>
+                  <p class="text-sm text-footer" data-i18n="copyright">Wealth Masters © 2025.</p>
                 </div>
                 <div class="item-box">
                   <ul class="flex md:gap-6 gap-3 items-center text-footer">
