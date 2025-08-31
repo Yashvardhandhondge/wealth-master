@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Generator</title>
+
+    <!-- Quill.js Rich Text Editor CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --primary-color: #DC2626;
+            --secondary-color: #444;
+            --border-color: #555;
+            --input-bg: #2a2a2a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h1,
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            color: white;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .form-section {
+            background-color: var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .input-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            color: var(--text-color);
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(220, 38, 38, 0.5);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .ql-toolbar,
+        .ql-container {
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color) !important;
+            border-radius: 5px;
+        }
+
+        .ql-container {
+            border-top: 0 !important;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .ql-editor {
+            min-height: 250px;
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 1.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #b91c1c;
+        }
+
+        .btn-secondary {
+            background-color: #666;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #777;
+        }
+
+        /* Post Card Styles */
+        .preview-section {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .blog-card {
+            background-color: #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+            display: block;
+            text-decoration: none;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-category {
+            display: inline-block;
+            background-color: rgba(220, 38, 38, 0.1);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: #a1a1aa;
+            margin: 0 0 1rem 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 54px;
+            /* Approx 3 lines */
+        }
+
+        .read-more-link {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        #card-code-textarea {
+            margin-top: 1.5rem;
+            height: 200px;
+        }
+
+        .code-actions {
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: calc(1.5rem + 8px);
+            right: 8px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            background: #555;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .copy-btn:hover {
+            background: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <main>
+            <h1>Blog Post Generator</h1>
+            <div class="form-section">
+                <form id="post-form">
+                    <div class="input-group">
+                        <label for="lang">Language</label>
+                        <select id="lang">
+                            <option value="en">English (en)</option>
+                            <option value="lt">Lithuanian (lt)</option>
+                            <option value="de">German (de)</option>
+                            <option value="es">Spanish (es)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="title">Page Title ({title})</label>
+                        <input type="text" id="title" placeholder="Passive Income with Crypto: A Deep Dive">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="meta-description">Meta Description ({meta-description})</label>
+                        <textarea id="meta-description"
+                            placeholder="Learn about the different ways to earn passive yield on your crypto assets safely, including staking, lending, and more."></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="h1-heading">H1 Heading ({h1-heading})</label>
+                        <input type="text" id="h1-heading"
+                            placeholder="Passive Income with Crypto: Staking, Lending, and More">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="date">Publication Date ({date})</label>
+                        <input type="date" id="date">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="featured-img">Featured Image URL ({featured-img})</label>
+                        <input type="url" id="featured-img"
+                            value="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1932&auto=format&fit=crop">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="editor-container">Post Content ({post-content})</label>
+                        <!-- Quill editor will be mounted here -->
+                        <div id="editor-container">
+                            <h3>Understanding Crypto Staking</h3>
+                            <p>Staking is the process of actively participating in transaction validation (similar to
+                                mining) on a proof-of-stake (PoS) blockchain. On these blockchains, anyone with a
+                                minimum-required balance of a specific cryptocurrency can validate transactions and earn
+                                staking rewards.</p>
+
+                            <h3>Exploring Crypto Lending</h3>
+                            <p>Crypto lending is a form of decentralized finance (DeFi) where investors lend their
+                                cryptocurrencies to borrowers in exchange for interest payments. It's a way to make your
+                                assets work for you.</p>
+
+                            <ul>
+                                <li>High potential returns</li>
+                                <li>Contributes to network security</li>
+                                <li>Relatively easy to get started</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr style="border-color: var(--border-color); margin: 2rem 0;">
+
+                    <div class="input-group">
+                        <label for="file-name">File Name (URL)</label>
+                        <input type="text" id="file-name" placeholder="my-awesome-post.html">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="download-btn">Download HTML File</button>
+                </form>
+            </div>
+        </main>
+
+        <aside class="preview-section">
+            <h2>Post Card Generator</h2>
+
+            <!-- Live Preview -->
+            <a href="#" class="blog-card" id="preview-card" onclick="return false;">
+                <img src="" alt="Featured image preview" class="card-image" id="preview-image">
+                <div class="card-content">
+                    <span class="card-category">Passive Income</span>
+                    <h3 class="card-title" id="preview-title"></h3>
+                    <p class="card-excerpt" id="preview-excerpt"></p>
+                    <span class="read-more-link">Read More →</span>
+                </div>
+            </a>
+
+            <div class="code-actions">
+                <textarea id="card-code-textarea" readonly></textarea>
+                <button class="copy-btn" id="copy-btn">Copy</button>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- Quill.js Rich Text Editor JS -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 1. INITIALIZE QUILL RICH TEXT EDITOR ---
+            const quill = new Quill('#editor-container', {
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        [{ 'header': [2, 3, 4, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        ['blockquote', 'code-block'],
+                        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                        [{ 'indent': '-1' }, { 'indent': '+1' }],
+                        ['link'],
+                        ['clean']
+                    ]
+                }
+            });
+
+            // --- 2. DEFINE THE HTML TEMPLATE ---
+            // NOTE: I've added a new <style> block inside the head to fix the footer layout.
+            const htmlTemplate = `
+<!DOCTYPE html>
+<html lang="{lang}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description"
+        content="{meta-description}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ocixyipglvsfmybqimen.supabase.co/storage/v1/object/public/freeoff/prices.js"><\/script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/assets/images/image1.webp" type="image/png" sizes="32x32" style="border-radius: 50%;">
+    <link rel="apple-touch-icon" href="/assets/images/image1.webp" style="border-radius: 50%;">
+    <link rel="mask-icon" href="/assets/images/image1.webp" color="#000000" style="border-radius: 50%;">
+    <!-- Dynamic Canonical Tag -->
+    <script>
+        const link = document.createElement("link");
+        link.rel = "canonical";
+        link.href = window.location.origin + window.location.pathname;
+        document.head.appendChild(link);
+    <\/script>
+    <!-- gulp:css -->
+    <link rel="stylesheet" href="/assets/css/nice-select.css">
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <!-- endgulp -->
+    
+    <!-- ===== FIX FOR FOOTER LAYOUT ===== -->
+    <style>
+      .ft-top-wrap {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr; /* Default for mobile */
+      }
+      @media (min-width: 768px) { /* Medium screens and up */
+        .ft-top-wrap {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+      }
+      @media (min-width: 1024px) { /* Large screens */
+         .ft-top-wrap {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+    
+    <script src="/assets/js/i18n.js"><\/script>
+    <script src="/assets/js/plotly-2.26.0.min.js"><\/script>
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Wealth Masters",
+        "url": "http://wealthmasters.pro/",
+        "logo": "http://wealthmasters.pro/assets/images/image1.webp",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contact@wealthmasters.pro",
+          "contactType": "customer service"
+        },
+        "sameAs": ["https://www.linkedin.com/company/wealthmasters-club/", "https://www.instagram.com/wealth.mastersclub"]
+      }
+    <\/script>
+
+    <!--Nav Menu-->
+    <script>
+        // File: /assets/js/menu.js
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (hamburgerButton && mobileMenu) {
+                hamburgerButton.addEventListener('click', () => {
+                    hamburgerButton.classList.toggle('open');
+                    mobileMenu.classList.toggle('hidden');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        document.body.style.overflow = 'auto';
+                    } else {
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            } else {
+                console.error('Hamburger menu script could not find #hamburger-button or #mobile-menu.');
+            }
+        });
+    <\/script>
+
+    <script>
+        // File: /assets/js/schema-generator.js
+        document.addEventListener('DOMContentLoaded', () => {
+            const blogTitleElement = document.getElementById('blog-post-title');
+            if (blogTitleElement) {
+                try {
+                    const headline = blogTitleElement.textContent.trim();
+                    const metaDescription = document.querySelector('meta[name="description"]').getAttribute('content');
+                    const pageUrl = window.location.href;
+                    const imageUrl = document.getElementById('featured-image').src;
+                    const datePublished = document.getElementById('publication-date').getAttribute('datetime');
+                    const articleSchema = {
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
+                        "headline": headline,
+                        "description": metaDescription,
+                        "image": imageUrl,
+                        "author": { "@type": "Organization", "name": "Wealth Masters" },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "Wealth Masters",
+                            "logo": { "@type": "ImageObject", "url": "http://wealthmasters.pro//assets/images/image1.webp" }
+                        },
+                        "datePublished": datePublished,
+                        "dateModified": datePublished
+                    };
+                    const schemaScript = document.createElement('script');
+                    schemaScript.type = 'application/ld+json';
+                    schemaScript.textContent = JSON.stringify(articleSchema, null, 2);
+                    document.head.appendChild(schemaScript);
+                } catch (error) {
+                    console.error('Error generating Article schema:', error);
+                }
+            }
+        });
+    <\/script>
+</head>
+
+<body class="  font-base  font-normal bg-[#000000]">
+    <main class="overflow-hidden">
+        <!--  ====================== Header Area Start =============================  -->
+        <div class="top-box pt-4 lg:pt-[40px] relative">
+            <div class="container">
+                <header class="relative px-4 py-4 lg:pt-6">
+                    <div class="container mx-auto flex w-full items-center justify-between gap-4">
+                        <nav class="hidden lg:flex items-center gap-8 text-white font-medium">
+                            <a href="/" class="desktop-nav-link" data-i18n="mb_home">Home</a>
+                            <a href="/about.html" class="desktop-nav-link" data-i18n="mb_about">About Us</a>
+                            <a href="/contact.html" class="desktop-nav-link" data-i18n="mb_contect">Contact</a>
+                            <a href="/en/blog/index.html" class="desktop-nav-link" data-i18n="mb_blog">Blog</a>
+                        </nav>
+                        <a href="/" class="relative z-50">
+                            <div class="hidden lg:flex flex-col items-center gap-1">
+                                <figure class="flex gap-1 items-center">
+                                    <img src="/assets/images/l1.webp" loading="lazy" alt="l1" class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10 h-5">
+                                    <img src="/assets/images/l2.webp" loading="lazy" alt="l2" class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10 h-5">
+                                    <img src="/assets/images/l3.webp" loading="lazy" alt="l3" class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10 h-5">
+                                    <img src="/assets/images/l4.webp" loading="lazy" alt="l4" class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start h-5">
+                                </figure>
+                                <img src="/assets/images/l-body.svg" loading="lazy" class="h-4" alt="Wealth Masters">
+                            </div>
+                            <div class="flex lg:hidden flex-col items-center gap-1">
+                                <figure class="flex gap-1 items-center">
+                                    <img src="/assets/images/l1.webp" loading="lazy" alt="l1" class="h-5">
+                                    <img src="/assets/images/l2.webp" loading="lazy" alt="l2" class="h-5">
+                                    <img src="/assets/images/l3.webp" loading="lazy" alt="l3" class="h-5">
+                                    <img src="/assets/images/l4.webp" loading="lazy" alt="l4" class="h-5 place-self-start">
+                                </figure>
+                                <img src="/assets/images/l-body.svg" loading="lazy" class="h-4" alt="Wealth Masters">
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-4">
+                            <div class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_81_471)"><path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z" fill="#DC2626"/></g>
+                                  <defs><clipPath id="clip0_81_471"><rect width="24" height="24" fill="white"/></clipPath></defs>
+                                </svg>
+                                <select id="languageSwitcher" class="nice-select font-bold" onchange="setLanguage(this.value)">
+                                    <option value="en" data-display="EN">English</option>
+                                    <option value="lt" data-display="LT">Lithuanian</option>
+                                    <option value="de" data-display="DE">German</option>
+                                    <option value="es" data-display="ES">Spanish</option>
+                                </select>
+                            </div>
+                            <button id="hamburger-button" class="hamburger z-50 lg:hidden" aria-label="Open menu">
+                                <span class="hamburger-top"></span><span class="hamburger-middle"></span><span class="hamburger-bottom"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="mobile-menu" class="glassy-menu hidden fixed inset-0 z-40">
+                        <div class="flex flex-col items-center justify-center w-full h-full text-white text-2xl space-y-4 pt-20">
+                            <a href="/" class="mobile-nav-link" data-i18n="mb_home">Home</a>
+                            <a href="/about.html" class="mobile-nav-link" data-i18n="mb_about">About Us</a>
+                            <a href="/contact.html" class="mobile-nav-link" data-i18n="mb_contect">Contact</a>
+                            <a href="/privacy-policy.html" class="mobile-nav-link" data-i18n="privacy_policy">Privacy Policy</a>
+                            <a href="/en/blog/index.html" class="mobile-nav-link" data-i18n="mb_blog">Blog</a>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div class="shape-item absolute -top-44 lg:top-0 right-0"><img src="/assets/images/header-top-left.webp" loading="lazy" alt="images"></div>
+            <div class="shape-item absolute -top-44 lg:top-0 left-0"><img src="/assets/images/header-top-right.webp" loading="lazy" alt="images"></div>
+        </div>
+        <!--  ====================== Header Area End =============================  -->
+
+        <!-- ====================== Blog Post Section Start ============================= -->
+        <style>
+            .blog-post-section{margin-top:150px;margin-bottom:150px;position:relative;overflow:hidden;color:#E5E5E5}.blog-glow-effect{position:absolute;top:20%;left:50%;width:800px;height:800px;background:radial-gradient(circle,rgba(220,38,38,.1) 0,rgba(220,38,38,0) 65%);transform:translate(-50%,-50%);pointer-events:none;z-index:0}.blog-post-content{position:relative;z-index:1;max-width:800px;margin-left:auto;margin-right:auto}.blog-post-title{font-family:'Outfit',sans-serif;font-weight:600;color:#fff;line-height:1.2;font-size:40px}.blog-post-meta{color:#A1A1AA;margin-top:1rem;margin-bottom:2rem}.blog-post-content h3{font-family:'Outfit',sans-serif;font-weight:500;font-size:1.5rem;color:#fff;margin-top:2.5rem;margin-bottom:1rem}.blog-post-content p,.blog-post-content li{color:#A1A1AA;line-height:1.8;font-size:1.125rem}.blog-post-content p{margin-bottom:1rem}.blog-post-content ul{list-style-type:none;padding-left:1rem;margin-bottom:1rem}.blog-post-content ul li{margin-bottom:.75rem;position:relative;padding-left:1.5rem}.blog-post-content ul li::before{content:'■';position:absolute;left:0;color:#DC2626;font-size:.8rem;top:.45rem}.blog-post-content a{color:#DC2626;text-decoration:none;font-weight:500;transition:color .3s ease}.blog-post-content a:hover{text-decoration:underline}.featured-image{border-radius:12px;margin-bottom:2rem;border:1px solid rgba(255,255,255,.1)}.blog-post-content blockquote{border-left:4px solid #DC2626;padding-left:1.5rem;margin:2rem 0;font-style:italic;color:#E5E5E5;font-size:1.25rem}
+        </style>
+        <section class="blog-post-section">
+            <div class="blog-glow-effect"></div>
+            <article class="container px-6 blog-post-content">
+                <header>
+                    <h1 id="blog-post-title" class="blog-post-title text-3xl md:text-5xl">{h1-heading}</h1>
+                    <p class="blog-post-meta">Published by Wealth Masters on <time id="publication-date" datetime="{date}">{date-formatted}</time></p>
+                </header>
+                <img id="featured-image" src="{featured-img}" alt="{title}" class="featured-image">
+                {post-content}
+            </article>
+        </section>
+        <!-- ====================== Blog Post Section End ============================= -->
+
+        <!--  ====================== start-earning  Area Start =============================  -->
+        <div class="relative">
+            <img src="/assets/images/footer-ellipse.webp" loading="lazy" alt="images" class="absolute hidden sm:inline top-24 left-1/2 transform -translate-y-1/2 -translate-x-1/2 m-auto z-0" />
+            <img src="/assets/images/mobile-footer.webp" loading="lazy" alt="images" class="absolute inline sm:hidden bottom-full top-0 right-0 left-0 m-auto z-0" />
+            <footer class="footer-area border-t border-[#FFFFFF33] md:pt-[113px] pt-[74px] pb-[35px] bg-[#000000] relative z-10">
+                <div class="footer-colo">
+                    <div class="container">
+                        <div class="ft-top-wrap">
+                            <div class="footer-item">
+                                <div class="site-logo">
+                                    <a href="/"><img id="image0_61_3589" width="500" height="500" preserveAspectRatio="none" src="/assets/images/wealth-masters-logo.webp" alt="wealth masters logo" /></a>
+                                </div>
+                                <div class="text-box mt-6 ">
+                                    <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Join Wealth Masters for expert crypto market analysis, VIP strategies, and insights to grow your passive income.</p>
+                                </div>
+                                <div class="footer-social-icon mt-6">
+                                    <ul class="flex items-center gap-4 justify-center lg:justify-start text-footer">
+                                        <li><a href="https://www.facebook.com/wealthmastersclub" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12.073C22 6.505 17.523 2 12 2S2 6.505 2 12.073c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.2 22 17.064 22 12.073Z"/></svg></a></li>
+                                        <li><a href="https://x.com/thewealthm" target="_blank" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.53 3H20.5L13.86 10.29L21.75 21H15.38L10.43 14.63L4.76 21H1.75L8.82 13.22L1.25 3H7.78L12.3 8.84L17.53 3ZM16.4 19H18.2L7.44 4.89H5.53L16.4 19Z"/></svg></a></li>
+                                        <li><a href="https://www.linkedin.com/company/wealthmasters-club/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2"/><path d="M8 10H6V18H8V10ZM7 6C6.44772 6 6 6.44772 6 7C6 7.55228 6.44772 8 7 8C7.55228 8 8 7.55228 8 7C8 6.44772 7.55228 6 7 6ZM18 18H16V14C16 13.4477 15.5523 13 15 13H14C13.4477 13 13 13.4477 13 14V18H11V10H13V11C13.5523 10.4477 14.2761 10 15 10C16.6569 10 18 11.3431 18 13V18Z" fill="currentColor"/></svg></a></li>
+                                        <li><a href="https://www.instagram.com/wealth.mastersclub" target="_blank"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.1666 1.66675H5.83329C3.53211 1.66675 1.66663 3.53223 1.66663 5.83341V14.1667C1.66663 16.4679 3.53211 18.3334 5.83329 18.3334H14.1666C16.4678 18.3334 18.3333 16.4679 18.3333 14.1667V5.83341C18.3333 3.53223 16.4678 1.66675 14.1666 1.66675Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13.3334 9.47501C13.4362 10.1685 13.3178 10.8769 12.9948 11.4992C12.6719 12.1215 12.161 12.6262 11.5347 12.9414C10.9085 13.2566 10.1987 13.3663 9.50653 13.255C8.81431 13.1436 8.17484 12.8167 7.67907 12.321C7.1833 11.8252 6.85648 11.1857 6.7451 10.4935C6.63371 9.8013 6.74343 9.09159 7.05865 8.46532C7.37386 7.83905 7.87853 7.32812 8.50086 7.00521C9.12319 6.68229 9.8315 6.56383 10.525 6.66667C11.2325 6.77158 11.8874 7.10123 12.3931 7.60693C12.8988 8.11263 13.2285 8.76757 13.3334 9.47501Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5834 5.41675H14.5917" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></li>
+                                        <li><a href="mailto:contact@wealthmasters.pro" target="_blank"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.6666 3.33325H3.33329C2.41282 3.33325 1.66663 4.07944 1.66663 4.99992V14.9999C1.66663 15.9204 2.41282 16.6666 3.33329 16.6666H16.6666C17.5871 16.6666 18.3333 15.9204 18.3333 14.9999V4.99992C18.3333 4.07944 17.5871 3.33325 16.6666 3.33325Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18.3333 5.83325L10.8583 10.5833C10.601 10.7444 10.3036 10.8299 9.99996 10.8299C9.69636 10.8299 9.3989 10.7444 9.14163 10.5833L1.66663 5.83325" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer-item">
+                                <h2 data-i18n="footer_heading" class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explore</h2>
+                                <ul class="footer-links">
+                                    <li><a data-i18n="footer_home" href="/" title="Go to Home">Home</a></li>
+                                    <li><a data-i18n="footer_about" href="/about.html" title="Learn About Us">About Us</a></li>
+                                    <li><a data-i18n="footer_contact" href="/contact.html" title="Contact Wealth Masters">Contact</a></li>
+                                    <li><a data-i18n="footer_privacy" href="/privacy-policy.html" title="Read Our Privacy Policy">Privacy</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-item">
+                                <div class="newsletter">
+                                    <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Subscribe</h2>
+                                    <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text">Get the latest crypto trading setups, market updates, investment strategies, and exclusive crypto offers delivered straight to your inbox.</p>
+                                    <div id="custom-substack-2" class="mt-6 form-box">
+                                        <form id="join-club-form" class="flex items-center justify-center">
+                                            <div style="display:flex;width:100%;max-width:420px;height:44px"><input id="join-email-input" type="email" name="email" placeholder="Type Your Email..." required style="flex:1;border-top-left-radius:7px;border-bottom-left-radius:7px;border:1px solid #666;padding:10px 15px;background:#111;font-size:14px;color:#fff;box-shadow:2px 2px 1px 0 #ffffff59 inset;outline:none;border-right:none"/><button id="join-submit-btn" type="submit" style="width:125px;height:100%;border-top-right-radius:7px;border-bottom-right-radius:7px;padding:0;background:#dc2626;color:#fff;border:1px solid #666;border-left:none;font-weight:600;font-size:14px;cursor:pointer;box-shadow:2px 2px 1px 0 #ffffff59 inset;transition:background-color .2s" onmouseover="this.style.background='#B91C1C'" onmouseout="this.style.background='#DC2626'">Sign up FREE</button></div>
+                                            <input type="hidden" name="utm_source" value="website"/><input type="hidden" name="utm_medium" value="footer_form"/>
+                                        </form>
+                                        <div id="join-form-message" style="display:none;margin-top:10px;font-size:14px"></div>
+                                    </div>
+                                    <script>
+                                        // Script content omitted for brevity in template string. It will be added back dynamically.
+                                    <\/script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copy-right-area w-full pt-8 mt-8 justify-between border-t border-[#1F2937]">
+                            <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
+                                <div class="item-text">
+                                    <p class="text-sm text-footer" data-i18n="copyright">Wealth Masters &copy2025. All rights reserved.</p>
+                                </div>
+                                <div class="item-box">
+                                    <ul class="flex md:gap-6 gap-3 items-center text-footer">
+                                        <li><a class="hover:text-primary-200 duration-500 text-sm" href="/privacy-policy.html" data-i18n="privacy_policy">Privacy Policy</a></li>
+                                        <li><a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="terms_service">Terms of Service</a></li>
+                                        <li><a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="cookie_policy">Cookie Policy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!--  ====================== Footer Area End =============================  -->
+        <!-- gulp:js -->
+        <script src="/assets/js/jquery.min.js"><\/script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"><\/script>
+        <script src="https://ocixyipglvsfmybqimen.supabase.co/storage/v1/object/public/freeoff/prices.js"><\/script>
+        <script src="/assets/js/jquery.nice-select.min.js"><\/script>
+        <script src="/assets/js/app.js"><\/script>
+        <script src="/assets/js/chart.js"><\/script>
+        <!-- endgulp -->
+    </main>
+</body>
+</html>`;
+
+            const substackScript = `
+            document.getElementById('join-club-form').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const email = document.getElementById('join-email-input').value;
+                const submitBtn = document.getElementById('join-submit-btn');
+                const messageDiv = document.getElementById('join-form-message');
+                if (!email || !isValidEmail(email)) {
+                    showMessageJoin('Please enter a valid email address.', 'error');
+                    return;
+                }
+                submitBtn.innerHTML = 'Subscribing...';
+                submitBtn.disabled = true;
+                messageDiv.style.display = 'none';
+                try {
+                    await submitToSubstackViaIframe(email);
+                    showMessageJoin('🎉 Successfully subscribed!', 'success');
+                    document.getElementById('join-email-input').value = '';
+                } catch (error) {
+                    console.error('Subscription error:', error);
+                    showMessageJoin('Something went wrong. Please try again or contact support.', 'error');
+                } finally {
+                    submitBtn.innerHTML = 'Join The Club';
+                    submitBtn.disabled = false;
+                }
+            });
+            function showMessageJoin(message, type) {
+                const messageDiv = document.getElementById('join-form-message');
+                messageDiv.innerHTML = message;
+                messageDiv.style.display = 'block';
+                messageDiv.style.color = type === 'success' ? '#34C759' : '#FF3B30';
+                if (type === 'success') { setTimeout(() => { messageDiv.style.display = 'none'; }, 5000); }
+            }
+            function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+            function submitToSubstackViaIframe(email) {
+                return new Promise((resolve, reject) => {
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.name = 'substack-frame-' + Date.now();
+                    document.body.appendChild(iframe);
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = 'https://wealthmasters.substack.com/api/v1/free';
+                    form.target = iframe.name;
+                    form.style.display = 'none';
+                    const emailInput = document.createElement('input');
+                    emailInput.type = 'hidden'; emailInput.name = 'email'; emailInput.value = email;
+                    const utmSource = document.createElement('input');
+                    utmSource.type = 'hidden'; utmSource.name = 'utm_source'; utmSource.value = 'website';
+                    const utmMedium = document.createElement('input');
+                    utmMedium.type = 'hidden'; utmMedium.name = 'utm_medium'; utmMedium.value = 'footer_form';
+                    form.appendChild(emailInput); form.appendChild(utmSource); form.appendChild(utmMedium);
+                    document.body.appendChild(form);
+                    iframe.onload = () => { setTimeout(() => { try { document.body.removeChild(form); document.body.removeChild(iframe); resolve(); } catch (e) { resolve(); } }, 1000); };
+                    iframe.onerror = () => reject(new Error('Network error'));
+                    form.submit();
+                    setTimeout(() => { try { document.body.removeChild(form); document.body.removeChild(iframe); resolve(); } catch (e) { resolve(); } }, 5000);
+                });
+            }`;
+
+            // --- 3. TRANSLATION DICTIONARY ---
+            // You can easily edit or add translations here.
+            // NOTE: These are machine-translated and may require review.
+            const translations = {
+                'mb_home': { en: 'Home', lt: 'Pagrindinis', de: 'Startseite', es: 'Inicio' },
+                'mb_about': { en: 'About Us', lt: 'Apie mus', de: 'Über uns', es: 'Sobre nosotros' },
+                'mb_contect': { en: 'Contact', lt: 'Kontaktai', de: 'Kontakt', es: 'Contacto' },
+                'mb_blog': { en: 'Blog', lt: 'Tinklaraštis', de: 'Blog', es: 'Blog' },
+                'privacy_policy': { en: 'Privacy Policy', lt: 'Privatumo politika', de: 'Datenschutzrichtlinie', es: 'Política de privacidad' },
+                'footer_tagline': {
+                    en: 'Join Wealth Masters for expert crypto market analysis, VIP strategies, and insights to grow your passive income.',
+                    lt: 'Prisijunkite prie „Wealth Masters“, kad gautumėte ekspertų kriptovaliutų rinkos analizę, VIP strategijas ir įžvalgas, kaip padidinti savo pasyvias pajamas.',
+                    de: 'Schließen Sie sich Wealth Masters an, um Expertenanalysen zum Kryptomarkt, VIP-Strategien und Einblicke zum Ausbau Ihres passiven Einkommens zu erhalten.',
+                    es: 'Únase a Wealth Masters para obtener análisis expertos del mercado de criptomonedas, estrategias VIP e información para aumentar sus ingresos pasivos.'
+                },
+                'footer_heading': { en: 'Explore', lt: 'Naršyti', de: 'Erkunden', es: 'Explorar' },
+                'footer_home': { en: 'Home', lt: 'Pagrindinis', de: 'Startseite', es: 'Inicio' },
+                'footer_about': { en: 'About Us', lt: 'Apie mus', de: 'Über uns', es: 'Sobre nosotros' },
+                'footer_contact': { en: 'Contact', lt: 'Kontaktai', de: 'Kontakt', es: 'Contacto' },
+                'footer_privacy': { en: 'Privacy', lt: 'Privatumas', de: 'Datenschutz', es: 'Privacidad' },
+                'subscribe': { en: 'Subscribe', lt: 'Prenumeruoti', de: 'Abonnieren', es: 'Suscribirse' },
+                'subscribe_text': {
+                    en: 'Get the latest crypto trading setups, market updates, investment strategies, and exclusive crypto offers delivered straight to your inbox.',
+                    lt: 'Gaukite naujausias kriptovaliutų prekybos sąrankas, rinkos naujienas, investavimo strategijas ir išskirtinius kriptovaliutų pasiūlymus tiesiai į savo pašto dėžutę.',
+                    de: 'Erhalten Sie die neuesten Krypto-Handels-Setups, Markt-Updates, Anlagestrategien und exklusive Krypto-Angebote direkt in Ihren Posteingang.',
+                    es: 'Reciba las últimas configuraciones de trading de criptomonedas, actualizaciones del mercado, estrategias de inversión y ofertas exclusivas de criptomonedas directamente en su bandeja de entrada.'
+                },
+                'copyright': {
+                    en: 'Wealth Masters &copy2025. All rights reserved.',
+                    lt: 'Wealth Masters &copy2025. Visos teisės saugomos.',
+                    de: 'Wealth Masters &copy2025. Alle Rechte vorbehalten.',
+                    es: 'Wealth Masters &copy2025. Todos los derechos reservados.'
+                },
+                'terms_service': { en: 'Terms of Service', lt: 'Paslaugų teikimo sąlygos', de: 'Nutzungsbedingungen', es: 'Términos de servicio' },
+                'cookie_policy': { en: 'Cookie Policy', lt: 'Slapukų politika', de: 'Cookie-Richtlinie', es: 'Política de cookies' }
+            };
+
+
+            // --- 4. GET REFERENCES TO ALL DOM ELEMENTS ---
+            const form = document.getElementById('post-form');
+            const inputs = {
+                lang: document.getElementById('lang'),
+                title: document.getElementById('title'),
+                metaDescription: document.getElementById('meta-description'),
+                h1Heading: document.getElementById('h1-heading'),
+                date: document.getElementById('date'),
+                featuredImg: document.getElementById('featured-img'),
+                fileName: document.getElementById('file-name'),
+            };
+
+            const preview = {
+                image: document.getElementById('preview-image'),
+                title: document.getElementById('preview-title'),
+                excerpt: document.getElementById('preview-excerpt'),
+            };
+
+            const cardCodeTextarea = document.getElementById('card-code-textarea');
+            const copyBtn = document.getElementById('copy-btn');
+
+            // --- 5. UTILITY FUNCTIONS ---
+            function generateSlug(text) {
+                return text.toString().toLowerCase().trim()
+                    .replace(/\s+/g, '-').replace(/[^\w\-]+/g, '')
+                    .replace(/\-\-+/g, '-').replace(/^-+/, '').replace(/-+$/, '');
+            }
+
+            function formatDisplayDate(dateString) {
+                if (!dateString) return '';
+                const date = new Date(dateString + 'T00:00:00');
+                return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            }
+
+            // --- 6. CORE LOGIC & EVENT HANDLERS ---
+            function updatePreviewAndCode() {
+                const titleVal = inputs.title.value || "Your Blog Post Title";
+                const excerptVal = inputs.metaDescription.value || "A short, engaging description of your blog post goes here.";
+                const imageVal = inputs.featuredImg.value;
+                const fileNameVal = inputs.fileName.value.replace('.html', '');
+                const cardUrl = `/en/blog/${fileNameVal}.html`;
+
+                preview.image.src = imageVal;
+                preview.title.textContent = titleVal;
+                preview.excerpt.textContent = excerptVal;
+
+                const cardHtml = `
+                    <!-- Blog Post Card -->
+                    <a href="${cardUrl}" class="blog-card">
+                        <img src="${imageVal}"
+                            alt="${titleVal}" class="card-image">
+                        <div class="card-content">
+                            <span class="card-category">Passive Income</span>
+                            <h3 class="card-title">${titleVal}</h3>
+                            <p class="card-excerpt">${excerptVal}</p>
+                            <span class="read-more-link">Read More →</span>
+                        </div>
+                    </a>
+                `;
+                cardCodeTextarea.value = cardHtml.trim().replace(/^                    /gm, '    ');
+            }
+
+            // --- 7. EVENT LISTENERS ---
+            inputs.title.addEventListener('input', () => {
+                const slug = generateSlug(inputs.title.value);
+                inputs.fileName.value = slug ? `${slug}.html` : '';
+                if (!inputs.h1Heading.value) {
+                    inputs.h1Heading.value = inputs.title.value;
+                }
+                updatePreviewAndCode();
+            });
+
+            ['input', 'change'].forEach(evt => {
+                inputs.metaDescription.addEventListener(evt, updatePreviewAndCode);
+                inputs.featuredImg.addEventListener(evt, updatePreviewAndCode);
+                inputs.fileName.addEventListener(evt, updatePreviewAndCode);
+            });
+
+            copyBtn.addEventListener('click', () => {
+                cardCodeTextarea.select();
+                navigator.clipboard.writeText(cardCodeTextarea.value).then(() => {
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+                });
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const values = {
+                    lang: inputs.lang.value,
+                    title: inputs.title.value,
+                    metaDescription: inputs.metaDescription.value,
+                    h1Heading: inputs.h1Heading.value,
+                    date: inputs.date.value,
+                    featuredImg: inputs.featuredImg.value,
+                    postContent: quill.root.innerHTML
+                };
+
+                let finalHtml = htmlTemplate
+                    .replaceAll('{lang}', values.lang)
+                    .replaceAll('{title}', values.title)
+                    .replaceAll('{meta-description}', values.metaDescription)
+                    .replaceAll('{h1-heading}', values.h1Heading)
+                    .replaceAll('{date}', values.date)
+                    .replaceAll('{date-formatted}', formatDisplayDate(values.date))
+                    .replaceAll('{featured-img}', values.featuredImg)
+                    .replaceAll('{post-content}', values.postContent)
+                    .replace('<script><\\/script>', `<script>${substackScript}<\\/script>`);
+
+
+                // --- NEW: TRANSLATION REPLACEMENT LOGIC ---
+                if (values.lang !== 'en') {
+                    const translationRegex = /<([a-zA-Z0-9]+)\s[^>]*data-i18n="([^"]+)"[^>]*>([^<]*)<\/\1>/g;
+                    finalHtml = finalHtml.replace(translationRegex, (match, tagName, key, content) => {
+                        const translationSet = translations[key];
+                        if (translationSet && translationSet[values.lang]) {
+                            const translatedText = translationSet[values.lang];
+                            return match.replace(content, translatedText);
+                        }
+                        return match; // Return original if no translation found
+                    });
+                }
+
+                const blob = new Blob([finalHtml], { type: 'text/html' });
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = inputs.fileName.value || 'blog-post.html';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(a.href);
+            });
+
+            // --- 8. INITIALIZE THE FORM AND PREVIEW ---
+            function initialize() {
+                const today = new Date().toISOString().split('T')[0];
+                inputs.date.value = today;
+                updatePreviewAndCode();
+            }
+
+            initialize();
+        });
+    </script>
+</body>
+
+</html>
