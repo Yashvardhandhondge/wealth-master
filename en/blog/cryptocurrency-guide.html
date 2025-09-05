@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Cryptocurrency? Guide to Digital Assets and Blockchain</title>
+    <meta name="description"
+        content="Clear explanation of cryptocurrency, blockchain technology, and digital assets. Learn how Bitcoin, Ethereum, and other cryptocurrencies work, their benefits, and their risks.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ocixyipglvsfmybqimen.supabase.co/storage/v1/object/public/freeoff/prices.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/assets/images/image1.webp" type="image/png" sizes="32x32" style="border-radius: 50%;">
+    <link rel="apple-touch-icon" href="/assets/images/image1.webp" style="border-radius: 50%;">
+    <link rel="mask-icon" href="/assets/images/image1.webp" color="#000000" style="border-radius: 50%;">
+    <!-- Dynamic Canonical Tag -->
+    <script>
+        const link = document.createElement("link");
+        link.rel = "canonical";
+        link.href = window.location.origin + window.location.pathname;
+        document.head.appendChild(link);
+    </script>
+    <!-- gulp:css -->
+    <link rel="stylesheet" href="/assets/css/nice-select.css">
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <!-- endgulp -->
+    
+    <!-- ===== FIX FOR FOOTER LAYOUT ===== -->
+    <style>
+      .ft-top-wrap {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr; /* Default for mobile */
+      }
+      @media (min-width: 768px) { /* Medium screens and up */
+        .ft-top-wrap {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+      }
+      @media (min-width: 1024px) { /* Large screens */
+         .ft-top-wrap {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+    
+    <script src="/assets/js/i18n.js"></script>
+    <script src="/assets/js/plotly-2.26.0.min.js"></script>
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Wealth Masters",
+        "url": "http://wealthmasters.pro/",
+        "logo": "http://wealthmasters.pro/assets/images/image1.webp",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contact@wealthmasters.pro",
+          "contactType": "customer service"
+        },
+        "sameAs": ["https://www.linkedin.com/company/wealthmasters-club/", "https://www.instagram.com/wealth.mastersclub"]
+      }
+    </script>
+
+    <!--Nav Menu-->
+    <script>
+        // File: /assets/js/menu.js
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (hamburgerButton && mobileMenu) {
+                hamburgerButton.addEventListener('click', () => {
+                    hamburgerButton.classList.toggle('open');
+                    mobileMenu.classList.toggle('hidden');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        document.body.style.overflow = 'auto';
+                    } else {
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            } else {
+                console.error('Hamburger menu script could not find #hamburger-button or #mobile-menu.');
+            }
+        });
+    </script>
+
+    <script>
+        // File: /assets/js/schema-generator.js
+        document.addEventListener('DOMContentLoaded', () => {
+            const blogTitleElement = document.getElementById('blog-post-title');
+            if (blogTitleElement) {
+                try {
+                    const headline = blogTitleElement.textContent.trim();
+                    const metaDescription = document.querySelector('meta[name="description"]').getAttribute('content');
+                    const pageUrl = window.location.href;
+                    const imageUrl = document.getElementById('featured-image').src;
+                    const datePublished = document.getElementById('publication-date').getAttribute('datetime');
+                    const articleSchema = {
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
+                        "headline": headline,
+                        "description": metaDescription,
+                        "image": imageUrl,
+                        "author": { "@type": "Organization", "name": "Wealth Masters" },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "Wealth Masters",
+                            "logo": { "@type": "ImageObject", "url": "http://wealthmasters.pro//assets/images/image1.webp" }
+                        },
+                        "datePublished": datePublished,
+                        "dateModified": datePublished
+                    };
+                    const schemaScript = document.createElement('script');
+                    schemaScript.type = 'application/ld+json';
+                    schemaScript.textContent = JSON.stringify(articleSchema, null, 2);
+                    document.head.appendChild(schemaScript);
+                } catch (error) {
+                    console.error('Error generating Article schema:', error);
+                }
+            }
+        });
+    </script>
+</head>
+
+<body class="  font-base  font-normal bg-[#000000]">
+    <main class="overflow-hidden">
+        <!--  ====================== Header Area Start =============================  -->
+        <div class="top-box pt-4 lg:pt-[40px] relative">
+            <div class="container">
+                <header class="relative px-4 py-4 lg:pt-6">
+                    <div class="container mx-auto flex w-full items-center justify-between gap-4">
+                        <nav class="hidden lg:flex items-center gap-8 text-white font-medium">
+                            <a href="/" class="desktop-nav-link" data-i18n="mb_home">Home</a>
+                            <a href="/about.html" class="desktop-nav-link" data-i18n="mb_about">About Us</a>
+                            <a href="/contact.html" class="desktop-nav-link" data-i18n="mb_contect">Contact</a>
+                            <a href="/en/blog/index.html" class="desktop-nav-link" data-i18n="mb_blog">Blog</a>
+                        </nav>
+                        <a href="/" class="relative z-50">
+                            <div class="hidden lg:flex flex-col items-center gap-1">
+                                <figure class="flex gap-1 items-center">
+                                    <img src="/assets/images/l1.webp" loading="lazy" alt="l1" class="animate-[stack_0.5s_ease-out_1s_forwards] opacity-0 -translate-x-10 h-5">
+                                    <img src="/assets/images/l2.webp" loading="lazy" alt="l2" class="animate-[stack_0.5s_ease-out_1.2s_forwards] opacity-0 translate-y-10 h-5">
+                                    <img src="/assets/images/l3.webp" loading="lazy" alt="l3" class="animate-[stack_0.5s_ease-out_1.4s_forwards] opacity-0 translate-x-10 h-5">
+                                    <img src="/assets/images/l4.webp" loading="lazy" alt="l4" class="animate-[stack_0.5s_ease-out_1.6s_forwards] opacity-0 -translate-y-10 place-self-start h-5">
+                                </figure>
+                                <img src="/assets/images/l-body.svg" loading="lazy" class="h-4" alt="Wealth Masters">
+                            </div>
+                            <div class="flex lg:hidden flex-col items-center gap-1">
+                                <figure class="flex gap-1 items-center">
+                                    <img src="/assets/images/l1.webp" loading="lazy" alt="l1" class="h-5">
+                                    <img src="/assets/images/l2.webp" loading="lazy" alt="l2" class="h-5">
+                                    <img src="/assets/images/l3.webp" loading="lazy" alt="l3" class="h-5">
+                                    <img src="/assets/images/l4.webp" loading="lazy" alt="l4" class="h-5 place-self-start">
+                                </figure>
+                                <img src="/assets/images/l-body.svg" loading="lazy" class="h-4" alt="Wealth Masters">
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-4">
+                            <div class="relative flex gap-2 rounded-[7px] items-center z-[9999] px-[15px] py-[2px] bg-transparent border border-[#FFFFFF1A] shadow-xl">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_81_471)"><path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z" fill="#DC2626"/></g>
+                                  <defs><clipPath id="clip0_81_471"><rect width="24" height="24" fill="white"/></clipPath></defs>
+                                </svg>
+                                <select id="languageSwitcher" class="nice-select font-bold" onchange="setLanguage(this.value)">
+                                    <option value="en" data-display="EN">English</option>
+                                    <option value="lt" data-display="LT">Lithuanian</option>
+                                    <option value="de" data-display="DE">German</option>
+                                    <option value="es" data-display="ES">Spanish</option>
+                                </select>
+                            </div>
+                            <button id="hamburger-button" class="hamburger z-50 lg:hidden" aria-label="Open menu">
+                                <span class="hamburger-top"></span><span class="hamburger-middle"></span><span class="hamburger-bottom"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="mobile-menu" class="glassy-menu hidden fixed inset-0 z-40">
+                        <div class="flex flex-col items-center justify-center w-full h-full text-white text-2xl space-y-4 pt-20">
+                            <a href="/" class="mobile-nav-link" data-i18n="mb_home">Home</a>
+                            <a href="/about.html" class="mobile-nav-link" data-i18n="mb_about">About Us</a>
+                            <a href="/contact.html" class="mobile-nav-link" data-i18n="mb_contect">Contact</a>
+                            <a href="/privacy-policy.html" class="mobile-nav-link" data-i18n="privacy_policy">Privacy Policy</a>
+                            <a href="/en/blog/index.html" class="mobile-nav-link" data-i18n="mb_blog">Blog</a>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div class="shape-item absolute -top-44 lg:top-0 right-0"><img src="/assets/images/header-top-left.webp" loading="lazy" alt="images"></div>
+            <div class="shape-item absolute -top-44 lg:top-0 left-0"><img src="/assets/images/header-top-right.webp" loading="lazy" alt="images"></div>
+        </div>
+        <!--  ====================== Header Area End =============================  -->
+
+        <!-- ====================== Blog Post Section Start ============================= -->
+        <style>
+            .blog-post-section{margin-top:150px;margin-bottom:150px;position:relative;overflow:hidden;color:#E5E5E5}.blog-glow-effect{position:absolute;top:20%;left:50%;width:800px;height:800px;background:radial-gradient(circle,rgba(220,38,38,.1) 0,rgba(220,38,38,0) 65%);transform:translate(-50%,-50%);pointer-events:none;z-index:0}.blog-post-content{position:relative;z-index:1;max-width:800px;margin-left:auto;margin-right:auto}.blog-post-title{font-family:'Outfit',sans-serif;font-weight:600;color:#fff;line-height:1.2;font-size:40px}.blog-post-meta{color:#A1A1AA;margin-top:1rem;margin-bottom:2rem}.blog-post-content h3{font-family:'Outfit',sans-serif;font-weight:500;font-size:1.5rem;color:#fff;margin-top:2.5rem;margin-bottom:1rem}.blog-post-content p,.blog-post-content li{color:#A1A1AA;line-height:1.8;font-size:1.125rem}.blog-post-content p{margin-bottom:1rem}.blog-post-content ul{list-style-type:none;padding-left:1rem;margin-bottom:1rem}.blog-post-content ul li{margin-bottom:.75rem;position:relative;padding-left:1.5rem}.blog-post-content ul li::before{content:'■';position:absolute;left:0;color:#DC2626;font-size:.8rem;top:.45rem}.blog-post-content a{color:#DC2626;text-decoration:none;font-weight:500;transition:color .3s ease}.blog-post-content a:hover{text-decoration:underline}.featured-image{border-radius:12px;margin-bottom:2rem;border:1px solid rgba(255,255,255,.1)}.blog-post-content blockquote{border-left:4px solid #DC2626;padding-left:1.5rem;margin:2rem 0;font-style:italic;color:#E5E5E5;font-size:1.25rem}
+        </style>
+        <section class="blog-post-section">
+            <div class="blog-glow-effect"></div>
+            <article class="container px-6 blog-post-content">
+                <header>
+                    <h1 id="blog-post-title" class="blog-post-title text-3xl md:text-5xl">What is Cryptocurrency? Guide to Digital Assets and Blockchain</h1>
+                    <p class="blog-post-meta">Published by Wealth Masters on <time id="publication-date" datetime="2025-09-05">September 5, 2025</time></p>
+                </header>
+                <img id="featured-image" src="https://images.unsplash.com/photo-1634704784915-aacf363b021f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="What is Cryptocurrency? Guide to Digital Assets and Blockchain" class="featured-image">
+                <p>Cryptocurrency has moved from niche forums to global headlines. It represents a new form of money built on cryptography and blockchain networks. Instead of relying on banks, cryptocurrency transactions run on decentralized systems that anyone can access. Bitcoin introduced the concept in 2009, and since then thousands of digital assets have emerged, each with unique functions and markets.</p><h2>How Cryptocurrency Works</h2><p>At its core, cryptocurrency operates on&nbsp;<strong>blockchain technology</strong>, a distributed ledger that records transactions across multiple computers. This ensures security, transparency, and immutability.</p><p>Key elements include:</p><p><br></p><ul><li><strong>Blockchain:</strong>&nbsp;Stores transaction history in linked blocks.</li><li><strong>Consensus Mechanisms:</strong>&nbsp;Proof of Work (PoW) and Proof of Stake (PoS) validate activity.</li><li><strong>Wallets and Keys:</strong>&nbsp;Public keys function like account numbers; private keys secure access to funds.</li></ul><p>This framework allows cryptocurrencies to run without central control, making the system resistant to fraud and censorship.</p><h2>Leading Cryptocurrencies</h2><ul><li><strong>Bitcoin (BTC):</strong>&nbsp;First digital currency, often used as a store of value.</li><li><strong>Ethereum (ETH):</strong>&nbsp;Platform for decentralized applications and smart contracts.</li><li><strong>Tether (USDT) &amp; USD Coin (USDC):</strong>&nbsp;Stablecoins pegged to the US dollar, widely used in trading.</li><li><strong>BNB:</strong>&nbsp;Integral to Binance’s exchange ecosystem.</li><li><strong>XRP:</strong>&nbsp;Focused on cross-border banking transactions.</li></ul><p>Each asset fills a specific role — from payments to decentralized finance.</p><h2>Why People Use Cryptocurrency</h2><ul><li>Faster, borderless transactions</li><li>Lower fees for international payments</li><li>Access to investment opportunities beyond traditional markets</li><li>Direct ownership without banks or intermediaries</li><li>Privacy and financial control</li></ul><h2>Risks of Cryptocurrency</h2><ul><li><strong>Volatility:</strong>&nbsp;Prices can change dramatically in hours.</li><li><strong>Security Risks:</strong>&nbsp;Wallet hacks and phishing attacks remain common.</li><li><strong>Scams:</strong>&nbsp;Fake projects lure inexperienced investors.</li><li><strong>Regulation:</strong>&nbsp;Governments are still developing frameworks for crypto assets.</li></ul><p>Managing risk is critical before committing capital.</p><h2>The Future of Cryptocurrency</h2><p>The industry continues to evolve rapidly. Governments are researching central bank digital currencies, while corporations test blockchain for payments and supply chains. Ethereum upgrades and new scaling solutions aim to handle larger transaction volumes.</p><p>Adoption will face hurdles — regulation, scalability, and user education — but the direction is clear: digital assets are becoming part of global finance.</p><h2>Conclusion</h2><ul><li>Cryptocurrency combines technology and finance in a way that challenges traditional systems. Bitcoin, Ethereum, and stablecoins are leading the way, while blockchain applications expand into industries far beyond payments. Understanding how it works is the first step toward navigating this new financial landscape.</li></ul>
+            </article>
+        </section>
+        <!-- ====================== Blog Post Section End ============================= -->
+
+        <!--  ====================== start-earning  Area Start =============================  -->
+        <div class="relative">
+            <img src="/assets/images/footer-ellipse.webp" loading="lazy" alt="images" class="absolute hidden sm:inline top-24 left-1/2 transform -translate-y-1/2 -translate-x-1/2 m-auto z-0" />
+            <img src="/assets/images/mobile-footer.webp" loading="lazy" alt="images" class="absolute inline sm:hidden bottom-full top-0 right-0 left-0 m-auto z-0" />
+            <footer class="footer-area border-t border-[#FFFFFF33] md:pt-[113px] pt-[74px] pb-[35px] bg-[#000000] relative z-10">
+                <div class="footer-colo">
+                    <div class="container">
+                        <div class="ft-top-wrap">
+                            <div class="footer-item">
+                                <div class="site-logo">
+                                    <a href="/"><img id="image0_61_3589" width="500" height="500" preserveAspectRatio="none" src="/assets/images/wealth-masters-logo.webp" alt="wealth masters logo" /></a>
+                                </div>
+                                <div class="text-box mt-6 ">
+                                    <p class="text-center lg:text-left text-footer" data-i18n="footer_tagline">Join Wealth Masters for expert crypto market analysis, VIP strategies, and insights to grow your passive income.</p>
+                                </div>
+                                <div class="footer-social-icon mt-6">
+                                    <ul class="flex items-center gap-4 justify-center lg:justify-start text-footer">
+                                        <li><a href="https://www.facebook.com/wealthmastersclub" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12.073C22 6.505 17.523 2 12 2S2 6.505 2 12.073c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.2 22 17.064 22 12.073Z"/></svg></a></li>
+                                        <li><a href="https://x.com/thewealthm" target="_blank" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.53 3H20.5L13.86 10.29L21.75 21H15.38L10.43 14.63L4.76 21H1.75L8.82 13.22L1.25 3H7.78L12.3 8.84L17.53 3ZM16.4 19H18.2L7.44 4.89H5.53L16.4 19Z"/></svg></a></li>
+                                        <li><a href="https://www.linkedin.com/company/wealthmasters-club/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2"/><path d="M8 10H6V18H8V10ZM7 6C6.44772 6 6 6.44772 6 7C6 7.55228 6.44772 8 7 8C7.55228 8 8 7.55228 8 7C8 6.44772 7.55228 6 7 6ZM18 18H16V14C16 13.4477 15.5523 13 15 13H14C13.4477 13 13 13.4477 13 14V18H11V10H13V11C13.5523 10.4477 14.2761 10 15 10C16.6569 10 18 11.3431 18 13V18Z" fill="currentColor"/></svg></a></li>
+                                        <li><a href="https://www.instagram.com/wealth.mastersclub" target="_blank"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.1666 1.66675H5.83329C3.53211 1.66675 1.66663 3.53223 1.66663 5.83341V14.1667C1.66663 16.4679 3.53211 18.3334 5.83329 18.3334H14.1666C16.4678 18.3334 18.3333 16.4679 18.3333 14.1667V5.83341C18.3333 3.53223 16.4678 1.66675 14.1666 1.66675Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13.3334 9.47501C13.4362 10.1685 13.3178 10.8769 12.9948 11.4992C12.6719 12.1215 12.161 12.6262 11.5347 12.9414C10.9085 13.2566 10.1987 13.3663 9.50653 13.255C8.81431 13.1436 8.17484 12.8167 7.67907 12.321C7.1833 11.8252 6.85648 11.1857 6.7451 10.4935C6.63371 9.8013 6.74343 9.09159 7.05865 8.46532C7.37386 7.83905 7.87853 7.32812 8.50086 7.00521C9.12319 6.68229 9.8315 6.56383 10.525 6.66667C11.2325 6.77158 11.8874 7.10123 12.3931 7.60693C12.8988 8.11263 13.2285 8.76757 13.3334 9.47501Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5834 5.41675H14.5917" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></li>
+                                        <li><a href="mailto:contact@wealthmasters.pro" target="_blank"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.6666 3.33325H3.33329C2.41282 3.33325 1.66663 4.07944 1.66663 4.99992V14.9999C1.66663 15.9204 2.41282 16.6666 3.33329 16.6666H16.6666C17.5871 16.6666 18.3333 15.9204 18.3333 14.9999V4.99992C18.3333 4.07944 17.5871 3.33325 16.6666 3.33325Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18.3333 5.83325L10.8583 10.5833C10.601 10.7444 10.3036 10.8299 9.99996 10.8299C9.69636 10.8299 9.3989 10.7444 9.14163 10.5833L1.66663 5.83325" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer-item">
+                                <h2 data-i18n="footer_heading" class="footer-title font-medium text-[18px] mb-6 text-center lg:text-left">Explore</h2>
+                                <ul class="footer-links">
+                                    <li><a data-i18n="footer_home" href="/" title="Go to Home">Home</a></li>
+                                    <li><a data-i18n="footer_about" href="/about.html" title="Learn About Us">About Us</a></li>
+                                    <li><a data-i18n="footer_contact" href="/contact.html" title="Contact Wealth Masters">Contact</a></li>
+                                    <li><a data-i18n="footer_privacy" href="/privacy-policy.html" title="Read Our Privacy Policy">Privacy</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-item">
+                                <div class="newsletter">
+                                    <h2 class="font-medium text-[18px] mb-6 text-center lg:text-left" data-i18n="subscribe">Subscribe</h2>
+                                    <p class="text-center lg:text-left text-footer" data-i18n="subscribe_text">Get the latest crypto trading setups, market updates, investment strategies, and exclusive crypto offers delivered straight to your inbox.</p>
+                                    <div id="custom-substack-2" class="mt-6 form-box">
+                                        <form id="join-club-form" class="flex items-center justify-center">
+                                            <div style="display:flex;width:100%;max-width:420px;height:44px"><input id="join-email-input" type="email" name="email" placeholder="Type Your Email..." required style="flex:1;border-top-left-radius:7px;border-bottom-left-radius:7px;border:1px solid #666;padding:10px 15px;background:#111;font-size:14px;color:#fff;box-shadow:2px 2px 1px 0 #ffffff59 inset;outline:none;border-right:none"/><button id="join-submit-btn" type="submit" style="width:125px;height:100%;border-top-right-radius:7px;border-bottom-right-radius:7px;padding:0;background:#dc2626;color:#fff;border:1px solid #666;border-left:none;font-weight:600;font-size:14px;cursor:pointer;box-shadow:2px 2px 1px 0 #ffffff59 inset;transition:background-color .2s" onmouseover="this.style.background='#B91C1C'" onmouseout="this.style.background='#DC2626'">Sign up FREE</button></div>
+                                            <input type="hidden" name="utm_source" value="website"/><input type="hidden" name="utm_medium" value="footer_form"/>
+                                        </form>
+                                        <div id="join-form-message" style="display:none;margin-top:10px;font-size:14px"></div>
+                                    </div>
+                                    <script>
+                                        // Script content omitted for brevity in template string. It will be added back dynamically.
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copy-right-area w-full pt-8 mt-8 justify-between border-t border-[#1F2937]">
+                            <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
+                                <div class="item-text">
+                                    <p class="text-sm text-footer" data-i18n="copyright">Wealth Masters &copy2025. All rights reserved.</p>
+                                </div>
+                                <div class="item-box">
+                                    <ul class="flex md:gap-6 gap-3 items-center text-footer">
+                                        <li><a class="hover:text-primary-200 duration-500 text-sm" href="/privacy-policy.html" data-i18n="privacy_policy">Privacy Policy</a></li>
+                                        <li><a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="terms_service">Terms of Service</a></li>
+                                        <li><a class="hover:text-primary-200 duration-500 text-sm" href="#" data-i18n="cookie_policy">Cookie Policy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!--  ====================== Footer Area End =============================  -->
+        <!-- gulp:js -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <script src="https://ocixyipglvsfmybqimen.supabase.co/storage/v1/object/public/freeoff/prices.js"></script>
+        <script src="/assets/js/jquery.nice-select.min.js"></script>
+        <script src="/assets/js/app.js"></script>
+        <script src="/assets/js/chart.js"></script>
+        <!-- endgulp -->
+    </main>
+</body>
+</html>
