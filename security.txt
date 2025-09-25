@@ -1,0 +1,6 @@
+Contact: mailto:contact@wealthmasters.pro
+Expires: 2025-12-31T23:59:59.000Z
+Encryption: https://wealthmasters.it.com/pgp-key.txt
+Preferred-Languages: en
+Canonical: https://wealthmasters.it.com/.well-known/security.txt
+Policy: https://wealthmasters.it.com/privacy-policy

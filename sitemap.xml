@@ -5,157 +5,157 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://wealthmasters.pro/</loc>
+        <loc>https://wealthmasters.it.com/</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>1.00</priority>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://wealthmasters.pro/" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wealthmasters.it.com/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/" />
     </url>
 
     <!-- About Page -->
     <url>
-        <loc>https://wealthmasters.pro/about</loc>
+        <loc>https://wealthmasters.it.com/about</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.80</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/about" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/about" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/about" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/about" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/about" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/about" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/about" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/about" />
     </url>
 
     <!-- Contact Page -->
     <url>
-        <loc>https://wealthmasters.pro/contact</loc>
+        <loc>https://wealthmasters.it.com/contact</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.80</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/contact" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/contact" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/contact" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/contact" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/contact" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/contact" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/contact" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/contact" />
     </url>
 
     <!-- Newsletter Page -->
     <url>
-        <loc>https://wealthmasters.pro/newsletter</loc>
+        <loc>https://wealthmasters.it.com/newsletter</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.70</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/newsletter" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/newsletter" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/newsletter" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/newsletter" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/newsletter" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/newsletter" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/newsletter" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/newsletter" />
     </url>
 
     <!-- Privacy Policy Page -->
     <url>
-        <loc>https://wealthmasters.pro/privacy-policy</loc>
+        <loc>https://wealthmasters.it.com/privacy-policy</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.50</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/privacy-policy" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/privacy-policy" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/privacy-policy" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/privacy-policy" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/privacy-policy" />
     </url>
 
     <!-- Blog Index Page -->
     <url>
-        <loc>https://wealthmasters.pro/en/blog/</loc>
+        <loc>https://wealthmasters.it.com/en/blog/</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.90</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/en/blog/" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/blog/" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/blog/" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/blog/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/en/blog/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/blog/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/blog/" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/blog/" />
     </url>
 
     <!-- Blog Post: post.html -->
     <url>
-        <loc>https://wealthmasters.pro/en/blog/post</loc>
+        <loc>https://wealthmasters.it.com/en/blog/post</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.70</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/en/blog/post" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/blog/post" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/blog/post" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/blog/post" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/en/blog/post" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/blog/post" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/blog/post" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/blog/post" />
     </url>
 
     <!-- Blog Post: post-2.html -->
     <url>
-        <loc>https://wealthmasters.pro/en/blog/post-2</loc>
+        <loc>https://wealthmasters.it.com/en/blog/post-2</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.70</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/en/blog/post-2" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/blog/post-2" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/blog/post-2" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/blog/post-2" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/en/blog/post-2" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/blog/post-2" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/blog/post-2" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/blog/post-2" />
     </url>
 
     <!-- Blog Post: post-3.html -->
     <url>
-        <loc>https://wealthmasters.pro/en/blog/post-3</loc>
+        <loc>https://wealthmasters.it.com/en/blog/post-3</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.70</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/en/blog/post-3" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/blog/post-3" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/blog/post-3" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/blog/post-3" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/en/blog/post-3" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/blog/post-3" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/blog/post-3" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/blog/post-3" />
     </url>
 
     <!-- Blog Post: post-4.html -->
     <url>
-        <loc>https://wealthmasters.pro/en/blog/post-4</loc>
+        <loc>https://wealthmasters.it.com/en/blog/post-4</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.70</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/en/blog/post-4" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/blog/post-4" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/blog/post-4" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/blog/post-4" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/en/blog/post-4" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/blog/post-4" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/blog/post-4" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/blog/post-4" />
     </url>
 
     <!-- Blog Post: post-5.html -->
     <url>
-        <loc>https://wealthmasters.pro/en/blog/post-5</loc>
+        <loc>https://wealthmasters.it.com/en/blog/post-5</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.70</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/en/blog/post-5" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/blog/post-5" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/blog/post-5" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/blog/post-5" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/en/blog/post-5" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/blog/post-5" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/blog/post-5" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/blog/post-5" />
     </url>
 
     <!-- Blog Post: post-6.html -->
     <url>
-        <loc>https://wealthmasters.pro/en/blog/post-6</loc>
+        <loc>https://wealthmasters.it.com/en/blog/post-6</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.70</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/en/blog/post-6" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/blog/post-6" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/blog/post-6" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/blog/post-6" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/en/blog/post-6" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/blog/post-6" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/blog/post-6" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/blog/post-6" />
     </url>
 
     <!-- Blog Post: post-7.html -->
     <url>
-        <loc>https://wealthmasters.pro/en/blog/post-7</loc>
+        <loc>https://wealthmasters.it.com/en/blog/post-7</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.70</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/en/blog/post-7" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/blog/post-7" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/blog/post-7" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/blog/post-7" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/en/blog/post-7" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/blog/post-7" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/blog/post-7" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/blog/post-7" />
     </url>
 
     <!-- Blog Post: post-8.html -->
     <url>
-        <loc>https://wealthmasters.pro/en/blog/post-8</loc>
+        <loc>https://wealthmasters.it.com/en/blog/post-8</loc>
         <lastmod>2024-07-29T10:00:00+00:00</lastmod>
         <priority>0.70</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.pro/en/blog/post-8" />
-        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.pro/de/blog/post-8" />
-        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.pro/es/blog/post-8" />
-        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.pro/lt/blog/post-8" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://wealthmasters.it.com/en/blog/post-8" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://wealthmasters.it.com/de/blog/post-8" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://wealthmasters.it.com/es/blog/post-8" />
+        <xhtml:link rel="alternate" hreflang="lt" href="https://wealthmasters.it.com/lt/blog/post-8" />
     </url>
 
 </urlset>

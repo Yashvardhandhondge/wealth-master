@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
-Sitemap: http://wealthmasters.pro/sitemap.xml
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.log$
+Disallow: /security.txt
+Sitemap: https://wealthmasters.it.com/sitemap.xml
+
+# Security
+Crawl-delay: 1
