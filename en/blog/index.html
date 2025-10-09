@@ -521,8 +521,21 @@
             .blog-grid {
                 margin-top: 30px;
                 display: grid;
+                grid-template-columns: 1fr;
                 gap: 2.5rem;
                 /* 40px. Increased from the default for more breathing room. */
+            }
+
+            @media (min-width: 768px) {
+                .blog-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .blog-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
             }
 
             /* ================== KEY CHANGE END ================== */
@@ -772,21 +785,20 @@
                         </div>
                     </a>
 
-                </div>
-
-                <!-- Blog Post Card 10 -->
-
-                    <a href="/en/blog/post-9.html" class="blog-card">
-    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1932&auto=format&fit=crop"
-        alt="BitMEX cryptocurrency derivatives trading platform interface" class="card-image">
-    <div class="card-content">
-        <span class="card-category">Leadership</span>
-        <h3 class="card-title">Adapt or Be Left Behind: BitMEX CEO Stephan Lutz on Surviving the Fast Cycles of Crypto
-        </h3>
-        <p class="card-excerpt">Learn how BitMEX's CEO navigated from traditional finance to crypto leadership, the truth about leverage trading, and why adaptation speed determines market winners.</p>
-        <span class="read-more-link">Read More →</span>
-    </div>
-</a>
+                    <!-- Blog Post Card 10 -->
+                    <a href="/es/blog/post-9.html" class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1932&auto=format&fit=crop"
+                            alt="BitMEX cryptocurrency derivatives trading platform interface" class="card-image">
+                        <div class="card-content">
+                            <span class="card-category">Leadership</span>
+                            <h3 class="card-title">Adapt or Be Left Behind: BitMEX CEO Stephan Lutz on Surviving the
+                                Fast Cycles of Crypto</h3>
+                            <p class="card-excerpt">Learn how BitMEX's CEO navigated from traditional finance to crypto
+                                leadership, the truth about leverage trading, and why adaptation speed determines market
+                                winners.</p>
+                            <span class="read-more-link">Read More →</span>
+                        </div>
+                    </a>
 
                 </div>
 
